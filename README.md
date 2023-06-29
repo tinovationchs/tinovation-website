@@ -2,7 +2,7 @@
 
 ## Ideas
 
-- heap
+- tree of knowledge!
   - basics: git, command line, languages, ides
   - ai: basic libaries/models, CV, DL
   - webdev: html/css/js, frameworks, deployment
