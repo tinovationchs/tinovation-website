@@ -2,7 +2,15 @@
 export default {
   content: ["./src/**/*.{html,js,svelte,ts}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        header: ["Belanosima", "sans-serif"],
+      },
+      colors: {
+        "retro-black": "#232222",
+        "retro-white": "#ECE8E0",
+      },
+    },
     fontFamily: {
       sans: ["Lexend", "sans-serif"],
     },
