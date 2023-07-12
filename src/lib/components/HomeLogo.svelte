@@ -1,4 +1,4 @@
-<span class="absolute z-10 w-0 translate-y-8" />
+<span class="absolute z-10 w-0 translate-y-9" />
 
 <div class="z-20 h-auto w-40 stroke-retro-white">
   <svg
@@ -47,7 +47,7 @@
   span {
     content: "";
     border-radius: 50%;
-    box-shadow: 0 0 100px 40px rgb(255, 255, 255) /* inner white */,
+    box-shadow: 0 0 100px 40px white /* inner white */,
       0 0 140px 80px #ffd51d /* outer yellow glow */;
   }
 </style>

@@ -8,6 +8,7 @@ export default {
       },
       colors: {
         "retro-black": "#232222",
+        "retro-gray": "#D3D0C9",
         "retro-white": "#ECE8E0",
       },
     },
