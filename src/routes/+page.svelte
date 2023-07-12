@@ -4,7 +4,7 @@
 </script>
 
 <!-- CONTENT STREAM -->
-<div class="flex w-full flex-col text-lg text-retro-white md:items-center">
+<div class="flex w-full flex-col bg-retro-gray text-lg text-retro-white md:items-center">
   <!-- BANNER/HEADER THINGY -->
   <div class="flex h-[40rem] w-full flex-row justify-center rounded-b-3xl bg-retro-black">
     <div class="flex flex-col items-center pt-56">

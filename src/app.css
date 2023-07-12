@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-retro-gray;
+  @apply bg-retro-black;
 }
