@@ -1,9 +1,7 @@
 <script lang="ts">
   import HomeLogo from "$lib/components/HomeLogo.svelte";
-  import Navbar from "$lib/components/Navbar.svelte";
 </script>
 
-<Navbar />
 
 <!-- CONTENT STREAM -->
 <div class="flex w-full flex-col items-center text-retro-black">

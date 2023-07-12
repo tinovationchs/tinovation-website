@@ -1,11 +1,5 @@
-<script>
-  import Navbar from "$lib/components/Navbar.svelte";
-</script>
-
-<Navbar />
-
-<div class="absolute h-full w-full fill-purple-600">
-  <div class="h-80 bg-purple-600" />
+<div class="absolute h-full w-full fill-purple-400">
+  <div class="h-72 bg-purple-400" />
 
   <div class="fill-inherit">
     <svg
