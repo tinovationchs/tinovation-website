@@ -4,14 +4,14 @@
 </script>
 
 <!-- CONTENT STREAM -->
-<div class="flex w-full flex-col items-center text-retro-white text-lg">
+<div class="flex w-full flex-col items-center text-lg text-retro-white">
   <!-- BANNER/HEADER THINGY -->
   <div class="flex h-[40rem] w-full flex-row justify-center rounded-b-xl bg-retro-black">
     <div class="flex flex-col items-center pt-56">
       <HomePageLogo />
 
       <h1 class="mt-4 font-header text-7xl font-semibold text-retro-white">Tinovation</h1>
-      <h3 class="text-retro-white font-header text-2xl">programming club at CHS</h3>
+      <h3 class="font-header text-2xl text-retro-white">programming club at CHS</h3>
 
       <SocialsBar />
     </div>
@@ -35,11 +35,7 @@
 
   <div class="mb-8 mt-8 flex w-[40rem] flex-col gap-6">
     <h2 class="font-header text-4xl">The Officer Team</h2>
-    <p>
-      Daniel, Ryan, Arnav, Bhargav
-    </p>
-    <p>
-      Taisei, Shine, Sharma, Purva, Shauryan, Laurier
-    </p>
+    <p>Exec: Daniel, Ryan, Arnav, Bhargav</p>
+    <p>Mentors: Taisei, Shine, Sharma, Purva, Shauryan, Laurier</p>
   </div>
 </div>
