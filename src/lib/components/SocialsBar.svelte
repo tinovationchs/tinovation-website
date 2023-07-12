@@ -1,4 +1,4 @@
-<div class="mt-6 flex flex-row items-center gap-5 px-4 py-3">
+<div class="mt-4 flex flex-row items-center gap-5 px-4 py-3">
   <a
     href="https://discord.gg/QGxaW5dSG2"
     target="_blank"
