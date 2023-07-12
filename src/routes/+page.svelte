@@ -4,21 +4,23 @@
 </script>
 
 <!-- CONTENT STREAM -->
-<div class="flex w-full flex-col md:items-center text-lg text-retro-white">
+<div class="flex w-full flex-col text-lg text-retro-white md:items-center">
   <!-- BANNER/HEADER THINGY -->
   <div class="flex h-[40rem] w-full flex-row justify-center rounded-b-3xl bg-retro-black">
     <div class="flex flex-col items-center pt-56">
       <HomePageLogo />
 
-      <h1 class="mt-4 font-header text-7xl font-semibold text-retro-white">Tinovation</h1>
-      <h3 class="font-header text-2xl text-retro-white">programming club at CHS</h3>
+      <h1 class="mt-4 font-header text-6xl font-semibold text-retro-white md:text-7xl">
+        Tinovation
+      </h1>
+      <h3 class="font-header text-lg text-retro-white md:text-2xl">programming club at CHS</h3>
 
       <SocialsBar />
     </div>
   </div>
 
   <!-- ACTUAL CONTENT -->
-  <div class="mb-8 mt-16 flex sm:w-fit md:w-[40rem] flex-col gap-6 px-8">
+  <div class="mb-8 mt-16 flex w-fit flex-col gap-6 px-8 md:w-[40rem]">
     <h2 class="font-header text-4xl">About Us</h2>
     <p>
       Tinovation is the largest programming and software development club at CHS! At Tinovation, you
@@ -33,7 +35,7 @@
     </p>
   </div>
 
-  <div class="mb-8 mt-8 flex sm:w-fit md:w-[40rem] flex-col gap-6 px-6">
+  <div class="mb-8 mt-8 flex w-fit flex-col gap-6 px-6 md:w-[40rem]">
     <h2 class="font-header text-4xl">The Officer Team</h2>
     <p>Exec: Daniel, Ryan, Arnav, Bhargav</p>
     <p>Mentors: Taisei, Shine, Sharma, Purva, Shauryan, Laurier</p>

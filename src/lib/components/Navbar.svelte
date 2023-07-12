@@ -4,7 +4,7 @@
 
 <div class="flex w-full flex-row justify-center">
   <nav
-    class="text-semibold fixed top-4 z-30 flex flex-row gap-8 rounded-3xl bg-retro-white px-10 py-1.5 font-header text-2xl shadow-md shadow-transparent transition ease-in hover:-translate-y-0.5 hover:shadow-retro-white">
+    class="text-semibold fixed top-4 z-30 flex flex-row gap-4 rounded-3xl bg-retro-white px-4 py-1 font-header text-lg shadow-md shadow-transparent transition ease-in hover:-translate-y-0.5 hover:shadow-retro-white md:gap-8 md:px-10 md:py-1.5 md:text-2xl">
     <!-- NOTE: ALL THESE IF STATEMENTS WAS PROBABLY INEFFICIENT BUT I WAS LAZY AND DIDN'T WANT TO FIND ANOTHER SOLUTION -->
     {#if $page.url.pathname === "/"}
       <a href="/" class="text-amber-700 transition ease-in">home</a>
