@@ -1,6 +1,10 @@
+<script>
+  import info from "$lib/info";
+</script>
+
 <div class="mt-4 flex flex-row items-center gap-5 px-4 py-3">
   <a
-    href="https://discord.gg/QGxaW5dSG2"
+    href={info.discord_link}
     target="_blank"
     class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in hover:border-[#5865F2] hover:fill-[#5865F2]">
     <svg
@@ -68,8 +72,11 @@
     href="https://github.com/tinovationchs"
     target="_blank"
     class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in hover:border-green-500 hover:fill-green-500">
-    <svg viewBox="0 0 98 96" width="98" height="96" xmlns="http://www.w3.org/2000/svg"
-
+    <svg
+      viewBox="0 0 98 96"
+      width="98"
+      height="96"
+      xmlns="http://www.w3.org/2000/svg"
       class="h-7 w-7 stroke-inherit">
       <path
         fill-rule="evenodd"
