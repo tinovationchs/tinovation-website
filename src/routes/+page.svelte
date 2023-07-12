@@ -2,7 +2,6 @@
   import HomeLogo from "$lib/components/HomeLogo.svelte";
 </script>
 
-
 <!-- CONTENT STREAM -->
 <div class="flex w-full flex-col items-center text-retro-black">
   <div class="flex h-[36rem] w-full flex-row justify-center rounded-b-xl bg-retro-black">

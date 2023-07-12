@@ -7,6 +7,6 @@
   <title>Tinovation</title>
 </svelte:head>
 
-<Navbar/>
+<Navbar />
 
 <slot />
