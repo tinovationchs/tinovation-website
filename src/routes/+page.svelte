@@ -4,9 +4,9 @@
 </script>
 
 <!-- CONTENT STREAM -->
-<div class="flex w-full flex-col items-center text-lg text-retro-white">
+<div class="flex w-full flex-col md:items-center text-lg text-retro-white">
   <!-- BANNER/HEADER THINGY -->
-  <div class="flex h-[40rem] w-full flex-row justify-center rounded-b-xl bg-retro-black">
+  <div class="flex h-[40rem] w-full flex-row justify-center rounded-b-3xl bg-retro-black">
     <div class="flex flex-col items-center pt-56">
       <HomePageLogo />
 
@@ -18,7 +18,7 @@
   </div>
 
   <!-- ACTUAL CONTENT -->
-  <div class="mb-8 mt-16 flex w-[40rem] flex-col gap-6">
+  <div class="mb-8 mt-16 flex sm:w-fit md:w-[40rem] flex-col gap-6 px-8">
     <h2 class="font-header text-4xl">About Us</h2>
     <p>
       Tinovation is the largest programming and software development club at CHS! At Tinovation, you
@@ -33,7 +33,7 @@
     </p>
   </div>
 
-  <div class="mb-8 mt-8 flex w-[40rem] flex-col gap-6">
+  <div class="mb-8 mt-8 flex sm:w-fit md:w-[40rem] flex-col gap-6 px-6">
     <h2 class="font-header text-4xl">The Officer Team</h2>
     <p>Exec: Daniel, Ryan, Arnav, Bhargav</p>
     <p>Mentors: Taisei, Shine, Sharma, Purva, Shauryan, Laurier</p>
