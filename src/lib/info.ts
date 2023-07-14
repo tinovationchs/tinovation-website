@@ -7,7 +7,14 @@ const info = {
   co_presidents: ["Daniel Cui", "Ryan Kim"],
   vice_president: "Arnav Gupta",
   secretary_treasurer: "Bhargav Eranki",
-  mentors: ["Taisei", "Shine", "Sharma", "Purva", "Shauryan", "Laurier"],
+  mentors: [
+    "Taisei De La Cruz",
+    "Shine Chang",
+    "Arnav Sharma",
+    "Purva Marfatia",
+    "Shauryan Kanaujia",
+    "Laurier Ke",
+  ],
 };
 
 export default info;

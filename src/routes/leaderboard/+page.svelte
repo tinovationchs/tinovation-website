@@ -1,4 +1,8 @@
-<div class="absolute h-full w-full fill-purple-400">
+<script>
+  import Leaderboard from "$lib/components/Leaderboard.svelte";
+</script>
+
+<div class="absolute -z-10 h-full w-full fill-purple-400">
   <div class="h-72 bg-purple-400" />
 
   <div class="fill-inherit">
@@ -20,3 +24,9 @@
 </div>
 
 <div class="fixed -z-20 h-full min-h-screen w-full bg-retro-black" />
+
+<div class="flex flex-row justify-center">
+  <div class="mb-10 mt-24 flex w-full flex-col md:w-auto">
+    <Leaderboard />
+  </div>
+</div>

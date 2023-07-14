@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         header: ["Belanosima", "sans-serif"],
+        jetbrains: ["Jetbrains Mono", "monospace"],
       },
       colors: {
         "retro-black": "#232222",

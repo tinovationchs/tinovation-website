@@ -1,6 +1,7 @@
 <script lang="ts">
   import HomePageLogo from "$lib/components/HomePageLogo.svelte";
   import SocialsBar from "$lib/components/SocialsBar.svelte";
+  import info from "$lib/info";
 </script>
 
 <!-- CONTENT STREAM -->
@@ -37,7 +38,9 @@
 
   <div class="mb-8 mt-8 flex w-fit flex-col gap-6 px-6 md:w-[40rem]">
     <h2 class="font-header text-4xl">The Officer Team</h2>
-    <p>Exec: Daniel, Ryan, Arnav, Bhargav</p>
+    <p>
+      Co-Presidents: {`${info.co_presidents[0]}, ${info.co_presidents[1]}`}
+    </p>
     <p>Mentors: Taisei, Shine, Sharma, Purva, Shauryan, Laurier</p>
   </div>
 </div>

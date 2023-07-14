@@ -1,4 +1,4 @@
-<div class="absolute h-full w-full fill-blue-400">
+<div class="absolute -z-10 h-full w-full fill-blue-400">
   <div class="h-72 bg-blue-400" />
 
   <div class="fill-inherit">
