@@ -4,6 +4,10 @@
   import info from "$lib/info";
 </script>
 
+<svelte:head>
+  <title>{"Tinovation"}</title>
+</svelte:head>
+
 <!-- CONTENT STREAM -->
 <div class="flex w-full flex-col bg-retro-gray text-lg text-retro-white md:items-center">
   <!-- BANNER/HEADER THINGY -->

@@ -2,6 +2,10 @@
   import Leaderboard from "$lib/components/Leaderboard.svelte";
 </script>
 
+<svelte:head>
+  <title>{"Leaderboard - Tinovation"}</title>
+</svelte:head>
+
 <div class="absolute -z-10 h-full w-full fill-purple-400">
   <div class="h-72 bg-purple-400" />
 
