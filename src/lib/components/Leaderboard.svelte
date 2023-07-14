@@ -3,7 +3,7 @@
 </script>
 
 <div
-  class="mx-8 flex flex-col rounded-lg border-2 border-retro-black bg-retro-white p-4 pt-3 font-jetbrains text-lg sm:mx-24 md:w-[42rem]">
+  class="mx-4 flex flex-col rounded-lg border-2 border-retro-black bg-retro-white p-4 pt-3 font-jetbrains text-lg sm:mx-12 md:w-[41rem]">
   <h1 class="mt-2 text-center font-header text-5xl md:text-6xl">Leaderboard</h1>
   <h2 class="text-center font-header">last updated: {leaderboardLastUpdated}</h2>
 
@@ -21,7 +21,7 @@
     {#each leaderboardData as person, i}
       <div
         class="flex flex-row items-baseline gap-4 p-4 first:rounded-t-lg last:rounded-b-lg odd:bg-[rgb(201,199,196)] even:bg-retro-white">
-        <span class="md:w-[14.5rem]">
+        <span class="md:w-[16rem]">
           <span>{i + 1 || "-1"}</span>
           <span>{person.name || "no name?"}</span>
         </span>

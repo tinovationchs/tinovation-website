@@ -42,7 +42,7 @@ let data: Person[] = [
     comment: "2nd in code sprint #1",
   },
   {
-    name: "Shauryan",
+    name: "Shauryan Kanaujia",
     points: [10, 9],
     comment: "sharks",
   },
