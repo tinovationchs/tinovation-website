@@ -2,7 +2,6 @@
   <title>{"Resources - Tinovation"}</title>
 </svelte:head>
 
-
 <div class="absolute -z-10 h-full w-full fill-pink-400">
   <div class="h-72 bg-pink-400" />
 

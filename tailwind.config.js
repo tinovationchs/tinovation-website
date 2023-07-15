@@ -15,6 +15,7 @@ export default {
     },
     fontFamily: {
       sans: ["Lexend", "sans-serif"],
+      mono: ["Jetbrains Mono", "monospace"],
     },
   },
   plugins: [],

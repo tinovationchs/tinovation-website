@@ -1,6 +1,6 @@
-import type { Person } from "$lib/types";
+import type { Leaderboard } from "$lib/types";
 
-let data: Person[] = [
+const data: Leaderboard = [
   {
     name: "Daniel Cui",
     points: [1, 5, 3, 2],
@@ -8,7 +8,7 @@ let data: Person[] = [
   },
   {
     name: "Ryan Kim",
-    points: [1, 5, 3, 2, 1654],
+    points: [1, 5, 3, 2, 154],
     comment: "1st in code sprint #1",
   },
   {
@@ -28,8 +28,6 @@ let data: Person[] = [
   },
   {
     name: "Arnav Gupta",
-    points: [0],
-    comment: "i love animals!",
   },
   {
     name: "Taisei De La Cruz",

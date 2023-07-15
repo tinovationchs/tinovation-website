@@ -1,34 +1,63 @@
 import moment from "moment";
-import data from "$lib/leaderboards/test";
-import type { Person } from "$lib/types";
+import type { Leaderboard, Person } from "$lib/types";
+import { writable, derived } from "svelte/store";
 
-// the array used for inputting the data
-export const leaderboardLastUpdated = moment("07-14-2023", "MM-DD-YYYY").format("MMM Do, YYYY");
-export const leaderboardData: Person[] = data;
+// ======== ONLY EDIT THE STRING HERE! ========== //
+// default/current leaderboard filename w/o ".ts" //
+export const currentLeaderboard = writable("23-24_(S1)");
+// ============================================== //
 
-// ============================================================== //
-// WHEN ADDING SCORES, EDIT ONLY FILE PATH TO LEADERBOARD TS FILE //
-// ============================================================== //
+export const leaderboardLastUpdated = moment("2023-07-14", "YYYY-MM-DD"); // this date formatting is superior!
+export const leaderboardData = derived(currentLeaderboard, async (name) =>
+  initLeaderboardValues(await getData(name))
+);
+export const allLeaderboards = getLeaderboards();
 
-const setTotalPoints = (person: Person) => {
+// ================================ //
+// DO NOT EDIT ANYTHING BELOW THIS! //
+// ================================ //
+
+// dynamic imports, baby... but gross async await promises... ugh... but svelte makes it kinda nice
+async function getData(filename: string) {
+  return <Person[]>(await import(`./leaderboards/${filename}.ts`)).default;
+}
+
+function getLeaderboards() {
+  const filenames = Object.keys(import.meta.glob("./leaderboards/*.ts"));
+  return filenames.map((name: string) =>
+    name.substring(name.lastIndexOf("/") + 1, name.lastIndexOf("."))
+  );
+}
+
+function setTotalPoints(person: Person) {
+  if (person.points === undefined) {
+    person.points = [0];
+  }
   let totalPoints = 0;
-  for (let pt of person.points) {
+  for (const pt of person.points) {
     totalPoints += pt;
   }
   person.totalPoints = totalPoints;
-};
-
-// adding total score
-for (let p of leaderboardData) {
-  setTotalPoints(p);
 }
 
-// sorting array by total score
-leaderboardData.sort((a, b) => {
-  return b.totalPoints! - a.totalPoints!; // descending order
-});
+function initLeaderboardValues(leaderboard: Leaderboard | undefined) {
+  if (leaderboard === undefined) {
+    leaderboard = [];
+  }
+  // adding total score
+  for (const p of leaderboard) {
+    setTotalPoints(p);
+  }
 
-// setting current placement by index after sorting
-for (let [index, person] of leaderboardData.entries()) {
-  person.currentPlacement = index + 1;
+  // sorting array by total score
+  leaderboard.sort((a, b) => {
+    return b.totalPoints! - a.totalPoints!; // descending order
+  });
+
+  // setting current placement by index after sorting
+  for (const [index, person] of leaderboard.entries()) {
+    person.currentPlacement = index + 1;
+  }
+
+  return leaderboard;
 }
