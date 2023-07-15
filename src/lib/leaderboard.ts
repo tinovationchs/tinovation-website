@@ -2,20 +2,21 @@ import moment from "moment";
 import type { Leaderboard, Person } from "$lib/types";
 import { writable, derived } from "svelte/store";
 
-// ======== ONLY EDIT THE STRING HERE! ========== //
+// ======== ONLY EDIT THE STRINGS HERE! ========= //
 // default/current leaderboard filename w/o ".ts" //
 export const currentLeaderboard = writable("23-24_(S1)");
+// use format for the date, date of last update   //
+export const leaderboardLastUpdated = moment("2023-07-14", "YYYY-MM-DD");
 // ============================================== //
-
-export const leaderboardLastUpdated = moment("2023-07-14", "YYYY-MM-DD"); // this date formatting is superior!
-export const leaderboardData = derived(currentLeaderboard, async (name) =>
-  initLeaderboardValues(await getData(name))
-);
-export const allLeaderboards = getLeaderboards();
 
 // ================================ //
 // DO NOT EDIT ANYTHING BELOW THIS! //
 // ================================ //
+
+export const leaderboardData = derived(currentLeaderboard, async (name) =>
+  initLeaderboardValues(await getData(name))
+);
+export const allLeaderboards = getLeaderboards();
 
 // dynamic imports, baby... but gross async await promises... ugh... but svelte makes it kinda nice
 async function getData(filename: string) {
