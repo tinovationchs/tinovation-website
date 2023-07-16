@@ -25,7 +25,7 @@
   </div>
 
   <!-- ACTUAL CONTENT -->
-  <div class="mb-8 mt-16 flex w-fit flex-col gap-6 px-8 md:w-[40rem]">
+  <div class="mb-6 mt-12 flex w-fit flex-col gap-6 px-4 md:w-[44rem]">
     <h2 class="font-header text-4xl">About Us</h2>
     <p>
       Tinovation is the largest programming and software development club at CHS! At Tinovation, you
@@ -40,7 +40,7 @@
     </p>
   </div>
 
-  <div class="mb-8 mt-8 flex w-fit flex-col gap-6 px-6 md:w-[40rem]">
+  <div class="mb-6 mt-4 flex w-fit flex-col gap-6 px-6 md:w-[44rem]">
     <h2 class="font-header text-4xl">The Officer Team</h2>
     <p>
       Co-Presidents: {`${info.co_presidents[0]}, ${info.co_presidents[1]}`}
