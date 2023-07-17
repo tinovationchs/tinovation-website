@@ -1,3 +1,8 @@
+<script>
+  import ResourceGroup from "$lib/components/ResourceGroup.svelte";
+  import resourceCategories from "$lib/resources";
+</script>
+
 <svelte:head>
   <title>{"Resources - Tinovation"}</title>
 </svelte:head>
@@ -24,3 +29,16 @@
 </div>
 
 <div class="fixed -z-20 h-full min-h-screen w-full bg-retro-black" />
+
+<div class="flex flex-row justify-center pt-16 md:pt-20">
+  <div>
+    <h1 class="mb-2 text-center font-header text-5xl md:text-6xl">Resources</h1>
+    <hr class="mb-8 rounded-full border-2 border-retro-black"/>
+    <div
+    class="grid w-fit grid-cols-1 gap-4 px-4 md:grid-cols-2 lg:grid-cols-3 grid-rows-[masonry]">
+    {#each Object.entries(resourceCategories) as [category, resources]}
+      <ResourceGroup {category} {resources}/>
+    {/each}
+    </div>
+  </div>
+</div>
