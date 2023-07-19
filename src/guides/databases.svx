@@ -1,0 +1,101 @@
+---
+title: Databases 
+authors: [Shine Chang]
+date: "2023-07-18"
+published: true
+---
+
+### Vocabulary
+__Database Schema__:
+A file describing the format and types of data stored. This can range from a scratch file serving just as a developer's note, or a strictly formatted file used by the database scripts.
+![Sample Schema Diagram](https://content.codecademy.com/programs/data-engineering-postgres/database-normalization-with-postgresql/orders_items_normalized.png)
+
+## Types:
+__NoSQL/Document Oriented__:
+- Each entry (“document”) is effectively a javascript object.
+- Document based databases do not require or enforce a schematic.  
+- Flexible & Easy to use (especially with Node.js).   
+- The more common type used by database servers / hosters.
+
+__SQL/Relational__:
+-   A database is a collection of tables, analogous for collections.    
+-   Each row is an entry in the table, and each column of a table represents a parameter in the collection. The columns must be a sized data type, meaning no objects or arrays can be stored within a table cell.
+-   The schematic defines the columns in each table, and the data type stored.
+-   A parameter in an entry can be related to another entry, for example via IDs. Refer to the image above for an example.
+-   To access (“query”) the database, SQL (Structured Query Language) is used. This is necessary to make it easier to query by database relations. 
+**Example Query:**
+	```
+	SELECT id, lon, lat FROM city 
+	WHERE lat > 12.0 AND 
+		  lat < 14.1 AND
+		  lon > 32.0 AND
+		  lon < 64.5
+	ORDER BY population DESC
+	```
+	*Gets the `id`, `lon`, `lat` columns of all rows from table `city`, where `lat` and `lon` are in a certain range, sorted by population in descending order.*
+-   A good database schematic / design is essential to reduce query overhead. A good database typically follows a few rules; these are called "*database normalization rules,*" which we will go over later.
+-   Obviously, more difficult to use but  a very powerful tool. Used less in amateur web dev.
+
+### Database Normalization
+[TODO]
+
+### Database Clustering
+Database Clustering is when multiple database servers exist to host a single database. This offloads traffic from a single server, improves scalability, provides fault tolerance, and also decreases latency with distributed servers. Two common solutions for offloading database traffic from a single server are *replication* and *sharding*. 
+
+*Replication* is done by having replicas of the database distributed in different regions. The *secondary* replicas can only handle read requests, and will forward any write requests to the *primary* set. This offloads the read traffic, which should be greater than write, and also provides back-up databases. 
+
+*Sharding* is when a single table or dataset is split and hosted by multiple servers. This reduces response time for both reading and writing, by eliminating the single bottleneck server. 
+
+Some database providers may implement these techniques out-of-the-box. For example, MongoDB has auto replication enabled.
+
+## Database Options/Service Providers
+
+### SQL/Relational
+__MySQL__: Oracle's SQL database service
+__Cloud SQL__: Google’s SQL database hosting service. Free initial credits
+__Azure SQL__: Microsoft’s SQL database hosting service. Free initial credits
+__SQLite__: stores an SQL database locally. Good for amateur development. Local hosting, so, free.
+
+### NoSQL/Document-oriented
+__MongoDB Atlas__: Real-time Database hosting service. Nice interface, clear documentation, simple syntax. Free.
+__Firebase RTDB__: Real-time Database hosting. Good interface, terrible documentation. Iffy syntax as a result of not being able to find the cleanest way to implement something due to the poor documentation. Free.
+
+## MongoDB Example
+The following is an example Node.JS controller, using MongoDB. 
+The controller simply extracts user input from the [request body](https://en.wikipedia.org/wiki/HTTP), then inserts it into the `users` collection. 
+```
+const coll = require("../db.js")
+				.db("Medicare")
+				.collection("users");
+const { query, body, validationResult } = require('express-validator');
+
+// A controller function for registering a new user
+exports.register = async (req, res) => {
+	/* NOTE: AN ACTUAL CONTROLLER SHOULD VALIDATE USER INPUT.
+	 * THIS IS DISCUSSED IN THE "BACKEND TIPS" RESOURCE.	
+	 */
+		
+	// EXTRACT DATA FROM REQUEST BODY
+	const b = req.body;
+	const user = {
+		displayName: b.displayName || "no name set",
+		name: b.name,
+		age: b.age,
+		password: HASHER(b.password),
+		patient: b.patient,
+	};
+
+	// Case: If user already exists
+	if (await coll.findOne({name: user.name}) != null) 
+		return res.status(400)
+			.send(`User named '${user.name}' already exists.`);
+
+	// Insert to db
+	const insert_res = await coll.insertOne(user);
+	user._id = insert_res.insertedId;
+
+	// Send new user object
+	return res.status(200)
+		.json(user);
+}
+```
