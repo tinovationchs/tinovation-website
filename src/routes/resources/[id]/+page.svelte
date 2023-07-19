@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import type { PageData } from "./$types";
   import colors from "$lib/tailwindColors";
+  import moment from "moment";
 
   export let data: any;
 
@@ -37,20 +37,35 @@
   const color = hexToRgb(hueArray.at(Math.abs(getHash(data.metadata.title)) % hueArray.length)!);
 </script>
 
+<svelte:head>
+  <title>
+    {data.metadata.title} - Tinovation
+  </title>
+</svelte:head>
+
 <div
   class="absolute h-[45rem] w-full -translate-y-28"
-  style="background-image: linear-gradient({180 + getHash(data.metadata.title) % 7}deg, rgba({color?.r}, {color?.g}, {color?.b}, 0.8), #232222 50%);" />
+  style="background-image: linear-gradient({180 +
+    (getHash(data.metadata.title) %
+      7)}deg, rgba({color?.r}, {color?.g}, {color?.b}, 0.8), #232222 50%);" />
 
 <div class="flex flex-row justify-center">
   <main
     class="md:w-max-[30rem] z-10 flex w-full flex-col gap-4 px-6 py-16 font-sans text-lg font-light text-retro-white md:w-[42rem] md:py-20 md:pt-24 lg:w-[52rem]">
-    <div>
-      <h1 class="text-center">{data.metadata.title}</h1>
-      <h3 class="-translate-y-1 text-center">
-        {`author${data.metadata.authors.length === 1 ? "" : "s"}: ${data.metadata.authors.join(
-          ", "
-        )}`}
-      </h3>
+    <div class="flex flex-row justify-center">
+      <div class="flex flex-col font-header">
+        <span class="translate-y-2 text-retro-lightgray">
+          {`${data.metadata.date ? moment(data.metadata.date).format("MMM Do, YYYY") : ""}`}
+        </span>
+
+        <h1 class="-translate-y-2">{data.metadata.title}</h1>
+
+        <span class="-translate-y-4 text-retro-lightgray">
+          {`Author${data.metadata.authors.length === 1 ? "" : "s"}: ${data.metadata.authors.join(
+            ", "
+          )}`}
+        </span>
+      </div>
     </div>
 
     <svelte:component this={data.component} />
@@ -113,17 +128,20 @@
   /* IMAGES */
   /* ====== */
   main :global(img) {
-    @apply w-full rounded-lg py-4;
+    @apply rounded-lg py-4;
   }
 
   /* =========== */
   /* CODE BLOCKS */
   /* =========== */
   main :global(pre) {
-    @apply my-4 w-full whitespace-pre-wrap rounded-lg px-2 py-1.5;
+    @apply my-4 w-full whitespace-pre-wrap rounded-lg px-4 py-2.5;
   }
   main :global(code) {
     @apply mx-0.5 rounded p-1 text-sm;
+  }
+  main :global(pre) :global(code) {
+    @apply m-0 p-0;
   }
   main :global(pre),
   :global(code) {

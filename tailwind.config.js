@@ -10,6 +10,7 @@ export default {
       colors: {
         "retro-black": "#232222",
         "retro-gray": "#545B64",
+        "retro-lightgray": "rgb(201,199,196)",
         "retro-white": "#ECE8E0",
       },
     },

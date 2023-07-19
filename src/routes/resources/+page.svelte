@@ -30,12 +30,11 @@
 
 <div class="fixed -z-20 h-full min-h-screen w-full bg-retro-black" />
 
-<div class="flex flex-row justify-center pt-20 md:pt-24">
+<div class="flex flex-row justify-center py-20 md:py-24">
   <div>
     <p class="mb-2 text-center font-header text-5xl md:text-6xl">Resources</p>
     <hr class="mb-8 rounded-full border-2 border-retro-black" />
-    <div
-      class="grid w-fit grid-cols-1 grid-rows-[masonry] gap-4 px-4 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid w-fit grid-cols-1 gap-4 px-4 md:grid-cols-2 lg:grid-cols-3">
       {#each Object.entries(resourceCategories) as [category, resources]}
         <ResourceGroup {category} {resources} />
       {/each}

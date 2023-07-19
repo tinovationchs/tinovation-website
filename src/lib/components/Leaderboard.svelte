@@ -37,7 +37,7 @@
         class="[&>*:nth-child(1)]:bg-[#c49f25] [&>*:nth-child(1)]:text-retro-white [&>*:nth-child(2)]:bg-[#8f8f8f] [&>*:nth-child(2)]:text-retro-white [&>*:nth-child(3)]:bg-yellow-700 [&>*:nth-child(3)]:text-retro-white">
         {#each data as person, i}
           <div
-            class="flex flex-row items-baseline gap-4 p-4 first:rounded-t-lg last:rounded-b-lg odd:bg-[rgb(201,199,196)] even:bg-retro-white">
+            class="flex flex-row items-baseline gap-4 p-4 first:rounded-t-lg last:rounded-b-lg odd:bg-retro-lightgray even:bg-retro-white">
             <span class="md:w-[16rem]">
               <span>{i + 1}</span>
               <span>{person.name ?? "???"}</span>

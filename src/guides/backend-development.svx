@@ -1,12 +1,11 @@
 ---
 title: Backend Development
 authors: [Shine Chang]
-description: "this is a test"
 date: "2023-07-18"
 published: true
 ---
 
-## The notion of "Backend"
+## The Notion of "Backend"
 
 The "backend" refers to the portion of a project not exposed to the user; This distinction is to separate the heavy-lifting logic from the interface. This "backend-frontend" schematic is used outside of web projects too. 
 In the context of web applications, the backend is typically a server hosting HTTP endpoints for the application. These endpoints could be __API endpoints__, which processes the interface's requests. An interface invokes this API by sending an HTTP request to the server endpoint (in JS, `fetch()`). Here is an example to illustrate the backend-frontend relation.

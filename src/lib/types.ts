@@ -7,3 +7,19 @@ export interface Person {
 }
 
 export type Leaderboard = Person[];
+
+export enum ItemType {
+  Guide,
+  Link,
+  Code,
+}
+
+export interface Item {
+  type: ItemType;
+  path: string;
+  displayName: string;
+}
+
+export interface Categories {
+  [index: string]: (Item | string)[];
+}
