@@ -1,7 +1,7 @@
 import { ItemType, type Categories, type Item } from "$lib/types";
 
 const resourceCategories: Categories = {
-  Basics: ["git", "command-line", "ides", "filesystem", "languages"],
+  "Basics": ["git", "command-line", "ides", "filesystem", "languages"],
   "Web Development": [
     { type: ItemType.Guide, displayName: "backend", path: "backend-development" },
     "html-css",
@@ -12,16 +12,19 @@ const resourceCategories: Categories = {
     "error",
   ],
   "Artificial Intelligence": ["machine-learning", "deep-learning", "computer-vision"],
-  "Databases/Servers": ["firebase", "rest", "mongo-db", "chatgpt-api"],
+  "Databases/Servers": [
+      { type: ItemType.Guide, displayName: "databases101", path: "databases" },
+      "firebase", "rest", "mongo-db", "chatgpt-api"
+  ],
   "App Development": ["react-native", "flutter", "electron", "tauri"],
-  Miscellaneous: ["vim", "assembly"],
+  "Miscellaneous": ["vim", "assembly"],
   "Hack Club": [
     { type: ItemType.Link, displayName: "toolbox", path: "https://toolbox.hackclub.com/" },
     { type: ItemType.Link, displayName: "workshops", path: "https://workshops.hackclub.com/" },
     { type: ItemType.Link, displayName: "hackathons", path: "https://hackathons.hackclub.com/" },
     { type: ItemType.Link, displayName: "slack", path: "https://hackclub.com/slack/" },
   ],
-  Tinovation: [
+  "Tinovation": [
     "images",
     {
       type: ItemType.Link,

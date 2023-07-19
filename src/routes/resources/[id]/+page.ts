@@ -2,9 +2,9 @@ import { error } from "@sveltejs/kit";
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async ({ params }) => {
-  const guides = import.meta.glob(`/src/guides/*.svx`);
+  const guides = import.meta.glob(`/src/guides/*.md`);
 
-  const slugFromPath = (path: string) => path.match(/([\w-]+)\.(svx)/i)?.[1] ?? null;
+  const slugFromPath = (path: string) => path.match(/([\w-]+)\.(md)/i)?.[1] ?? null;
 
   let match: { path?: string; resolver?: App.MdsvexResolver } = {};
   for (const [path, resolver] of Object.entries(guides)) {
