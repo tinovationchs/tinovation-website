@@ -8,3 +8,4 @@
 - "frontmatter" (basically metadata) is yaml, starts and ends with "---"
 - the filename for the .svx file determines the route on the /heap/[id]
 - prettier doesn't work for svx yet :(, so better keep your markdown neat
+- must indent with tabs to get indentation to work for ol/ul

@@ -1,0 +1,145 @@
+---
+title: Backend Development
+authors: [Shine Chang]
+description: "this is a test"
+date: "2023-07-18"
+published: true
+---
+
+## The notion of "Backend"
+
+The "backend" refers to the portion of a project not exposed to the user; This distinction is to separate the heavy-lifting logic from the interface. This "backend-frontend" schematic is used outside of web projects too. 
+In the context of web applications, the backend is typically a server hosting HTTP endpoints for the application. These endpoints could be __API endpoints__, which processes the interface's requests. An interface invokes this API by sending an HTTP request to the server endpoint (in JS, `fetch()`). Here is an example to illustrate the backend-frontend relation.
+
+![Diagram](https://drive.google.com/uc?id=1881cpBZJVnZwOddtCbkngp-BYN5FeP22)
+
+Other than API endpoints, the "backend" could also act as the server for the frontend. Meaning the client will also go to this server to fetch the website itself. You can serve simple, static HTML/JS files, or add renderers or templating engines to make the website more powerful. 
+With this, you've essentially learned the recipe for hosting your own complete website on a single server!
+
+
+## Deployment & Cloud Architecture
+
+__Monolith__: A self-contained server that provides a single service.
+
+__Virtual Machines (VM)__: Partition a single servers resource by creating "virtual machines." This allows for multiple self-contained services to be deployed on a single computer. 
+
+__Microservices__: Bundle multiple services into one server, without partitioning into virtual machines. This partitions the server's resource without the overhead of virtual machines. A well-known program that manages a microservices is `Docker`.
+
+__Serverless__: In this architecture, data (a request) is processed by being routed and passed through many "functions" within the server. Traditional servers or microservices revolve around hosting a service on one or multiple always-alive processes, and invoking it through message passing (inter-process communication, IPC). Serverless does away with this by making a service a static function that can be invoked on-demand, skipping the step of IPC. 
+Unlike in microservices where each container has to address the scaling issue themselves, serverless functions do not since these functions are static and not processes. This centralizes the scaling issue to a per-server problem and not a per-service one. This makes it easier to deploy services, as it is simply adding a function in the library. 
+This architecture is going to be the holy grail for quick deployment of amateur projects.
+
+## What does this Mean for the Developer?
+
+[TODO: serverless frameworks]
+
+## Deployment Options
+
+- **Github Pages**: 
+	- Static site host.
+	-  Supports `Jekyll` as a static site generator. Static site generators take your files, templates/renders it, and stores the static result somewhere to be hosted; think of it as a compiler for pages. `Jekyll` is great for making quick blogs.
+	- Github Pages is great for hosting [plain HTML/JS/CSS](https://yelp.github.io/) sites, or [Jekyll-made blogs](https://vonheikemen.github.io/devlog/). 
+
+- **Vercel**:
+	- Serverless Host. Uses AWS Lambda under the hood
+	- Supports *many* frameworks like NEXT.js, Sveltekit, Flask, Django, Vue, Angular, Jekyll.
+	- Very friendly to use, clean interface.
+	- Links to a git repository, rebuilds & redeploys *automatically*
+
+- **Render**:
+	- Virtual Machine-based host
+	- Can use a pinger to keep alive.
+	- Better than Repl.it for its better throttling and caps.
+
+- **Repl.it**:
+	- Virtual Machine-based host
+	- Can use a pinger to keep alive.
+	- Not recommended for its strict throttling and bandwidth caps.
+		- another indent?
+
+## Cloud architecture Not Related to Deployment
+[TODO]
+__Edge__
+__CDN__
+
+## Others
+
+## Stack
+The set of tools / frameworks commonly used together for development. Note that some of these do not support serverless computing, and suffer from the "hosting issue"
+
+ - __ME[_]N__
+	- Node.JS, Express.JS, MongoDB, Some frontend framework. 
+	 - JS-based, very friendly
+	 - There are many options for a JS frontend templator / framework. EJS, Svelte, React, Vue, Angular, etc.
+	 - Cannot be deployed as serverless service. 
+
+- __Python, Flask, SQL, Jinja__
+	- A python-based solution with relational databases.
+	- It is not inherent that this stack uses relational databases, some document-based databases also provide a Python driver.
+
+-	__Django__
+	-	Python-based all-in-one web stack package. It allows you to implement response handling, templating, and local databases all with one package.
+- __PHP, Apache, SQL__
+	- An older HTTP server stack.
+	- Less common 
+
+## Middleware
+
+In the context of web, these are small softwares that the request passes through before it gets to the actual server. These are used to separate tedious/simple tasks from the bulk of the server.
+For example, an express server that handles forum posts can have a middleware function that checks for profanity in the request body.
+A very useful application of middleware is in *validators*, which are talked about later.
+
+## Tips
+
+### File organization
+
+This is vital for readability and maintainability, allowing collaborators to quickly find what are looking for quickly.
+The following is a decent amateur `Node.JS` backend structure:
+[TODO: Screenshot]
+
+### Validation
+
+It is vital that you sanitize & validate user input. This prevents attacks as well as establishes assumptions about the data, making your following code free of error/case handling.
+__Node.JS solution:__ [express-validator](https://express-validator.github.io/docs)
+
+```
+const { query, body, validationResult } = require('express-validator');
+controller.sendMessage = [
+	query("username") // Line A
+		.exists()
+		.isString()
+		.toLowerCase()
+		.withMessage("Invalid target username"),
+	body("text") // Line B
+		.exists()
+		.isString()
+		.withMessage("Invaid Text"),
+	async (req, res) => {
+		const errors = validationResult(req); // Line C
+		if (!errors.isEmpty()) // Line D
+			return res.status(400).json({ errors: errors.array() });
+		/*
+		 Your Code here..
+		*/
+	}
+]
+```
+
+`express-validator` is a very powerful tool and very elegant to use. The code snippet above implements a route for sending messages to a user. The recipient's username will be sent via the [HTTP query string](https://static.semrush.com/blog/uploads/media/00/6e/006eebc38b54220916caecfc80fed202/Guide-to-URL-Parameters-2.png), and the message itself will be in the request body. The following bullet points will explain the code snippet.
+- Firstly, You'll Notice that the "function" is actually an array. This is because `express-validator` works by adding middleware to the route to validate. 
+- Line A & B here define the validator. The function of each line can be easily inferred. How it works under the hood is that each line is chaining another validator on top of the existing one, thus creating a big validator with all the specified constraints.
+- Line C extracts the validation result. The middleware functions place their results into the `req` object, and this line simply retrieves it. 
+- Line D processes the validation result, and simply returns if it is not satisfied. 
+
+
+### Neat, Intuitive & Documented API paths
+
+Doing so will make it much easier for collaborators to understand the API and also use it. This will make collaboration a lot easier, as a front-end developer will only need to review the documentation and route files and not look through backend code.
+This also means a good file structure, and splitting routing from controllers.
+A less important note is to use proper HTTP status codes. This will help greatly in API testing. 
+
+### Standardize Code Styling
+
+This will prevent mid-hackathon arguments about tab sizing.
+
+__Node.JS solution:__ [prettier](https://prettier.io/), [Example](https://prettier.io/playground/)

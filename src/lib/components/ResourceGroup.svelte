@@ -5,13 +5,14 @@
   export let resources: string[];
 </script>
 
-<div class="rounded-md border-2 border-retro-black bg-retro-white p-2 w-80">
-    <h2>{category}</h2>
-    <div class="flex flex-col">
-      {#each resources as resource}
-      <a href={`/resources/${resource}`} class="block border border-retro-black rounded">{resource}</a>
+<div class="w-80 rounded-md border-2 border-retro-black bg-retro-white p-2 text-center">
+  <p class="text-lg">{category}</p>
+  <div class="flex flex-col gap-2">
+    {#each resources as resource}
+      <a href={`/resources/${resource}`} class="block rounded border border-retro-black"
+        >{resource}</a>
     {/each}
-    </div>
-    
-    <div></div>
+  </div>
+
+  <div />
 </div>

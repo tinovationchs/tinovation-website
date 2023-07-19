@@ -1,5 +1,5 @@
 const resourceCategories = {
-  "Web Development": ["test"],
+  "Web Development": ["test", "backend-development", "basics"],
   "Machine Learning": [],
 };
 
