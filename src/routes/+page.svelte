@@ -25,7 +25,7 @@
   </div>
 
   <!-- ACTUAL CONTENT -->
-  <div class="mb-6 mt-12 flex w-fit flex-col gap-6 px-4 md:w-[44rem]">
+  <div class="my-12 flex w-fit flex-col gap-4 px-4 md:w-[44rem]">
     <h2 class="font-header text-4xl">About Us</h2>
     <p>
       Tinovation is the largest programming and software development club at CHS! At Tinovation, you
@@ -38,13 +38,31 @@
       Every year, Tinovation also hosts PioneerHacks where hundreds of software geeks across the Bay
       Area compete to build winning products.
     </p>
-  </div>
 
-  <div class="mb-6 mt-4 flex w-fit flex-col gap-6 px-6 md:w-[44rem]">
-    <h2 class="font-header text-4xl">The Officer Team</h2>
-    <p>
-      Co-Presidents: {`${info.co_presidents[0]}, ${info.co_presidents[1]}`}
-    </p>
-    <p>Mentors: Taisei, Shine, Sharma, Purva, Shauryan, Laurier</p>
+    <div class="mb-8 mt-4 flex flex-col gap-3">
+      <h2 class="font-header text-4xl">The Officer Team</h2>
+      <p>
+        <b class="text-purple-300">Co-Presidents:</b>
+        {`${info.co_presidents[0]}, ${info.co_presidents[1]}`}
+      </p>
+      <p>
+        <b class="text-blue-300">Vice Presidents:</b>
+        {info.vice_president}
+      </p>
+      <p>
+        <b class="text-green-300">Secretary/Treasurer:</b>
+        {info.secretary_treasurer}
+      </p>
+      <p>
+        <b class="text-red-300">Mentors:</b>
+        {info.mentors.join(", ")}
+      </p>
+    </div>
   </div>
 </div>
+
+<style>
+  p {
+    @apply font-light;
+  }
+</style>
