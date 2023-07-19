@@ -65,7 +65,7 @@
               viewBox="0 0 24 24"
               stroke-width="2"
               stroke="currentColor"
-              class="ml-auto h-5 w-5 translate-x-0.5 translate-y-0.5">
+              class="ml-auto h-5 w-5 -translate-x-0.5 translate-y-0.5">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -85,7 +85,7 @@
               viewBox="0 0 24 24"
               stroke-width="2"
               stroke="currentColor"
-              class="ml-auto h-5 w-5 translate-y-0.5">
+              class="ml-auto h-5 w-5 -translate-x-1 translate-y-0.5">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
