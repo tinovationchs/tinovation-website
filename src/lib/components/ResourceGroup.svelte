@@ -33,7 +33,7 @@
         {#if resource.type === ItemType.Guide}
           <a
             href={`/resources/${resource.path ?? "error"}`}
-            class="flex flex-row px-2 py-1 transition ease-in odd:bg-retro-lightgray even:bg-retro-white hover:-translate-y-1 hover:text-pink-700">
+            class="flex flex-row px-3 py-1 transition ease-in odd:bg-retro-lightgray even:bg-retro-white hover:-translate-y-1 hover:text-pink-700">
             {#if typeof resource === "string"}
               {`/${resource}`}
             {:else if typeof resource === "object"}
