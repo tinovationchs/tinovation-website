@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Footer from "$lib/components/Footer.svelte";
   import HomePageLogo from "$lib/components/HomePageLogo.svelte";
   import SocialsBar from "$lib/components/SocialsBar.svelte";
   import info from "$lib/info";
@@ -39,7 +40,7 @@
       Area compete to build winning products.
     </p>
 
-    <div class="mb-8 mt-4 flex flex-col gap-3">
+    <div class="mt-4 flex flex-col gap-3">
       <h2 class="font-header text-4xl">The Officer Team</h2>
       <p>
         <b class="text-purple-300">Co-Presidents:</b>
@@ -59,4 +60,6 @@
       </p>
     </div>
   </div>
+
+  <Footer />
 </div>

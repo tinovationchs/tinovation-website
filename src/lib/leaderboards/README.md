@@ -6,3 +6,4 @@
 - The name of the leaderboard is the filename, and underscores will be replaced by a whitespace in the dropdown.
   - **Do not use whitespace in filename!**
 - The default leaderboard is set in `leaderboard.ts` as `currentLeaderboard`. Just edit the filename to the correct one.
+- make sure to update the `leaderboardLastUpdated`!

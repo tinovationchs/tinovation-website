@@ -23,7 +23,7 @@
   </a>
 
   <a
-    href="https://www.instagram.com/tinovationchs"
+    href={info.instagram_link}
     target="_blank"
     class=" flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in hover:border-[#E1306C] hover:fill-[#E1306C]">
     <svg
@@ -39,7 +39,7 @@
   </a>
 
   <a
-    href="https://bank.hackclub.com/donations/start/tinovation"
+    href={info.donate_link}
     target="_blank"
     class=" flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in hover:border-red-500 hover:fill-red-500">
     <svg class="h-auto w-10 fill-inherit" viewBox="0 0 32 32">
@@ -51,7 +51,7 @@
   </a>
 
   <a
-    href="mailto:tinovationofficerteam@gmail.com"
+    href={`mailto:${info.email}`}
     target="_blank"
     class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white stroke-retro-white transition ease-in hover:border-yellow-500 hover:stroke-yellow-500">
     <svg
@@ -69,7 +69,7 @@
   </a>
 
   <a
-    href="https://github.com/tinovationchs"
+    href={info.github_link}
     target="_blank"
     class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in hover:border-green-500 hover:fill-green-500">
     <svg
