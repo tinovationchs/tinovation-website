@@ -51,16 +51,16 @@
 
 <div class="flex flex-row justify-center">
   <main
-    class="md:w-max-[30rem] z-10 flex w-full flex-col gap-4 px-6 py-16 font-sans text-lg font-light text-retro-white md:w-[42rem] md:py-20 md:pt-24 lg:w-[52rem]">
+    class="md:w-max-[30rem] z-10 flex w-full flex-col gap-4 px-6 py-14 font-sans text-lg font-light text-retro-white md:w-[42rem] md:py-20 lg:w-[52rem]">
     <div class="flex flex-row justify-center">
       <div class="flex flex-col font-header">
-        <span class="translate-y-2 text-retro-lightgray">
+        <span class="translate-y-4 text-retro-lightgray">
           {`${data.metadata.date ? moment(data.metadata.date).format("MMM Do, YYYY") : ""}`}
         </span>
 
-        <h1 class="-translate-y-2">{data.metadata.title}</h1>
+        <h1 class="">{data.metadata.title}</h1>
 
-        <span class="-translate-y-4 text-retro-lightgray">
+        <span class="-translate-y-2 text-retro-lightgray">
           {`Author${data.metadata.authors.length === 1 ? "" : "s"}: ${data.metadata.authors.join(
             ", "
           )}`}
@@ -88,7 +88,7 @@
   :global(h4),
   :global(h5),
   :global(h6) {
-    @apply mt-2 font-header text-lg md:text-xl;
+    @apply mt-2 font-header text-xl md:text-2xl;
   }
 
   /* ========= */
@@ -128,7 +128,14 @@
   /* IMAGES */
   /* ====== */
   main :global(img) {
-    @apply rounded-lg py-4;
+    @apply rounded-lg my-4;
+  }
+
+  /* =========== */
+  /* blockquote? */
+  /* =========== */
+  main :global(blockquote) {
+    @apply rounded-lg border-l-4 border-green-600 bg-retro-lightgray px-2 py-2 text-lg font-semibold text-retro-black transition ease-in hover:scale-[102%] leading-tight;
   }
 
   /* =========== */

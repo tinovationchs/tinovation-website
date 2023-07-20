@@ -11,7 +11,7 @@
     <h1 class="font-header text-4xl font-semibold text-retro-white md:text-6xl">
       {`${$page.error?.message} :(`}
     </h1>
-    <img class="w-full rounded-lg" src="/sad_cat.gif" alt="sad cat gif" />
+    <img class="w-full rounded-lg" src="/website/sad_cat.gif" alt="sad cat gif" />
     <a
       href="/"
       class="text-center text-xl text-retro-white transition ease-in hover:scale-105 hover:text-amber-600">

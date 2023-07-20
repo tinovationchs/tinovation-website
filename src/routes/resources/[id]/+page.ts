@@ -2,7 +2,7 @@ import { error } from "@sveltejs/kit";
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async ({ params }) => {
-  const guides = import.meta.glob(`/src/guides/*.svx`);
+  const guides = import.meta.glob(`/src/guides/**/*.svx`);
 
   const slugFromPath = (path: string) => path.match(/([\w-]+)\.(svx)/i)?.[1] ?? null;
 

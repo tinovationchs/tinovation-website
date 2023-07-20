@@ -1,0 +1,65 @@
+---
+title: Dev Notes 
+authors: [Daniel Cui]
+date: "2023-07-19"
+published: true
+---
+
+> Disclaimer: Daniel was annoyed because web development takes painfully long. 
+> He apologizes in advance if the following makes no sense.
+
+## Greetings, stranger!
+
+You may be quite perplexed by all this, but don't fear, my poor, lost soul!
+For that place you have landed is a marvelous haven for the brave truth-seekers
+in a wasteland of tutorial hell and hours spent glazed over red, green, and blue
+lights. 
+
+*Come with me... and you'll be... in a world a pure innovation...*
+
+*wait a minute...* [imagination](https://www.youtube.com/watch?v=SVi3-PrQ0pY)*?*
+
+**oh well!**
+
+## The Creed
+
+We here at Tinovation attest to the creed of self-determination and individual achievement.
+What does it mean to be **"good at python"** or **"proficient at machine learning"** when you 
+can't do anything practical with those skills? Have you ever inquired about how applications 
+on your cellular device or personal computer are *really made*? Have you had an itch *to create* 
+cool, exciting things?
+
+If so, you have come to the perfect place. We exist as a waning oasis. A step on your journey
+towards creating *innovative* and *illustrious* projects through tech. Most things will fade with
+time like clubs and websites, but we can merely assist you with supplies as you reach places 
+we have never seen or even imagined. Most anything is possible!
+
+![baby yoda ascii art](/guides/tinovation/baby-yoda.png)
+<center>
+
+`This is the way.`
+
+</center>
+
+
+## Anyway...
+
+Hi, this is Daniel. I developed this website. Most of the core functionality was
+done over a week, but I tended to grind out work throughout the night, which was not
+really great.
+
+This website is kinda of an amalgamation of many things.
+
+- **home** with new logo, socials, other general info
+- **resources** with all the guides, links, and fancy business
+- **showcase** with cool projects from students to show what is possible
+- **leaderboard** to track points for code sprints over a semester
+
+Vercel is truly amazing. Without continuous deployment, using these static files/data
+would have been much harder and might have required some database thingy like AWS (painful).
+
+All the source code is at https://github.com/tinovationchs/tinovation-website, and 
+you can repurpose it for something else if you want, while adhering to the 
+[license](https://github.com/tinovationchs/tinovation-website/blob/main/LICENSE), of course.
+
+*Happy Coding!*

@@ -1,31 +1,55 @@
 import { ItemType, type Categories, type Item } from "$lib/types";
 
 const resourceCategories: Categories = {
-  "Basics": ["git", "command-line", "ides", "filesystem", "languages"],
+  Basics: [
+    "git",
+    // "command-line",
+    // "editors",
+    // "filesystem",
+    // "languages",
+  ],
   "Web Development": [
     { type: ItemType.Guide, displayName: "backend", path: "backend-development" },
-    "html-css",
-    "javascript",
-    "frameworks",
-    "deployment",
-    "test",
+    // "html-css",
+    // "javascript",
+    // "frameworks",
+    // "deployment",
     "error",
   ],
-  "Artificial Intelligence": ["machine-learning", "deep-learning", "computer-vision"],
-  "Databases/Servers": [
-      { type: ItemType.Guide, displayName: "databases101", path: "databases" },
-      "firebase", "rest", "mongo-db", "chatgpt-api"
+  "Artificial Intelligence": [
+    // "machine-learning",
+    // "deep-learning",
+    // "computer-vision",
   ],
-  "App Development": ["react-native", "flutter", "electron", "tauri"],
-  "Miscellaneous": ["vim", "assembly"],
+  "Databases/Servers": [
+    { type: ItemType.Guide, displayName: "databases-101", path: "databases-101" },
+    // "firebase",
+    // "rest",
+    // "mongo-db",
+    // "chatgpt-api",
+  ],
+  "App Development": [
+    // "react-native",
+    // "flutter",
+    // "electron",
+    // "tauri",
+  ],
+  Miscellaneous: [
+    // "vim",
+    // "assembly",
+  ],
   "Hack Club": [
     { type: ItemType.Link, displayName: "toolbox", path: "https://toolbox.hackclub.com/" },
     { type: ItemType.Link, displayName: "workshops", path: "https://workshops.hackclub.com/" },
     { type: ItemType.Link, displayName: "hackathons", path: "https://hackathons.hackclub.com/" },
     { type: ItemType.Link, displayName: "slack", path: "https://hackclub.com/slack/" },
   ],
-  "Tinovation": [
-    "images",
+  Tinovation: [
+    {
+      type: ItemType.Guide,
+      displayName: "dev-notes",
+      path: "dev-notes",
+    },
     {
       type: ItemType.Link,
       displayName: "rick",

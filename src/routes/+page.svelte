@@ -60,9 +60,3 @@
     </div>
   </div>
 </div>
-
-<style>
-  p {
-    @apply font-light;
-  }
-</style>
