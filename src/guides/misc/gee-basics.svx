@@ -11,9 +11,9 @@ published: true
 It's a cloud-based geospatial data processing platform that allows users to work with Google's huge (multi-*petabyte*) catalog of earth observation data or import their own and use it to analyze satellite imagery. It's most often used for things like remote sensing research, change detection, and mapping trends over time. The built-in code editor uses JavaScript, but there is also a Python API available.
 
 ### Getting Started
-Go to earthengine.google.com and hit the "Get Started" button at the far right of the navbar. You'll be prompted to sign in with Google; once you've done that, 	register an unpaid project under "Academia/Research", and agree to Google Cloud terms if you need to in order to do this. If all goes well, you should be redirected to the editor!
+Go to https://earthengine.google.com and hit the "Get Started" button at the far right of the navbar. You'll be prompted to sign in with Google; once you've done that, 	register an unpaid project under "Academia/Research", and agree to Google Cloud terms if you need to in order to do this. If all goes well, you should be redirected to the editor!
 
-If you'd like to explore yourself from here, [this](https://developers.google.com/earth-engine/guides/python_install) is the link for Python installation and [this](https://developers.google.com/earth-engine/guides/getstarted) is a link to Earth Engine's JS quickstart.
+If you'd like to explore yourself from here, [this](https://developers.google.com/earth-engine/guides/python_install) is the link for Python installation, and [this](https://developers.google.com/earth-engine/guides/getstarted) is a link to Earth Engine's JS quickstart.
 
 The following is some context for earth observation in general; if you just want to get your hands dirty, go to [this section](#quickstart).
 

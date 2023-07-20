@@ -152,13 +152,13 @@
   /* CODE BLOCKS */
   /* =========== */
   main :global(pre) {
-    @apply my-4 w-full whitespace-pre-wrap rounded-lg px-4 py-2.5;
+    @apply my-4 w-full whitespace-pre-wrap rounded-lg px-4 py-2.5 overflow-y-auto;
   }
   main :global(code) {
-    @apply mx-0.5 rounded p-1 text-sm;
+    @apply mx-0.5 rounded p-1 text-sm break-words;
   }
   main :global(pre) :global(code) {
-    @apply m-0 p-0;
+    @apply m-0 p-0 whitespace-pre;
   }
   main :global(pre),
   :global(code) {
