@@ -1,0 +1,88 @@
+---
+title: Google Earth Engine :D
+authors: [Purva Marfatia]
+date: "2023-07-19"
+published: true
+---
+## Introduction
+
+### What is Google Earth Engine?
+
+It's a cloud-based geospatial data processing platform that allows users to work with Google's huge (multi-*petabyte*) catalog of earth observation data or import their own and use it to analyze satellite imagery. It's most often used for things like remote sensing research, change detection, and mapping trends over time. The built-in code editor uses JavaScript, but there is also a Python API available.
+
+### Getting Started
+Go to earthengine.google.com and hit the "Get Started" button at the far right of the navbar. You'll be prompted to sign in with Google; once you've done that, 	register an unpaid project under "Academia/Research", and agree to Google Cloud terms if you need to in order to do this. If all goes well, you should be redirected to the editor!
+
+If you'd like to explore yourself from here, [this](https://developers.google.com/earth-engine/guides/python_install) is the link for Python installation and [this](https://developers.google.com/earth-engine/guides/getstarted) is a link to Earth Engine's JS quickstart.
+
+The following is some context for earth observation in general; if you just want to get your hands dirty, go to [this section](#quickstart).
+
+### Basic context + a bit of terminology
+
+The two most important types of data you'll be working with in Earth Engine are probably **raster** and **vector** data, which might be familiar terms already. 
+
+**Rasters**
+
+**Raster data** refers to any pixel data where each pixel is associated with a specific location, and truthfully, that association is the only thing separating it from a standard digital image. Pixel values can be continuous for things like elevation data or discrete for categorical data like land cover classification.
+
+**Single-band images** are images where there's only one value associated with each pixel (in addition to its location); examples of this would be a map of something like elevation or precipitation data.
+
+**Multi-band images** are images where there are *multiple* values associated with each pixel: these bands can be thought of as individual matrices of values, one per pixel in the image.  Usually, these **bands** represent different segments on the electromagnetic spectrum, like the image below demonstrates:
+![an image that helps explain bands](https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/GUID-4F5A176A-D52A-4F07-9C2E-9922C1B6097D-web.gif)
+A really well-known example of this is RGB, in which you have a red band, green band, and blue band that combine to form a *true-color composite*, which is just an image that looks normal (this isn't always the case: [false-color composites](https://gsp.humboldt.edu/olm/Courses/GSP_216/lessons/composites.html#:~:text=False%20color%20images) and other variations exist!)
+
+**Vectors**
+
+**Vector data** is mostly what it sounds like; data that's comprised of points, lines, and polygons instead of pixels. This is most useful for data like country borders or building footprints; anything with discrete boundaries.
+
+### Why is this important to understand?
+
+The vast majority of Google Earth Engine's data catalog is earth observation imagery from well-known satellites such as Landsat, Sentinel, and MODIS. Due to the sensors these satellites are equipped with, the images they produce often have very specific bands for different purposes. 
+
+For example, Landsat's B1 (aka the *coastal/aerosol band*), which senses deep blues and violets and is used to detect shallow water, dust, and smoke. Additionally, B5 is the *near-infrared* band; since healthy plants reflect the near-infrared, this, combined with a couple of other bands, can be used to measure plant cover and health more accurately than just looking at the green value (B3).
+
+## Create a script
+
+Assuming you've got setup covered, go to the online EE editor and create a new script. Familiarity with JavaScript is helpful, but not really necessary here as most things you'll start with just involve manipulating existing Earth Engine objects using built-in functions.
+
+### Data Types in Earth Engine
+`ee.Image` is Earth Engine's data type for [raster data](#rasters), which can be thought of as a stack of bands. 
+
+`ee.Feature` is the format for [vector data](#vectors), which are points, lines, or polygons. In Earth Engine, features consist of a geometry (`ee.Geometry`) and a dictionary of properties. These are often bundled into a `FeatureCollection`, which contains multiple of these geometries. For example, a FeatureCollection that has outlines of modern world countries would consist of geometries for each country and properties, like area, date created, and name.
+
+Earth Engine also has `Dictionary`, `List`, `Array`, `Date`, `Number` and `String`, but those are all probably familiar; Image and Feature are the most important ones to know.
+
+### Importing/filtering data in Earth Engine
+Any of the data from Earth Engine's catalog is available directly from the IDE (you don't need to add any `import` statements). To import something, say, Landsat 8 satellite data\* (tier 1, the surface reflectance one), use the following:
+ `var image = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR")`
+Obviously, you don't want *all* the Landsat data, so you'll need to **filter** it so that you get the image or images that you're interested in. Filtering the collection can be done via methods like `filterDate`, `filterBounds`, `sort`, and you can use `.first()` or `.median()` to get one specific image (either an already existing one or [a computed one](https://developers.google.com/earth-engine/apidocs/ee-imagecollection-median) in the case of median).
+ 
+ For example, if I'm looking to get the most **cloud-free** Landsat image possible (which most people do) from 2018, I can sort that Landsat collection above as follows:
+ 
+```
+    var image = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR")
+    .filterDate('2017-01-01', '2018-01-01')
+    .sort('CLOUD_COVER')
+    .first();
+```
+However, this now gives me a Landsat image **the size of the world**, which is probably not necessary for most purposes. To filter the data spatially, I can add the following line before I sort, where `region` is a geometry that I've drawn or imported from a FeatureCollection:
+
+  `.filterBounds(region)`
+
+This allows us to only get the data in that specific region, which when followed by the `CLOUD_COVER` sort will give us the *least cloudy image* that covers this region.
+
+Other ways to filter collections use their metadata, which could be searching for a specific country name, only including imagery with a property below a numeric value (e.g. areas with elevation below 10,000 feet), and more :)
+
+<sub>* I'm importing Tier 1 data, and the SR stands for Surface Reflectance. You can learn more about different subcollections of data [here](https://www.usgs.gov/landsat-missions/landsat-collection-2).
+
+### Unsupervised learning: K-means clustering
+Using the built-in `ee.Clusterer` provided by Earth Engine, we can select a Landsat image, filter it a bit, and run K-means clustering on the region to see what regions it comes up with! [This short video](https://www.youtube.com/watch?v=_bXryFt90SI) is a walkthrough of that; the main steps are to 1) define a region of interest (ROI), 2) sample training data from that ROI, and then 3) perform K-means clustering and visualize the results.
+
+
+### Doing basic supervised classification!
+We can also do an elementary land cover classification in Google Earth Engine to try and classify the type of land in a given area using only a few samples of each category: [this video](https://youtu.be/ahixw0iAqsA?t=2175) walks you through that. The main steps are to 1) gather and label training data, which here is done crudely by clicking manual points, 2) aggregating a single training dataset and training the built-in classifier, and 3) visualizing the output. This is actually pretty easy because again, GEE's JS client has a lot of functions that make our lives easier.
+
+**To sort out any confusion in the two examples above, please refer to the Earth Engine docs [here](https://developers.google.com/earth-engine/).**
+
+## todo: add links + diagrams maybe? also figure out how stackedit.io does multiline code block things TT
+

@@ -37,6 +37,7 @@ const resourceCategories: Categories = {
   Miscellaneous: [
     // "vim",
     // "assembly",
+    {type: ItemType.Guide, displayName: "google-earth-engine", path: "gee-basics"}
   ],
   "Hack Club": [
     { type: ItemType.Link, displayName: "toolbox", path: "https://toolbox.hackclub.com/" },
