@@ -7,7 +7,7 @@ published: true
 
 ## What is Git?
 
-Git is a version control system (VCS) that **tracks** and **manages** computer files, 
+Git is a version control system that **tracks** and **manages** computer files, 
 commonly used in software projects for collaboration, coordinating work, and maintaining 
 a history of the source code.
 

@@ -28,7 +28,7 @@ The two most important types of data you'll be working with in Earth Engine are 
 **Single-band images** are images where there's only one value associated with each pixel (in addition to its location); examples of this would be a map of something like elevation or precipitation data.
 
 **Multi-band images** are images where there are *multiple* values associated with each pixel: these bands can be thought of as individual matrices of values, one per pixel in the image.  Usually, these **bands** represent different segments on the electromagnetic spectrum, like the image below demonstrates:
-![an image that helps explain bands](https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/GUID-4F5A176A-D52A-4F07-9C2E-9922C1B6097D-web.gif)
+![diagram that helps explain bands](https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/GUID-4F5A176A-D52A-4F07-9C2E-9922C1B6097D-web.gif)
 A really well-known example of this is RGB, in which you have a red band, green band, and blue band that combine to form a *true-color composite*, which is just an image that looks normal (this isn't always the case: [false-color composites](https://gsp.humboldt.edu/olm/Courses/GSP_216/lessons/composites.html#:~:text=False%20color%20images) and other variations exist!)
 
 **Vectors**
@@ -60,11 +60,12 @@ Obviously, you don't want *all* the Landsat data, so you'll need to **filter** i
  For example, if I'm looking to get the most **cloud-free** Landsat image possible (which most people do) from 2018, I can sort that Landsat collection above as follows:
  
 ```
-    var image = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR")
-    .filterDate('2017-01-01', '2018-01-01')
-    .sort('CLOUD_COVER')
-    .first();
+var image = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR")
+  .filterDate('2017-01-01', '2018-01-01')
+  .sort('CLOUD_COVER')
+  .first();
 ```
+
 However, this now gives me a Landsat image **the size of the world**, which is probably not necessary for most purposes. To filter the data spatially, I can add the following line before I sort, where `region` is a geometry that I've drawn or imported from a FeatureCollection:
 
   `.filterBounds(region)`
@@ -73,7 +74,7 @@ This allows us to only get the data in that specific region, which when followed
 
 Other ways to filter collections use their metadata, which could be searching for a specific country name, only including imagery with a property below a numeric value (e.g. areas with elevation below 10,000 feet), and more :)
 
-<sub>* I'm importing Tier 1 data, and the SR stands for Surface Reflectance. You can learn more about different subcollections of data [here](https://www.usgs.gov/landsat-missions/landsat-collection-2).
+> I'm importing Tier 1 data, and the SR stands for Surface Reflectance. You can learn more about different subcollections of data [here](https://www.usgs.gov/landsat-missions/landsat-collection-2).
 
 ### Unsupervised learning: K-means clustering
 Using the built-in `ee.Clusterer` provided by Earth Engine, we can select a Landsat image, filter it a bit, and run K-means clustering on the region to see what regions it comes up with! [This short video](https://www.youtube.com/watch?v=_bXryFt90SI) is a walkthrough of that; the main steps are to 1) define a region of interest (ROI), 2) sample training data from that ROI, and then 3) perform K-means clustering and visualize the results.

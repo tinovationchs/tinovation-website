@@ -5,7 +5,7 @@ date: "2023-07-19"
 published: true
 ---
 
-> Disclaimer: Daniel was annoyed because web development takes painfully long. 
+> **Disclaimer:** Daniel was annoyed because web development takes painfully long. 
 > He apologizes in advance if the following makes no sense.
 
 ## Greetings, stranger!

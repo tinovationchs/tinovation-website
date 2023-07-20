@@ -128,7 +128,7 @@
   /* IMAGES */
   /* ====== */
   main :global(img) {
-    @apply rounded-lg my-4;
+    @apply rounded-lg my-4 mx-auto;
   }
 
   /* =========== */
@@ -137,6 +137,16 @@
   main :global(blockquote) {
     @apply rounded-lg border-l-4 border-green-600 bg-retro-lightgray px-2 py-2 text-lg font-semibold text-retro-black transition ease-in hover:scale-[102%] leading-tight;
   }
+  main :global(blockquote) :global(em), :global(blockquote) :global(i) {
+    @apply italic text-pink-600;
+  }
+  main :global(blockquote) :global(strong), :global(blockquote) :global(b) {
+    @apply font-bold text-yellow-600;
+  }
+  main :global(blockquote) :global(a) {
+    @apply text-purple-800;
+  }
+  
 
   /* =========== */
   /* CODE BLOCKS */

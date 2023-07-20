@@ -22,4 +22,4 @@
 - try not to mix styling, like italics with code blocks, or links with bold
 - h2 (##) is major subtitles, h3 (###) is minor subtitles
   - don't use h1, h4, h5, h6
-- don't use tables!
+- don't use tables, sub, or sup!
