@@ -1,0 +1,29 @@
+---
+title: HTML and CSS
+authors: [Taisei De La Cruz]
+date: "2023-07-20"
+published: true
+---
+
+## HTML, CSS, JS Documentation and Tutorials
+
+[MDN](https://developer.mozilla.org/en-US/) is no doubt the greatest resource for web developers. 
+It contains documentation (and examples) for HTML elements and attributes, CSS properties, and 
+Javascript APIs and syntax. It even has a ton of great tutorials on various topics. You should 
+really, really, really use MDN.
+
+[W3Schools](https://www.w3schools.com/) has some pretty decent tutorials introducing HTML, CSS, 
+and JS, and also has some reference for HTML elements, Javascript syntax, etc (similar but less 
+comprehensive than MDN).
+
+
+### Mobile Design (Flexbox, Grid, Media Queries)
+
+Unlike laptops and PCs, phones are very small (citation needed), and often in portrait, not 
+landscape mode. So, special design and CSS considerations are needed to make sure websites 
+still work and look nice on phones.
+
+[Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) 
+are a good way to do this - media queries can apply CSS depending on the screen size.
+
+Grid and flexboxes are also cool. Go search them up.

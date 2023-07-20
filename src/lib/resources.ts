@@ -2,24 +2,29 @@ import { ItemType, type Categories, type Item } from "$lib/types";
 
 const resourceCategories: Categories = {
   Basics: [
+    // "languages",
+    // "editors",
     "git",
     // "command-line",
-    // "editors",
     // "filesystem",
-    // "languages",
   ],
   "Web Development": [
-    { type: ItemType.Guide, displayName: "backend", path: "backend-development" },
-    // "html-css",
-    // "javascript",
-    // "frameworks",
+    { type: ItemType.Guide, displayName: "intro", path: "web-intro" },
+    "html-css",
+    "javascript",
+    "backend-development",
+    "web-frameworks",
+    "rust-and-elm-architecture",
     // "deployment",
-    "error",
   ],
   "Artificial Intelligence": [
     // "machine-learning",
     // "deep-learning",
-    // "computer-vision",
+    {
+      type: ItemType.Code,
+      displayName: "computer-vision-basics",
+      path: "https://colab.research.google.com/drive/1_6WNF_CzHt635Y23hUTIUAzpE7NzEK3e",
+    },
   ],
   "Databases/Servers": [
     { type: ItemType.Guide, displayName: "databases-101", path: "databases-101" },
@@ -37,7 +42,7 @@ const resourceCategories: Categories = {
   Miscellaneous: [
     // "vim",
     // "assembly",
-    {type: ItemType.Guide, displayName: "google-earth-engine", path: "gee-basics"}
+    { type: ItemType.Guide, displayName: "google-earth-engine", path: "gee-basics" },
   ],
   "Hack Club": [
     { type: ItemType.Link, displayName: "toolbox", path: "https://toolbox.hackclub.com/" },
@@ -46,21 +51,14 @@ const resourceCategories: Categories = {
     { type: ItemType.Link, displayName: "slack", path: "https://hackclub.com/slack/" },
   ],
   Tinovation: [
-    {
-      type: ItemType.Guide,
-      displayName: "dev-notes",
-      path: "dev-notes",
-    },
+    { type: ItemType.Guide, displayName: "dev-notes", path: "dev-notes" },
+    "error",
     {
       type: ItemType.Link,
       displayName: "rick",
       path: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     },
-    {
-      type: ItemType.Code,
-      displayName: "github",
-      path: "https://github.com/tinovationchs",
-    },
+    { type: ItemType.Code, displayName: "github", path: "https://github.com/tinovationchs" },
   ],
 };
 

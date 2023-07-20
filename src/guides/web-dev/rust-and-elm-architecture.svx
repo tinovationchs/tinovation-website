@@ -1,0 +1,85 @@
+---
+title: Rust and the Elm Architecture
+authors: [Taisei De La Cruz]
+date: "2023-07-20"
+published: true
+---
+
+Rust is a fast, compiled, strongly typed, and memory safe programming language.
+
+Let's explain what that means:
+
+**Compiled** languages are “translated” into a lower level machine code that can be directly executed 
+by the computer, before they are run. Languages like C are another example of a compiled language, 
+while languages like Python are typically interpreted languages.
+
+**Strongly typed** languages usually require you to declare types for parameters and variables, 
+although Rust's compiler is smart enough that it can often infer types for variables. Strongly 
+typed languages also have strict rules about changing a variable's type (illegal), etc.
+
+**Memory safe**: Unlike languages like C, Rust tries to guarantee memory safety through its 
+borrow checker and ownership systems. It's a bit hard to explain, but you can read the Rust book to learn more.
+
+The basics of Rust is out of scope for this document, but you can check out Rust's 
+[very helpful free online book](https://doc.rust-lang.org/stable/book/ch01-00-getting-started.html) 
+which can teach you Rust (**HIGHLY RECOMMENDED**). Up to chapter 10 should be enough. 
+Chapters 13, 15, and 18 are also useful to read. Rust also has amazing [documentation](https://doc.rust-lang.org/std/index.html) 
+for its standard library that you should check out. You can also find documentation for 
+Rust crates by searching in [docs.rs](https://docs.rs/). Once you get the basic concepts of 
+Rust, you can probably figure out how to search and read the docs. Of course, as usual, you will 
+learn much better and naturally if you try making some small projects in Rust while you are reading the book.
+Also, if you encounter any errors, besides searching them up (which can be very helpful), 
+Rust's compilers is very smart and can help suggest a fix, so make sure to read them!
+Feel free to ask us if you have some simple Rust questions, eg about `unwrap()`, `Option`, 
+references, closures, etc. If you ask me a tricky question about lifetimes though, I will probably 
+just suggest you rewrite your code to avoid them… lifetimes are scary, and unless you're super 
+sure you need to use them, they can often mean you're doing something wrong.
+
+## The Elm Architecture
+
+Now back on topic. The Elm Architecture has nothing to do with Rust - it's a way (“architecture”) to 
+make interactive programs like websites and apps. In fact, it originated from a language called Elm.
+You can think of it as a trait (kinda like the Rust equivalent of classes in other languages) that looks something like this:
+
+```rust
+trait Component {
+  type Message;
+
+
+  fn new() -> Self;
+  fn update(&mut self, message: Self::Message);
+  fn view(&self);
+}
+```
+
+The `new()` function creates a new component - of course, you can make the function accept any parameters 
+and do stuff with them, but I just ignored that for simplicity.
+
+`update()` has `&mut self` meaning it has a **mutable reference** of itself - it can change its own 
+state (properties). Message is usually a struct or enum that contains information. Whenever a message 
+is sent, it means the `update()` function is being called. For example, a message might be sent when 
+a user clicks a button, or the site gets a response from an API call.
+
+The `view()` function has `&self`, which is a **non-mutable** reference of itself - it can read its 
+own state, but **cannot modify the state**. It just displays what should be shown on screen and 
+sends messages if, say, a button is clicked. If it was a website, that would be HTML, while if 
+it was a desktop app, it would probably be some widgets that came with the library.
+
+I don't know if that was a good explanation, but no worries, you'll get it quickly once you try.
+
+## Yew
+Yew is a frontend framework for websites. It does display html, but instead of Javascript, 
+it uses Rust compiled to Web Assembly (WASM).
+
+Yew has a [tutorial](https://yew.rs/docs/tutorial), but to be honest, the 
+[examples](https://github.com/yewstack/yew/tree/master/examples) were more helpful for me.
+
+## Iced
+Iced is a framework for desktop apps on all platforms (Windows, Linux, MacOS, Raspberry Pi…), 
+although it can be compiled into a website also (outputs as code that draws to HTML Canvas, so not really recommended).
+
+You will want to look at the [examples](https://github.com/iced-rs/iced/tree/master/examples), and the documentation on docs.rs.
+
+## Conclusion
+Rust is really cool. The Elm Architecture is very cool. Yew and Iced are very cool. 
+You should try them, because then you will be cool too (guaranteed and foolproof or your money back).

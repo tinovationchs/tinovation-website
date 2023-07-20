@@ -7,42 +7,64 @@ published: true
 
 ## Purpose
 
-The purpose of this article is to explain some under-the-hood operations and concepts involved in cloud infrastructures. This is followed by a guide on how to quickly and inexpensively deploy web applications.
+The purpose of this article is to explain some under-the-hood operations and concepts involved in cloud 
+infrastructures. This is followed by a guide on how to quickly and inexpensively deploy web applications.
 
 ---
 
 ## The notion of "Backend"
 
-The "backend" refers to the portion of a project not exposed to the user; This distinction is to separate the sensitive data or heavy-duty logic from the interface. This "backend-frontend" schematic is used outside of web projects too. 
-In the context of web applications, the backend is typically a server hosting HTTP endpoints for the application. These endpoints are __API endpoints__, which processes the interface's requests. An interface invokes this API by sending an HTTP request to the server endpoint (in JS, `fetch()`). Here is an example to illustrate the backend-frontend relation.
+The "backend" refers to the portion of a project not exposed to the user; This distinction is to separate 
+the sensitive data or heavy-duty logic from the interface. This "backend-frontend" schematic is used 
+outside of web projects too. In the context of web applications, the backend is typically a server 
+hosting HTTP endpoints for the application. These endpoints are __API endpoints__, which processes 
+the interface's requests. An interface invokes this API by sending an HTTP request to the server 
+endpoint (in JS, `fetch()`). Here is an example to illustrate the backend-frontend relation.
+
 ![Diagram](https://drive.google.com/uc?id=1LwUQA2gzQGoNZezQ8MKaecFTSNs2rrTj)
 
-In the model, we see that the database operations are done by the backend. This ensures that the client does not have direct access to our database, blocking potential malicious clients.
+In the model, we see that the database operations are done by the backend. This ensures that the client 
+does not have direct access to our database, blocking potential malicious clients.
 
-Other than API endpoints, the "backend" could also act as the server for the frontend. Meaning the client will also go to this server to fetch the website itself. You can serve simple, static HTML/JS files, or add renderers or templating engines to make the website more powerful. 
+Other than API endpoints, the "backend" could also act as the server for the frontend. Meaning the client 
+will also go to this server to fetch the website itself. You can serve simple, static HTML/JS files, or 
+add renderers or templating engines to make the website more powerful. 
 
-The backend program still needs a computer to execute on. The simplest way of course is to execute our server program on a random computer, then expose the server port to the network. With this, we've effectively "deployed" a server and a website!
+The backend program still needs a computer to execute on. The simplest way of course is to execute our 
+server program on a random computer, then expose the server port to the network. With this, we've 
+effectively "deployed" a server and a website!
 
-However, there are many issues with this deployment. First, only peers within your local area network (LAN) can access your server. Also, this program is not scalable, i.e. we can't expand its capacity. Before discussing solutions, let's first go over some critical vocabulary and concepts. 
+However, there are many issues with this deployment. First, only peers within your local area network (LAN) 
+can access your server. Also, this program is not scalable, i.e. we can't expand its capacity. Before 
+discussing solutions, let's first go over some critical vocabulary and concepts. 
 
 **Common Misunderstanding (Svelte vs SvelteKit)**
 
-Some JS frameworks **strictly** deal with writing a website frontend, and then there are ones that manage the front ***and*** backends. This is the difference between `Svelte` and `SvelteKit`, `React` and `Next.js`, and `Vue.js` and `Nuxt.js`. These terms are *not* interchangeable. 
+Some JS frameworks **strictly** deal with writing a website frontend, and then there are ones that 
+manage the front ***and*** backends. This is the difference between `Svelte` and `SvelteKit`, `React` 
+and `Next.js`, and `Vue.js` and `Nuxt.js`. These terms are *not* interchangeable. 
 
 ## Cloud Infrastructure
 
 #### Scalability 
-One of the biggest concerns of a backend developer is architecture scalability, or, how easy it is to expand the service's capacity. There are two types of scaling, horizontal and vertical.
+One of the biggest concerns of a backend developer is architecture scalability, or, how easy it is to expand 
+the service's capacity. There are two types of scaling, horizontal and vertical.
 
 **vertical**: Increasing performance of a single server. Obviously, there is a limit to vertical scaling.
 **horizontal**: Increasing quantity of servers. Theoretically, this is a boundless.
 
-Vertical scalability is easy to achieve, however ideally, we would want our applications to be horizontally scalable too. However, simply adding more servers does not do the trick, it would just mean we have multiple instances of the same program. We need another component to bind the multiple servers to make them work together.
+Vertical scalability is easy to achieve, however ideally, we would want our applications to be horizontally 
+scalable too. However, simply adding more servers does not do the trick, it would just mean we have multiple 
+instances of the same program. We need another component to bind the multiple servers to make them work together.
 
 #### Load Balancer
-To utilize the resource of multiple server nodes, we need a scheduler node to tell the servers what request to address. The below diagram models the role of a load balancer. 
+To utilize the resource of multiple server nodes, we need a scheduler node to tell the servers 
+what request to address. The below diagram models the role of a load balancer. 
+
 ![load balancer](https://drive.google.com/uc?id=1PIFufsBhaeIm1cyEsUZgoYN5BDVLg5Gh)
-Though the idea is simple, the implementation is a beast in itself. This service is usually provided by third party software or generated by infrastructure tools.
+
+Though the idea is simple, the implementation is a beast in itself. This service is usually 
+provided by third party software or generated by infrastructure tools.
 
 
 ## Architecture Patterns
@@ -53,37 +75,59 @@ A self-contained server that provides a single service.
 
 __Virtual Machines (VM)__
 
-Partition a single servers resource by creating "virtual machines." This allows for multiple self-contained services to be deployed on a single computer. 
+Partition a single servers resource by creating "virtual machines." This allows for multiple self-contained 
+services to be deployed on a single computer. 
 
 __Microservices__
 
-Bundle multiple services into one server, without partitioning into virtual machines. This partitions the server's resource without the overhead of virtual machines. A well-known program that manages a microservices is `Docker`.
+Bundle multiple services into one server, without partitioning into virtual machines. This partitions the 
+server's resource without the overhead of virtual machines. A well-known program that manages a microservices is `Docker`.
 
 __Serverless__
 
-In this architecture, data (a request) is processed by being routed and passed through many "functions" within the server. Traditional servers or microservices revolve around hosting a service on one or multiple always-alive processes, and invoking it through message passing. Serverless does away with this by making a service a static function that can be invoked on-demand. This eliminates the messaging overhead, as well as the need to keep an individual process alive for each microservice. 
+In this architecture, data (a request) is processed by being routed and passed through many "functions" 
+within the server. Traditional servers or microservices revolve around hosting a service on one or multiple 
+always-alive processes, and invoking it through message passing. Serverless does away with this by making 
+a service a static function that can be invoked on-demand. This eliminates the messaging overhead, as 
+well as the need to keep an individual process alive for each microservice. 
 
-Unlike in microservices where each container has to address the scaling issue themselves, serverless functions do not since these functions are static and not processes. This centralizes the scaling issue to a per-server problem and not a per-service one. This makes it easier to deploy services, as it is simply adding a function in the library. 
+Unlike in microservices where each container has to address the scaling issue themselves, 
+serverless functions do not since these functions are static and not processes. This centralizes 
+the scaling issue to a per-server problem and not a per-service one. This makes it easier to deploy 
+services, as it is simply adding a function in the library. 
 
 This architecture is going to be the holy grail for quick deployment of amateur projects.
 
 ---
 ## What does this Mean for the Developer?
-It should be clear that managing and maintaining cloud infrastructure is a massive hassle, and is a big focus of production backend design. However, applications produced by hobbyist/amateur developers typically do not require the capacity enabled by these complex infrastructure designs. What is important is how can I get my application deployed quickly and inexpensively.
+It should be clear that managing and maintaining cloud infrastructure is a massive hassle, and is a big 
+focus of production backend design. However, applications produced by hobbyist/amateur developers typically 
+do not require the capacity enabled by these complex infrastructure designs. What is important is how 
+can I get my application deployed quickly and inexpensively.
 
 ---
 
 ## Deployment 
 ### Static Site Generation
-One solution to the server deployment issue is to not have a server! This can be used in a blog or organization site that does not require dynamic or persistent user data, there is no need for a custom server, all we would need is a file distribution server. 
+One solution to the server deployment issue is to not have a server! This can be used in a blog or 
+organization site that does not require dynamic or persistent user data, there is no need for a 
+custom server, all we would need is a file distribution server. 
 
 The simplest form of a "static site" is a vanilla HTML CSS JS website.
-More complex websites built with frameworks can also be built as a static site by a generator. Essentially, the generation tool "compiles" your high-level files into vanilla HTML CSS JS. 
-`Jekyll` is a common static site framework tailored towards blogs. Modern JS frameworks, such as `React`, `Vue`, and `Svelte` either have in-house generators or support generators.
+More complex websites built with frameworks can also be built as a static site by a generator. 
+Essentially, the generation tool "compiles" your high-level files into vanilla HTML CSS JS. 
+`Jekyll` is a common static site framework tailored towards blogs. Modern JS frameworks, such as `React`, `Vue`, 
+and `Svelte` either have in-house generators or support generators.
 
 
 ### Using Serverless
-As mentioned above, this is going to be our solution for deploying applications in a cheap way. It maintains the behavior of a typical backend server, while making it very cheap to deploy. To use serverless however, we need to format our backends as functions, which means we won't be writing an HTTP server as we normally would. Though it is possible to write functions ourselves and deploy them as is, it is advised to use a web framework like `SvelteKit` or `Next.js` that supports and handles the bundling. Though these frameworks don't explicitly say, (I believe that) these functions are deployed as serverless functions under the hood. 
+As mentioned above, this is going to be our solution for deploying applications in a cheap way. 
+It maintains the behavior of a typical backend server, while making it very cheap to deploy. To 
+use serverless however, we need to format our backends as functions, which means we won't be 
+writing an HTTP server as we normally would. Though it is possible to write functions ourselves and 
+deploy them as is, it is advised to use a web framework like `SvelteKit` or `Next.js` that supports 
+and handles the bundling. Though these frameworks don't explicitly say, (I believe that) these 
+functions are deployed as serverless functions under the hood. 
 
 **Serverless & SvelteKit**
 In SvelteKit, we define a [API route](https://kit.svelte.dev/docs/routing#server) to create a custom backend service.
@@ -103,8 +147,11 @@ export async function POST ({ cookies }) {
 
 - **Github Pages**: 
 	- Static site host.
-	-  Supports `Jekyll` as a static site generator. Static site generators take your files, templates/renders it, and stores the static result somewhere to be hosted; think of it as a compiler for pages. `Jekyll` is great for making quick blogs.
-	- Github Pages is great for hosting [plain HTML/JS/CSS](https://yelp.github.io/) sites, or [Jekyll-made blogs](https://vonheikemen.github.io/devlog/). 
+	- Supports `Jekyll` as a static site generator. Static site generators take your files, 
+		templates/renders it, and stores the static result somewhere to be hosted; think of it 
+		as a compiler for pages. `Jekyll` is great for making quick blogs.
+	- Github Pages is great for hosting [plain HTML/JS/CSS](https://yelp.github.io/) sites, 
+		or [Jekyll-made blogs](https://vonheikemen.github.io/devlog/). 
 - **Vercel**:
 	- Serverless Host. Uses AWS Lambda under the hood
 	- Supports *many* frameworks like NEXT.js, Sveltekit, Flask, Django, Vue, Angular, Jekyll.
@@ -122,27 +169,34 @@ export async function POST ({ cookies }) {
 ## Other Subjects
 
 ### Stack
-The set of tools / frameworks commonly used together for development. Note that some of these do not support serverless computing, and suffer from the "hosting issue"
+
+The set of tools / frameworks commonly used together for development. Note that 
+some of these do not support serverless computing, and suffer from the "hosting issue"
 
  - __ME[_]N__
 	- Node.JS, Express.JS, MongoDB, Some frontend framework. 
-	 - JS-based, very friendly
-	 - There are many options for a JS frontend templator / framework. EJS, Svelte, React, Vue, Angular, etc.
-	 - Cannot be deployed as serverless service. 
+	- JS-based, very friendly
+	- There are many options for a JS frontend templator / framework. EJS, Svelte, 
+		React, Vue, Angular, etc.
+	- Cannot be deployed as serverless service. 
 
 - __Python, Flask, SQL, Jinja__
 	- A python-based solution with relational databases.
-	- It is not inherent that this stack uses relational databases, some document-based databases also provide a Python driver.
+	- It is not inherent that this stack uses relational databases, some document-based 
+	databases also provide a Python driver.
 
 -	__Django__
-	-	Python-based all-in-one web stack package. It allows you to implement response handling, templating, and local databases all with one package.
+	-	Python-based all-in-one web stack package. It allows you to implement response handling, templating, 
+		and local databases all with one package.
 - __PHP, Apache, SQL__
 	- An older HTTP server stack.
 	- Less common 
 
 ### Middleware
-In the context of web, these are small softwares that the request passes through before it gets to the actual server. These are used to separate tedious/simple tasks from the bulk of the server.
-For example, an express server that handles forum posts can have a middleware function that checks for profanity in the request body.
+
+In the context of web, these are small softwares that the request passes through before it gets to the actual server.
+These are used to separate tedious/simple tasks from the bulk of the server. For example, an express server 
+that handles forum posts can have a middleware function that checks for profanity in the request body.
 A very useful application of middleware is in *validators*, which are talked about later.
 
 ---
@@ -150,13 +204,18 @@ A very useful application of middleware is in *validators*, which are talked abo
 ## Tips
 
 ### File organization
+
 This is vital for readability and maintainability, allowing collaborators to quickly find what are looking for quickly.
 The following is a decent amateur `Node.JS` backend structure:
 [TODO: Screenshot]
 
 ### Validation
-It is vital that you sanitize & validate user input. This prevents attacks as well as establishes assumptions about the data, making your following code free of error/case handling.
+
+It is vital that you sanitize & validate user input. This prevents attacks as well as establishes assumptions 
+about the data, making your following code free of error/case handling.
+
 __Node.JS solution:__ [express-validator](https://express-validator.github.io/docs)
+
 ```
 const { query, body, validationResult } = require('express-validator');
 controller.sendMessage = [
@@ -179,19 +238,31 @@ controller.sendMessage = [
 	}
 ]
 ```
-`express-validator` is a very powerful tool and very elegant to use. The code snippet above implements a route for sending messages to a user. The recipient's username will be sent via the [HTTP query string](https://static.semrush.com/blog/uploads/media/00/6e/006eebc38b54220916caecfc80fed202/Guide-to-URL-Parameters-2.png), and the message itself will be in the request body. The following bullet points will explain the code snippet.
-- Firstly, You'll Notice that the "function" is actually an array. This is because `express-validator` works by adding middleware to the route to validate. 
-- Line A & B here define the validator. The function of each line can be easily inferred. How it works under the hood is that each line is chaining another validator on top of the existing one, thus creating a big validator with all the specified constraints.
+
+`express-validator` is a very powerful tool and very elegant to use. The code snippet above implements a 
+route for sending messages to a user. The recipient's username will be sent via the 
+[HTTP query string](https://static.semrush.com/blog/uploads/media/00/6e/006eebc38b54220916caecfc80fed202/Guide-to-URL-Parameters-2.png), 
+and the message itself will be in the request body. The following bullet points will explain the code snippet.
+
+- Firstly, You'll Notice that the "function" is actually an array. This is because `express-validator` 
+	works by adding middleware to the route to validate. 
+- Line A & B here define the validator. The function of each line can be easily inferred. How it works 
+	under the hood is that each line is chaining another validator on top of the existing one, thus creating 
+	a big validator with all the specified constraints.
 - Line C extracts the validation result. The middleware functions place their results into the `req` object, and this line simply retrieves it. 
 - Line D processes the validation result, and simply returns if it is not satisfied. 
 
 
 ### Neat, Intuitive & Documented API paths
-Doing so will make it much easier for collaborators to understand the API and also use it. This will make collaboration a lot easier, as a front-end developer will only need to review the documentation and route files and not look through backend code.
+
+Doing so will make it much easier for collaborators to understand the API and also use it. 
+This will make collaboration a lot easier, as a front-end developer will only need to review 
+the documentation and route files and not look through backend code.
 This also means a good file structure, and splitting routing from controllers.
 A less important note is to use proper HTTP status codes. This will help greatly in API testing. 
 
 ### Standardize Code Styling
+
 This will prevent mid-hackathon arguments about tab sizing.
 
 __Node.JS solution:__

@@ -1,0 +1,61 @@
+---
+title: Web Development Intro
+authors: [Taisei De La Cruz]
+date: "2023-07-20"
+published: true
+---
+
+## General Web Tips
+Web development is a really really really really really large topic with all sorts of niches. But don't be intimidated! 
+This document has a bunch of links to all sorts of web-related topics.
+
+But first, some general tips, especially for beginners:
+The best way to learn is by doing! At first, make small easy projects, like static sites, to get familiar with the basics of 
+HTML, CSS, and JS. I personally wouldn't suggest using any JS or CSS frameworks at this point. Once you feel more confident,
+ go ahead and make more ambitious projects. You'll learn a lot just by trying to implement different features.
+
+Use online resources to learn more! Personally I think text tutorials/documentation pages are better than videos.
+Optional: Use an IDE like VSCode, and install plugins that can quickly point out any syntax errors.
+
+
+## Debugging
+Basically all browsers come with developer tools (not available on mobile devices, disabled on school chromebooks). 
+You can usually open them with ctrl+shift+c (different for Safari on Apple devices, where you need to go into preferences, 
+enable developer tools - go search it up).
+
+Generally, the developer tools have the following tabs:
+
+- Elements (on Chromium) / Inspector (on Firefox): Allows you inspect all the html and css on the page. **INCREDIBLY USEFUL!!!!!!** 
+You can use the cursor and select a specific html element to inspect, or browse through the DOM tree. Clicking on an element shows you 
+all the CSS, JS event listeners, and animations that are applied to it, as well as all sorts of other stuff like its size in pixels 
+(also tells you padding and margin). Importantly, you can edit the CSS and HTML, which is pretty good for testing out how the site would 
+look if you changed something. Additionally, browsers will tell you if an invalid CSS property is set, or if a property is overridden by 
+another one declared somewhere else.
+
+- Console: The console is everything you need for Javascript debugging. It shows (and allows you to filter) Javascript 
+errors, warnings, and logs (`console.log()`). It also shows all requests (eg, loading an image file, or calling an API) 
+initiated by the page, and also sometimes includes CSS and HTML warnings if you did something wrong. You can also type 
+Javascript into the console! Eg, typing in `document.querySelector("body").style.backgroundColor = "green";` into the 
+console and hitting enter should turn the page background green. You can call functions, change variables, and do 
+basically anything, making it really really good for debugging.
+
+- Application (on Chromium) / Storage, Application (two separate tabs on Firefox): Shows cookies, local storage, 
+session storage, IndexedDB, and more. Good when debugging anything related to those. Also shows stuff related to 
+service workers and web manifests.
+
+- Style Editor (on Firefox): Shows all the CSS stylesheets that are loaded into the page (including inline ones), 
+and allows you to edit them.
+
+- Network (on Firefox): Shows all requests made by the page, allows you to edit and resend them, as well as inspect 
+everything about the request and response, including headers, cookies, HTTP status code, HTTP method, and content.
+
+- Lighthouse (on Chromium): Analyzes the page, and gives it a score, as well as some suggestions for improvement. 
+Not much need to use unless it is a larger web page that you intend to release.
+
+If you get errors, first check the dev console, which will usually politely tell you which line it is on --- 
+take a look and see if anything obvious is wrong. If you can't figure it out, search up the error message --- 
+Stack Overflow usually has solutions to a decent amount of beginner HTML/CSS/JS issues.
+
+If the error is related to a bad input into a function, unexpected behaviour, or a logic error, `console.log()`s 
+are usually your best friend. Use them to log relevant expressions, variables, on different lines, and sometimes 
+you can track down the problem easily. The dev console may also come in handy.

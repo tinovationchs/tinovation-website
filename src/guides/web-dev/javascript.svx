@@ -1,0 +1,288 @@
+---
+title: Javascript 
+authors: [Taisei De La Cruz]
+date: "2023-07-20"
+published: true
+---
+
+In Javascript, you can use CSS selectors to get HTML element objects by using the 
+[`document.querySelector`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) 
+or [`document.querySelectorAll`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll) functions. 
+You can also use these methods to get the children of HTML elements, if you have the element's JS object. Example:
+
+```javascript
+let image_el = document.getElementById("image-container").querySelector("img");
+```
+
+### Events
+
+Listening to events:
+```javascript
+document.getElementById("asdf").addEventListener("click", (event) => {
+ //do something
+});
+document.getElementById("asdf").onclick = (event) => {
+ //do something
+};
+```
+
+[Basics](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
+
+[Custom Events](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent)
+
+[List of most events](https://developer.mozilla.org/en-US/docs/Web/Events#event_listing)
+
+### JSON
+JSON stands for JavaScript Object Notation. It is usually used to store and send information. For example, 
+many POST requests contain the information sent in the JSON format. The JSON format is really simple, 
+it has basically a stricter version of Javascript objects (except with no variables, functions, etc, and also requiring double quotes).
+
+JSON is made up of keys and values.
+
+```json
+{
+  "Key": "Value",
+  "Another key": "Another value!"
+}
+```
+
+Although the example has spaces inside the key name, I would recommend avoiding using space and 
+hyphens in key names, and instead using underscores, so you can access them using dot notations.
+
+And you can have numbers, booleans, arrays, and other objects as values too. But the keys can only be double quoted strings.
+
+```json
+{
+  "users": {
+    "sam-davis": {
+      "balance": 5000,
+      "wanted_dead_or_alive": true,
+      "banned_from": ["oregon", "nevada", "vatican city"]
+    }
+  }
+}
+```
+
+Here's an example of parsing JSON and reading the data.
+
+```javascript
+let json_string = `{
+  "users": {
+    "sam_davis": {
+      "balance": 5000,
+      "wanted_dead_or_alive": true,
+      "banned_from": ["oregon", "nevada", "vatican city"]
+    }
+  }
+}`;
+
+let user_info = JSON.parse(json_string);
+
+//will log 5000
+console.log(user_info.users.sam_davis.balance);
+
+//this does the same thing
+console.log(user_info["users"].["sam_davis"].["balance"]);
+```
+
+### HTTP Request Methods
+The most commonly used HTTP Request Methods are `GET` and `POST`.
+
+`GET` requests are what you do when you use your browser to navigate to a website. 
+Use these for requesting information - so, if you were reading an API, you would probably use a `GET` request.
+
+`POST` requests send information to the website, telling it to change something. 
+For example, submitting a form would usually be a `POST` request, because you are sending 
+the form data telling the website to do something with it, like storing it in a database.
+
+### Making Web Requests
+In the stone ages, you might have used XMLHttpRequest to make web requests, 
+but nowadays you would use the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
+
+### Backend (Server) vs Frontend (Client)
+The frontend is typically the HTML, CSS, JS, and resources (typically images or video) you serve to users. 
+Since you are sending it to users, they have full control over inspecting and changing that content - that's why 
+the dev tools and browser extensions are possible. So, you should never ever put anything sensitive on the 
+frontend (eg, database credentials, passwords or api keys…. or social security numbers. Looking at you, 
+[Missouri](https://www.dailydot.com/debug/missouri-governor-reporter-hacker-mocked/)!).
+
+The backend is the server that serves your content, and if relevant, processes any information that the 
+user sends, like form submissions (eg, a login for a website, or a comment box for a forum). Backends make 
+it possible to serve **dynamic** content (serverless websites, despite the name, actually do run on servers, 
+so does are included too). Dynamic content means that the webpage may look different depending on say, 
+an user is logged in or not, even though the URL is the same.
+
+Although Javascript used to be a purely client side language, some people apparently decided they wanted 
+to use Javascript to write their backend too, and so we have stuff like Node.js, and it's younger sibling, Deno.
+
+### HTTP Headers
+Headers are sent along with a HTTP request (from the user), and also along with a HTTP response (from the server).
+
+The MDN page on [HTTP Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers).
+
+### Client side storage
+[Local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) and 
+[session storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage) are good ways 
+to store data on the client side (on the user's computer, not your server).
+
+You can also use [IndexedDB](https://developer.mozilla.org/en-US/docs/Glossary/IndexedDB), but that is overkill in most cases.
+
+Servers also can store and access client side data by setting cookies.
+
+
+### Asynchronous (Promises!) vs Synchronous
+Asynchronous stuff in Javascript can be a tough concept to wrap your head around at first, 
+but once you get it, they become really, really useful. And they are much better than what 
+programmers did before they existed - callbacks inside callbacks inside callbacks.
+
+As a quick overview, asynchronous functions are… *asyncronous*. Let's see what this means. Say we have this code:
+
+```js
+function apply_for_government_permit() {
+  //pretend there is code that takes a long time here
+  Government.local.ask_for_building_permit();
+  Government.local.environmental_review();
+  Government.local.bribe_neighbours_so_they_dont_complain();
+  Government.local.wait_years_for_process_to_complete();
+}
+
+apply_for_government_permit();
+console.log(“a”);
+```
+
+If you ran this hypothetical code, the `console.log` would not run until the permit application permit ended, which could take years!
+
+However, if we changed `apply_for_government_permit` into an asynchronous function…
+
+```js
+async function apply_for_government_permit() {
+  //pretend there is code that takes a long time here
+  Government.local.ask_for_building_permit();
+  Government.local.environmental_review();
+  Government.local.bribe_neighbours_so_they_dont_complain();
+  Government.local.wait_years_for_process_to_complete();
+}
+
+apply_for_government_permit();
+console.log(“a”);
+```
+
+Now, first, the `apply_for_government_permit` will be called, then the `console.log` will 
+run **immediately** after, **without waiting for the asynchronous `apply_for_government_permit` function to finish`.
+
+Real world scenarios where async functions are commonly used include sending web (http) 
+requests with [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/fetch).
+
+Now, imagine the async function above actually returned something, and we needed it. 
+Like the actual permit. How can we access that value?
+
+```js
+let permit = apply_for_government_permit();
+```
+
+This **won't** work - it will return a 
+[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). 
+Besides, even if it worked, since we don't know how long the application process will take, when we try to use it, 
+it may still be undefined! We want some way to do something with the return value after it successfully completes. 
+There are two ways to do this.
+
+```js
+apply_for_government_permit().then((permit) => {
+  send_permit_to_lawyer(permit);
+});
+console.log(“a”);
+```
+
+If we use `.then()`, we can put a callback function as the first parameter, 
+which itself takes the return value of the function as a parameter (the `(permit) => …` part).
+
+And best of all, the `console.log` still happens immediately, without having to wait for the application process to end.
+
+However, if we have multiple async functions relying on each other, we can quickly 
+find ourselves in a callback hell full of `.then()`s that are hard to break out of.
+
+So, there is another way (yay!), using the `await` keyword.
+
+```js
+let permit = await apply_for_government_permit();
+send_permit_to_lawyer(permit);
+console.log(“a”);
+```
+
+However, the downside is that `await` is only usable in other `async` functions, 
+or the top level of the program (this is a new feature in more recent versions of Javascript). 
+Also, the `console.log` will not happen until the permit application process is over.
+
+Obligatory [MDN Guide](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing)
+
+### Websockets
+Websockets are great for two way communication between client and server, 
+and the server can even use them to have multiple clients communicate with each other. 
+So, websockets are commonly used in messaging services. Websockets are also commonly used to check for updates, 
+instead of sending HTTP requests every few seconds to see if anything is new.
+
+Well you know the drill - [MDN link](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API). 
+
+### Canvas
+The canvas is one of my favourite Javascript APIs ever. It allows you to programmatically draw stuff, 
+and it is commonly used in web animations and games.
+
+[MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) 
+
+### JS Libraries
+Javascript has a huge amount of libraries that can do basically anything. 
+Typically, you can copy a JS libraries' files over to your own website, and link them. 
+But things can get pretty complicated with all the different kinds of Javascript out there, 
+with some libraries being written in CommonJS and ES being incompatible and being tricky to use in the browser. 
+The documentation of libraries can also be tricky to find and be sparse. 
+Try to find a library that seems to have a decent amount of usage (high github stars or npm downloads, for example), 
+and has good documentation and examples. Good luck!
+
+Just kidding - if you encounter any trouble, feel free to ask a mentor!
+
+If writing Node.js, npm is the undisputed king of finding and installing packages.
+
+### Browser Extensions
+MDN has some pretty good guides on everything related to [browser extensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/What_are_WebExtensions).
+
+Bookmarklets are bookmarkets that can run javascript when you click them. Similar to web extension content 
+scripts, they can execute arbitrary javascript on a page. In some cases, it may be easier just to make a 
+bookmarklet instead of a full blown browser extension, but it depends on what you're doing.
+
+Try adding this as a bookmark, and click it while on a page:
+
+```js
+javascript: (() => { 
+  let img = document.createElement("img"); 
+  img.src = "https://upload.wikimedia.org/wikipedia/commons/6/60/John_Cena_July_2018.jpg"; 
+  document.body.innerHTML = ""; 
+  document.body.appendChild(img); 
+})();
+```
+
+### Truthiness and Falsiness (`==` vs `===`) 
+Javascript is weird, so use three equal signs.
+
+```js
+0 == false // true
+0 === false // false
+“” == false // true
+“” === false // false
+
+if (“abc”) {
+  console.log(“hola”); // will run
+}
+
+[] == [] // false
+[1, 2, 3] == [1, 2, 3] // false
+```
+
+Many an error has been caused by `0` evaluating to `false`, so keep that kinda stuff in mind.
+
+### Typescript
+Typescript is Javascript but with type annotations, enums, type inferences, and some 
+other neat features. It compiles to Javascript. It prevents many of the common Javascript 
+developer headaches, and combined with a nice IDE extension, it can make writing code a lot easier. Search it up.
+
+### Security (Basics)
+Here are [last year's slides](https://docs.google.com/presentation/d/1hHUJvB-JgyuyJ-U0_hf6xxgW8vddWDOvpz9FI-Nv2x8/edit?usp=sharing) on some common web vulnerabilities.

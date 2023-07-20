@@ -1,0 +1,30 @@
+---
+title: Web Frameworks 
+authors: [Taisei De La Cruz]
+date: "2023-07-20"
+published: true
+---
+
+## Frameworks + their Documentation and Tutorials
+Once websites become moderately complex and/or dynamic, it can become a pain to write them in pure HTML, CSS, and JS. 
+If you were making a small wiki about cheeses, would you want to copy paste a bunch of HTML and create a new HTML 
+file every time you added an entry? Probably not.
+
+Here a few frameworks and their tutorial/documentation pages (not a comprehensive list, not even close):
+
+[Svelte](https://learn.svelte.dev/tutorial/welcome-to-svelte): Syntax is nice and clean, my personal favourite. Also has sveltekit
+
+[React](https://react.dev/learn): Most popular JS framework, made by Facebook
+
+[Yew](https://yew.rs/): Rust framework that compiles into [Web Assembly](https://developer.mozilla.org/en-US/docs/WebAssembly)
+
+### Templating
+
+Templating is one part of what frameworks usually do, but templating can be done on its own too. 
+Templating engines allow you to reuse HTML, CSS, and JS code (like a navbar present on every page, or a 
+blog post template where you just need to insert the title, author, and content). They typically also allow 
+you to render variables from the server, have for loops, etc. Here are some templating engines:
+
+[Jinja](https://jinja.palletsprojects.com/en/3.1.x/) (Python) or Nunjucks (Node.js)
+
+[EJS](https://ejs.co/) (Node.js)
