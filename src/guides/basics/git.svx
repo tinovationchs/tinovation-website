@@ -1,0 +1,13 @@
+---
+title: Git
+authors: [Daniel Cui]
+date: "2023-07-19"
+published: true
+---
+
+## What is Git?
+
+Git is a version control system (VCS) that **tracks** and **manages** computer files, 
+commonly used in software projects for collaboration, coordinating work, and maintaining 
+a history of the source code.
+

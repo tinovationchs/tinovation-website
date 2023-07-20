@@ -118,7 +118,7 @@
   /* LINKS */
   /* ===== */
   main :global(a) {
-    @apply font-normal text-purple-400 underline underline-offset-2;
+    @apply font-normal text-purple-400 underline underline-offset-2 break-words;
   }
   main :global(a):hover {
     @apply decoration-wavy;

@@ -1,5 +1,8 @@
 # Contributing to Guides
 
+- you will need to add the file to `resources.ts` object to have it show up
+  - using a string uses defaults, the `Item` has more control over how it is rendered
+
 ## Guidelines & Tips
 
 - **frontmatter** (basically metadata) is yaml, starts and ends with "---"
