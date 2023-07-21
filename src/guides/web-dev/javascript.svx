@@ -147,7 +147,7 @@ function apply_for_government_permit() {
 }
 
 apply_for_government_permit();
-console.log(“a”);
+console.log("a");
 ```
 
 If you ran this hypothetical code, the `console.log` would not run until the permit application permit ended, which could take years!
@@ -164,7 +164,7 @@ async function apply_for_government_permit() {
 }
 
 apply_for_government_permit();
-console.log(“a”);
+console.log("a");
 ```
 
 Now, first, the `apply_for_government_permit` will be called, then the `console.log` will 
@@ -190,7 +190,7 @@ There are two ways to do this.
 apply_for_government_permit().then((permit) => {
   send_permit_to_lawyer(permit);
 });
-console.log(“a”);
+console.log("a");
 ```
 
 If we use `.then()`, we can put a callback function as the first parameter, 
@@ -206,7 +206,7 @@ So, there is another way (yay!), using the `await` keyword.
 ```js
 let permit = await apply_for_government_permit();
 send_permit_to_lawyer(permit);
-console.log(“a”);
+console.log("a");
 ```
 
 However, the downside is that `await` is only usable in other `async` functions, 
@@ -266,11 +266,11 @@ Javascript is weird, so use three equal signs.
 ```js
 0 == false // true
 0 === false // false
-“” == false // true
-“” === false // false
+"" == false // true
+"" === false // false
 
-if (“abc”) {
-  console.log(“hola”); // will run
+if ("abc") {
+  console.log("hola"); // will run
 }
 
 [] == [] // false
