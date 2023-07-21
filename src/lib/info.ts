@@ -7,7 +7,7 @@ const info = {
   email: "tinovationofficerteam@gmail.com",
   github_link: "https://github.com/tinovationchs",
 
-  co_presidents: ["Daniel Cui", "Ryan Kim"],
+  co_presidents: ["Daniel Cui", "Ryan Kim"].sort(),
   vice_president: "Arnav Gupta",
   secretary_treasurer: "Bhargav Eranki",
   mentors: [
@@ -17,7 +17,7 @@ const info = {
     "Purva Marfatia",
     "Shauryan Kanaujia",
     "Laurier Ke",
-  ],
+  ].sort(),
 
   resource_contribution_link:
     "https://github.com/tinovationchs/tinovation-website/blob/main/src/guides/README.md",

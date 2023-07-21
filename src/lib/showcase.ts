@@ -7,7 +7,7 @@ const showcaseProjects: Project[] = [
     authors: ["Daniel Cui"],
     date: "2023-07-20",
     description:
-      "The amazing Tinovation website! This is kinda meta, ain't it? Well, isn't that something.",
+      "The amazing Tinovation website! This is kinda meta, huh? Well, ain't that something.",
     main_link: "https://tinovation-website.vercel.app/",
     guide_name: "dev-notes",
     github_link: "https://github.com/tinovationchs/tinovation-website",

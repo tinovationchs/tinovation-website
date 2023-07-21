@@ -106,12 +106,12 @@
     </div>
 
     <div
-      class="ml-1 flex -translate-y-1 flex-row content-baseline justify-between font-header text-base sm:text-lg">
-      <h3>
+      class="ml-1 mb-1 flex -translate-y-0.5 flex-row gap-6 items-baseline justify-between font-header text-base sm:text-lg">
+      <h3 class="leading-tight pl-4 -indent-4">
         created by: {projectInfo.authors.join(", ")}
       </h3>
 
-      <h3 class="text-base text-retro-gray">
+      <h3 class="text-base text-retro-gray whitespace-nowrap">
         {moment(projectInfo.date, "YYYY-MM-DD").format("MMM Do, YYYY")}
       </h3>
     </div>

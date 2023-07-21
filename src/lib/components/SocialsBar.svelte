@@ -6,7 +6,7 @@
   <a
     href={info.discord_link}
     target="_blank"
-    class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in hover:border-[#5865F2] hover:fill-[#5865F2]">
+    class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in duration-75 hover:border-[#5865F2] hover:fill-[#5865F2]">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 127.14 96.36"
@@ -25,7 +25,7 @@
   <a
     href={info.instagram_link}
     target="_blank"
-    class=" flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in hover:border-[#E1306C] hover:fill-[#E1306C]">
+    class=" flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in duration-75 hover:border-[#E1306C] hover:fill-[#E1306C]">
     <svg
       id="Layer_1"
       data-name="Layer 1"
@@ -38,22 +38,22 @@
     </svg>
   </a>
 
-  <a
+  <!-- <a
     href={info.donate_link}
     target="_blank"
-    class=" flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in hover:border-red-500 hover:fill-red-500">
+    class=" flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in duration-75 hover:border-red-500 hover:fill-red-500">
     <svg class="h-auto w-10 fill-inherit" viewBox="0 0 32 32">
       <path
         d="M16.194 8.096A2.397 2.397 0 0 0 16 8.018V6c.358 0 .735.149.997.264.297.13.676.326 1.077.555a37.817 37.817 0 0 1 2.878 1.864c2.15 1.518 2.548 1.817 4.755 3.61a.999.999 0 1 1-1.414 1.414C22 12 21.9 11.799 19.798 10.317a35.088 35.088 0 0 0-2.716-1.761 9.091 9.091 0 0 0-.888-.46zM15.806 8.096c.09-.04.153-.064.194-.078V6c-.358 0-.735.149-.997.264-.297.13-.676.326-1.077.555a37.817 37.817 0 0 0-2.878 1.864C8.9 10.201 8.5 10.5 6.293 12.293a.999.999 0 1 0 1.414 1.414c2.294-1.707 2.394-1.908 4.495-3.39a35.088 35.088 0 0 1 2.716-1.761c.365-.209.65-.357.888-.46zM7 24a1 1 0 0 1 1-1h16a1 1 0 0 1 0 2H8a1 1 0 0 1-1-1z" />
       <path
         d="M16 22a1 1 0 0 1-1-1v-7a1 1 0 0 1 2 0v7a1 1 0 0 1-1 1zM21 22a1 1 0 0 1-1-1v-7a1 1 0 0 1 2 0v7a1 1 0 0 1-1 1zM11 22a1 1 0 0 1-1-1v-7a1 1 0 0 1 2 0v7a1 1 0 0 1-1 1z" />
     </svg>
-  </a>
+  </a> -->
 
   <a
     href={`mailto:${info.email}`}
     target="_blank"
-    class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white stroke-retro-white transition ease-in hover:border-yellow-500 hover:stroke-yellow-500">
+    class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white stroke-retro-white transition ease-in duration-75 hover:border-yellow-500 hover:stroke-yellow-500">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -71,7 +71,7 @@
   <a
     href={info.github_link}
     target="_blank"
-    class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in hover:border-green-500 hover:fill-green-500">
+    class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in duration-75 hover:border-green-500 hover:fill-green-500">
     <svg
       viewBox="0 0 98 96"
       width="98"
