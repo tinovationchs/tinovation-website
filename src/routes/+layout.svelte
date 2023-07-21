@@ -5,10 +5,6 @@
   import { page } from "$app/stores";
 </script>
 
-<svelte:head>
-  <title>Tinovation</title>
-</svelte:head>
-
 <div class="flex min-h-screen flex-col">
   <Navbar />
 
