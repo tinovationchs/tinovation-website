@@ -4,8 +4,16 @@ const info = {
   discord_link: "https://discord.gg/QGxaW5dSG2",
   instagram_link: "https://www.instagram.com/tinovationchs",
   donate_link: "https://bank.hackclub.com/donations/start/tinovation",
-  email: "tinovationofficerteam@gmail.com",
+  email: "team@tinovation.org",
   github_link: "https://github.com/tinovationchs",
+  club_advisor_email: "eric_ferrante@fuhsd.org",
+
+  fun_games_link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  pioneerhacks_link: "https://www.pioneerhacks.org",
+
+  form_visible: false,
+  form_link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  form_text: "join the innovation",
 
   co_presidents: ["Daniel Cui", "Ryan Kim"].sort(),
   vice_president: "Arnav Gupta",
@@ -18,6 +26,7 @@ const info = {
     "Shauryan Kanaujia",
     "Laurier Ke",
   ].sort(),
+  club_advisor: "Mr. Ferrante",
 
   resource_contribution_link:
     "https://github.com/tinovationchs/tinovation-website/blob/main/src/guides/README.md",

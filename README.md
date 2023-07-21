@@ -1,6 +1,8 @@
 # Tinovation Website
 
-## Ideas
+## Old Dev Notes
+
+### Ideas
 
 - tree of knowledge!
   - basics: git, command line, languages, ides
@@ -10,7 +12,7 @@
   - appdev platforms: mobile, react-native/flutter, electron/tauri, ionic
   - misc: random, cool things
 
-## Dev Notes
+### Other Notes
 
 - before committing, run prettier to maintain consistency!
 - mdsvex is a smaller project that isn't as supported as mdx's official support for react/vue, but I hope that changes!
