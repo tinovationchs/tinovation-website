@@ -23,3 +23,15 @@ export interface Item {
 export interface Categories {
   [index: string]: (Item | string)[];
 }
+
+export interface Project {
+  thumbnail_image: string;
+  name: string;
+  authors: string[];
+  date: string;
+  description: string;
+  main_link: string;
+  guide_name?: string;
+  github_link?: string;
+  other_links?: string[];
+}

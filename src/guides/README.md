@@ -7,7 +7,7 @@
 - you will need to add your file to the `resources.ts` object called `resourceCategories` to have it show up
   - using a string uses defaults, the `Item` has more control over how it is rendered
   - follow the format of the preexisting ones
-- test it throughly with `npm run dev` from the terminal
+- test it thoroughly with `npm run dev` from the terminal
 - make a commit and submit a pull request to the main repo from you own!
 
 ## Guidelines & Tips

@@ -9,7 +9,7 @@ type ColorDict = {
 export const black = "#000000",
   white = "#ffffff";
 
-const colors: ColorDict = {
+const twColors: ColorDict = {
   slate: {
     "50": "#f8fafc",
     "100": "#f1f5f9",
@@ -298,4 +298,37 @@ const colors: ColorDict = {
   },
 };
 
-export default colors;
+const hypercolorGradients: string[] = [
+  "linear-gradient(to right, rgb(236, 72, 153, 0.3), rgb(239, 68, 68, 0.3), rgb(234, 179, 8, 0.3))",
+  "linear-gradient(to right, rgb(134, 239, 172, 0.3), rgb(59, 130, 246, 0.3), rgb(147, 51, 234, 0.3))",
+  "linear-gradient(to right, rgb(249, 168, 212, 0.3), rgb(216, 180, 254, 0.3), rgb(129, 140, 248, 0.3))",
+  // "linear-gradient(to right, rgb(55, 65, 81, 0.3), rgb(17, 24, 39, 0.3), rgb(0, 0, 0, 0.3))",
+  "linear-gradient(to right, rgb(199, 210, 254, 0.3), rgb(254, 202, 202, 0.3), rgb(254, 249, 195, 0.3))",
+  "linear-gradient(to right, rgb(254, 249, 195, 0.3), rgb(253, 224, 71, 0.3), rgb(234, 179, 8, 0.3))",
+  "linear-gradient(to right, rgb(254, 240, 138, 0.3), rgb(187, 247, 208, 0.3), rgb(34, 197, 94, 0.3))",
+  "linear-gradient(to right, rgb(229, 231, 235, 0.3), rgb(156, 163, 175, 0.3), rgb(75, 85, 99, 0.3))",
+  "linear-gradient(to right, rgb(254, 202, 202, 0.3), rgb(252, 165, 165, 0.3), rgb(254, 240, 138, 0.3))",
+  "linear-gradient(to right, rgb(187, 247, 208, 0.3), rgb(134, 239, 172, 0.3), rgb(59, 130, 246, 0.3))",
+  "linear-gradient(to right, rgb(254, 240, 138, 0.3), rgb(250, 204, 21, 0.3), rgb(161, 98, 7, 0.3))",
+  "linear-gradient(to right, rgb(187, 247, 208, 0.3), rgb(74, 222, 128, 0.3), rgb(126, 34, 206, 0.3))",
+  "linear-gradient(to right, rgb(254, 202, 202, 0.3), rgb(220, 38, 38, 0.3))",
+  "linear-gradient(to right, rgb(134, 239, 172, 0.3), rgb(253, 224, 71, 0.3), rgb(249, 168, 212, 0.3))",
+  "linear-gradient(to right, rgb(165, 180, 252, 0.3), rgb(192, 132, 252, 0.3))",
+  "linear-gradient(to right, rgb(187, 247, 208, 0.3), rgb(34, 197, 94, 0.3))",
+  "linear-gradient(to right, rgb(233, 213, 255, 0.3), rgb(192, 132, 252, 0.3), rgb(107, 33, 168, 0.3))",
+  "linear-gradient(to right, rgb(156, 163, 175, 0.3), rgb(75, 85, 99, 0.3), rgb(30, 64, 175, 0.3))",
+  "linear-gradient(to right, rgb(219, 234, 254, 0.3), rgb(147, 197, 253, 0.3), rgb(59, 130, 246, 0.3))",
+  "linear-gradient(to right, rgb(187, 247, 208, 0.3), rgb(74, 222, 128, 0.3), rgb(34, 197, 94, 0.3))",
+  "linear-gradient(to right, rgb(192, 132, 252, 0.3), rgb(250, 204, 21, 0.3))",
+  "linear-gradient(to right, rgb(248, 113, 113, 0.3), rgb(209, 213, 219, 0.3), rgb(59, 130, 246, 0.3))",
+  "linear-gradient(to right, rgb(153, 27, 27, 0.3), rgb(202, 138, 4, 0.3), rgb(234, 179, 8, 0.3))",
+  "linear-gradient(to right, rgb(254, 240, 138, 0.3), rgb(234, 179, 8, 0.3))",
+  "linear-gradient(to right, rgb(147, 197, 253, 0.3), rgb(187, 247, 208, 0.3), rgb(253, 224, 71, 0.3))",
+  "linear-gradient(to right, rgb(254, 240, 138, 0.3), rgb(187, 247, 208, 0.3), rgb(134, 239, 172, 0.3))",
+  "linear-gradient(to right, rgb(254, 240, 138, 0.3), rgb(253, 224, 71, 0.3), rgb(250, 204, 21, 0.3))",
+  "linear-gradient(to right, rgb(29, 78, 216, 0.3), rgb(30, 64, 175, 0.3), rgb(17, 24, 39, 0.3))",
+  "linear-gradient(to right, rgb(134, 239, 172, 0.3), rgb(192, 132, 252, 0.3))",
+  "linear-gradient(to right, rgb(254, 240, 138, 0.3), rgb(251, 207, 232, 0.3), rgb(244, 114, 182, 0.3))",
+];
+
+export { twColors, hypercolorGradients };

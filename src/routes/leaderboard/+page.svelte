@@ -6,8 +6,8 @@
   <title>{"Leaderboard - Tinovation"}</title>
 </svelte:head>
 
-<div class="absolute -z-10 h-full w-full fill-purple-400">
-  <div class="h-72 bg-purple-400" />
+<div class="absolute -z-10 h-full w-full fill-purple-300">
+  <div class="h-72 bg-purple-300" />
 
   <div class="fill-inherit">
     <svg

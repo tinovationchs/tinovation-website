@@ -44,7 +44,7 @@
       <h2 class="font-header text-4xl">The Officer Team</h2>
       <p>
         <b class="text-purple-300">Co-Presidents:</b>
-        {`${info.co_presidents[0]}, ${info.co_presidents[1]}`}
+        {`${info.co_presidents.join(", ")}`}
       </p>
       <p>
         <b class="text-blue-300">Vice Presidents:</b>

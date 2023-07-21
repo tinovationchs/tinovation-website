@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import colors from "$lib/tailwindColors";
+  import { twColors } from "$lib/colors";
   import moment from "moment";
 
   export let data: any;
@@ -29,7 +29,7 @@
       : null;
   }
 
-  const vals = Object.values(colors);
+  const vals = Object.values(twColors);
   const hueArray: string[] = [];
   for (const val of vals) {
     hueArray.push(val["300"]);
@@ -55,7 +55,7 @@
     <div class="flex flex-row justify-center">
       <div class="flex flex-col font-header">
         <span class="translate-y-2 text-retro-lightgray">
-          {`${data.metadata.date ? moment(data.metadata.date).format("MMM Do, YYYY") : ""}`}
+          {`${data.metadata.date ? moment(data.metadata.date, "YYYY-MM-DD").format("MMM Do, YYYY") : ""}`}
         </span>
 
         <h1 class="-translate-y-2">{data.metadata.title}</h1>

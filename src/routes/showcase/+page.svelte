@@ -1,9 +1,15 @@
+<script>
+  import Project from "$lib/components/Project.svelte";
+  import info from "$lib/info";
+  import showcaseProjects from "$lib/showcase";
+</script>
+
 <svelte:head>
   <title>{"Showcase - Tinovation"}</title>
 </svelte:head>
 
-<div class="absolute -z-10 h-full w-full fill-blue-400">
-  <div class="h-72 bg-blue-400" />
+<div class="absolute -z-10 h-full w-full fill-blue-300">
+  <div class="h-72 bg-blue-300" />
 
   <div class="fill-inherit">
     <svg
@@ -24,3 +30,23 @@
 </div>
 
 <div class="fixed -z-20 h-full min-h-screen w-full bg-retro-black" />
+
+<div class="mb-8 mt-20 flex flex-row justify-center md:mt-24">
+  <div>
+    <h1 class="text-center font-header text-5xl md:text-6xl">Showcase</h1>
+
+    <a
+      href={info.showcase_contribution_link}
+      target="_blank"
+      class="mb-2 block text-center font-header text-lg underline-offset-2 hover:text-blue-900 hover:underline">
+      want to add your project?
+    </a>
+
+    <hr class="mx-2 mb-8 rounded-full border-2 border-retro-black" />
+    <div class="grid w-fit grid-cols-1 gap-9 px-4 lg:grid-cols-2">
+      {#each showcaseProjects as projectInfo, index}
+        <Project {index} {projectInfo} numProjects={showcaseProjects.length} />
+      {/each}
+    </div>
+  </div>
+</div>

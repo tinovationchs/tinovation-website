@@ -4,9 +4,9 @@
 
 <div
   class="mt-auto w-full rounded-t-3xl bg-retro-black px-1 py-4 text-center font-header text-base text-retro-lightgray">
-  © {info.copyright_year} <span class="transition duration-100 ease-in-out hover:text-retro-white">Tinovation</span>.
-  
-  Made with
+  © {info.copyright_year}
+  <span class="transition duration-100 ease-in-out hover:text-retro-white">Tinovation</span>. Made
+  with
   <a
     href="https://kit.svelte.dev/"
     target="_blank"

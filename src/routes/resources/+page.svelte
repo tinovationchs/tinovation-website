@@ -1,5 +1,6 @@
 <script>
   import ResourceGroup from "$lib/components/ResourceGroup.svelte";
+  import info from "$lib/info";
   import resourceCategories from "$lib/resources";
 </script>
 
@@ -7,8 +8,8 @@
   <title>{"Resources - Tinovation"}</title>
 </svelte:head>
 
-<div class="absolute -z-10 h-full w-full fill-pink-400">
-  <div class="h-72 bg-pink-400" />
+<div class="absolute -z-10 h-full w-full fill-pink-300">
+  <div class="h-72 bg-pink-300" />
 
   <div class="fill-inherit">
     <svg
@@ -35,9 +36,9 @@
     <h1 class="text-center font-header text-5xl md:text-6xl">Resources</h1>
 
     <a
-      href="https://github.com/tinovationchs/tinovation-website/blob/main/src/guides/README.md"
+      href={info.resource_contribution_link}
       target="_blank"
-      class="mb-2 block text-center font-header text-xl hover:text-pink-950 hover:underline underline-offset-2">
+      class="mb-2 block text-center font-header text-lg underline-offset-2 hover:text-pink-900 hover:underline">
       want to contribute?
     </a>
 
