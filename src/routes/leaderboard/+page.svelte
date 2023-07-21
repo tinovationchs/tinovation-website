@@ -4,7 +4,7 @@
 
 <svelte:head>
   <title>{"Leaderboard - Tinovation"}</title>
-  <meta property=”og:title” content={"Leaderboard - Tinovation"}/>
+  <meta property="”og:title”" content={"Leaderboard - Tinovation"} />
 </svelte:head>
 
 <div class="absolute -z-10 h-full w-full fill-purple-300">

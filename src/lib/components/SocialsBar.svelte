@@ -6,7 +6,7 @@
   <a
     href={info.discord_link}
     target="_blank"
-    class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in duration-75 hover:border-[#5865F2] hover:fill-[#5865F2]">
+    class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition duration-75 ease-in hover:border-[#5865F2] hover:fill-[#5865F2]">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 127.14 96.36"
@@ -25,7 +25,7 @@
   <a
     href={info.instagram_link}
     target="_blank"
-    class=" flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in duration-75 hover:border-[#E1306C] hover:fill-[#E1306C]">
+    class=" flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition duration-75 ease-in hover:border-[#E1306C] hover:fill-[#E1306C]">
     <svg
       id="Layer_1"
       data-name="Layer 1"
@@ -53,7 +53,7 @@
   <a
     href={`mailto:${info.email}`}
     target="_blank"
-    class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white stroke-retro-white transition ease-in duration-75 hover:border-yellow-500 hover:stroke-yellow-500">
+    class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white stroke-retro-white transition duration-75 ease-in hover:border-yellow-500 hover:stroke-yellow-500">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -71,7 +71,7 @@
   <a
     href={info.github_link}
     target="_blank"
-    class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition ease-in duration-75 hover:border-green-500 hover:fill-green-500">
+    class="flex h-12 w-12 items-center justify-center rounded-lg border-2 border-retro-white fill-retro-white transition duration-75 ease-in hover:border-green-500 hover:fill-green-500">
     <svg
       viewBox="0 0 98 96"
       width="98"

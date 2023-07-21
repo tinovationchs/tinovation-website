@@ -8,7 +8,7 @@ const showcaseProjects: Project[] = [
     date: "2023-07-20",
     description:
       "The amazing Tinovation website! This is kinda meta, huh? Well, ain't that something.",
-    main_link: "https://tinovation-website.vercel.app/",
+    main_link: "https://www.tinovation.org",
     guide_name: "dev-notes",
     github_link: "https://github.com/tinovationchs/tinovation-website",
   },

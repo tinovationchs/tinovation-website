@@ -7,7 +7,7 @@
 
 <svelte:head>
   <title>{"Tinovation"}</title>
-  <meta property=”og:title” content={"Tinovation"}/>
+  <meta property="”og:title”" content={"Tinovation"} />
 </svelte:head>
 
 <!-- CONTENT STREAM -->
