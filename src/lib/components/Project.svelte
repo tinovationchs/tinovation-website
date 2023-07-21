@@ -2,10 +2,31 @@
   import { hypercolorGradients } from "$lib/colors";
   import type { Project } from "$lib/types";
   import moment from "moment";
+  import { onMount } from "svelte";
 
   export let index: number;
   export let projectInfo: Project;
   export let numProjects: number;
+
+  let src = `/showcase/${projectInfo.thumbnail_image}`;
+  let loaded = false;
+  let failed = false;
+  let loading = true;
+
+  onMount(() => {
+    const img = new Image();
+    img.src = src;
+    loading = true;
+
+    img.onload = () => {
+      loading = false;
+      loaded = true;
+    };
+    img.onerror = () => {
+      loading = false;
+      failed = true;
+    };
+  });
 </script>
 
 <div
@@ -19,10 +40,19 @@
     href={projectInfo.main_link}
     target="_blank"
     class="group relative mx-4 mt-4 rounded-lg shadow-xl transition hover:scale-[101%] hover:shadow">
-    <img
-      src={`/showcase/${projectInfo.thumbnail_image}`}
-      alt="project thumbnail"
-      class="rounded-lg transition group-hover:opacity-90" />
+    {#if loaded}
+      <img {src} alt="project thumbnail" class="rounded-lg transition group-hover:opacity-90" />
+    {:else if failed}
+      <div
+        class="flex aspect-video flex-col justify-center rounded-lg bg-retro-lightgray text-center text-red-900 opacity-60 transition group-hover:opacity-40">
+        {"image load error :("}
+      </div>
+    {:else}
+      <div
+        class="flex aspect-video animate-loading flex-col justify-center rounded-lg bg-retro-lightgray text-center opacity-60 transition group-hover:animate-none group-hover:opacity-40">
+        {"loading thumbnail..."}
+      </div>
+    {/if}
 
     <svg
       xmlns="http://www.w3.org/2000/svg"
