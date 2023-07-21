@@ -9,7 +9,7 @@ Rust is a fast, compiled, strongly typed, and memory safe programming language.
 
 Let's explain what that means:
 
-**Compiled** languages are “translated” into a lower level machine code that can be directly executed 
+**Compiled** languages are "translated" into a lower level machine code that can be directly executed 
 by the computer, before they are run. Languages like C are another example of a compiled language, 
 while languages like Python are typically interpreted languages.
 
@@ -37,7 +37,7 @@ sure you need to use them, they can often mean you're doing something wrong.
 
 ## The Elm Architecture
 
-Now back on topic. The Elm Architecture has nothing to do with Rust - it's a way (“architecture”) to 
+Now back on topic. The Elm Architecture has nothing to do with Rust - it's a way ("architecture") to 
 make interactive programs like websites and apps. In fact, it originated from a language called Elm.
 You can think of it as a trait (kinda like the Rust equivalent of classes in other languages) that looks something like this:
 

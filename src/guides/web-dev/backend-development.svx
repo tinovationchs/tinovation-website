@@ -133,7 +133,7 @@ functions are deployed as serverless functions under the hood.
 In SvelteKit, we define a [API route](https://kit.svelte.dev/docs/routing#server) to create a custom backend service.
 Here is an example SvelteKit API route that is to be deployed as a serverless function.
 `app/src/routes/api/logout/+server.js`:
-```
+```javascript
 export async function POST ({ cookies }) {
     cookies.delete("session", { path: "/" });
     console.log("deleted 'session' cookie");

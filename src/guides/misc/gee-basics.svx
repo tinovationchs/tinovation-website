@@ -96,7 +96,7 @@ or [a computed one](https://developers.google.com/earth-engine/apidocs/ee-imagec
  
  For example, if I'm looking to get the most **cloud-free** Landsat image possible (which most people do) from 2018, I can sort that Landsat collection above as follows:
  
-```
+```javascript
 var image = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR")
   .filterDate('2017-01-01', '2018-01-01')
   .sort('CLOUD_COVER')

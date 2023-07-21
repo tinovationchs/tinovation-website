@@ -81,7 +81,7 @@ has auto replication enabled.
 The following is an example Node.JS controller, using MongoDB. 
 The controller simply extracts user input from the [request body](https://en.wikipedia.org/wiki/HTTP), then inserts it into the `users` collection.
 
-```
+```javascript
 const coll = require("../db.js")
 				.db("Medicare")
 				.collection("users");
