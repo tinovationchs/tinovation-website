@@ -153,7 +153,8 @@
   }
   main :global(pre),
   :global(code) {
-    @apply bg-black font-mono text-sm text-blue-400;
+    @apply bg-black !important;
+    @apply font-mono text-sm text-blue-400;
   }
 
   /* =========== */
