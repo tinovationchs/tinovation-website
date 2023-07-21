@@ -55,7 +55,11 @@
     <div class="flex flex-row justify-center">
       <div class="flex flex-col font-header">
         <span class="translate-y-2 text-retro-lightgray">
-          {`${data.metadata.date ? moment(data.metadata.date, "YYYY-MM-DD").format("MMM Do, YYYY") : ""}`}
+          {`${
+            data.metadata.date
+              ? moment(data.metadata.date, "YYYY-MM-DD").format("MMM Do, YYYY")
+              : ""
+          }`}
         </span>
 
         <h1 class="-translate-y-2">{data.metadata.title}</h1>

@@ -10,7 +10,9 @@
 
 <div
   class="flex h-fit w-auto max-w-[32rem] flex-col rounded-lg border-2 border-retro-black bg-retro-white shadow-xl"
-  style={`background-image: ${hypercolorGradients[(numProjects - index) % hypercolorGradients.length]};`}>
+  style={`background-image: ${
+    hypercolorGradients[(numProjects - index) % hypercolorGradients.length]
+  };`}>
   <div id="shader" class="relative bg-white opacity-20" />
 
   <a
@@ -47,20 +49,22 @@
       {#if projectInfo.other_links}
         {#each projectInfo.other_links as link}
           <a
-          href={link}
-          target="_blank"
-          class="transition ease-in stroke-retro-gray hover:stroke-retro-black fill-none">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="h-6 w-6 stroke-inherit">
-            <path fill-rule="evenodd" d="M19.902 4.098a3.75 3.75 0 00-5.304 0l-4.5 4.5a3.75 3.75 0 001.035 6.037.75.75 0 01-.646 1.353 5.25 5.25 0 01-1.449-8.45l4.5-4.5a5.25 5.25 0 117.424 7.424l-1.757 1.757a.75.75 0 11-1.06-1.06l1.757-1.757a3.75 3.75 0 000-5.304zm-7.389 4.267a.75.75 0 011-.353 5.25 5.25 0 011.449 8.45l-4.5 4.5a5.25 5.25 0 11-7.424-7.424l1.757-1.757a.75.75 0 111.06 1.06l-1.757 1.757a3.75 3.75 0 105.304 5.304l4.5-4.5a3.75 3.75 0 00-1.035-6.037.75.75 0 01-.354-1z" clip-rule="evenodd" />
-          </svg>
-          
-        </a>
+            href={link}
+            target="_blank"
+            class="fill-none stroke-retro-gray transition ease-in hover:stroke-retro-black">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6 stroke-inherit">
+              <path
+                fill-rule="evenodd"
+                d="M19.902 4.098a3.75 3.75 0 00-5.304 0l-4.5 4.5a3.75 3.75 0 001.035 6.037.75.75 0 01-.646 1.353 5.25 5.25 0 01-1.449-8.45l4.5-4.5a5.25 5.25 0 117.424 7.424l-1.757 1.757a.75.75 0 11-1.06-1.06l1.757-1.757a3.75 3.75 0 000-5.304zm-7.389 4.267a.75.75 0 011-.353 5.25 5.25 0 011.449 8.45l-4.5 4.5a5.25 5.25 0 11-7.424-7.424l1.757-1.757a.75.75 0 111.06 1.06l-1.757 1.757a3.75 3.75 0 105.304 5.304l4.5-4.5a3.75 3.75 0 00-1.035-6.037.75.75 0 01-.354-1z"
+                clip-rule="evenodd" />
+            </svg>
+          </a>
         {/each}
       {/if}
 
@@ -85,9 +89,10 @@
       {/if}
 
       {#if projectInfo.github_link}
-        <a href={projectInfo.github_link} 
-            target="_blank"
-        class="transition ease-in hover:fill-retro-black">
+        <a
+          href={projectInfo.github_link}
+          target="_blank"
+          class="transition ease-in hover:fill-retro-black">
           <svg
             viewBox="0 0 98 96"
             class="h-auto w-7 fill-inherit"
@@ -99,13 +104,16 @@
         </a>
       {/if}
     </div>
-    
-    <div class="flex flex-row justify-between content-baseline ml-1 -translate-y-1 font-header text-base sm:text-lg">
+
+    <div
+      class="ml-1 flex -translate-y-1 flex-row content-baseline justify-between font-header text-base sm:text-lg">
       <h3>
         created by: {projectInfo.authors.join(", ")}
       </h3>
 
-      <h3 class="text-retro-gray text-base">{moment(projectInfo.date, "YYYY-MM-DD").format("MMM Do, YYYY")}</h3>
+      <h3 class="text-base text-retro-gray">
+        {moment(projectInfo.date, "YYYY-MM-DD").format("MMM Do, YYYY")}
+      </h3>
     </div>
     <p class="mx-2">
       {projectInfo.description}

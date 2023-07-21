@@ -1,15 +1,14 @@
-<svelte:head>
-  <link rel="stylesheet" href="/css/atom-one-dark.min.css">
-  <script src="/js/highlight.min.js"></script>
-</svelte:head>
-
-<slot></slot>
-
-
-<script>
+<script type="ts">
+  import hljs from "highlight.js";
   import { onMount } from "svelte";
 
   onMount(() => {
-    hljs?.highlightAll();
+    hljs.highlightAll();
   });
 </script>
+
+<svelte:head>
+  <link rel="stylesheet" href="/css/atom-one-dark.min.css" />
+</svelte:head>
+
+<slot />
