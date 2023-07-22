@@ -38,11 +38,13 @@ const resourceCategories: Categories = {
     // "flutter",
     // "electron",
     // "tauri",
+    { type: ItemType.Code, displayName: ".net-framework", path: "https://colab.research.google.com/drive/15fYsChnCx88ixVNTWEPpPWGo8ZJFxqkP?usp=sharing" },
   ],
   Miscellaneous: [
     // "vim",
     // "assembly",
     { type: ItemType.Guide, displayName: "google-earth-engine", path: "gee-basics" },
+    { type: ItemType.Code, displayName: "discord-bot-tutorial", path: "https://colab.research.google.com/drive/1SS4oZzZzuQBDoSV8vJO244ZUVH9MTiMI?usp=sharing" },
   ],
   "Hack Club": [
     { type: ItemType.Link, displayName: "toolbox", path: "https://toolbox.hackclub.com/" },
