@@ -59,7 +59,3 @@ A less important note is to use proper HTTP status codes. This will help greatly
 This will prevent mid-hackathon arguments about tab sizing.
 - [`prettier`](https://prettier.io/), an opinionated standard styling for JS. [Example](https://prettier.io/playground/).
 - [`eslint`](https://eslint.org/), a [linter](https://www.testim.io/blog/what-is-a-linter-heres-a-definition-and-quick-start-guide/), though not exclusively for styling, can be configured to enforce styles.This will prevent mid-hackathon arguments about tab sizing.
-- [`prettier`](https://prettier.io/), an opinionated standard styling for JS. [Example](https://prettier.io/playground/).
-- [`eslint`](https://eslint.org/), a [linter](https://www.testim.io/blog/what-is-a-linter-heres-a-definition-and-quick-start-guide/), though not exclusively for styling, can be configured to enforce styles.
-
-
