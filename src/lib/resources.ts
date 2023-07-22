@@ -12,10 +12,12 @@ const resourceCategories: Categories = {
     { type: ItemType.Guide, displayName: "intro", path: "web-intro" },
     "html-css",
     "javascript",
-    "backend-development",
     "web-frameworks",
     "rust-and-elm-architecture",
-    // "deployment",
+    { type: ItemType.Guide, displayName: "backend-basic", path: "backend-basic" },
+    { type: ItemType.Guide, displayName: "cloud-infrastructure", path: "cloud-infrastructure" },
+    { type: ItemType.Guide, displayName: "backend-miscellaneous", path: "backend-miscellaneous" },
+    { type: ItemType.Guide, displayName: "deployment", path: "deployment" },
   ],
   "Artificial Intelligence": [
     // "machine-learning",
@@ -27,10 +29,10 @@ const resourceCategories: Categories = {
     },
   ],
   "Databases/Servers": [
-    { type: ItemType.Guide, displayName: "databases-101", path: "databases-101" },
+    { type: ItemType.Guide, displayName: "database-basics", path: "database-basics" },
+    { type: ItemType.Guide, displayName: "mongoDB", path: "mongoDB" },
     // "firebase",
     // "rest",
-    // "mongo-db",
     // "chatgpt-api",
   ],
   "App Development": [

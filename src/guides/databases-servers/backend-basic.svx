@@ -1,0 +1,33 @@
+---
+title: Backend Basics
+authors: [Shine Chang]
+date: "2023-07-21"
+published: true
+---
+
+### The notion of "Backend" 
+The "backend" refers to the portion of a project not exposed to the user; This distinction is to separate the sensitive data or heavy-duty logic from the interface. This "backend-frontend" schematic is used outside of web projects too. 
+In the context of web applications, the backend is typically a server hosting HTTP endpoints for the application. These endpoints are __API endpoints__, which processes the interface's requests. An interface invokes this API by sending an HTTP request to the server endpoint (in JS, `fetch()`). Here is an example to illustrate the backend-frontend relation.
+![Diagram](https://drive.google.com/uc?id=1LwUQA2gzQGoNZezQ8MKaecFTSNs2rrTj)
+
+In the model, we see that the database operations are done by the backend. This ensures that the client does not have direct access to our database, blocking potential malicious clients.
+
+Other than API endpoints, the "backend" could also act as the server for the frontend. Meaning the client will also go to this server to fetch the website itself. You can serve simple, static HTML/JS files, or add renderers or templating engines to make the website more powerful. 
+
+The backend program still needs a computer to execute on. The simplest way of course is to execute our server program on a random computer, then expose the server port to the network. With this, we've effectively "deployed" a server and a website!
+
+However, there are many issues with this deployment. First, only peers within your local area network (LAN) can access your server. Also, this program is not scalable, i.e. we can't expand its capacity. Before discussing solutions, let's first go over some critical vocabulary and concepts. 
+
+**Common Misunderstanding (Svelte vs SvelteKit)**
+Some JS frameworks ***strictly*** deal with writing a website frontend, and then there are ones that manage the front ***and*** backends. This is the difference between `Svelte` and `SvelteKit`, `React` and `Next.js`, and `Vue.js` and `Nuxt.js`. These terms are *not* interchangeable. 
+
+## How to write one
+
+The most convenient way to write one (though arguably incorrect) is to use Node.JS, which is essentially JS ported to native. Setting up a HTTP server is easy with [Express.js](https://expressjs.com/) or [Fastify](https://fastify.dev/). 
+
+Next, you can add some frontend style. For basic templating, try [EJS]().
+
+To make more modern, reactive, and easily deployable (why? read "cloud infrastructure" and "deployment") websites, try full-stack frameworks such as [SvelteKit](https://kit.svelte.dev/), [Next.js](https://nextjs.org/), or [Nuxt.js](https://nuxt.com/).
+
+### Is a backend necessary?
+No, you do not need a custom backend server to host a website. If your site is [static](https://www.sanity.io/static-websites) (meaning it's always the same), you would just need a file distribution server. [Github Pages](https://pages.github.com/) is a very convenient host for static pages. Read more in the "deployment" resource.

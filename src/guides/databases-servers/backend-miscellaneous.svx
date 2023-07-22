@@ -1,0 +1,61 @@
+---
+title: Backend Miscellaneous 
+authors: [Shine Chang]
+date: "2023-07-18"
+published: true
+---
+
+### Middleware
+In the context of web, these are small softwares that the request passes through before it gets to the actual server. These are used to separate tedious/simple tasks from the bulk of the server.
+For example, an express server that handles forum posts can have a middleware function that checks for profanity in the request body.
+A very useful application of middleware is in *validators*, which are talked about later.
+
+## Tips
+
+### Typescipt
+A strict-typed extension of javascript. Javascript can be a bit prickly at times, and typescript aims to enforce more rules to alleviate the developer's pains.
+
+### File organization
+This is vital for readability and maintainability, allowing collaborators to quickly find what are looking for quickly. A [monorepo](https://semaphoreci.com/blog/what-is-monorepo) is the common format. For JS projects, [yarn workspaces](https://classic.yarnpkg.com/lang/en/docs/workspaces/) is a great tool to manage a monorepo workspace.
+
+### Validation
+It is vital that you sanitize & validate user input. This prevents attacks as well as establishes assumptions about the data, making your following code free of error/case handling.
+__Node.JS solution:__ [`express-validator`](https://express-validator.github.io/docs)
+```
+const { query, body, validationResult } = require('express-validator');
+controller.sendMessage = [
+	query("username") // Line A
+		.exists()
+		.isString()
+		.toLowerCase()
+		.withMessage("Invalid target username"),
+	body("text") // Line B
+		.exists()
+		.isString()
+		.withMessage("Invaid Text"),
+	async (req, res) => {
+		const errors = validationResult(req); // Line C
+		if (!errors.isEmpty()) // Line D
+			return res.status(400).json({ errors: errors.array() });
+		/*
+		 Your Code here..
+		 */
+	}
+]
+```
+`express-validator` is a very powerful tool and very elegant to use. The code snippet above implements a route for sending messages to a user. The recipient's username will be sent via the [HTTP query string](https://static.semrush.com/blog/uploads/media/00/6e/006eebc38b54220916caecfc80fed202/Guide-to-URL-Parameters-2.png), and the message itself will be in the request body. The following bullet points will explain the code snippet.
+- Firstly, You'll Notice that the "function" is actually an array. This is because `express-validator` works by adding middleware to the route to validate. 
+- Line A & B here define the validator. The function of each line can be easily inferred. How it works under the hood is that each line is chaining another validator on top of the existing one, thus creating a big validator with all the specified constraints.
+- Line C extracts the validation result. The middleware functions place their results into the `req` object, and this line simply retrieves it. 
+- Line D processes the validation result, and simply returns if it is not satisfied. 
+
+
+### Neat, Intuitive & Documented API paths
+Doing so will make it much easier for collaborators to understand the API and also use it. This will make collaboration a lot easier, as a front-end developer will only need to review the documentation and route files and not look through backend code.
+This also means a good file structure, and splitting routing from controllers.
+A less important note is to use proper HTTP status codes. This will help greatly in API testing. 
+
+### Standardize Code Styling
+This will prevent mid-hackathon arguments about tab sizing.
+- [`prettier`](https://prettier.io/), an opinionated standard styling for JS. [Example](https://prettier.io/playground/).
+- [`eslint`](https://eslint.org/), a [linter](https://www.testim.io/blog/what-is-a-linter-heres-a-definition-and-quick-start-guide/), though not exclusively for styling, can be configured to enforce styles.This will prevent mid-hackathon arguments about tab sizing.
