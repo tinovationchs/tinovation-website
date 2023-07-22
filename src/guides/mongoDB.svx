@@ -1,0 +1,50 @@
+---
+title: MongoDB 
+authors: [Shine Chang]
+date: "2023-07-21"
+published: true
+---
+
+
+# MongoDB
+A No-SQL database that offers free hosting. Typically the hobbyist's go-to solution for Db's. Offers a very nice Node.js driver.
+
+## Example
+The following is an example Node.JS controller, using MongoDB. 
+The controller simply extracts user input from the [request body](https://en.wikipedia.org/wiki/HTTP), then inserts it into the `users` collection. 
+```
+const coll = require("../db.js")
+				.db("Medicare")
+				.collection("users");
+const { query, body, validationResult } = require('express-validator');
+
+// A controller function for registering a new user
+exports.register = async (req, res) => {
+	/* NOTE: AN ACTUAL CONTROLLER SHOULD VALIDATE USER INPUT.
+	 * THIS IS DISCUSSED IN THE "BACKEND TIPS" RESOURCE.	
+	 */
+		
+	// EXTRACT DATA FROM REQUEST BODY
+	const b = req.body;
+	const user = {
+		displayName: b.displayName || "no name set",
+		name: b.name,
+		age: b.age,
+		password: HASHER(b.password),
+		patient: b.patient,
+	};
+
+	// Case: If user already exists
+	if (await coll.findOne({name: user.name}) != null) 
+		return res.status(400)
+			.send(`User named '${user.name}' already exists.`);
+
+	// Insert to db
+	const insert_res = await coll.insertOne(user);
+	user._id = insert_res.insertedId;
+
+	// Send new user object
+	return res.status(200)
+		.json(user);
+}
+```
