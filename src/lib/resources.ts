@@ -2,11 +2,12 @@ import { ItemType, type Categories, type Item } from "$lib/types";
 
 const resourceCategories: Categories = {
   Basics: [
-    // "languages",
-    // "editors",
+    { type: ItemType.Guide, displayName: "languages", path: "languages" },
+    { type: ItemType.Guide, displayName: "IDE", path: "IDE" },
     "git",
-    // "command-line",
-    // "filesystem",
+    { type: ItemType.Guide, displayName: "filesystem", path: "filesystem" },
+    { type: ItemType.Guide, displayName: "command-line", path: "command-line" },
+    { type: ItemType.Guide, displayName: "github", path: "github" },
   ],
   "Web Development": [
     { type: ItemType.Guide, displayName: "intro", path: "web-intro" },

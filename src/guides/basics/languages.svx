@@ -1,0 +1,21 @@
+---
+title: Languages
+authors: [Ryan Kim]
+date: "2023-07-22"
+published: true
+---
+
+Welcome to the world of coding! Here at Tinovation, we specifically use code to develop various applications. 
+
+Just as there are many spoken languages, there are many coding languages as well, each tailored to a quasi-unique function. Just as with spoken languages,
+each language can mean (in coding, do) very different things, so it is not just a matter of personal preference.
+
+If you are interested in web development, HTML, CSS, JavaScript, and node.js are the most common languages used. 
+
+Machine learning heavily uses Python.
+
+App development uses a variety of frameworks with their own proprietary languages.
+
+As you being your development journey, you will notice many similarities between languages. So don't be overwhelmed! Don't focus on the syntax,
+but the topic. Start with a particular field (i.e. web development, server management, machine learning) and you'll naturally pick up the coding 
+languages from there.

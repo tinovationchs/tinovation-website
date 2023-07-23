@@ -1,0 +1,22 @@
+---
+title: IDE
+authors: [Ryan Kim]
+date: "2023-07-22"
+published: true
+---
+
+## What is an IDE?
+
+An IDE (short for **Integrated Development Environment**) is a specialized text editor with plugins and supporting features that help programmers
+write code. IDEs often come with code compiling and bug checking along with code autocomplete and a built-in command line. Assuming you have
+the correct libraries installed, you should be able to run most of your applications straight from an IDE.
+
+Before you start writing any code, you need an IDE to write your code in.
+
+## Installing an IDE
+
+There are [various IDEs](https://www.trustradius.com/integrated-development-environment-ide?q=Microsoft%20Visual%20Studio%20Code&ms=3) tailored to different languages and purposes. 
+
+If you have no preference, we recommmend Visual Studio Code. Install it [here](https://code.visualstudio.com/). VSC supports all major operating systems and most common languages.
+
+[Confused?](https://www.youtube.com/watch?v=MlIzFUI1QGA)

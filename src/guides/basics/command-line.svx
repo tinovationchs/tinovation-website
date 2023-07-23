@@ -1,0 +1,39 @@
+---
+title: Command Line
+authors: [Ryan Kim]
+date: "2023-07-22"
+prereqs: [filesystem]
+published: true
+---
+
+The command line is the terminal window that you can open both natively on your operating system but also in an IDE. In Visual Studio Code,
+it is the Terminal:
+
+![a VSC terminal](/guides/basics/terminal.png)
+*What a terminal might look like in Visual Studio Code. The line gives the file location followed by a >*
+
+## Why Command Line?
+
+The terminal is a powerful place to run more nuanced commands on your computer that a developer might need.
+
+Many developer applications have CLIs, or **Command Line Interfaces**, that allow you to run the application through the terminal.
+
+Some applications exclusively run through the terminal. Git is one example. This saves the application's developer from needing to 
+program a GUI, or Graphical User Interface, while still performing its normal functions. This also allows the application to run 
+some relatively complicated tasks with minimal memory and high efficiency.
+
+The command line can seem daunting at first, but just like language syntax, it just requires a bit of memory on your part. Most 
+documentation will tell you exactly what commands you need to run and where to run them, so you don't need to do very much
+memorizing at all.
+
+Here are some [sample commands](https://www.freecodecamp.org/news/command-line-commands-cli-tutorial/) with the Windows command line. 
+You will not need most of these for development.
+
+## Commands to Know
+
+When in doubt, look up the command. Some rarer commands have strange usage that is not intuitive at all.
+
+`cd SomeDirectory` "change directory" This command changes the current directory to whatever "SomeDirectory" is given as by the user.
+This means any future commands will now run at the new system location.
+
+`ls` "list" This command lists the files in the current directory.
