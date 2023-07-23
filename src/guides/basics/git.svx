@@ -1,7 +1,8 @@
 ---
 title: Git
-authors: [Daniel Cui]
-date: "2023-07-19"
+authors: [Daniel Cui, Ryan Kim]
+date: "2023-07-22"
+prereqs: Editor
 published: true
 ---
 
@@ -9,5 +10,10 @@ published: true
 
 Git is a version control system that **tracks** and **manages** computer files, 
 commonly used in software projects for collaboration, coordinating work, and maintaining 
-a history of the source code.
+a history of the source code. In simple terms, Git helps a coding team edit programs together, and all programmers use it.
 
+Install it [here](https://git-scm.com/downloads). Install it with [these settings](https://medium.com/@sahiltiwari_66376/how-to-install-and-use-git-on-windows-end-to-end-2bd4fedade21).
+
+On the screen show below, do **not** leave it on Vim if you are not using Vim. Change it to your primary editor (likely Visual Studio Code). You can always change it later.
+
+![git install screen](/guides/basics/git-install-path.png)
