@@ -2,6 +2,8 @@
 
 - fork the repo and clone your own
 - edit the `src/lib/showcase.ts` file by copying the format of the existing projects
+  - new ones should be added to the top!
+  - for the links, do not put the same link from `main_link` into `other_links`
 - add your thumbnail image in the `static/showcase/` folder, make sure it looks all good!
 - test it thoroughly with `npm run dev` from the terminal
 - make a commit and submit a pull request to the main repo from you own!

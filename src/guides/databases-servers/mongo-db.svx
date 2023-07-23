@@ -1,5 +1,5 @@
 ---
-title: MongoDB 
+title: MongoDB
 authors: [Shine Chang]
 date: "2023-07-21"
 published: true
