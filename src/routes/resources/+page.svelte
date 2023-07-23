@@ -6,7 +6,7 @@
 
 <svelte:head>
   <title>{"Resources - Tinovation"}</title>
-  <meta property="”og:title”" content={"Resources - Tinovation"} />
+  <meta property="og:title" content={"Resources - Tinovation"} />
 </svelte:head>
 
 <div class="absolute -z-10 h-full w-full fill-pink-300">

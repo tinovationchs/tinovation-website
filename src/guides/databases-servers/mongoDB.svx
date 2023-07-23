@@ -12,7 +12,7 @@ A No-SQL database that offers free hosting. Typically the hobbyist's go-to solut
 ## Example
 The following is an example Node.JS controller, using MongoDB. 
 The controller simply extracts user input from the [request body](https://en.wikipedia.org/wiki/HTTP), then inserts it into the `users` collection. 
-```
+```js
 const coll = require("../db.js")
 				.db("Medicare")
 				.collection("users");

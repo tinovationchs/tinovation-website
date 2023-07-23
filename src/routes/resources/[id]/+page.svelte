@@ -41,7 +41,7 @@
   <title>
     {data.metadata.title} - Tinovation
   </title>
-  <meta property="”og:title”" content={`${data.metadata.title} - Tinovation`} />
+  <meta property="og:title" content={`${data.metadata.title} - Tinovation`} />
 </svelte:head>
 
 <div
