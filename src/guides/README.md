@@ -13,7 +13,7 @@
 ## Guidelines & Tips
 
 - **frontmatter** (basically metadata) is yaml, starts and ends with "---"
-  - defines the `title`, `authors`, `date`, whether it should be `published`
+  - defines the `title`, `authors`, `date`, `prereqs` (optional), whether it should be `published`
 - **filenames** are set as the url path and should be web-safe (only alphanumeric/hyphens)
   - mdsvex will search recursively for `.svx` files, directories will be only for organization
 - **image** paths lead to the static folder and must start with a "/"

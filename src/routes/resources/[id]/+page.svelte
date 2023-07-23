@@ -70,6 +70,12 @@
             ", "
           )}`}
         </span>
+
+        <span class="-translate-y-4 text-retro-lightgray">
+          {`Prerequisites: ${(typeof data.metadata.prereqs !== 'undefined') ? data.metadata.prereqs.join(
+            ", "
+          ) : "none"}`}
+        </span>
       </div>
     </div>
 

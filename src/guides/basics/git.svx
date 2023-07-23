@@ -2,7 +2,7 @@
 title: Git
 authors: [Daniel Cui, Ryan Kim]
 date: "2023-07-22"
-prereqs: Editor
+prereqs: [IDE]
 published: true
 ---
 
