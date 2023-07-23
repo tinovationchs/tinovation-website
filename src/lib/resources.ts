@@ -14,9 +14,7 @@ const resourceCategories: Categories = {
     "javascript",
     "web-frameworks",
     "rust-and-elm-architecture",
-    { type: ItemType.Guide, displayName: "backend-basic", path: "backend-basic" },
-    { type: ItemType.Guide, displayName: "cloud-infrastructure", path: "cloud-infrastructure" },
-    { type: ItemType.Guide, displayName: "backend-miscellaneous", path: "backend-miscellaneous" },
+    
     { type: ItemType.Guide, displayName: "deployment", path: "deployment" },
   ],
   "Artificial Intelligence": [
@@ -29,8 +27,11 @@ const resourceCategories: Categories = {
     },
   ],
   "Databases/Servers": [
+    { type: ItemType.Guide, displayName: "backend-basics", path: "backend-basics" },
     { type: ItemType.Guide, displayName: "database-basics", path: "database-basics" },
-    { type: ItemType.Guide, displayName: "mongoDB", path: "mongoDB" },
+    { type: ItemType.Guide, displayName: "cloud-infrastructure", path: "cloud-infrastructure" },
+    { type: ItemType.Guide, displayName: "mongo-db", path: "mongo-db" },
+    { type: ItemType.Guide, displayName: "backend-miscellaneous", path: "backend-miscellaneous" },
     // "firebase",
     // "rest",
     // "chatgpt-api",
@@ -40,11 +41,13 @@ const resourceCategories: Categories = {
     // "flutter",
     // "electron",
     // "tauri",
+    { type: ItemType.Code, displayName: ".net-framework", path: "https://colab.research.google.com/drive/15fYsChnCx88ixVNTWEPpPWGo8ZJFxqkP?usp=sharing" },
   ],
   Miscellaneous: [
     // "vim",
     // "assembly",
     { type: ItemType.Guide, displayName: "google-earth-engine", path: "gee-basics" },
+    { type: ItemType.Code, displayName: "discord-bot-tutorial", path: "https://colab.research.google.com/drive/1SS4oZzZzuQBDoSV8vJO244ZUVH9MTiMI?usp=sharing" },
   ],
   "Hack Club": [
     { type: ItemType.Link, displayName: "toolbox", path: "https://toolbox.hackclub.com/" },

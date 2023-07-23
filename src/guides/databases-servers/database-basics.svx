@@ -25,16 +25,18 @@ __SQL/Relational__:
 -   The schematic defines the columns in each table, and the data type stored.
 -   A parameter in an entry can be related to another entry, for example via IDs. Refer to the image above for an example.
 -   To access (“query”) the database, SQL (Structured Query Language) is used. This is necessary to make it easier to query by database relations. 
+
 **Example Query:**
-	```
-	SELECT id, lon, lat FROM city 
-	WHERE lat > 12.0 AND 
-		  lat < 14.1 AND
-		  lon > 32.0 AND
-		  lon < 64.5
-	ORDER BY population DESC
-	```
-	*Gets the `id`, `lon`, `lat` columns of all rows from table `city`, where `lat` and `lon` are in a certain range, sorted by population in descending order.*
+```sql
+SELECT id, lon, lat FROM city 
+WHERE lat > 12.0 AND 
+		lat < 14.1 AND
+		lon > 32.0 AND
+		lon < 64.5
+ORDER BY population DESC
+```
+> Gets the `id`, `lon`, `lat` columns of all rows from table `city`, where `lat` and `lon` are in a certain range, sorted by population in descending order.
+
 -   A good database schematic / design is essential to reduce query overhead. A good database typically follows a few rules; these are called "*database normalization rules,*" which we will go over later.
 -  Very powerful, but a bit inconvenient.
 - [AWS Article](https://aws.amazon.com/what-is/sql/#:~:text=Structured%20query%20language%20(SQL)%20is,relationships%20between%20the%20data%20values.) on SQL
@@ -56,8 +58,8 @@ Some database providers may implement these techniques out-of-the-box. For examp
 
 ### SQL/Relational
 __MySQL__: Oracle's SQL database service
-__Cloud SQL__: Google’s SQL database hosting service. Free initial credits
-__Azure SQL__: Microsoft’s SQL database hosting service. Free initial credits
+__Cloud SQL__: Google's SQL database hosting service. Free initial credits
+__Azure SQL__: Microsoft's SQL database hosting service. Free initial credits
 __SQLite__: stores an SQL database locally. Good for amateur development. Local hosting, so, free.
 
 ### NoSQL/Document-oriented

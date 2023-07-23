@@ -21,7 +21,7 @@ This is vital for readability and maintainability, allowing collaborators to qui
 ### Validation
 It is vital that you sanitize & validate user input. This prevents attacks as well as establishes assumptions about the data, making your following code free of error/case handling.
 __Node.JS solution:__ [`express-validator`](https://express-validator.github.io/docs)
-```
+```js
 const { query, body, validationResult } = require('express-validator');
 controller.sendMessage = [
 	query("username") // Line A
