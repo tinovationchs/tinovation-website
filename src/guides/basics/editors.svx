@@ -1,11 +1,12 @@
 ---
-title: IDE
+title: Code Editors
 authors: [Ryan Kim]
 date: "2023-07-22"
+complete: false
 published: true
 ---
 
-## What is an IDE?
+## IDEs
 
 An IDE (short for **Integrated Development Environment**) is a specialized text editor with plugins and supporting features that help programmers
 write code. IDEs often come with code compiling and bug checking along with code autocomplete and a built-in command line. Assuming you have

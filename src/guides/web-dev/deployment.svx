@@ -2,6 +2,7 @@
 title: Deployment
 authors: [Shine Chang]
 date: "2023-07-18"
+complete: false
 published: true
 ---
 
@@ -29,7 +30,7 @@ export async function POST ({ cookies }) {
 ```
 
 
-# Deployment Options
+## Deployment Options
 
 - [**Github Pages**](https://pages.github.com/): 
 	- Static site host.

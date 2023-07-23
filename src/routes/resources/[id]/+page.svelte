@@ -48,7 +48,7 @@
   class="absolute h-[45rem] w-full -translate-y-28"
   style="background-image: linear-gradient({180 +
     (getHash(data.metadata.title) %
-      7)}deg, rgba({color?.r}, {color?.g}, {color?.b}, 0.8), rgba({color?.r}, {color?.g}, {color?.b}, 0) 50%);" />
+      5)}deg, rgba({color?.r}, {color?.g}, {color?.b}, 0.8), rgba({color?.r}, {color?.g}, {color?.b}, 0) 50%);" />
 
 <div class="flex flex-row justify-center">
   <main
@@ -71,13 +71,33 @@
           )}`}
         </span>
 
-        <span class="-translate-y-4 text-retro-lightgray">
+        <!-- <span class="-translate-y-4 text-retro-lightgray">
           {`Prerequisites: ${(typeof data.metadata.prereqs !== 'undefined') ? data.metadata.prereqs.join(
             ", "
           ) : "none"}`}
-        </span>
+        </span> -->
       </div>
     </div>
+
+    {#if (data.metadata.complete !== undefined) && !data.metadata.complete}
+    <div
+      class="mb-2 -translate-y-2 rounded-lg border-l-4 border-red-600 bg-retro-lightgray px-2 py-2 text-center font-sans text-lg font-bold leading-tight text-red-700 transition ease-in hover:scale-[102%]">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="3"
+        stroke="currentColor"
+        class="inline h-5 w-5 -translate-y-[1px]">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+      </svg>
+
+      guide incomplete!
+    </div>
+    {/if}
 
     <svelte:component this={data.component} />
   </main>
@@ -96,9 +116,9 @@
   }
 
   main :global(h3),
-  :global(h4),
-  :global(h5),
-  :global(h6) {
+  main :global(h4),
+  main :global(h5),
+  main :global(h6) {
     @apply mt-2 font-header text-xl md:text-2xl;
   }
 
@@ -121,7 +141,7 @@
   /* BOLD */
   /* ==== */
   main :global(b),
-  :global(strong) {
+  main :global(strong) {
     @apply font-semibold text-yellow-400;
   }
 
@@ -142,11 +162,26 @@
     @apply mx-auto my-4 rounded-lg;
   }
 
-  /* code inside links */
+  /* things inside links */
   main :global(a) > :global(code) {
     @apply text-blue-400 underline decoration-blue-400 underline-offset-2;
   }
-  main :global(a) > :global(code):hover {
+
+  main :global(a) > :global(strong),
+  main :global(a) > :global(b) {
+    @apply text-yellow-400 underline decoration-yellow-400 underline-offset-2;
+  }
+
+  main :global(a) > :global(em),
+  main :global(a) > :global(i) {
+    @apply text-pink-400 underline decoration-pink-400 underline-offset-2;
+  }
+
+  main :global(a) > :global(code):hover,
+  main :global(a) > :global(strong):hover,
+  main :global(a) > :global(b):hover,
+  main :global(a) > :global(em):hover,
+  main :global(a) > :global(i):hover {
     @apply text-purple-400 no-underline;
   }
 
@@ -163,7 +198,7 @@
     @apply m-0 whitespace-pre p-0;
   }
   main :global(pre),
-  :global(code) {
+  main :global(code) {
     @apply bg-black !important;
     @apply font-mono text-sm text-blue-400;
   }

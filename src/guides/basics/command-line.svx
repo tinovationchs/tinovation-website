@@ -2,7 +2,7 @@
 title: Command Line
 authors: [Ryan Kim]
 date: "2023-07-22"
-prereqs: [filesystem]
+complete: false
 published: true
 ---
 

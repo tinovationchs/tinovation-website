@@ -1,21 +1,13 @@
 import { ItemType, type Categories, type Item } from "$lib/types";
 
 const resourceCategories: Categories = {
-  Basics: [
-    { type: ItemType.Guide, displayName: "languages", path: "languages" },
-    { type: ItemType.Guide, displayName: "IDE", path: "IDE" },
-    "git",
-    { type: ItemType.Guide, displayName: "filesystem", path: "filesystem" },
-    { type: ItemType.Guide, displayName: "command-line", path: "command-line" },
-    { type: ItemType.Guide, displayName: "github", path: "github" },
-  ],
+  Basics: ["languages", "editors", "file-system", "command-line", "git", "github"],
   "Web Development": [
     { type: ItemType.Guide, displayName: "intro", path: "web-intro" },
     "html-css",
     "javascript",
     "web-frameworks",
     "rust-and-elm-architecture",
-
     { type: ItemType.Guide, displayName: "deployment", path: "deployment" },
   ],
   "Artificial Intelligence": [
@@ -42,11 +34,11 @@ const resourceCategories: Categories = {
     // "flutter",
     // "electron",
     // "tauri",
-    {
-      type: ItemType.Code,
-      displayName: ".net-framework",
-      path: "https://colab.research.google.com/drive/15fYsChnCx88ixVNTWEPpPWGo8ZJFxqkP?usp=sharing",
-    },
+    // {
+    //   type: ItemType.Code,
+    //   displayName: ".net-framework",
+    //   path: "https://colab.research.google.com/drive/15fYsChnCx88ixVNTWEPpPWGo8ZJFxqkP?usp=sharing",
+    // },
   ],
   Miscellaneous: [
     // "vim",

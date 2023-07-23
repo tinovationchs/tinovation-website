@@ -2,6 +2,7 @@
 title: HTML and CSS
 authors: [Taisei De La Cruz]
 date: "2023-07-20"
+complete: false
 published: true
 ---
 
