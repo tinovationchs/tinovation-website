@@ -229,7 +229,7 @@
         {`${info.co_presidents.join(", ")}`}
       </p>
       <p>
-        <b class="text-blue-300">Vice Presidents:</b>
+        <b class="text-blue-300">Vice President:</b>
         {info.vice_president}
       </p>
       <p>
