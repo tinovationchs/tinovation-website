@@ -18,6 +18,11 @@ const resourceCategories: Categories = {
       displayName: "computer-vision-basics",
       path: "https://colab.research.google.com/drive/1_6WNF_CzHt635Y23hUTIUAzpE7NzEK3e",
     },
+    {
+      type: ItemType.Code,
+      displayName: "intro-to-keras",
+      path: "https://colab.research.google.com/drive/1-vXXPz_PVyLLASxzV2ZQXsgGQsfQjjuw?usp=sharing",
+    },
   ],
   "Databases/Servers": [
     { type: ItemType.Guide, displayName: "backend-basics", path: "backend-basics" },
