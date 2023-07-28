@@ -1,0 +1,49 @@
+---
+title: The File System
+authors: [Ryan Kim]
+date: "2023-07-22"
+complete: false
+published: true
+---
+
+## Understanding Your File System
+
+Your computer has many gigabytes of data assorted into various files, and the way that those files are organized is what we call your 
+**file system**.
+
+A file system typically involves many levels of **folders** that contain subfolders and files. A specific folder on your system is called
+a **directory**. If you want to reach a specific file on your system, you can do so via its **file address**.
+
+[Obtaining a file address on Windows](https://www.sony.com/electronics/support/articles/00015251). While the guide is from Windows 7, the process
+is the same in Windows 11.
+
+[Obtaining a file address on MacOS](https://setapp.com/how-to/how-to-find-the-path-of-a-file-in-mac)
+
+If something is asking for a directory, there is a key difference: it is asking for a folder, not a file, so rather than providing
+a file address, you must provide the folder address instead. The process is nearly identical.
+
+## Best Practices
+
+While your computer will immediately know where everything on your system is, if you are disorganized, you likely will not. So,
+try to keep your file system organized! 
+
+A common idea is to create a folder on your **Desktop**, or in your **Documents**, for all of your development files.
+
+For every project, you should create a new folder inside of that master development folder.
+
+![file system example](/guides/basics/cleanfiles.png)
+*In this case, the master folder is GitHub, which is inside Documents. Each folder you see is a separate project.*
+
+Whenever you create a project folder for a project, you should open that folder in your IDE to begin working.
+
+## File Extensions
+
+When you have a project folder ready to go, it's time to start writing some code! You can create a new file either through your IDE
+or natively through your operating system. 
+
+When naming your file, try to use a descriptive name. You must use the file extension that matches the language you are coding in.
+For example, if you are making a CSS file called "myCSS", you should name the file "myCSS.css". Your operating system might warn you
+about file corruption here. Press OK anyway. (Once you've set the file extension correctly, try not to change it after.)
+
+[An exhaustive list of file extensions](https://www.file-extensions.org/filetype/extension/name/source-code-and-script-files). 
+If you are unsure of what file extension to use, look it up.

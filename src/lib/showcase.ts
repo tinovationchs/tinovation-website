@@ -32,6 +32,34 @@ const showcaseProjects: Project[] = [
     main_link: "https://chs-map.vercel.app/",
     github_link: "https://github.com/solunian/chs-map",
   },
+  {
+    thumbnail_image: "tino-clubs.png",
+    name: "Tino Clubs",
+    authors: ["Jiaming Liu"],
+    date: "2023-07-22",
+    description:
+      "The official website for students to explore and find information about clubs at Cupertino High School.",
+    main_link: "https://tinoclubs.com/",
+  },
+  {
+    thumbnail_image: "apcs-java-website.png",
+    name: "Tino APCS/Intro Java",
+    authors: ["Jiaming Liu"],
+    date: "2023-07-22",
+    description:
+      "The official curriculum websites for APCS and Intro Java classes at Cupertino High School.",
+    main_link: "https://apcs.tinocs.com/",
+    other_links: ["https://java.tinocs.com/"],
+  },
+  {
+    thumbnail_image: "leetdeal.png",
+    name: "LeetDeal",
+    authors: ["Jiaming Liu"],
+    date: "2023-07-22",
+    description: "Mobile app and website for finding the best shopping deals. (defunct)",
+    main_link: "https://apps.apple.com/us/app/leetdeal-save-big-with-deals/id1534467869",
+    other_links: ["https://www.instagram.com/leetdeal/"],
+  },
 ];
 
 export default showcaseProjects;

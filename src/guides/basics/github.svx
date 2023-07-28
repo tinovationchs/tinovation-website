@@ -1,0 +1,26 @@
+---
+title: GitHub
+authors: [Ryan Kim]
+date: "2023-07-22"
+complete: false
+published: true
+---
+
+## Using GitHub
+
+GitHub is one of many services that allow you to create and manage **git** repositories, or places to store your project's code. 
+git, which you installed earlier, facilitates this process.
+
+You should start with [this tutorial](https://docs.github.com/en/get-started/quickstart/hello-world) and make sure you understand
+every module of the **Quickstart** section from "Hello World" through "Contributing to projects". Don't worry about GitHub CLI.
+
+At this point, you should be able to **create** and **clone** a repository to your computer, along with **commit** to a project and
+open a **pull request**.
+
+## Putting the "Git" in "GitHub"
+
+You will notice that it talks about using git from the **command line**. In general, projects are managed through the terminal 
+using [git commands](https://www.atlassian.com/git/glossary). These have a bit of a learning curve but are the professional way
+to interact with your repositories.
+
+If you want a more visual approach to Git, I highly recommend [GitHub Desktop](https://desktop.github.com/).

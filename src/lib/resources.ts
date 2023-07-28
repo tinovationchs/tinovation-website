@@ -1,21 +1,14 @@
 import { ItemType, type Categories, type Item } from "$lib/types";
 
 const resourceCategories: Categories = {
-  Basics: [
-    // "languages",
-    // "editors",
-    "git",
-    // "command-line",
-    // "filesystem",
-  ],
+  Basics: ["languages", "editors", "file-system", "command-line", "git", "github"],
   "Web Development": [
     { type: ItemType.Guide, displayName: "intro", path: "web-intro" },
     "html-css",
     "javascript",
-    "backend-development",
     "web-frameworks",
     "rust-and-elm-architecture",
-    // "deployment",
+    { type: ItemType.Guide, displayName: "deployment", path: "deployment" },
   ],
   "Artificial Intelligence": [
     // "machine-learning",
@@ -27,10 +20,13 @@ const resourceCategories: Categories = {
     },
   ],
   "Databases/Servers": [
-    { type: ItemType.Guide, displayName: "databases-101", path: "databases-101" },
+    { type: ItemType.Guide, displayName: "backend-basics", path: "backend-basics" },
+    { type: ItemType.Guide, displayName: "database-basics", path: "database-basics" },
+    { type: ItemType.Guide, displayName: "cloud-infrastructure", path: "cloud-infrastructure" },
+    { type: ItemType.Guide, displayName: "mongo-db", path: "mongo-db" },
+    { type: ItemType.Guide, displayName: "backend-miscellaneous", path: "backend-miscellaneous" },
     // "firebase",
     // "rest",
-    // "mongo-db",
     // "chatgpt-api",
   ],
   "App Development": [
@@ -38,13 +34,21 @@ const resourceCategories: Categories = {
     // "flutter",
     // "electron",
     // "tauri",
-    { type: ItemType.Code, displayName: ".net-framework", path: "https://colab.research.google.com/drive/15fYsChnCx88ixVNTWEPpPWGo8ZJFxqkP?usp=sharing" },
+    // {
+    //   type: ItemType.Code,
+    //   displayName: ".net-framework",
+    //   path: "https://colab.research.google.com/drive/15fYsChnCx88ixVNTWEPpPWGo8ZJFxqkP?usp=sharing",
+    // },
   ],
   Miscellaneous: [
     // "vim",
     // "assembly",
     { type: ItemType.Guide, displayName: "google-earth-engine", path: "gee-basics" },
-    { type: ItemType.Code, displayName: "discord-bot-tutorial", path: "https://colab.research.google.com/drive/1SS4oZzZzuQBDoSV8vJO244ZUVH9MTiMI?usp=sharing" },
+    {
+      type: ItemType.Code,
+      displayName: "discord-bot-tutorial",
+      path: "https://colab.research.google.com/drive/1SS4oZzZzuQBDoSV8vJO244ZUVH9MTiMI?usp=sharing",
+    },
   ],
   "Hack Club": [
     { type: ItemType.Link, displayName: "toolbox", path: "https://toolbox.hackclub.com/" },

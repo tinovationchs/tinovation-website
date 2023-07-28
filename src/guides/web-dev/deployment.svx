@@ -1,0 +1,51 @@
+---
+title: Deployment
+authors: [Shine Chang]
+date: "2023-07-18"
+complete: false
+published: true
+---
+
+## Static Site Generation
+Static site generation can be used in a blog or organization site that does not require dynamic or persistent data. Since there is no need for a custom server, all we would need is a file distribution server. 
+
+The simplest form of a "static site" is a vanilla HTML CSS JS website.
+More complex websites built with frameworks can also be built as a static site by a generator. Essentially, the generation tool "compiles" your high-level files into vanilla HTML CSS JS. 
+[`Jekyll`](https://jekyllrb.com/) is a common static site framework tailored towards blogs. Modern JS frameworks, such as `React`, `Vue`, and `Svelte` either have in-house generators or support generators.
+
+## Serverless
+
+As mentioned in "cloud infrastructure", serverless is very nice for deploying applications quickly. It maintains the behavior of a typical backend server, while making it very cheap to deploy. To use serverless however, we need to format our backends as functions, which means we won't be writing an HTTP server as we normally would. Though it is possible to write functions ourselves and deploy them as is, it is advised to use a web framework like `SvelteKit` or `Next.js` that supports and handles the bundling. (I think) The functions defined through these frameworks are deployed as serverless functions under the hood. 
+
+**Example: Serverless & SvelteKit**
+In SvelteKit, we define a [API route](https://kit.svelte.dev/docs/routing#server) to create a custom backend service.
+Here is an example SvelteKit API route that is to be deployed as a serverless function.
+`app/src/routes/api/logout/+server.js`:
+```js
+export async function POST ({ cookies }) {
+    cookies.delete("session", { path: "/" });
+    console.log("deleted 'session' cookie");
+    return new Response("done", { status: 200 });
+}
+```
+
+
+## Deployment Options
+
+- [**Github Pages**](https://pages.github.com/): 
+	- Static site host.
+	-  Supports `Jekyll` as a static site generator. Static site generators take your files, templates/renders it, and stores the static result somewhere to be hosted; think of it as a compiler for pages. `Jekyll` is great for making quick blogs.
+	- Github Pages is great for hosting [plain HTML/JS/CSS](https://yelp.github.io/) sites, or [Jekyll-made blogs](https://vonheikemen.github.io/devlog/). 
+- [**Vercel**](https://vercel.com/):
+	- Serverless Host. Uses AWS Lambda under the hood
+	- Supports *many* frameworks like NEXT.js, Sveltekit, Flask, Django, Vue, Angular, Jekyll.
+	- Very friendly to use, clean interface.
+	- Links to a git repository, rebuilds & redeploys *automatically*
+- [**Render**](https://render.com/):
+	- Virtual Machine-based host
+	- Can use a pinger to keep alive.
+	- Better than Repl.it for its better throttling and caps.
+- **Repl.it**:
+	- Virtual Machine-based host
+	- Can use a pinger to keep alive.
+	- Not recommended for its strict throttling and bandwidth caps.

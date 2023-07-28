@@ -7,7 +7,7 @@
 
 <svelte:head>
   <title>{"Tinovation"}</title>
-  <meta property="”og:title”" content={"Tinovation"} />
+  <meta property="og:title" content={"Tinovation"} />
 </svelte:head>
 
 <!-- CONTENT STREAM -->
@@ -42,7 +42,7 @@
     <!-- LINKS AND STUFF -->
     <!-- =============== -->
     <div
-      class="mt-2 flex w-full flex-row flex-wrap gap-4 text-center text-retro-black sm:flex-nowrap px-2">
+      class="mt-2 flex w-full flex-row flex-wrap gap-4 px-2 text-center text-retro-black sm:flex-nowrap">
       <a
         href="/resources"
         class="flex w-full flex-col gap-1 rounded-lg border-2 border-retro-black bg-gradient-to-br from-purple-400 via-purple-600 to-purple-800 p-2 text-retro-white shadow-lg transition ease-in hover:scale-[102%] hover:shadow-2xl">
@@ -56,7 +56,10 @@
         href="/showcase"
         class="flex w-full flex-col gap-1 rounded-lg border-2 border-retro-black bg-gradient-to-tl from-indigo-200 via-red-200 to-yellow-100 p-2 shadow-lg transition ease-in hover:scale-[102%] hover:shadow-2xl">
         <h2 class="text-xl font-bold">Project Showcase</h2>
-        <p>Several cool projects made by Tinovation members, both past and present. Use for inspiration!</p>
+        <p>
+          Several cool projects made by Tinovation members, both past and present. Use for
+          inspiration!
+        </p>
       </a>
     </div>
 
@@ -66,14 +69,14 @@
     <h2 class="mt-4 font-header text-4xl">Meeting Times</h2>
     <div class="mb-4 flex flex-col gap-1 text-xl">
       <p>
-        every <em class="not-italic text-blue-300">Monday</em> during
+        <em class="not-italic text-blue-300">Mondays</em> during
         <em class="not-italic text-green-300">Lunch</em>
         at
         <a href="https://chs-map.vercel.app" target="_blank" class="text-red-300">Room 307</a>
       </p>
       <p>
-        every <em class="not-italic text-blue-300">Saturday</em> from
-        <em class="not-italic text-green-300">10am to 1pm</em>
+        <em class="not-italic text-blue-300">Saturdays</em> from
+        <em class="not-italic text-green-300">10am to 1pm (tentative)</em>
         at the
         <a href="https://sccld.org/locations/cupertino/" target="_blank" class="text-red-300"
           >Cupertino Library</a>
@@ -226,7 +229,7 @@
         {`${info.co_presidents.join(", ")}`}
       </p>
       <p>
-        <b class="text-blue-300">Vice Presidents:</b>
+        <b class="text-blue-300">Vice President:</b>
         {info.vice_president}
       </p>
       <p>
