@@ -15,37 +15,37 @@ const resourceCategories: Categories = {
     // "deep-learning",
     {
       type: ItemType.Code,
-      displayName: "intro-to-numpy",
+      displayName: "numpy",
       path: "https://colab.research.google.com/drive/1puZZLzJvNTVSeEfzQ2YFgB_uYfKnUFIM?usp=sharing",
     },
     {
       type: ItemType.Code,
-      displayName: "intro-to-pandas",
+      displayName: "pandas",
       path: "https://colab.research.google.com/drive/1TQKG_o188szZrHn9qLvz3Vi17gLZJA08?usp=sharing",
     },
     {
       type: ItemType.Code,
-      displayName: "intro-to-matplotlib-and-seaborn",
+      displayName: "matplotlib-and-seaborn",
       path: "https://colab.research.google.com/drive/15rJXcXzi4bg2B1soQwlLPb5uzrvxPVeN?usp=sharing",
     },
     {
       type: ItemType.Code,
-      displayName: "intro-to-scikit-learn",
+      displayName: "scikit-learn",
       path: "https://colab.research.google.com/drive/1PoQzeqATIb6S8zqsTfT5JovbcLu4f6gD?usp=sharing",
     },
     {
       type: ItemType.Code,
-      displayName: "intro-to-keras",
+      displayName: "keras",
       path: "https://colab.research.google.com/drive/1-vXXPz_PVyLLASxzV2ZQXsgGQsfQjjuw?usp=sharing",
     },
     {
       type: ItemType.Code,
-      displayName: "intro-to-computer-vision",
+      displayName: "computer-vision",
       path: "https://colab.research.google.com/drive/1-vXXPz_PVyLLASxzV2ZQXsgGQsfQjjuw?usp=sharing",
     },
     {
       type: ItemType.Code,
-      displayName: "intro-to-nlp",
+      displayName: "natural-language-processing",
       path: "https://colab.research.google.com/drive/1e7JHymFZNZbB9cRKY3Hy0cWMRbvmYHh3?usp=sharing",
     },
     {
