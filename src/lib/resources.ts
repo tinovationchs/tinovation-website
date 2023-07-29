@@ -15,8 +15,18 @@ const resourceCategories: Categories = {
     // "deep-learning",
     {
       type: ItemType.Code,
-      displayName: "open-cv-basics",
-      path: "https://colab.research.google.com/drive/1_6WNF_CzHt635Y23hUTIUAzpE7NzEK3e",
+      displayName: "intro-to-numpy",
+      path: "https://colab.research.google.com/drive/1puZZLzJvNTVSeEfzQ2YFgB_uYfKnUFIM?usp=sharing",
+    },
+    {
+      type: ItemType.Code,
+      displayName: "intro-to-pandas",
+      path: "https://colab.research.google.com/drive/1TQKG_o188szZrHn9qLvz3Vi17gLZJA08?usp=sharing",
+    },
+    {
+      type: ItemType.Code,
+      displayName: "intro-to-matplotlib-and-seaborn",
+      path: "https://colab.research.google.com/drive/15rJXcXzi4bg2B1soQwlLPb5uzrvxPVeN?usp=sharing",
     },
     {
       type: ItemType.Code,
@@ -37,6 +47,11 @@ const resourceCategories: Categories = {
       type: ItemType.Code,
       displayName: "intro-to-nlp",
       path: "https://colab.research.google.com/drive/1e7JHymFZNZbB9cRKY3Hy0cWMRbvmYHh3?usp=sharing",
+    },
+    {
+      type: ItemType.Code,
+      displayName: "open-cv-basics",
+      path: "https://colab.research.google.com/drive/1_6WNF_CzHt635Y23hUTIUAzpE7NzEK3e",
     },
   ],
   "Databases/Servers": [
