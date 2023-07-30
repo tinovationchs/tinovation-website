@@ -1,0 +1,27 @@
+---
+title: Embedding Media into Websites
+authors: [Laurier Ke]
+date: "2023-07-29"
+complete: false
+published: true
+---
+## Scenario 
+The date is December 31st 2020. You are a new Web Developer for a startup company that makes websites and video games. It's early in the morning and you just had your 2 shots of espresso coffee and a warm burrito in your cubicle. It's a rather chill day, with a dark cloudy overcast floating above the office seemingly about to start the winter. Just as you wipe the coffee from your lips, your boss rushes into the bullpen of cubicles and announces: Adobe has discontinued Adobe flash player and along with it, CoolMathGames.com! 
+
+That is terrible news. 
+But not for you. 
+
+Although it may be bad news for the small children that found daily happiness within the simple math oriented games during school hours, it is not for a big hot shot web developer like you. Your boss tells your team to create the new CoolMathGames.com but you don’t know how to display video games.
+
+## The Solution
+Luckily you can display video games and media into HTML via **iframes**. 
+
+Here is an example:
+```HTML
+<iframe src = media link  width = "1000px" height = "1000px"></iframe>
+```
+In this specific **CoolMathGames.com** example, embedding video games could be quite daunting with servers and databases; but if you are able to make a [WebGL](https://www.khronos.org/webgl/wiki/Getting_Started) build of your game (which can be done with most game engines), you can upload a build to a cloud platform such as [Netlify.com](https://www.netlify.com/?attr=homepage-modal) or refer to our [Deployment resource](https://www.tinovation.org/resources/deployment).
+<br>
+
+**Media** can include ***youtube videos***, ***games***, ***other websites*** and etc, which can all be embedded into your own website!
+
