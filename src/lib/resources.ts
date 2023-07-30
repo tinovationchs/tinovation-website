@@ -44,6 +44,7 @@ const resourceCategories: Categories = {
     // "vim",
     // "assembly",
     { type: ItemType.Guide, displayName: "google-earth-engine", path: "gee-basics" },
+    { type: ItemType.Guide, displayName: "vr-application", path: "VR" },
     {
       type: ItemType.Code,
       displayName: "discord-bot-tutorial",

@@ -1,0 +1,70 @@
+---
+title: VR Applications
+authors: [Laurier Ke]
+date: "2023-07-29"
+complete: false
+published: true
+---
+## Introduction
+### What on god's green earth is VR?
+VR or virtual reality is a simulated experience that tracks movement and uses close up displays to give the user an immersive experience. We are going to make a VR application with Unity, a game engine that is commonly used to make video games but is not limited and also used for advertisements, architectures and a lot of other things! 
+
+### Why is VR important?
+You may question why you would make a VR application in the first place, I ask myself this very question every time I look myself in the bathroom mirror; but the answer isn’t the same for everybody but as you may have seen, the VR industry has been growing quite a bit in recent years with Apple’s approaching release of the Vision Pro and Meta’s Oculus VR headsets. Now is a great time to jump on the VR train especially since Apple is partnering with Unity to make complex VR applications. 
+
+### Prerequisites
+In order to follow this resource in the best way possible, you should be familiar with Object Oriented Programing Languages (such as C# and Java) as well as the Unity game engine. 
+
+### If you’re new to Unity
+Here is their website which has a couple of tutorials that tell you how to get started with Unity. 
+https://learn.unity.com 
+
+*** Refresher vocab ***
+
+**Scene window** - the current world where GameObjects exist and interact with each other. When you make a new scene it will appear in the project window and will contain a camera and a directional light (only in 3d projects).
+
+**Inspector window** - the window that shows further information about a GameObject when selected such as the object’s name, what components it contains and where it is located in the world.
+
+**Hierarchy of window** - the window where all the GameObjects are listed in a hierarchy. You can select GameObjects by clicking on them. 
+
+**GameObject** - the objects of the game that hold the scripts, components and other useful information. You can find all the GameObjects in the hierarchy window, and in the project window if you make them into Prefabs
+
+**Prefabs** - short for prefabricated, which are GameObjects stored in the project window can be dragged back into the scene. These are especially useful when you have more than one of the same GameObjects and want to apply changes to all of them. For example, if you have several enemies in a scene and want to give the enemy GameObject a new script; if you didn’t know about  Prefabs you would be spending valuable time adding the script to each GameObject one by one. Instead, by using prefabs you only need to change one GameObject for the same effect.
+
+## Getting started
+*Congrats!* You made it to the start line and are familiar with Unity! Make sure you have version **2022.3.4f1**, as that is the one we will be using.
+
+In order to begin creating a VR application, we have to create a new VR project. 
+
+<img src= "/guides/misc/Step1.png">
+
+If you haven’t already, you should download the VR template from the create new project window.
+
+<img src= "/guides/misc/Step2.png">
+
+When the scene is completely loaded, come back here.
+
+## Skydive through the scene
+Now that the scene has loaded up, there is a lot to take in everywhere, so let’s “skydive” through the hierarchy view and take a look at what each Gameobject does! 
+
+<img src= "/guides/misc/Hierarchy.png">
+
+** Complete XR Origin Set Up Variant **
+
+This is the camera rig and interaction manager that allows a player with a VR headset to see the scene as it is via the rig tracking your headset’s position and rotation as well as displaying two screens for both of the player’s eyes. 
+
+You likely won’t need to touch this GameObject unless you want to customize some settings such as the appearance of the VR hands and fine tune settings. 
+
+** Interactables **
+This is GameObject sorted as a folder of sorts to hold, as the name suggests, the interactables of the scene, such as the many objects you can pick up and interact with. You can create interactables like in this template for anything from a glass beaker that you can pickup to a ball that you can throw around. 
+
+** UI **
+This GameObject, like the Interactables GameObject, serves as a folder for the screens and the User Interface elements around the scenes. Screens like these can be good for conveying exposition and information to the user such as a speech bubble or a user manual to instruct the user. 
+
+** Teleport Area Setup **
+This specific template contains an ability to teleport around the scene, this GameObject simply sets it up properly. 
+
+** Environment / Lightning **
+The environment and lighting is self explanatory; the environment contains the walls and the ground, and the lighting contains the scene’s lighting which is another can of worms, but you can learn about it [here](https://learn.unity.com/tutorial/introduction-to-lighting-and-rendering).
+
+
