@@ -41,11 +41,6 @@ const resourceCategories: Categories = {
     },
     {
       type: ItemType.Code,
-      displayName: "computer-vision",
-      path: "https://colab.research.google.com/drive/1-vXXPz_PVyLLASxzV2ZQXsgGQsfQjjuw?usp=sharing",
-    },
-    {
-      type: ItemType.Code,
       displayName: "natural-language-processing",
       path: "https://colab.research.google.com/drive/1e7JHymFZNZbB9cRKY3Hy0cWMRbvmYHh3?usp=sharing",
     },
