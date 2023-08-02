@@ -4,30 +4,32 @@ const data: Leaderboard = [
   {
     name: "Daniel Cui",
     points: [1, 5, 3, 2],
-    comment: "kinda sus",
+    comment: "wizard!🧙",
   },
   {
     name: "Ryan Kim",
-    points: [1, 5, 3, 2, 154],
+    points: [1, 5, 3, 4],
     comment: "1st in code sprint #1",
   },
   {
     name: "Shine Chang",
-    points: [-6, 3, -1, 5],
+    points: [-6, 3, -1, 5, 4],
     comment: "likes anime a lot",
   },
   {
     name: "Laurier Ke",
-    points: [-8],
+    points: [100],
     comment: "super canadian",
   },
   {
     name: "Bhargav Eranki",
-    points: [-9],
+    points: [-1],
     comment: "allergies... poor guy",
   },
   {
     name: "Arnav Gupta",
+    points: [-1],
+    comment: "jeepers creepers!",
   },
   {
     name: "Taisei De La Cruz",
@@ -51,7 +53,7 @@ const data: Leaderboard = [
   },
   {
     name: "Jiaming Liu",
-    points: [8, 10, 23],
+    points: [8, 10, 23, 100],
     comment: "greatest tinovation member since Tanay",
   },
 ];
