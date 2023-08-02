@@ -27,7 +27,7 @@
   </div>
 
   <!-- ACTUAL CONTENT -->
-  <div class="my-12 flex w-fit flex-col gap-4 px-4 md:w-[44rem]">
+  <div class="my-12 flex w-fit flex-col gap-4 px-4 md:w-[46rem]">
     <!-- ============== -->
     <!-- ABOUT US BLOCK -->
     <!-- ============== -->
