@@ -2,6 +2,16 @@ import type { Project } from "./types";
 
 const showcaseProjects: Project[] = [
   {
+    thumbnail_image: "tinochan.png",
+    name: "Tinochan",
+    authors: ["Shine Chang", "Shauryan Kanaujia"],
+    date: "2023-07-27",
+    description:
+      "A recreation of traditional online forums, now using modern frameworks and deployable on the edge!",
+    main_link: "https://tinochan.vercel.app/",
+    github_link: "https://github.com/shine00chang/tinochan",
+  },
+  {
     thumbnail_image: "tinovation-website.png",
     name: "Tinovation Website",
     authors: ["Daniel Cui"],
