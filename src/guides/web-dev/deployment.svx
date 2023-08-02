@@ -41,6 +41,11 @@ export async function POST ({ cookies }) {
 	- Supports *many* frameworks like NEXT.js, Sveltekit, Flask, Django, Vue, Angular, Jekyll.
 	- Very friendly to use, clean interface.
 	- Links to a git repository, rebuilds & redeploys *automatically*
+- [**Cloudflare Pages**](https://pages.cloudflare.com)
+  - Serverless Host. 
+  - Supports most frameworks.
+  - Similar to Vercel in capability.
+  - Git integration
 - [**Render**](https://render.com/):
 	- Virtual Machine-based host
 	- Can use a pinger to keep alive.
