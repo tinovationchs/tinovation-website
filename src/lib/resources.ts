@@ -5,11 +5,11 @@ const resourceCategories: Categories = {
   "Web Development": [
     { type: ItemType.Guide, displayName: "intro", path: "web-intro" },
     "html-css",
+    { type: ItemType.Guide, displayName: "embedding", path: "embedding" },
     "javascript",
     "web-frameworks",
     "rust-and-elm-architecture",
-    { type: ItemType.Guide, displayName: "deployment", path: "deployment" },
-    { type: ItemType.Guide, displayName: "embedding", path: "embedding" }
+    { type: ItemType.Guide, displayName: "deployment", path: "deployment" }
   ],
   "Artificial Intelligence": [
     // "machine-learning",
