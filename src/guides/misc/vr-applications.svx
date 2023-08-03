@@ -15,7 +15,7 @@ You may question why you would make a VR application in the first place, I ask m
 ### Prerequisites
 In order to follow this resource in the best way possible, you should be familiar with Object Oriented Programing Languages (such as C# and Java) as well as the Unity game engine. 
 
-### If you’re new to Unity
+### If you're new to Unity
 Here is their website which has a couple of tutorials that tell you how to get started with Unity. 
 https://learn.unity.com 
 
@@ -38,7 +38,7 @@ In order to begin creating a VR application, we have to create a new VR project.
 
 <img src= "/guides/misc/Step1.png">
 
-If you haven’t already, you should download the VR template from the create new project window.
+If you haven't already, you should download the VR template from the create new project window.
 
 <img src= "/guides/misc/Step2.png">
 
@@ -53,7 +53,7 @@ Now that the scene has loaded up, there is a lot to take in everywhere, so let�
 
 This is the camera rig and interaction manager that allows a player with a VR headset to see the scene as it is via the rig tracking your headset’s position and rotation as well as displaying two screens for both of the player’s eyes. 
 
-You likely won’t need to touch this GameObject unless you want to customize some settings such as the appearance of the VR hands and fine tune settings. 
+You likely won't need to touch this GameObject unless you want to customize some settings such as the appearance of the VR hands and fine tune settings. 
 
 ** Interactables **
 This is GameObject sorted as a folder of sorts to hold, as the name suggests, the interactables of the scene, such as the many objects you can pick up and interact with. You can create interactables like in this template for anything from a glass beaker that you can pickup to a ball that you can throw around. 

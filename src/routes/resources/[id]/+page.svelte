@@ -79,24 +79,24 @@
       </div>
     </div>
 
-    {#if (data.metadata.complete !== undefined) && !data.metadata.complete}
-    <div
-      class="mb-2 -translate-y-2 rounded-lg border-l-4 border-red-600 bg-retro-lightgray px-2 py-2 text-center font-sans text-lg font-bold leading-tight text-red-700 transition ease-in hover:scale-[102%]">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="3"
-        stroke="currentColor"
-        class="inline h-5 w-5 -translate-y-[1px]">
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-      </svg>
+    {#if data.metadata.complete !== undefined && !data.metadata.complete}
+      <div
+        class="mb-2 -translate-y-2 rounded-lg border-l-4 border-red-600 bg-retro-lightgray px-2 py-2 text-center font-sans text-lg font-bold leading-tight text-red-700 transition ease-in hover:scale-[102%]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="3"
+          stroke="currentColor"
+          class="inline h-5 w-5 -translate-y-[1px]">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+        </svg>
 
-      guide incomplete!
-    </div>
+        guide incomplete!
+      </div>
     {/if}
 
     <svelte:component this={data.component} />

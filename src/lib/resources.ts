@@ -5,11 +5,11 @@ const resourceCategories: Categories = {
   "Web Development": [
     { type: ItemType.Guide, displayName: "intro", path: "web-intro" },
     "html-css",
-    { type: ItemType.Guide, displayName: "embedding", path: "embedding" },
+    { type: ItemType.Guide, displayName: "embedding-media", path: "embedding-media" },
     "javascript",
     "web-frameworks",
     "rust-and-elm-architecture",
-    { type: ItemType.Guide, displayName: "deployment", path: "deployment" }
+    { type: ItemType.Guide, displayName: "deployment", path: "web-deployment" },
   ],
   "Artificial Intelligence": [
     // "machine-learning",
@@ -80,7 +80,7 @@ const resourceCategories: Categories = {
     // "vim",
     // "assembly",
     { type: ItemType.Guide, displayName: "google-earth-engine", path: "gee-basics" },
-    { type: ItemType.Guide, displayName: "vr-application", path: "VR" },
+    { type: ItemType.Guide, displayName: "vr-applications", path: "vr-applications" },
     {
       type: ItemType.Code,
       displayName: "discord-bot-tutorial",
