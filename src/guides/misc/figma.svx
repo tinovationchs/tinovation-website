@@ -55,11 +55,11 @@ Good things that you *should* be doing are a lot less definitive; I would honest
 
 
 ## Further reading/references I like
-[Figma's design guide!!](https://help.figma.com/hc/en-us)
-[A list of poor design choices and what makes them bad](https://blog.hubspot.com/website/bad-vs-good-design)
-[Bad text/background color combinations + accessibility](https://tips.uark.edu/accessibility-color-issues/)
-[Apple's design guidelines](https://developer.apple.com/design/human-interface-guidelines/layout-and-organization)
-[A combination of intro tutorials, LOTS of clean layout examples, and a few other resources](https://www.niceverynice.com/)
-[An extensive list of really well-annotated design patterns from different digital products (requires account)](https://www.mobbin.com)
+[Figma's design guide!!](https://help.figma.com/hc/en-us)  
+[A list of poor design choices and what makes them bad](https://blog.hubspot.com/website/bad-vs-good-design)  
+[Bad text/background color combinations + accessibility](https://tips.uark.edu/accessibility-color-issues/)  
+[Apple's design guidelines](https://developer.apple.com/design/human-interface-guidelines/layout-and-organization)  
+[A combination of intro tutorials, LOTS of clean layout examples, and a few other resources](https://www.niceverynice.com/)  
+[An extensive list of really well-annotated design patterns from different digital products (requires account)](https://www.mobbin.com)  
 
 The last couple are really just if you have the time and are interested in this stuff; **keep in mind that your goal is to *build* a product, not just design it (although maybe this resource has changed your mind :P)**
