@@ -10,6 +10,7 @@ const resourceCategories: Categories = {
     "web-frameworks",
     "rust-and-elm-architecture",
     { type: ItemType.Guide, displayName: "deployment", path: "web-deployment" },
+    { type: ItemType.Guide, displayName: "figma-ui-ux", path: "figma" },
   ],
   "Artificial Intelligence": [
     // "machine-learning",
