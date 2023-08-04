@@ -10,7 +10,6 @@ const resourceCategories: Categories = {
     "web-frameworks",
     "rust-and-elm-architecture",
     { type: ItemType.Guide, displayName: "deployment", path: "web-deployment" },
-    { type: ItemType.Guide, displayName: "figma-ui-ux", path: "figma" },
   ],
   "Artificial Intelligence": [
     // "machine-learning",
@@ -87,6 +86,7 @@ const resourceCategories: Categories = {
       displayName: "discord-bot-tutorial",
       path: "https://colab.research.google.com/drive/1SS4oZzZzuQBDoSV8vJO244ZUVH9MTiMI?usp=sharing",
     },
+    { type: ItemType.Guide, displayName: "figma-ui-ux", path: "figma" },
   ],
   "Hack Club": [
     { type: ItemType.Link, displayName: "toolbox", path: "https://toolbox.hackclub.com/" },
