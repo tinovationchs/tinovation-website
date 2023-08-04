@@ -35,7 +35,7 @@ const showcaseProjects: Project[] = [
   {
     thumbnail_image: "southbayrobotics.png",
     name: "South Bay Robotics Website",
-    authors: ["Taisei D", "Skyler T"],
+    authors: ["Taisei De La Cruz", "Skyler Tabofunda"],
     date: "2023-08-03",
     description:
       "South Bay Robotics website and blog!",
