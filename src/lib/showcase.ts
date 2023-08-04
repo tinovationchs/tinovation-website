@@ -33,6 +33,16 @@ const showcaseProjects: Project[] = [
     github_link: "https://github.com/solunian/chs-map",
   },
   {
+    thumbnail_image: "southbayrobotics.png",
+    name: "South Bay Robotics Website",
+    authors: ["Taisei D", "Skyler T"],
+    date: "2023-08-03",
+    description:
+      "South Bay Robotics website and blog!",
+    main_link: "https://www.southbayrobotics.org",
+    github_link: "https://github.com/frc-sbr/sbr-site",
+  },
+  {
     thumbnail_image: "tino-clubs.png",
     name: "Tino Clubs",
     authors: ["Jiaming Liu"],
