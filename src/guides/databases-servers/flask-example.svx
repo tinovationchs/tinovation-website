@@ -1,0 +1,78 @@
+---
+
+title: Backend example with Flask
+authors: [Purva Marfatia]
+date: "2023-08-04"
+published: true
+complete: true
+
+---
+
+## What is a backend?
+If you're not really sure what a backend is, [backend-basics](https://www.tinovation.org/resources/backend-basics) is a really good place to start! Come back when you're done :)
+
+
+## I'm back. What's Flask?
+
+[Flask](https://flask.palletsprojects.com/en/2.3.x/) is a lightweight Python framework used for developing web applications. It's great for getting started quickly, and this resource shows you how to create a really basic SSR (server-side rendering) app.
+
+### A quick note  
+Currently, **this app will NOT be interacting with a database**; to connect your Flask application to a database, see [this article](https://www.digitalocean.com/community/tutorials/how-to-use-flask-sqlalchemy-to-interact-with-databases-in-a-flask-application), which uses `Flask-SQLAlchemy` to connect to the SQLite, MySQL, and PostgreSQL database engines, or [this one](https://www.digitalocean.com/community/tutorials/how-to-use-mongodb-in-a-flask-application), which uses `pymongo` to connect to MongoDB.
+
+## Getting started
+
+Install Flask by following [this guide](https://flask.palletsprojects.com/en/2.3.x/installation/), which has you create a **virtual environment** before you install Flask. A virtual environment can be thought of as a separate subdirectory with its own versions of certain packages, which is useful if you have multiple projects because then you won't run into conflicting dependencies.   
+
+Now that you've installed Flask, you should create an `app.py` (you can name it anything EXCEPT `flask.py`) file in the main directory. In this file, import Flask and create an instance, then write your first route (used to access API endpoints) à la the below:
+```python
+from flask import Flask, render_template, jsonify
+app = Flask(__name__)
+
+@app.route("/")
+def hello_tinovation():
+	return "<h1>Tinovation is so cool</h1>"
+
+if __name__ == "__main__":
+	app.run(debug=True, port=5001)
+```
+<small>Note: `__name__` is just a handy Python way to refer to the name of the current module, which is passed to Flask to create an app instance so it knows where to locate stuff like templates and static files, which we'll talk about later.</small>    
+
+To run your application, open your terminal and type `python app.py`. Then, upon navigating to the specified port (you can change this via the `port` parameter in the last line), you should be able to see the heading returned by `hello_tinovation()`.    
+
+By default, the HTTP method of Flask routes is GET. However, an alternate method can be specified using the `methods` parameter (note that it takes an array, so changing the HTTP method to POST would entail setting  `methods=['POST']`. 
+
+## Basic setup
+
+As an example, we're going to use the following array of Python objects as our data source because we don't have a database:
+```python
+studentdb = [
+{'id': 1, 'name': 'Student A', 'grade': 9, 'school': 'CHS'},
+{'id': 2, 'name': 'Student B', 'grade': 10, 'school': 'FHS'},
+{'id': 3, 'name': 'Student C', 'grade': 11, 'school': 'LHS'},
+{'id': 4, 'name': 'Student D', 'grade': 9, 'school': 'MVHS'},
+{'id': 5, 'name': 'Student E', 'grade': 9, 'school': 'HHS'}
+]
+```
+We can replace the return value for our "/" route to `jsonify(studentdb)`, meaning that now, we get JSON data on the main page.   
+
+We can use URL parameters as well! Here's an example that gets individual student records:
+```python
+@app.route("/student/<int:id>")
+def single_student():
+	return jsonify(studentdb[id-1])
+```
+ Now, if I open the link in my browser and go to "/student/2", I should get the record of Student B.
+
+Just so that you have a better picture of things:
+- **POST method** -- add a Python object to the array
+- **PUT method** -- edit the array's contents, maybe add a URL parameter to change a specific one
+- **'DELETE' method** -- self-explanatory; see above regarding URL parameter  
+
+Working with a database would be similar, except you'd probably do validation and have to work with different libraries.
+
+## Templates and forms  
+Flask comes with Jinja2, a templating engine that lets you write website templates and then use Python statements to populate the pages with information from the backend. Basically, you can write a `layout.html` for all of your pages and then use `extends` to apply it to the rest of your pages, each of which will contain some additional information. [This link](https://www.codecademy.com/learn/learn-flask/modules/flask-templates-and-forms/cheatsheet) is a really handy cheatsheet for using Jinja2, and it covers things like conditional and loops as well!  
+
+It also goes into the basics of creating forms in Flask using `flask_wtf` and `wtforms`, which is really useful for the vast majority of websites.  
+
+### That's kind of it! You can now create a basic web application using Flask and Jinja2, and there are a few resources linked above to connect to databases as well :) good luck!
