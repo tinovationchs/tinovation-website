@@ -70,6 +70,14 @@ const showcaseProjects: Project[] = [
     main_link: "https://apps.apple.com/us/app/leetdeal-save-big-with-deals/id1534467869",
     other_links: ["https://www.instagram.com/leetdeal/"],
   },
+  {
+    thumbnail_image: "retro.png",
+    name: "Retro",
+    authors: ["DoesntWantName onWebsite"],
+    date: "2023-08-12",
+    description: "Retro style personal website with terminal and minesweeper.",
+    main_link: "https://aadsfjkslda.user5829.repl.co/?background=https://cdn.discordapp.com/attachments/695408753658298470/1127040540039446549/fbafa9e921610f2bb55799fd36cd1051.webp",
+  },
 ];
 
 export default showcaseProjects;
