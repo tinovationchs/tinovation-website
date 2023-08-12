@@ -61,6 +61,7 @@ const resourceCategories: Categories = {
     { type: ItemType.Guide, displayName: "cloud-infrastructure", path: "cloud-infrastructure" },
     { type: ItemType.Guide, displayName: "mongo-db", path: "mongo-db" },
     { type: ItemType.Guide, displayName: "backend-miscellaneous", path: "backend-miscellaneous" },
+    { type: ItemType.Guide, displayName: "backend-example", path: "flask-example" },
     // "firebase",
     // "rest",
     // "chatgpt-api",
