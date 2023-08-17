@@ -90,8 +90,8 @@
     <a
       href={info.form_link}
       target="_blank"
-      class="group flex w-fit flex-row items-center justify-center gap-1 self-center rounded-lg border-white px-4 py-2 text-center font-header text-xl shadow
-    transition duration-100 ease-in hover:-translate-y-0.5 hover:border-purple-400 hover:stroke-purple-300 hover:text-purple-300 hover:opacity-90 hover:shadow-lg hover:shadow-purple-400">
+      class="group flex w-fit flex-row items-center justify-center gap-1 self-center rounded-lg px-4 py-2 text-center font-header text-xl
+    transition duration-100 ease-in hover:border-purple-400 hover:stroke-purple-300 hover:text-purple-300 hover:opacity-90 hover:shadow-lg hover:shadow-purple-400">
       <span class="align-baseline">{info.form_text}</span>
 
       <svg

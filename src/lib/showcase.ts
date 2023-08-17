@@ -1,6 +1,5 @@
 import type { Project } from "./types";
 
-
 // put new ones at the top!
 const showcaseProjects: Project[] = [
   {
@@ -9,7 +8,8 @@ const showcaseProjects: Project[] = [
     authors: ["---"],
     date: "2023-08-12",
     description: "Retro style personal website with terminal and minesweeper.",
-    main_link: "https://aadsfjkslda.user5829.repl.co/?background=https://cdn.discordapp.com/attachments/695408753658298470/1127040540039446549/fbafa9e921610f2bb55799fd36cd1051.webp",
+    main_link:
+      "https://aadsfjkslda.user5829.repl.co/?background=https://cdn.discordapp.com/attachments/695408753658298470/1127040540039446549/fbafa9e921610f2bb55799fd36cd1051.webp",
   },
   {
     thumbnail_image: "tinochan.png",
@@ -47,8 +47,7 @@ const showcaseProjects: Project[] = [
     name: "South Bay Robotics Website",
     authors: ["Taisei De La Cruz", "Skyler Tabofunda"],
     date: "2023-08-03",
-    description:
-      "South Bay Robotics website and blog!",
+    description: "South Bay Robotics website and blog!",
     main_link: "https://www.southbayrobotics.org",
     github_link: "https://github.com/frc-sbr/sbr-site",
   },

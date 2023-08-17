@@ -11,9 +11,9 @@ const info = {
   fun_games_link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   pioneerhacks_link: "https://www.pioneerhacks.org",
 
-  form_visible: false,
-  form_link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  form_text: "join the innovation",
+  form_visible: true,
+  form_link: "https://forms.gle/ju5Q6H26LXKy7MCF8",
+  form_text: "interest form",
 
   co_presidents: ["Daniel Cui", "Ryan Kim"].sort(),
   vice_president: "Arnav Gupta",
