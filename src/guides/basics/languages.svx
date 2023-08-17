@@ -1,22 +1,60 @@
 ---
 title: Languages
-authors: [Ryan Kim]
-date: "2023-07-22"
-checked: false
+authors: [Daniel Cui, Ryan Kim]
+date: "2023-08-17"
+checked: true
 published: true
 ---
 
-Welcome to the world of coding! Here at Tinovation, we specifically use code to develop various applications. 
+Welcome to the world of coding! Here at **Tinovation**, we use code to develop various applications.
 
-Just as there are many spoken languages, there are many coding languages as well, each tailored to a quasi-unique function. Just as with spoken languages,
-each language can mean (in coding, do) very different things, so it is not just a matter of personal preference.
+## What is a [programming language](https://en.wikipedia.org/wiki/Programming_language)?
 
-If you are interested in web development, HTML, CSS, JavaScript, and node.js are the most common languages used. 
+> A programming language is a system of notation for writing computer programs.
 
-Machine learning heavily uses Python.
+There are many of them, each one with different characteristics like *performance*, 
+*syntax*, *paradigm*, *types*, etc. Each language can accomplish very different things, but 
+most of them have similarities that allow programmers to learn another language pretty easily.
 
-App development uses a variety of frameworks with their own proprietary languages.
 
-As you being your development journey, you will notice many similarities between languages. So don't be overwhelmed! Don't focus on the syntax,
-but the topic. Start with a particular field (i.e. web development, server management, machine learning) and you'll naturally pick up the coding 
-languages from there.
+## List of Commonly Used Languages
+
+- [Python](https://www.python.org/): easy to learn, fun and practical to write, used for data science, 
+web apps, server-side scripting
+
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript): very common in web development, 
+typically paired with [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) and 
+[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) to build websites, 
+[TypeScript](https://www.typescriptlang.org/) transpiles to JS and provides more safety and better tooling
+
+- [Rust](https://www.rust-lang.org/): highly performant and memory-safe, for building systems/apps
+that require amazing performance like game engines or operating systems
+
+- [C#](https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/): created for Microsoft's .NET framework,
+used in game development with Unity, very versatile for app development
+
+- [Java](https://www.java.com/): heavily object-oriented, used for Android development, 
+servers, and databases, becoming outdated so [Kotlin](https://kotlinlang.org/) is better!
+
+- [Swift](https://developer.apple.com/swift/): a powerful and modern language to develop for Apple platforms
+
+- [C](https://en.wikipedia.org/wiki/C_(programming_language))/[C++](https://en.wikipedia.org/wiki/C%2B%2B): 
+the OG, low-level languages used to build fast applications like games, kernels, drivers, and operating systems, 
+allowing fine control over memory and performance
+
+
+Check out **Fireship** on Youtube! He has a collection of short videos about many different 
+languages and tools: https://www.youtube.com/@Fireship.
+
+**freecodecamp** has many Youtube video tutorials [here](https://www.youtube.com/@freecodecamp). I would 
+recommend starting out with their Python or JavaScript course.
+
+Languages also typically come with a specific package manager like 
+[pip](https://packaging.python.org/en/latest/tutorials/installing-packages/) for Python, 
+[npm](https://www.npmjs.com/) for JavaScript, and [cargo](https://doc.rust-lang.org/cargo/) for Rust.
+Packages will help you build apps with pre-existing tools and functions, so you won't have to write
+your own libraries from scratch!
+
+As you being your development journey, there will be a lot to learn, but don't be overwhelmed! 
+There are so many resources everwhere if you have any questions or problems. All you have to do is
+*find something you want to make, then learn what you need to make it.* It's as simple as that.

@@ -228,7 +228,7 @@
   /* THE ATROCITIES OF UNORDERED LISTS */
   /* ================================= */
   main :global(ul) {
-    @apply flex list-disc flex-col gap-4 pl-6;
+    @apply flex list-disc flex-col gap-4 pl-6 mb-4;
   }
   main > :global(ul) {
     @apply flex list-disc flex-col gap-4 py-2 pl-6;
@@ -255,7 +255,7 @@
   /* THE ATROCITIES OF ORDERED LISTS */
   /* =============================== */
   main :global(ol) {
-    @apply flex list-decimal flex-col gap-4 pl-6;
+    @apply flex list-decimal flex-col gap-4 pl-6 mb-4;
   }
   main > :global(ol) {
     @apply flex list-decimal flex-col gap-4 py-2 pl-6;
