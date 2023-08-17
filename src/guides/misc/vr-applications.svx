@@ -2,7 +2,7 @@
 title: VR Applications
 authors: [Laurier Ke]
 date: "2023-07-29"
-complete: false
+checked: false
 published: true
 ---
 ## Introduction
@@ -36,22 +36,22 @@ https://learn.unity.com
 
 In order to begin creating a VR application, we have to create a new VR project. 
 
-<img src= "/guides/misc/Step1.png">
+![step 1](/guides/misc/Step1.png)
 
 If you haven't already, you should download the VR template from the create new project window.
 
-<img src= "/guides/misc/Step2.png">
+![step 2](/guides/misc/Step2.png)
 
 When the scene is completely loaded, come back here.
 
 ## Skydive through the scene
-Now that the scene has loaded up, there is a lot to take in everywhere, so let’s “skydive” through the hierarchy view and take a look at what each Gameobject does! 
+Now that the scene has loaded up, there is a lot to take in everywhere, so let's “skydive” through the hierarchy view and take a look at what each Gameobject does! 
 
-<img src= "/guides/misc/Hierarchy.png">
+![hierarchy](/guides/misc/Hierarchy.png)
 
 ** Complete XR Origin Set Up Variant **
 
-This is the camera rig and interaction manager that allows a player with a VR headset to see the scene as it is via the rig tracking your headset’s position and rotation as well as displaying two screens for both of the player’s eyes. 
+This is the camera rig and interaction manager that allows a player with a VR headset to see the scene as it is via the rig tracking your headset's position and rotation as well as displaying two screens for both of the player’s eyes. 
 
 You likely won't need to touch this GameObject unless you want to customize some settings such as the appearance of the VR hands and fine tune settings. 
 

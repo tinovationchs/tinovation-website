@@ -2,7 +2,7 @@
 title: Rust and the Elm Architecture
 authors: [Taisei De La Cruz]
 date: "2023-07-20"
-complete: false
+checked: false
 published: true
 ---
 

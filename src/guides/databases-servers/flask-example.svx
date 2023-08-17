@@ -1,11 +1,9 @@
 ---
-
 title: Backend example with Flask
 authors: [Purva Marfatia]
 date: "2023-08-04"
+checked: false
 published: true
-complete: true
-
 ---
 
 ## What is a backend?

@@ -79,7 +79,7 @@
       </div>
     </div>
 
-    {#if data.metadata.complete !== undefined && !data.metadata.complete}
+    {#if data.metadata.checked === undefined || !data.metadata.checked}
       <div
         class="mb-2 -translate-y-2 rounded-lg border-l-4 border-red-600 bg-retro-lightgray px-2 py-2 text-center font-sans text-lg font-bold leading-tight text-red-700 transition ease-in hover:scale-[102%]">
         <svg
