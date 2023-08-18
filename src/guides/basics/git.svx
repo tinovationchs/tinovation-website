@@ -1,19 +1,86 @@
 ---
 title: Git
 authors: [Daniel Cui, Ryan Kim]
-date: "2023-07-22"
-checked: false
+date: "2023-08-18"
+checked: true
 published: true
 ---
 
 ## What is Git?
 
-Git is a version control system that **tracks** and **manages** computer files, 
-commonly used in software projects for collaboration, coordinating work, and maintaining 
-a history of the source code. In simple terms, Git helps a coding team edit programs together.
+Git is a version control system that *tracks* and *manages* the changes made to computer 
+files throughout development, commonly used in software projects for collaboration, 
+coordinating work, and maintaining a history of the source code.
 
-Install it [here](https://git-scm.com/downloads). Install it with [these settings](https://medium.com/@sahiltiwari_66376/how-to-install-and-use-git-on-windows-end-to-end-2bd4fedade21).
+![git logo](/guides/basics/git_logo.jpeg)
 
-On the screen show below, do **not** leave it on Vim if you are not using Vim. Change it to your primary editor (likely Visual Studio Code). You can always change it later.
+## Installing
 
-![git install screen](/guides/basics/git-install-path.png)
+Install Git from [here](https://git-scm.com/downloads). It may already be installed if you
+are using Mac or Linux.
+
+- If using **Windows**, install it with the installer.
+  - You can go with most of the defaults in the setup, but you look into some of the other options.
+    [This step-by-step guide](https://medium.com/@sahiltiwari_66376/how-to-install-and-use-git-on-windows-end-to-end-2bd4fedade21)
+    works if you are just starting out.
+  - After installing, make sure you are using the Git Bash as your terminal (instead of the command prompt)
+    or you have [Git added to your PATH](https://www.answerlookup.com/how-add-git-windows-path-environment-variable).
+
+- If using **Mac**, [`homebrew`](https://brew.sh/) is a great way to install packages like Git.
+
+- If using **Linux**, you can use the preferred package manager for installing, like 
+[`apt`](https://en.wikipedia.org/wiki/APT_(software)) for Debian or [`pacman`](https://wiki.archlinux.org/title/pacman) for Arch.
+  - but seriously if you are using Linux, you already know this, don't you?
+
+You can also use a GUI like [GitHub Desktop](https://desktop.github.com/) along with Git instead of a CLI,
+but I highly suggest against it. Learning to use the CLI is pretty important.
+
+
+## How It Works
+
+A Git repository is simply just a directory on your computer where you tell it to track files with `git init`.
+When you add files in the directory, they are *untracked*. You can add them to the *staging area* with `git add`,
+and once you've made enough changes for a *commit*, you can write a snapshot of the current state of the directory
+to the commit history with `git commit`.
+
+Often, git repos are stored in a *remote* location like on [GitHub](https://github.com), where you can `git push`
+your own commits to and `git pull` changes that other collaborators have made.
+
+![git lifecycle](/guides/basics/git_lifecycle.png)
+
+**Before making any commits**, you will need to run the following commands in the terminal to set your 
+Git config. This sets the metadata about the author for all commits.
+
+```bash
+git config --global user.name "<your_name>"
+git config --global user.email "<your_email>"
+```
+
+A `.gitignore` file tells Git to not track certain files in the current repository. Useful
+in not committing installed packages like `node_modules` or `.venv` and outrageously large files.
+
+Git uses a `.git` *hidden* directory to track and maintain the repository. If you **delete** it,
+you wipe you commit history, and you will have to re-initialize the directory to use Git.
+
+There's a lot more to Git like with *branching*, *rebasing*, *tags*, etc., but 
+you should learn the basics first. [This](https://www.youtube.com/watch?v=8JJ101D3knE) is a pretty good 
+video tutorial, and there are many other pretty great resources online.
+
+## Common Git Commands
+
+- `init` initializes a git repository in the current directory
+- `status` prints the status/current state of the Git repository
+- `add` adds files to the *staging area*
+- `commit` commits all staged files into a *commit* in the commit history
+- `log` prints the commit history
+- `remote` creates, views, or deletes connections to remote repos
+- `pull`/`push` updates local or remote repo
+- `stash` temporarily stashes changes in your working directory to reapply later
+- `branch` creates a new *branch* in the repo
+- `switch` switches branches
+- `merge` merges branches
+- `checkout` checks out branches or past commits
+- `revert`/`reset`/`rebase` **destructive** commands
+
+> Note: if you can't figure it out, just Google it! Also, the docs are [here](https://git-scm.com/doc)!
+

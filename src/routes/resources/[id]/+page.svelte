@@ -228,23 +228,23 @@
   /* THE ATROCITIES OF UNORDERED LISTS */
   /* ================================= */
   main :global(ul) {
-    @apply flex list-disc flex-col gap-4 pl-6 mb-4;
+    @apply flex list-disc flex-col gap-4 pl-6;
   }
   main > :global(ul) {
-    @apply flex list-disc flex-col gap-4 py-2 pl-6;
+    @apply mb-2 flex list-disc flex-col gap-4 py-2 pl-6;
   }
   main > :global(ul) > :global(li) {
     @apply pl-1;
   }
   main > :global(ul) > :global(li) > :global(ul) {
-    @apply flex flex-col gap-4 pl-6;
+    @apply flex flex-col gap-4 pl-6 mt-2;
     list-style-type: circle;
   }
   main > :global(ul) > :global(li) > :global(ul) > :global(li) {
     @apply pl-1;
   }
   main > :global(ul) > :global(li) > :global(ul) > :global(li) > :global(ul) {
-    @apply flex flex-col gap-4 pl-6;
+    @apply flex flex-col gap-4 pl-6 mt-2;
     list-style-type: square;
   }
   main > :global(ul) > :global(li) > :global(ul) > :global(li) > :global(ul) > :global(li) {
@@ -255,23 +255,23 @@
   /* THE ATROCITIES OF ORDERED LISTS */
   /* =============================== */
   main :global(ol) {
-    @apply flex list-decimal flex-col gap-4 pl-6 mb-4;
+    @apply flex list-decimal flex-col gap-4 pl-6;
   }
   main > :global(ol) {
-    @apply flex list-decimal flex-col gap-4 py-2 pl-6;
+    @apply mb-2 flex list-decimal flex-col gap-4 py-2 pl-6;
   }
   main > :global(ol) > :global(li) {
     @apply pl-1;
   }
   main > :global(ol) > :global(li) > :global(ol) {
-    @apply flex flex-col gap-4 pl-6;
+    @apply flex flex-col gap-4 pl-6 mt-2;
     list-style-type: lower-alpha;
   }
   main > :global(ol) > :global(li) > :global(ol) > :global(li) {
     @apply pl-1;
   }
   main > :global(ol) > :global(li) > :global(ol) > :global(li) > :global(ol) {
-    @apply flex flex-col gap-4 pl-6;
+    @apply flex flex-col gap-4 pl-6 mt-2;
     list-style-type: lower-roman;
   }
   main > :global(ol) > :global(li) > :global(ol) > :global(li) > :global(ol) > :global(li) {
