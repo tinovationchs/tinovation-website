@@ -35,4 +35,4 @@ specifically made for Android development
 
 You can download these on most systems (Windows/Mac/Linux), but if you are on ChromeOS or a mobile device, you might have 
 to use [repl.it](https://replit.com/site/ide) or something like [GitHub Codespaces](https://github.com/features/codespaces) 
-to work online instead. You might also be able to use [VS Code](https://vscode.dev/) in the browser, too!
+to work online instead of locally. You might also be able to use [VS Code](https://vscode.dev/) in the browser, too!

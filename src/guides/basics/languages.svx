@@ -6,11 +6,9 @@ checked: true
 published: true
 ---
 
-Welcome to the world of coding! Here at **Tinovation**, we use code to develop various applications.
-
 ## What is a [programming language](https://en.wikipedia.org/wiki/Programming_language)?
 
-> A programming language is a system of notation for writing computer programs.
+*A programming language is a system of notation for writing computer programs.*
 
 There are many of them, each one with different characteristics like *performance*, 
 *syntax*, *paradigm*, *types*, etc. Each language can accomplish very different things, but 
@@ -25,7 +23,7 @@ web apps, server-side scripting
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript): very common in web development, 
 typically paired with [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) and 
 [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) to build websites, 
-[TypeScript](https://www.typescriptlang.org/) transpiles to JS and provides more safety and better tooling
+[TypeScript](https://www.typescriptlang.org/) transpiles to JS and provides type safety and better tooling
 
 - [Rust](https://www.rust-lang.org/): highly performant and memory-safe, for building systems/apps
 that require amazing performance like game engines or operating systems
