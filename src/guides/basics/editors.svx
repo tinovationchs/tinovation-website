@@ -26,7 +26,7 @@ different modes instead of using a mouse (has a steep learning curve)
 - [Android Studio](https://developer.android.com/studio/): an IDE based on IntelliJ from JetBrains,
 specifically made for Android development
 
-- [XCode](https://developer.apple.com/xcode/): Apple's IDE to develop apps for their suite of products
+- [Xcode](https://developer.apple.com/xcode/): Apple's IDE to develop apps for their suite of products
 
 - Others: [Sublime Text](https://www.sublimetext.com/), [Notepad++](https://notepad-plus-plus.org/),
 [Visual Studio](https://visualstudio.microsoft.com/)
@@ -35,4 +35,4 @@ specifically made for Android development
 
 You can download these on most systems (Windows/Mac/Linux), but if you are on ChromeOS or a mobile device, you might have 
 to use [repl.it](https://replit.com/site/ide) or something like [GitHub Codespaces](https://github.com/features/codespaces) 
-to work online instead of locally. You might also be able to use [VS Code](https://vscode.dev/) in the browser, too!
+to work online instead of locally. You might also be able to use [VS Code](https://vscode.dev/) in the browser!
