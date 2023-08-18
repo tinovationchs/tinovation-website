@@ -1,23 +1,38 @@
 ---
 title: Code Editors
-authors: [Ryan Kim]
-date: "2023-07-22"
-checked: false
+authors: [Daniel Cui, Ryan Kim]
+date: "2023-08-17"
+checked: true
 published: true
 ---
 
-## IDEs
+*Code editors are just text editors to write code.* They may also include plugins and specialized features 
+like syntax highlighting, code completion, debugging tools, integrated terminal, etc.,
+and a code editor is often called an **Integrated Development Environment**, or IDE for short.
 
-An IDE (short for **Integrated Development Environment**) is a specialized text editor with plugins and supporting features that help programmers
-write code. IDEs often come with code compiling and bug checking along with code autocomplete and a built-in command line. Assuming you have
-the correct libraries installed, you should be able to run most of your applications straight from an IDE.
+## List of Commonly Used Code Editors
 
-Before you start writing any code, you need an IDE to write your code in.
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/): a lightweight, highly versatile editor
+that is used by the majority of programmers, includes many features, very customizable with plugins
 
-## Installing an IDE
+- [JetBrains IDEs](https://www.jetbrains.com/products/): includes many powerful, commercial IDEs with 
+impressive refactoring and language support, [IntelliJ](https://www.jetbrains.com/idea/) for Java and 
+[PyCharm](https://www.jetbrains.com/pycharm/) for Python have *free* **Community Edition** versions
 
-There are [various IDEs](https://www.trustradius.com/integrated-development-environment-ide?q=Microsoft%20Visual%20Studio%20Code&ms=3) tailored to different languages and purposes. 
+- [Vi](https://en.wikipedia.org/wiki/Vi)/[Vim](https://www.vim.org)/[Neovim](https://neovim.io/):
+keyboard-based text editors for users who want to maximize efficiency with key commands and 
+different modes instead of using a mouse (has a steep learning curve)
 
-If you have no preference, we recommmend Visual Studio Code. Install it [here](https://code.visualstudio.com/). VSC supports all major operating systems and most common languages.
+- [Android Studio](https://developer.android.com/studio/): an IDE based on IntelliJ from JetBrains,
+specifically made for Android development
 
-[Confused?](https://www.youtube.com/watch?v=MlIzFUI1QGA)
+- [XCode](https://developer.apple.com/xcode/): Apple's IDE to develop apps for their suite of products
+
+- Others: [Sublime Text](https://www.sublimetext.com/), [Notepad++](https://notepad-plus-plus.org/),
+[Visual Studio](https://visualstudio.microsoft.com/)
+
+> We recommmend **VS Code** for its simplicity, versatility, and widespread use. It's also *free*!
+
+You can download these on most systems (Windows/Mac/Linux), but if you are on ChromeOS or a mobile device, you might have 
+to use [repl.it](https://replit.com/site/ide) or something like [GitHub Codespaces](https://github.com/features/codespaces) 
+to work online instead. You might also be able to use [VS Code](https://vscode.dev/) in the browser, too!

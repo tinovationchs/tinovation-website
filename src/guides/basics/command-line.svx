@@ -9,7 +9,7 @@ published: true
 The command line is the terminal window that you can open both natively on your operating system but also in an IDE. In Visual Studio Code,
 it is the Terminal:
 
-![a VSC terminal](/guides/basics/terminal.png)
+![a VS Code terminal](/guides/basics/terminal.png)
 *What a terminal might look like in Visual Studio Code. The line gives the file location followed by a >*
 
 ## Why Command Line?

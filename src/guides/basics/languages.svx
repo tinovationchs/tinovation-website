@@ -31,7 +31,7 @@ typically paired with [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) 
 that require amazing performance like game engines or operating systems
 
 - [C#](https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/): created for Microsoft's .NET framework,
-used in game development with Unity, very versatile for app development
+used in game development with Unity, versatile for app development
 
 - [Java](https://www.java.com/): heavily object-oriented, used for Android development, 
 servers, and databases, becoming outdated so [Kotlin](https://kotlinlang.org/) is better!
@@ -39,7 +39,7 @@ servers, and databases, becoming outdated so [Kotlin](https://kotlinlang.org/) i
 - [Swift](https://developer.apple.com/swift/): a powerful and modern language to develop for Apple platforms
 
 - [C](https://en.wikipedia.org/wiki/C_(programming_language))/[C++](https://en.wikipedia.org/wiki/C%2B%2B): 
-the OG, low-level languages used to build fast applications like games, kernels, drivers, and operating systems, 
+the OG, low-level languages used to build blazingly fast applications like games, kernels, drivers, and operating systems, 
 allowing fine control over memory and performance
 
 
