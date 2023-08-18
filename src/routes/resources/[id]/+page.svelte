@@ -52,7 +52,7 @@
 
 <div class="flex flex-row justify-center">
   <main
-    class="md:w-max-[30rem] z-10 flex w-full flex-col gap-4 px-6 py-16 font-sans text-lg font-light text-retro-white md:w-[42rem] md:py-20 lg:w-[52rem]">
+    class="md:w-max-[30rem] z-10 flex w-full flex-col gap-4 px-6 pt-16 pb-10 font-sans text-lg font-light text-retro-white md:w-[42rem] md:pt-20 lg:w-[52rem]">
     <div class="flex flex-row justify-center">
       <div class="flex flex-col font-header">
         <span class="translate-y-2 text-retro-lightgray">
