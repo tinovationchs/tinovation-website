@@ -237,14 +237,14 @@
     @apply pl-1;
   }
   main > :global(ul) > :global(li) > :global(ul) {
-    @apply flex flex-col gap-4 pl-6 mt-2;
+    @apply mt-2 flex flex-col gap-4 pl-6;
     list-style-type: circle;
   }
   main > :global(ul) > :global(li) > :global(ul) > :global(li) {
     @apply pl-1;
   }
   main > :global(ul) > :global(li) > :global(ul) > :global(li) > :global(ul) {
-    @apply flex flex-col gap-4 pl-6 mt-2;
+    @apply mt-2 flex flex-col gap-4 pl-6;
     list-style-type: square;
   }
   main > :global(ul) > :global(li) > :global(ul) > :global(li) > :global(ul) > :global(li) {
@@ -264,14 +264,14 @@
     @apply pl-1;
   }
   main > :global(ol) > :global(li) > :global(ol) {
-    @apply flex flex-col gap-4 pl-6 mt-2;
+    @apply mt-2 flex flex-col gap-4 pl-6;
     list-style-type: lower-alpha;
   }
   main > :global(ol) > :global(li) > :global(ol) > :global(li) {
     @apply pl-1;
   }
   main > :global(ol) > :global(li) > :global(ol) > :global(li) > :global(ol) {
-    @apply flex flex-col gap-4 pl-6 mt-2;
+    @apply mt-2 flex flex-col gap-4 pl-6;
     list-style-type: lower-roman;
   }
   main > :global(ol) > :global(li) > :global(ol) > :global(li) > :global(ol) > :global(li) {

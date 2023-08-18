@@ -1,26 +1,32 @@
 ---
 title: GitHub
-authors: [Ryan Kim]
-date: "2023-07-22"
-checked: false
+authors: [Daniel Cui, Ryan Kim]
+date: "2023-08-18"
+checked: true
 published: true
 ---
 
-## Using GitHub
+## What is GitHub?
 
-GitHub is one of many services that allow you to create and manage **git** repositories, or places to store your project's code. 
-git, which you installed earlier, facilitates this process.
+[**GitHub**](https://github.com) is a code hosting platform for version control and collaboration. 
+It lets you and others work together on projects from anywhere.
 
-You should start with [this tutorial](https://docs.github.com/en/get-started/quickstart/hello-world) and make sure you understand
-every module of the **Quickstart** section from "Hello World" through "Contributing to projects". Don't worry about GitHub CLI.
+You should start with [this tutorial](https://docs.github.com/en/get-started/quickstart/hello-world) 
+and make sure you understand every part of the **Quickstart** section from 
+*Hello World* through *Contributing to projects*.
 
-At this point, you should be able to **create** and **clone** a repository to your computer, along with **commit** to a project and
-open a **pull request**.
+## Key Features
 
-## Putting the "Git" in "GitHub"
+You can *clone* repositories on GitHub to a local copy, which you can mess around with.
 
-You will notice that it talks about using git from the **command line**. In general, projects are managed through the terminal 
-using [git commands](https://www.atlassian.com/git/glossary). These have a bit of a learning curve but are the professional way
-to interact with your repositories.
+To contribute to a project without direct access, you can *fork* the repository, creating 
+your own repo on GitHub where you can make direct commits to. Then you can open a *pull request*
+to the original repo, requesting the authors to merge your changes.
 
-If you want a more visual approach to Git, I highly recommend [GitHub Desktop](https://desktop.github.com/).
+There are also many, exciting coding projects with 
+[*discussions*](https://github.com/features/discussions) and *documentation* on GitHub! 
+You can check them out on the [explore page](https://github.com/explore).
+
+GitHub has many other features like [GitHub Pages](https://pages.github.com/), 
+[issue tracking](https://github.com/features/issues), [GitHub Actions](https://github.com/features/actions),
+and [more](https://github.com/features/)!

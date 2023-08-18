@@ -88,6 +88,7 @@ const resourceCategories: Categories = {
       path: "https://colab.research.google.com/drive/1SS4oZzZzuQBDoSV8vJO244ZUVH9MTiMI?usp=sharing",
     },
     { type: ItemType.Guide, displayName: "figma", path: "figma" },
+    "cool-stuff",
   ],
   "Hack Club": [
     { type: ItemType.Link, displayName: "toolbox", path: "https://toolbox.hackclub.com/" },

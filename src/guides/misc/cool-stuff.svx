@@ -1,0 +1,18 @@
+---
+title: Cool Stuff
+authors: [Daniel Cui]
+date: "2023-08-18"
+checked: true
+published: true
+---
+
+### Here's a list of tools that you might want to try out!
+
+- [1.1.1.1](https://1.1.1.1/): a free, public DNS resolver from Cloudflare that could 
+  make your searches faster(?) and more secure(?)
+
+- [Fig](https://fig.io/): autocomplete for the terminal and other CLI goodies
+
+- [Coolors](https://coolors.co/): a palette chooser/generator for UIs and designs
+
+- [Catppuccin](https://github.com/catppuccin): Soothing pastel theme for the high-spirited!
