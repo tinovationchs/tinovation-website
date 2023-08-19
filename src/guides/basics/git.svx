@@ -33,7 +33,7 @@ are using Mac or Linux.
   - but seriously if you are using Linux, you already know this, don't you?
 
 You can also use a GUI like [GitHub Desktop](https://desktop.github.com/) along with Git instead of a CLI,
-but I highly suggest against it. Learning to use the CLI is pretty important.
+but I suggest against it. Learning to use the CLI is pretty important.
 
 
 ## How It Works
