@@ -72,7 +72,7 @@
         <em class="not-italic text-blue-300">Mondays</em> during
         <em class="not-italic text-green-300">Lunch</em>
         at
-        <a href="https://chs-map.vercel.app" target="_blank" class="text-red-300">Room 307</a>
+        <a href="https://chs-map.vercel.app?rooms=307" target="_blank" class="text-red-300">Room 307</a>
       </p>
       <p>
         <em class="not-italic text-blue-300">Saturdays</em> from
