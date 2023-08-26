@@ -246,7 +246,7 @@
   <!-- ===================== -->
   <!-- CONTACT INFO & FOOTER -->
   <!-- ===================== -->
-  <Footer>
+  <Footer isBgTransparent={false}>
     <div class="flex flex-row justify-center">
       <div class="my-16 flex w-fit flex-col justify-center gap-2">
         <h2 class="text-4xl">Contact Us</h2>

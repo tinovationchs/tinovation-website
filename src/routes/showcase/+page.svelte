@@ -10,7 +10,7 @@
 </svelte:head>
 
 <div class="absolute -z-10 h-full w-full fill-blue-300">
-  <div class="h-72 bg-blue-300" />
+  <div class="h-64 bg-blue-300" />
 
   <div class="fill-inherit">
     <svg
