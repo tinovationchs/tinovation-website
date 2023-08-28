@@ -6,7 +6,7 @@ checked: true
 published: true
 ---
 
-## What is a [programming language](https://en.wikipedia.org/wiki/Programming_language)?
+## What is a [programming language](https://wikipedia.org/wiki/Programming_language)?
 
 *A programming language is a system of notation for writing computer programs.*
 
@@ -36,7 +36,7 @@ servers, and databases, becoming outdated so [Kotlin](https://kotlinlang.org/) i
 
 - [Swift](https://developer.apple.com/swift/): a powerful and modern language to develop for Apple platforms
 
-- [C](https://en.wikipedia.org/wiki/C_(programming_language))/[C++](https://en.wikipedia.org/wiki/C%2B%2B): 
+- [C](https://wikipedia.org/wiki/C_(programming_language))/[C++](https://wikipedia.org/wiki/C%2B%2B): 
 the OG, low-level languages used to build blazingly fast applications like games, kernels, drivers, and operating systems, 
 allowing fine control over memory and performance
 

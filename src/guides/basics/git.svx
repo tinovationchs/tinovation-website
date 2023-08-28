@@ -29,7 +29,7 @@ are using Mac or Linux.
 - If using **Mac**, [`homebrew`](https://brew.sh/) is a great way to install packages like Git.
 
 - If using **Linux**, you can use the preferred package manager for installing, like 
-[`apt`](https://en.wikipedia.org/wiki/APT_(software)) for Debian or [`pacman`](https://wiki.archlinux.org/title/pacman) for Arch.
+[`apt`](https://wikipedia.org/wiki/APT_(software)) for Debian or [`pacman`](https://wiki.archlinux.org/title/pacman) for Arch.
   - but seriously if you are using Linux, you already know this, don't you?
 
 You can also use a GUI like [GitHub Desktop](https://desktop.github.com/) along with Git instead of a CLI,

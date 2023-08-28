@@ -19,7 +19,7 @@ that is used by the majority of programmers, includes many features, very custom
 impressive refactoring and language support, [IntelliJ](https://www.jetbrains.com/idea/) for Java and 
 [PyCharm](https://www.jetbrains.com/pycharm/) for Python have *free* **Community Edition** versions
 
-- [Vi](https://en.wikipedia.org/wiki/Vi)/[Vim](https://www.vim.org)/[Neovim](https://neovim.io/):
+- [Vi](https://wikipedia.org/wiki/Vi)/[Vim](https://www.vim.org)/[Neovim](https://neovim.io/):
 keyboard-based text editors for users who want to maximize efficiency with key commands and 
 different modes instead of using a mouse (has a steep learning curve)
 
