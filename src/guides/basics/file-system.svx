@@ -1,7 +1,7 @@
 ---
 title: The File System
-authors: [Ryan Kim]
-date: "2023-07-22"
+authors: [Daniel Cui, Ryan Kim]
+date: "2023-08-03"
 checked: false
 published: true
 ---
@@ -30,9 +30,6 @@ try to keep your file system organized!
 A common idea is to create a folder on your **Desktop**, or in your **Documents**, for all of your development files.
 
 For every project, you should create a new folder inside of that master development folder.
-
-![file system example](/guides/basics/cleanfiles.png)
-*In this case, the master folder is GitHub, which is inside Documents. Each folder you see is a separate project.*
 
 Whenever you create a project folder for a project, you should open that folder in your IDE to begin working.
 
