@@ -72,13 +72,19 @@
         <em class="not-italic text-blue-300">Mondays</em> during
         <em class="not-italic text-green-300">Lunch</em>
         at
-        <a href="https://chs-map.vercel.app?rooms=307" target="_blank" class="text-red-300">Room 307</a>
+        <a
+          href="https://chs-map.vercel.app?rooms=307"
+          target="_blank"
+          class="text-red-300 transition duration-100 ease-in-out hover:underline">Room 307</a>
       </p>
       <p>
         <em class="not-italic text-blue-300">Saturdays</em> from
-        <em class="not-italic text-green-300">10am to 1pm (tentative)</em>
+        <em class="not-italic text-green-300">10am to 1pm</em>
         at the
-        <a href="https://sccld.org/locations/cupertino/" target="_blank" class="text-red-300"
+        <a
+          href="https://sccld.org/locations/cupertino/"
+          target="_blank"
+          class="text-red-300 transition duration-100 ease-in-out hover:underline"
           >Cupertino Library</a>
       </p>
     </div>
