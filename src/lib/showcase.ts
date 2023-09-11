@@ -79,6 +79,14 @@ const showcaseProjects: Project[] = [
     main_link: "https://apps.apple.com/us/app/leetdeal-save-big-with-deals/id1534467869",
     other_links: ["https://www.instagram.com/leetdeal/"],
   },
+  {
+    thumbnail_image: "tinoexchange.png",
+    name: "Tino Market",
+    authors: ["Purva Marfatia"],
+    date: "2023-09-10",
+    description: "Platform for students to share books, calculators, and other resources.",
+    main_link: "https://tino-market-fe.onrender.com/",
+  },
 ];
 
 export default showcaseProjects;
