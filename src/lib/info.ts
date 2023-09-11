@@ -12,8 +12,8 @@ const info = {
   pioneerhacks_link: "https://www.pioneerhacks.org",
 
   form_visible: true,
-  form_link: "https://forms.gle/ju5Q6H26LXKy7MCF8",
-  form_text: "interest form",
+  form_link: "https://forms.gle/8v1tzN5hnULHtN447",
+  form_text: "registration form",
 
   co_presidents: ["Daniel Cui", "Ryan Kim"].sort(),
   vice_president: "Arnav Gupta",
