@@ -1,7 +1,19 @@
 import type { Project } from "./types";
 
-// put new ones at the top!
+// =========================== //
+// PUT NEW ONES AT THE TOP!!!! //
+// =========================== //
+
 const showcaseProjects: Project[] = [
+  {
+    thumbnail_image: "tinomarket.png",
+    name: "Tino Market",
+    authors: ["Purva Marfatia"],
+    date: "2023-09-10",
+    description: "Platform for students to share books, calculators, and other resources.",
+    main_link: "https://tino-market-fe.onrender.com/",
+    github_link: "https://github.com/sourcherryscones/tino_market",
+  },
   {
     thumbnail_image: "retro.png",
     name: "Retro Website",
@@ -78,14 +90,6 @@ const showcaseProjects: Project[] = [
     description: "Mobile app and website for finding the best shopping deals. (defunct)",
     main_link: "https://apps.apple.com/us/app/leetdeal-save-big-with-deals/id1534467869",
     other_links: ["https://www.instagram.com/leetdeal/"],
-  },
-  {
-    thumbnail_image: "tinoexchange.png",
-    name: "Tino Market",
-    authors: ["Purva Marfatia"],
-    date: "2023-09-10",
-    description: "Platform for students to share books, calculators, and other resources.",
-    main_link: "https://tino-market-fe.onrender.com/",
   },
 ];
 
