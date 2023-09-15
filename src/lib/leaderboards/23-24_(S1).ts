@@ -287,6 +287,11 @@ const data: Leaderboard = [
     comment: "",
   },
   {
+    name: "Sungmin Park",
+    points: [],
+    comment: "",
+  },
+  {
     name: "Arnav Sharma",
     points: [],
     comment: "",
