@@ -6,7 +6,7 @@ Aditya Baliyara
 Rishit Sharma
 Pragya Sharma 
 Tanish Nalli
-Vedanth kalkura
+Vedanth Kalkura
 Yuki Hase
 Bryan Deng
 Vismay Achar Bhargav
@@ -56,6 +56,8 @@ Ayush Bheemaiah
 Anushree Misra
 Dhruva Srinivas
 Sungmin Park
+Christopher Zhang
+Tanay Gupta
 Arnav Sharma
 Laurier Ke
 Purva Marfatia
