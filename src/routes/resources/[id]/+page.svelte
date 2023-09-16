@@ -193,6 +193,7 @@
   }
   main :global(code) {
     @apply mx-0.5 break-words rounded p-1 text-sm;
+    font-variant-ligatures: none;
   }
   main :global(pre) :global(code) {
     @apply m-0 whitespace-pre p-0;
