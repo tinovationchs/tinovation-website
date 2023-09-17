@@ -42,7 +42,7 @@ const data: Leaderboard = [
     comment: "",
   },
   {
-    name: "Vedanth kalkura",
+    name: "Vedanth Kalkura",
     points: [],
     comment: "",
   },
@@ -298,6 +298,11 @@ const data: Leaderboard = [
   },
   {
     name: "Tanay Gupta",
+    points: [],
+    comment: "",
+  },
+  {
+    name: "Benjamin Lee",
     points: [],
     comment: "",
   },
