@@ -8,22 +8,14 @@
   <title>{"Showcase - Tinovation"}</title>
   <meta property="og:title" content={"Showcase - Tinovation"} />
   <meta property="theme-color" content="#1d4ed8" />
-  <meta
-    property="description"
-    content="Cool projects made by our members!" />
-  
-  <meta
-    property="og:description"
-    content="Cool projects made by our members!" />
+  <meta property="description" content="Cool projects made by our members!" />
+
+  <meta property="og:description" content="Cool projects made by our members!" />
   <meta property="og:image" content="https://tinovation.org/website/meta/showcase.webp" />
 
   <meta property="twitter:title" content={"Showcase - Tinovation"} />
-  <meta
-    property="twitter:description"
-    content="Cool projects made by our members!" />
-  <meta
-    property="twitter:image"
-    content="https://tinovation.org/website/meta/showcase.webp" />
+  <meta property="twitter:description" content="Cool projects made by our members!" />
+  <meta property="twitter:image" content="https://tinovation.org/website/meta/showcase.webp" />
 </svelte:head>
 
 <div class="absolute -z-10 h-full w-full fill-blue-300">

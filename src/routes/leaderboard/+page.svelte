@@ -9,7 +9,7 @@
   <meta
     property="description"
     content="Earn points on code sprints and games through luck and perseverance!" />
-  
+
   <meta
     property="og:description"
     content="Earn points on code sprints and games through luck and perseverance!" />
@@ -19,11 +19,8 @@
   <meta
     property="twitter:description"
     content="Earn points on code sprints and games through luck and perseverance!" />
-  <meta
-    property="twitter:image"
-    content="https://tinovation.org/website/meta/leaderboard.webp" />
+  <meta property="twitter:image" content="https://tinovation.org/website/meta/leaderboard.webp" />
 </svelte:head>
-
 
 <div class="absolute -z-10 h-full w-full fill-purple-300">
   <div class="h-64 bg-purple-300" />

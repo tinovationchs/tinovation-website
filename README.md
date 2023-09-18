@@ -1,6 +1,6 @@
 # Tinovation Website
 
-This is the website for Tinovation, a school club at CHS. It includes general club 
+This is the website for Tinovation, a school club at CHS. It includes general club
 information, coding resources, a project showcase, and a leaderboard for code sprints.
 
 Happy coding!

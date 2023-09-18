@@ -8,6 +8,7 @@
 <svelte:head>
   <title>{"Tinovation"}</title>
   <meta property="og:title" content={"Tinovation"} />
+  <meta property="theme-color" content="#cfb340" />
 </svelte:head>
 
 <!-- CONTENT STREAM -->

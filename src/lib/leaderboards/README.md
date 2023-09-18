@@ -4,7 +4,7 @@
 
 You can use my python script `fill_leaderboard.py` to generate a leaderboard .ts file from `name_list.txt`.
 
-Just copy all names with each name on one line. 
+Just copy all names with each name on one line.
 
 Then run the script and input the name of the new leaderboard. It should work...
 
