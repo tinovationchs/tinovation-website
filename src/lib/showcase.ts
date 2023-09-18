@@ -34,7 +34,7 @@ const showcaseProjects: Project[] = [
     github_link: "https://github.com/shine00chang/tinochan",
   },
   {
-    thumbnail_image: "tinovation-website.png",
+    thumbnail_image: "tinovation-website.webp",
     name: "Tinovation Website",
     authors: ["Daniel Cui"],
     date: "2023-07-20",

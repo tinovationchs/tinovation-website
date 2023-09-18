@@ -7,6 +7,23 @@
 <svelte:head>
   <title>{"Resources - Tinovation"}</title>
   <meta property="og:title" content={"Resources - Tinovation"} />
+  <meta property="theme-color" content="#be185d" />
+  <meta
+    property="description"
+    content="Coding resources to help anyone learn to build cool stuff!" />
+  
+  <meta
+    property="og:description"
+    content="Coding resources to help anyone learn to build cool stuff!" />
+  <meta property="og:image" content="https://tinovation.org/website/meta/resources.webp" />
+
+  <meta property="twitter:title" content={"Resources - Tinovation"} />
+  <meta
+    property="twitter:description"
+    content="Coding resources to help anyone learn to build cool stuff!" />
+  <meta
+    property="twitter:image"
+    content="https://tinovation.org/website/meta/resources.webp" />
 </svelte:head>
 
 <div class="absolute -z-10 h-full w-full fill-pink-300">

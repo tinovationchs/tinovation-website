@@ -39,10 +39,28 @@
 
 <svelte:head>
   <title>
-    {data.metadata.title} - Tinovation
+    {`${data.metadata.title} - Resources`}
   </title>
-  <meta property="og:title" content={`${data.metadata.title} - Tinovation`} />
+  <meta property="og:title" content={`${data.metadata.title} - Resources`} />
+  <meta property="theme-color" content="#be185d" />
+  <meta
+    property="description"
+    content="Coding resources to help anyone learn to build cool stuff!" />
+  
+    <meta
+    property="og:description"
+    content="Coding resources to help anyone learn to build cool stuff!" />
+  <meta property="og:image" content="https://tinovation.org/website/meta/resources.webp" />
+
+  <meta property="twitter:title" content={`${data.metadata.title} - Resources`} />
+  <meta
+    property="twitter:description"
+    content="Coding resources to help anyone learn to build cool stuff!" />
+  <meta
+    property="twitter:image"
+    content="https://tinovation.org/website/meta/resources.webp" />
 </svelte:head>
+
 
 <div
   class="absolute h-[45rem] w-full -translate-y-28"
