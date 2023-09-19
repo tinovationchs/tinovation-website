@@ -1,5 +1,5 @@
 import type { Leaderboard } from "$lib/types";
-
+        
 const data: Leaderboard = [
   {
     name: "Ashaaz Ahmed",
@@ -303,6 +303,21 @@ const data: Leaderboard = [
   },
   {
     name: "Benjamin Lee",
+    points: [],
+    comment: "",
+  },
+  {
+    name: "Navaneeth Sujith",
+    points: [],
+    comment: "",
+  },
+  {
+    name: "Varchas Thaker",
+    points: [],
+    comment: "",
+  },
+  {
+    name: "Johnson Li",
     points: [],
     comment: "",
   },
