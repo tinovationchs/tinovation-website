@@ -1,0 +1,46 @@
+---
+title: Scoring
+authors: [Daniel Cui]
+date: "2023-09-18"
+checked: true
+published: true
+---
+
+Just to let you know, this is all just friendly competition.
+We would much rather you learn to build cool things and have fun with it
+than to be aggressively concerned about winning. But hey, whatever floats 
+your boat.
+
+Also, mentors can earn points as well, so try to drag them into your team
+because they have some mad skillz.
+
+## Code Sprints *(team/solo)*
+
+Each member of a team who won will recieve that amount of points.
+So, if your team wins first, every person gets 10 points.
+
+- 1st Place: **10 pts**
+
+- 2nd Place: **8 pts**
+
+- 3rd Place: **5 pts**
+
+- everyone else for submitting: **2 pts**
+
+> Just for clarification, the participation points are given to those who 
+> *submitted a project* but *did not place*. First place will not win 12 points.
+
+## CTFs *(team/solo)*
+
+- 1st Place: **5 pts**
+- 2nd Place: **4 pts**
+- 3rd Place: **3 pts**
+
+## Low Stakes Games *(solo)*
+
+Some of these games may include: kahoots, pitch competition, blind coding competition, 
+geoguessr, bomb party, typing game, etc.
+
+- 1st Place: **3 pts**
+- 2nd Place: **2 pts**
+- 3rd Place: **1 pts**

@@ -98,6 +98,7 @@ const resourceCategories: Categories = {
   ],
   Tinovation: [
     { type: ItemType.Guide, displayName: "dev-notes", path: "dev-notes" },
+    "scoring",
     "error",
     {
       type: ItemType.Link,
