@@ -24,3 +24,4 @@ Happy coding!
   - see here for mdsvex versioning problems: https://github.com/pngwn/MDsveX/issues/518
   - I hope this works... wth it's crazy! it actually works!
 - heavily referenced to get working... thanks, mate! --> https://github.com/mvasigh/sveltekit-mdsvex-blog
+- yolo badge?
