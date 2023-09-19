@@ -25,3 +25,4 @@ Happy coding!
   - I hope this works... wth it's crazy! it actually works!
 - heavily referenced to get working... thanks, mate! --> https://github.com/mvasigh/sveltekit-mdsvex-blog
 - yolo badge?
+- peapod badge??
