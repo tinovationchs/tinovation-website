@@ -1,10 +1,18 @@
 ---
 title: Languages
 authors: [Daniel Cui, Ryan Kim]
-date: "2023-08-17"
+date: "2023-09-21"
 checked: true
 published: true
 ---
+
+On your development journey, there will be a lot to learn, but don't be overwhelmed! 
+There are so many resources everwhere for your questions or problems. All you have to do is
+*find something you want to make, then learn what you need to make it.* It's as simple as that.
+
+> If you are a complete beginner and want to have a more comprehensive introduction to computer science,
+> you should check out [Harvard's CS50 course](https://cs50.harvard.edu/x)!
+
 
 ## What is a [programming language](https://wikipedia.org/wiki/Programming_language)?
 
@@ -52,7 +60,3 @@ Languages also typically come with a specific package manager like
 [npm](https://www.npmjs.com/) for JavaScript, and [cargo](https://doc.rust-lang.org/cargo/) for Rust.
 Packages will help you build apps with pre-existing tools and functions, so you won't have to write
 your own libraries from scratch!
-
-As you being your development journey, there will be a lot to learn, but don't be overwhelmed! 
-There are so many resources everwhere if you have any questions or problems. All you have to do is
-*find something you want to make, then learn what you need to make it.* It's as simple as that.
