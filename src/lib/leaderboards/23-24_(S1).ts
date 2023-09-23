@@ -307,6 +307,26 @@ const data: Leaderboard = [
     comment: "",
   },
   {
+    name: "Navaneeth Sujith",
+    points: [],
+    comment: "",
+  },
+  {
+    name: "Varchas Thaker",
+    points: [],
+    comment: "",
+  },
+  {
+    name: "Johnson Li",
+    points: [],
+    comment: "",
+  },
+  {
+    name: "Pearl Lakhani",
+    points: [],
+    comment: "",
+  },
+  {
     name: "Arnav Sharma",
     points: [],
     comment: "",
