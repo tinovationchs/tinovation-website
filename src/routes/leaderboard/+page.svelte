@@ -5,6 +5,21 @@
 <svelte:head>
   <title>{"Leaderboard - Tinovation"}</title>
   <meta property="og:title" content={"Leaderboard - Tinovation"} />
+  <meta property="theme-color" content="#7e22ce" />
+  <meta
+    property="description"
+    content="Earn points on code sprints and games through luck and perseverance!" />
+
+  <meta
+    property="og:description"
+    content="Earn points on code sprints and games through luck and perseverance!" />
+  <meta property="og:image" content="https://tinovation.org/website/meta/leaderboard.webp" />
+
+  <meta property="twitter:title" content={"Leaderboard - Tinovation"} />
+  <meta
+    property="twitter:description"
+    content="Earn points on code sprints and games through luck and perseverance!" />
+  <meta property="twitter:image" content="https://tinovation.org/website/meta/leaderboard.webp" />
 </svelte:head>
 
 <div class="absolute -z-10 h-full w-full fill-purple-300">

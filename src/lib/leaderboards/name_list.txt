@@ -62,7 +62,10 @@ Benjamin Lee
 Navaneeth Sujith
 Varchas Thaker
 Johnson Li
+<<<<<<< HEAD
 Pearl Lakhani
+=======
+>>>>>>> a8e8059dd3dc957881d712fd906ef64bc9f0adc0
 Arnav Sharma
 Laurier Ke
 Purva Marfatia

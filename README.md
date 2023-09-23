@@ -1,6 +1,6 @@
 # Tinovation Website
 
-This is the website for Tinovation, a school club at CHS. It includes general club 
+This is the website for Tinovation, a school club at CHS. It includes general club
 information, coding resources, a project showcase, and a leaderboard for code sprints.
 
 Happy coding!
@@ -24,3 +24,5 @@ Happy coding!
   - see here for mdsvex versioning problems: https://github.com/pngwn/MDsveX/issues/518
   - I hope this works... wth it's crazy! it actually works!
 - heavily referenced to get working... thanks, mate! --> https://github.com/mvasigh/sveltekit-mdsvex-blog
+- yolo badge?
+- peapod badge??
