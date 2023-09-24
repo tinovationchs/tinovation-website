@@ -10,7 +10,7 @@ const showcaseProjects: Project[] = [
     name: "VR Chemistry Lab",
     authors: ["Laurier Ke, Arnav Gupta"],
     date: "2023-09-23",
-    description: "A VR application of the flame tests chemistry lab",
+    description: "A VR application of the flame tests chemistry lab.",
     main_link: "https://drive.google.com/file/d/1OVgo9jz7gu5Zvs1Hv6hH5RGlxUcHnqM7/view?usp=sharing",
     github_link: "https://github.com/LaurierKe/ChemLab",
   },
