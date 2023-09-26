@@ -278,8 +278,8 @@ const data: Leaderboard = [
   },
   {
     name: "Anushree Misra",
-    points: [],
-    comment: "",
+    points: [2],
+    comment: "2nd in kahoot #1",
   },
   {
     name: "Dhruva Srinivas",
@@ -327,14 +327,19 @@ const data: Leaderboard = [
     comment: "",
   },
   {
+    name: "Mitchell Kwak",
+    points: [1],
+    comment: "3rd in kahoot #1",
+  },
+  {
     name: "Arnav Sharma",
     points: [],
     comment: "",
   },
   {
     name: "Laurier Ke",
-    points: [],
-    comment: "",
+    points: [3],
+    comment: "1st in kahoot #1",
   },
   {
     name: "Purva Marfatia",

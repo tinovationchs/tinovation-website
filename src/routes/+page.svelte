@@ -80,7 +80,7 @@
       </p>
       <p>
         <em class="not-italic text-blue-300">Saturdays</em> from
-        <em class="not-italic text-green-300">10am to 1pm</em>
+        <em class="not-italic text-green-300">11am to 1pm</em>
         at the
         <a
           href="https://sccld.org/locations/cupertino/"
