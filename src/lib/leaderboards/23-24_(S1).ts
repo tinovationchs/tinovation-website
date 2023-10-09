@@ -3,12 +3,12 @@ import type { Leaderboard } from "$lib/types";
 const data: Leaderboard = [
   {
     name: "Ashaaz Ahmed",
-    points: [],
+    points: [2],
     comment: "",
   },
   {
     name: "Aaron Dbritto",
-    points: [],
+    points: [2],
     comment: "",
   },
   {
@@ -33,7 +33,7 @@ const data: Leaderboard = [
   },
   {
     name: "Pragya Sharma",
-    points: [],
+    points: [5],
     comment: "",
   },
   {
@@ -43,7 +43,7 @@ const data: Leaderboard = [
   },
   {
     name: "Vedanth Kalkura",
-    points: [],
+    points: [2],
     comment: "",
   },
   {
@@ -53,7 +53,7 @@ const data: Leaderboard = [
   },
   {
     name: "Bryan Deng",
-    points: [],
+    points: [2],
     comment: "",
   },
   {
@@ -73,7 +73,7 @@ const data: Leaderboard = [
   },
   {
     name: "Aarav Batra",
-    points: [],
+    points: [2],
     comment: "",
   },
   {
@@ -88,7 +88,7 @@ const data: Leaderboard = [
   },
   {
     name: "Brandon Seo",
-    points: [],
+    points: [2],
     comment: "",
   },
   {
@@ -108,12 +108,12 @@ const data: Leaderboard = [
   },
   {
     name: "Millie Ng",
-    points: [],
+    points: [2],
     comment: "",
   },
   {
     name: "Nikhil Krishnaswamy",
-    points: [],
+    points: [2],
     comment: "",
   },
   {
@@ -138,7 +138,7 @@ const data: Leaderboard = [
   },
   {
     name: "Shivanth Kandasamy",
-    points: [],
+    points: [2],
     comment: "",
   },
   {
@@ -148,7 +148,7 @@ const data: Leaderboard = [
   },
   {
     name: "Kalyaa Pradeep",
-    points: [],
+    points: [2],
     comment: "",
   },
   {
@@ -163,7 +163,7 @@ const data: Leaderboard = [
   },
   {
     name: "Jimin Lee",
-    points: [],
+    points: [2],
     comment: "",
   },
   {
@@ -218,12 +218,12 @@ const data: Leaderboard = [
   },
   {
     name: "Christopher Zhang",
-    points: [],
+    points: [8],
     comment: "",
   },
   {
     name: "Kavya Gupta",
-    points: [],
+    points: [5],
     comment: "",
   },
   {
@@ -283,8 +283,8 @@ const data: Leaderboard = [
   },
   {
     name: "Dhruva Srinivas",
-    points: [],
-    comment: "",
+    points: [10],
+    comment: "code sprint #1 winner",
   },
   {
     name: "Sungmin Park",
@@ -298,7 +298,7 @@ const data: Leaderboard = [
   },
   {
     name: "Tanay Gupta",
-    points: [],
+    points: [8],
     comment: "",
   },
   {
@@ -318,7 +318,7 @@ const data: Leaderboard = [
   },
   {
     name: "Johnson Li",
-    points: [],
+    points: [2],
     comment: "",
   },
   {
@@ -332,6 +332,16 @@ const data: Leaderboard = [
     comment: "3rd in kahoot #1",
   },
   {
+    name: "Namita Gaidhani",
+    points: [5],
+    comment: "",
+  },
+  {
+    name: "Michael Chuang",
+    points: [8],
+    comment: "",
+  },
+  {
     name: "Arnav Sharma",
     points: [],
     comment: "",
@@ -343,7 +353,7 @@ const data: Leaderboard = [
   },
   {
     name: "Purva Marfatia",
-    points: [],
+    points: [5],
     comment: "",
   },
   {
@@ -353,13 +363,13 @@ const data: Leaderboard = [
   },
   {
     name: "Shine Chang",
-    points: [],
-    comment: "",
+    points: [2],
+    comment: "CTF wizard!",
   },
   {
     name: "Taisei De La Cruz",
-    points: [],
-    comment: "",
+    points: [2],
+    comment: "rainbow table cracking unimash 😭",
   },
 ];
 

@@ -6,6 +6,16 @@ import type { Project } from "./types";
 
 const showcaseProjects: Project[] = [
   {
+    thumbnail_image: "tinofind.png",
+    name: "Tinofind",
+    authors: ["Dhruva Srinivas"],
+    date: "2023-10-09",
+    description:
+      "Tinofind is a lost and found website for our school, allowing people to report and claim lost items.",
+    main_link: "https://tinofind.vercel.app/",
+    github_link: "https://github.com/carrotfarmer/tinofind",
+  },
+  {
     thumbnail_image: "flametest.png",
     name: "VR Chemistry Lab",
     authors: ["Laurier Ke, Arnav Gupta"],
