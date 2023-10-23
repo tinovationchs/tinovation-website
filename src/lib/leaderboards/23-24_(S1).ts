@@ -88,8 +88,8 @@ const data: Leaderboard = [
   },
   {
     name: "Brandon Seo",
-    points: [2],
-    comment: "",
+    points: [2, 2],
+    comment: "2nd in kahoot #2",
   },
   {
     name: "Ethan Shen",
@@ -163,8 +163,8 @@ const data: Leaderboard = [
   },
   {
     name: "Jimin Lee",
-    points: [2],
-    comment: "",
+    points: [2, 1],
+    comment: "3rd in kahoot #2",
   },
   {
     name: "Prashant Kondayapalepu",
@@ -203,8 +203,8 @@ const data: Leaderboard = [
   },
   {
     name: "John Kim",
-    points: [],
-    comment: "",
+    points: [3],
+    comment: "1st in kahoot #2",
   },
   {
     name: "Isaac Pan",
