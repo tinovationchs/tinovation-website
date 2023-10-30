@@ -6,7 +6,7 @@ import type { Project } from "./types";
 
 const showcaseProjects: Project[] = [
   {
-    thumbnail_image: "tinotorial.png",
+    thumbnail_image: "tinotorial.jpg",
     name: "Tino Tutorial",
     authors: ["Pragya Sharma, Kavya Gupta, Namita Gaidhani"],
     date: "2023-10-15",
