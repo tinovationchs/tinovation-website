@@ -6,6 +6,16 @@ import type { Project } from "./types";
 
 const showcaseProjects: Project[] = [
   {
+    thumbnail_image: "tinotorial.png",
+    name: "Tino Tutorial",
+    authors: ["Pragya Sharma, Kavya Gupta, Namita Gaidhani"],
+    date: "2023-10-15",
+    description:
+      "This is an organizer for the availability in different rooms during tutorials on Mondays, Wednesdays, and Fridays for Cupertino High School.",
+    main_link: "https:/chs-tut-vercel.vercel.app/",
+    github_link: "https://github.com/pragisharma/chs-tutorial/",
+  },
+  {
     thumbnail_image: "tinofind.png",
     name: "Tinofind",
     authors: ["Dhruva Srinivas"],
