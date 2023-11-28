@@ -136,6 +136,3 @@ make our lives easier.
 
 **To sort out any confusion in the two examples above, please refer to the Earth Engine docs 
 [here](https://developers.google.com/earth-engine/).**
-
-## todo: add links + diagrams maybe? also figure out how stackedit.io does multiline code block things TT
-
