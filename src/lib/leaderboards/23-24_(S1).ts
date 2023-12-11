@@ -33,7 +33,7 @@ const data: Leaderboard = [
   },
   {
     name: "Pragya Sharma",
-    points: [5, 2],
+    points: [5, 2, 2],
     comment: "",
   },
   {
@@ -53,8 +53,8 @@ const data: Leaderboard = [
   },
   {
     name: "Bryan Deng",
-    points: [2],
-    comment: "",
+    points: [2, 3, 5],
+    comment: "2nd in advent-code-golf",
   },
   {
     name: "Vismay Achar Bhargav",
@@ -89,7 +89,7 @@ const data: Leaderboard = [
   {
     name: "Brandon Seo",
     points: [2, 2],
-    comment: "2nd in kahoot #2",
+    comment: "2nd in kahoot-2",
   },
   {
     name: "Ethan Shen",
@@ -143,7 +143,7 @@ const data: Leaderboard = [
   },
   {
     name: "Anushruth Venkatesan",
-    points: [2],
+    points: [2, 2],
     comment: "",
   },
   {
@@ -163,8 +163,8 @@ const data: Leaderboard = [
   },
   {
     name: "Jimin Lee",
-    points: [2, 1, 2],
-    comment: "2rd in kahoot #3",
+    points: [2, 1, 2, 2],
+    comment: "3rd in advent-code-golf",
   },
   {
     name: "Prashant Kondayapalepu",
@@ -204,7 +204,7 @@ const data: Leaderboard = [
   {
     name: "John Kim",
     points: [3],
-    comment: "1st in kahoot #2",
+    comment: "1st in kahoot-2",
   },
   {
     name: "Isaac Pan",
@@ -218,12 +218,12 @@ const data: Leaderboard = [
   },
   {
     name: "Christopher Zhang",
-    points: [8, 10, 3],
-    comment: "1st in kahoot #3",
+    points: [8, 10, 3, 2],
+    comment: "1st in kahoot-3",
   },
   {
     name: "Kavya Gupta",
-    points: [5],
+    points: [5, 2],
     comment: "",
   },
   {
@@ -273,18 +273,18 @@ const data: Leaderboard = [
   },
   {
     name: "Ayush Bheemaiah",
-    points: [],
+    points: [2],
     comment: "",
   },
   {
     name: "Anushree Misra",
     points: [2],
-    comment: "2nd in kahoot #1",
+    comment: "2nd in kahoot-1",
   },
   {
     name: "Dhruva Srinivas",
-    points: [10, 2],
-    comment: "code sprint #1 winner",
+    points: [10, 2, 10],
+    comment: "code-sprint-3 winner!",
   },
   {
     name: "Sungmin Park",
@@ -299,7 +299,7 @@ const data: Leaderboard = [
   {
     name: "Tanay Gupta",
     points: [8, 10, 1],
-    comment: "3rd in kahoot #3",
+    comment: "3rd in kahoot-3",
   },
   {
     name: "Benjamin Lee",
@@ -329,7 +329,7 @@ const data: Leaderboard = [
   {
     name: "Mitchell Kwak",
     points: [1],
-    comment: "3rd in kahoot #1",
+    comment: "3rd in kahoot-1",
   },
   {
     name: "Namita Gaidhani",
@@ -338,8 +338,8 @@ const data: Leaderboard = [
   },
   {
     name: "Michael Chuang",
-    points: [8, 10],
-    comment: "1st in code sprint #2",
+    points: [8, 10, 2],
+    comment: "1st in code-sprint-2",
   },
   {
     name: "Araav Nayak",
@@ -347,29 +347,34 @@ const data: Leaderboard = [
     comment: "",
   },
   {
-    name: "Arnav Sharma",
+    name: "Aashvik Kohli",
     points: [2],
     comment: "",
   },
   {
+    name: "Arnav Sharma",
+    points: [2, 2],
+    comment: "",
+  },
+  {
     name: "Laurier Ke",
-    points: [3],
+    points: [3, 2],
     comment: "1st in kahoot #1",
   },
   {
     name: "Purva Marfatia",
-    points: [5, 8],
+    points: [5, 8, 8],
     comment: "",
   },
   {
     name: "Shauryan Kanaujia",
-    points: [],
+    points: [2],
     comment: "",
   },
   {
     name: "Shine Chang",
-    points: [2, 2],
-    comment: "CTF wizard!",
+    points: [2, 2, 5, 10],
+    comment: "code-sprint-3 winner!",
   },
   {
     name: "Taisei De La Cruz",
