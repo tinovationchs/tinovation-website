@@ -4,9 +4,9 @@ import { writable, derived } from "svelte/store";
 
 // ======== ONLY EDIT THE STRINGS HERE! ========= //
 // default/current leaderboard filename w/o ".ts" //
-export const currentLeaderboard = writable("23-24_(S1)");
+export const currentLeaderboard = writable("23-24_(S2)");
 // use format for the date, date of last update   //
-export const leaderboardLastUpdated = moment("2023-12-11", "YYYY-MM-DD");
+export const leaderboardLastUpdated = moment("2024-01-10", "YYYY-MM-DD");
 // ============================================== //
 
 // ================================ //

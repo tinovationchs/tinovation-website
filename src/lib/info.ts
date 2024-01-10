@@ -1,5 +1,5 @@
 const info = {
-  copyright_year: "2023",
+  copyright_year: "2024",
 
   discord_link: "https://discord.gg/QGxaW5dSG2",
   instagram_link: "https://www.instagram.com/tinovationchs",
