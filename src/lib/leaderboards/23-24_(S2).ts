@@ -23,7 +23,7 @@ const data: Leaderboard = [
   },
   {
     name: "Kavya Gupta",
-    points: [],
+    points: [10],
     comment: "",
   },
   {
@@ -53,7 +53,7 @@ const data: Leaderboard = [
   },
   {
     name: "Pragya Sharma",
-    points: [],
+    points: [10],
     comment: "",
   },
   {
@@ -84,6 +84,51 @@ const data: Leaderboard = [
   {
     name: "Tanay Gupta",
     points: [],
+    comment: "",
+  },
+  {
+    name: "Laurier Ke",
+    points: [3],
+    comment: "kahoot nerd?",
+  },
+  {
+    name: "Brandon Seo",
+    points: [2],
+    comment: "",
+  },
+  {
+    name: "Ethan Shen",
+    points: [1],
+    comment: "",
+  },
+  {
+    name: "Andy Zhang",
+    points: [5],
+    comment: "kaggle lmao",
+  },
+  {
+    name: "Araav Nayak",
+    points: [3],
+    comment: "",
+  },
+  {
+    name: "Richard Zhang",
+    points: [2],
+    comment: "",
+  },
+  {
+    name: "Purva Marfatia",
+    points: [10],
+    comment: "",
+  },
+  {
+    name: "Arnav Sharma",
+    points: [8],
+    comment: "",
+  },
+  {
+    name: "Anush Venkatesan",
+    points: [8],
     comment: "",
   },
 ];
