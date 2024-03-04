@@ -23,8 +23,8 @@ const data: Leaderboard = [
   },
   {
     name: "Kavya Gupta",
-    points: [10],
-    comment: "",
+    points: [10, 3],
+    comment: "2nd codingbat",
   },
   {
     name: "Chris Zhang",
@@ -58,8 +58,8 @@ const data: Leaderboard = [
   },
   {
     name: "Avi Tomar",
-    points: [],
-    comment: "",
+    points: [2],
+    comment: "3rd codingbat",
   },
   {
     name: "Jolie Han",
@@ -129,6 +129,21 @@ const data: Leaderboard = [
   {
     name: "Anush Venkatesan",
     points: [8],
+    comment: "",
+  },
+  {
+    name: "Aaron Cu",
+    points: [5],
+    comment: "1st codingbat",
+  },
+  {
+    name: "Araav Nayak",
+    points: [3],
+    comment: "",
+  },
+  {
+    name: "Araav Nayak",
+    points: [3],
     comment: "",
   },
 ];
