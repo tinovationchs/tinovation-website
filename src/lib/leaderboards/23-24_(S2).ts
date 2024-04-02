@@ -18,12 +18,12 @@ const data: Leaderboard = [
   },
   {
     name: "Michael Chuang",
-    points: [],
-    comment: "",
+    points: [3],
+    comment: "3rd: boat 3d model",
   },
   {
     name: "Kavya Gupta",
-    points: [10, 3],
+    points: [10, 3, 1],
     comment: "2nd codingbat",
   },
   {
@@ -53,7 +53,7 @@ const data: Leaderboard = [
   },
   {
     name: "Pragya Sharma",
-    points: [10],
+    points: [10, 1],
     comment: "",
   },
   {
@@ -68,8 +68,8 @@ const data: Leaderboard = [
   },
   {
     name: "Alvin Kang",
-    points: [],
-    comment: "",
+    points: [5],
+    comment: "1st: hollow knight 3d model :)",
   },
   {
     name: "Tanay Gupta",
@@ -145,6 +145,11 @@ const data: Leaderboard = [
     name: "Araav Nayak",
     points: [3],
     comment: "",
+  },
+  {
+    name: "Kalyaa Pradeep",
+    points: [4],
+    comment: "mario 3d model",
   },
 ];
 
