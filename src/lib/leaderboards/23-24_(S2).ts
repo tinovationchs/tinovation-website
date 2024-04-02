@@ -137,16 +137,6 @@ const data: Leaderboard = [
     comment: "1st codingbat",
   },
   {
-    name: "Araav Nayak",
-    points: [3],
-    comment: "",
-  },
-  {
-    name: "Araav Nayak",
-    points: [3],
-    comment: "",
-  },
-  {
     name: "Kalyaa Pradeep",
     points: [4],
     comment: "mario 3d model",
