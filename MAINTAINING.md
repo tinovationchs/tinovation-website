@@ -1,6 +1,6 @@
 # Editing Content! (Maintaining)
 
-You will only really have to edit or add to some JS objects inside a `.ts` file, and I used TypeScript so most of the data has an expected shape to it.
+You will only really have to edit or add to some JS objects inside a `.ts` file, and I used TypeScript so most of the data has an expected shape to it. Frick. I just realized that I was inconsistent with camelCase and snake_case... ugh, I hate JavaScript. snake_case is superior.
 
 ## General Club Info
 
