@@ -5,6 +5,10 @@ information, coding resources, a project showcase, and a leaderboard for code sp
 
 Happy coding!
 
+> If you are the current maintainer of this website, refer to the
+> [MAINTAINING.md](https://github.com/tinovationchs/tinovation-website/blob/main/MAINTAINING.md)
+> for changing the content of the website without breaking anything!
+
 ## Old Dev Notes
 
 ### Ideas

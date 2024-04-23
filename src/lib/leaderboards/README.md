@@ -6,7 +6,7 @@ You can use my python script `fill_leaderboard.py` to generate a leaderboard .ts
 
 Just copy all names with each name on one line.
 
-Then run the script and input the name of the new leaderboard. It should work...
+Then run the script and input the name of the new leaderboard. It should work... lol i dont think this script is really that useful.
 
 ## Editing Notes
 
