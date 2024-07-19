@@ -15,17 +15,17 @@ const info = {
   form_link: "https://forms.gle/8v1tzN5hnULHtN447",
   form_text: "registration form",
 
-  co_presidents: ["Daniel Cui", "Ryan Kim"].sort(),
-  vice_president: "Arnav Gupta",
-  secretary_treasurer: "Bhargav Eranki",
+  co_presidents: ["Purva Marfatia", "Bhargav Eranki"],
+  vice_president: "Shine Chang",
+  secretary_treasurer: "Arnav Sharma",
   mentors: [
-    "Taisei De La Cruz",
-    "Shine Chang",
-    "Arnav Sharma",
-    "Purva Marfatia",
-    "Shauryan Kanaujia",
-    "Laurier Ke",
-  ].sort(),
+    "Kavya Gupta",
+    "Advaiyt Sane",
+    "Dhruva Srinivas",
+    "Alvin Kang",
+    "Ayush Bheemaiah",
+    "Christopher Zhang",
+  ],
   club_advisor: "Mr. Ferrante",
 
   resource_contribution_link:
