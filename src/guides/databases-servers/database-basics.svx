@@ -59,11 +59,15 @@ Some database providers may implement these techniques out-of-the-box. For examp
 
 ### SQL/Relational
 __MySQL__: Oracle's SQL database service
+
 __Cloud SQL__: Google's SQL database hosting service. Free initial credits
+
 __Azure SQL__: Microsoft's SQL database hosting service. Free initial credits
+
 __SQLite__: stores an SQL database locally. Good for amateur development. Local hosting, so, free.
 
 ### NoSQL/Document-oriented
 __MongoDB Atlas__: Real-time Database hosting service. Nice interface, clear documentation, simple syntax. Free.
+
 __Firebase RTDB__: Real-time Database hosting. Good interface, terrible documentation. Iffy syntax as a result of not being able to find the cleanest way to implement something due to the poor documentation. Free.
 

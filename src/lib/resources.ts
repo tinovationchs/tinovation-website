@@ -66,17 +66,6 @@ const resourceCategories: Categories = {
     // "rest",
     // "chatgpt-api",
   ],
-  "App Development": [
-    // "react-native",
-    // "flutter",
-    // "electron",
-    // "tauri",
-    // {
-    //   type: ItemType.Code,
-    //   displayName: ".net-framework",
-    //   path: "https://colab.research.google.com/drive/15fYsChnCx88ixVNTWEPpPWGo8ZJFxqkP?usp=sharing",
-    // },
-  ],
   Miscellaneous: [
     // "vim",
     // "assembly",

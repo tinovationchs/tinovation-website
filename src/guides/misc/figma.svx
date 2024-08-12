@@ -2,7 +2,7 @@
 title: Intro to Figma
 authors: [Purva Marfatia]
 date: "2023-08-04"
-checked: false
+checked: true 
 published: true
 ---
 

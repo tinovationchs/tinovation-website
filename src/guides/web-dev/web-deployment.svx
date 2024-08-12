@@ -2,7 +2,7 @@
 title: Deployment
 authors: [Shine Chang]
 date: "2023-07-18"
-checked: false
+checked: true 
 published: true
 ---
 

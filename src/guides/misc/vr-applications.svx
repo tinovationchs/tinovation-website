@@ -2,7 +2,7 @@
 title: VR Applications
 authors: [Laurier Ke]
 date: "2023-07-29"
-checked: false
+checked: true 
 published: true
 ---
 ## Introduction
