@@ -47,7 +47,7 @@
 
 <div class="fixed -z-20 h-full min-h-screen w-full bg-retro-black" />
 
-<div class="mb-8 mt-20 flex flex-row justify-center md:mt-24">
+<div class="mb-8 flex flex-row justify-center">
   <div>
     <h1 class="text-center font-header text-5xl md:text-6xl">Resources</h1>
 

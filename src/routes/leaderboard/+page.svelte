@@ -46,7 +46,7 @@
 <div class="fixed -z-20 h-full min-h-screen w-full bg-retro-black" />
 
 <div class="flex flex-row justify-center">
-  <div class="mb-8 mt-20 flex w-full flex-col md:mt-24 md:w-auto">
+  <div class="mb-8 flex w-full flex-col md:w-auto">
     <Leaderboard />
   </div>
 </div>

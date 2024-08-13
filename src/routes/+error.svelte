@@ -6,7 +6,7 @@
   <title>{"Error - Tinovation"}</title>
 </svelte:head>
 
-<div class="fixed mt-20 flex w-full flex-row justify-center md:mt-24">
+<div class="fixed flex w-full flex-row justify-center">
   <div class="flex flex-col gap-4">
     <h1 class="font-header text-4xl font-semibold text-retro-white md:text-6xl">
       {`${$page.error?.message} :(`}

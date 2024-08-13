@@ -8,6 +8,9 @@
 <div class="flex min-h-screen flex-col">
   <Navbar />
 
+  <div class="h-28 md:h-32">
+  </div>
+
   <slot />
 
   {#if $page.url.pathname !== "/"}
