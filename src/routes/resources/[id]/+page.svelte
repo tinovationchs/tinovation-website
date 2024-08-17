@@ -60,7 +60,7 @@
 </svelte:head>
 
 <div
-  class="absolute h-[45rem] w-full -translate-y-28"
+  class="absolute w-full -translate-y-28"
   style="background-image: linear-gradient({180 +
     (getHash(data.metadata.title) %
       5)}deg, rgba({color?.r}, {color?.g}, {color?.b}, 0.8), rgba({color?.r}, {color?.g}, {color?.b}, 0) 50%);" />

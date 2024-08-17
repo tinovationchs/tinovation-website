@@ -1,0 +1,206 @@
+---
+title: Tinofind - Project Walkthrough
+authors: [Dhruva Srinivas]
+date: "2024-08-16"
+checked: true 
+published: true
+---
+
+[Tinofind](https://tinofind.vercel.app) is a web app I built that can act as a lost and found portal for CHS. 
+The idea was that students could post items they found or lost, and claim items that if it was theirs. In this post,
+I will show you some quick behind-the-scenes look at how this app works! 
+
+## Breaking it down
+
+The functionality can be broken down into three main parts:
+- Users should be able to **post items** they found or lost
+- Users should be able to **claim items** that they lost
+- And most importantly, users should be able to see all the items that have been listed on the site
+
+From this list, we can identify that there are two components that are common to all three parts:
+ a `User` and an `Item`. We need some sort of database to store these `Users` and `Items`. We also need a
+ way to authenticate users, because we don't want just anyone to be able to post or claim items.
+
+## The Stack
+
+Keeping the requirements in mind, I decided to use the following:
+
+- [Next.js](https://nextjs.org): For the frontend
+- [Tailwind CSS](https://tailwindcss.com): For styling the frontend
+- Next API Routes/[tRPC](https://trpc.io): To build an API that acts as the backend 
+- [Railway](https://railway.app): A cloud-based Postgres database
+- [Prisma](https://prisma.io): an ORM, which basically lets you perform database operations without writing raw SQL 
+- [Auth.js](https://authjs.dev) (previously NextAuth): For user authentication using OAuth providers
+- [Vercel](https://vercel.com): To host the Next app
+
+## Database models
+
+The database has 5 tables: `Item`, `User`, `Account`, `Session`, and `VerificationToken`. The last 3 are used by NextAuth
+which we'll talk about later.
+
+Let's look at the Prisma model for `Item`:
+
+```prisma
+model Item {
+    id          Int     @id @default(autoincrement())
+    name        String
+    description String
+    location    String
+    picture     String?
+
+    claimedBy  User? @relation(name: "claimedBy", fields: [claimedById], references: [id])
+    reportedBy User? @relation(name: "reportedBy", fields: [reportedById], references: [id], onDelete: Cascade)
+
+    claimedById  String?
+    reportedById String?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@unique([reportedById, id])
+}
+```
+
+There are fields for each characteristic of the item (name, description, etc.), including the `User` who reported it, and
+the `User` who may have claimed it. Similarly, a `User` model is also defined in the schema that includes the items
+they have reported.
+
+## Authentication
+
+Authentication is handled by Auth.js/NextAuth, which utilizes [Next's API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes)
+to create API endpoints like `/signin`, `/signout` etc., which you can use to authenticate users. 
+
+For NextAuth, you can configure **providers**, and an **adapter** in its config file. Providers are 
+basically telling NextAuth what auth service you want to use, i.e, email-password, Google, Facebook, Auth0, or whatever.
+For this project, I chose Google OAuth ([what is OAuth?](https://auth0.com/intro-to-iam/what-is-oauth-2)), so I used the
+ [`GoogleProvider`](https://authjs.dev/reference/core/providers/google).
+
+Adapters are used by the library to sync authenticated users with a database. Say, a user signs in to your app,
+NextAuth will use the adapter to see if the user already exists in the database, and if not, it create a new user, in
+the user table specified in the database schema. Since I was using Prisma, I used the
+ [`PrismaAdapter`](https://authjs.dev/getting-started/adapters/prisma#configuration).
+
+## API Routes
+
+As mentioned before, I used [tRPC](https://trpc.io) to build the backend. tRPC allows you to define API routes
+ as TypeScript functions, which can directly be called from the Next.js frontend. This is a huge advantage because
+ you get type-safety out of the box, which you do not get if you were to use REST APIs and `fetch` (like if you `fetch`d
+ an Express.js endpoint). A simple tRPC procedure would look like this:
+
+```ts
+export const itemRouter = createTRPCRouter({
+  // Procedure to query all existing items in the database
+  allItems: protectedProcedure.query(async ({ ctx }): Promise<ItemType[]> => {
+    const items = await ctx.db.item.findMany({
+      include: {
+        reportedBy: true,
+        claimedBy: true,
+      },
+    });
+
+    return items as ItemType[];
+  }),
+});
+```
+
+This might look a bit intimidating at first, but it's actually quite simple. Let's break it down:
+- `itemRouter` is an object that will contain all the procedures (or functions) related to an `Item`
+    - A router can contain queries, mutations, and subscriptions (somewhat like GraphQL)
+- `allItems` is a query procedure that returns all the items in the database
+    - A query is a procedure that **does not change data** in the database
+    - A mutation is a procedure that **changes data** in the database
+    - A subscription is a procedure that **listens for changes** in the database
+- - The `protectedProcedure` object is a middleware that checks if the user is authenticated before running the procedure.
+ If the user is not authenticated, it returns a 403 error. This is useful for procedures that require authentication.
+-  The `ctx` (context) object can be configured while setting up tRPC. It gets passed on to every procedure, and can 
+ contain anything you want. In this case, it contains a `db` object, which is a `PrismaClient` instance and a `session`
+  object that contains the details of an active session, if it exists.
+- In the `allItems` query, we destructure `db` from the `ctx` object that we use to query all the items in the database.
+ Then we return the items as an array of `ItemType` objects.
+- Now when we call this procedure from the frontend, the tRPC client will know that the return type for this query
+is an array of `ItemType` objects, and will throw an error if the return types do not match.
+
+## The Frontend
+
+The frontend is pretty basic stuff, as mentioned, it uses Tailwind CSS for styling, and I also used 
+some [`shadcn-ui`](https://ui.shadcn.com/) components because I am allergic to writing my own CSS. Let's take a look at
+how the frontend would call a tRPC procedure. Say the user clicks on the button to claim an item on the main feed. 
+In the `Item` React component, we would use a hook from tRPC to call the `claimItem` procedure,
+which would be defined in the `itemRouter` shown above.
+
+```ts
+const utils = api.useContext();
+
+const { mutate: claimItem } = api.item.claimItem.useMutation({
+  // onSuccess runs if the procedure runs without any errors
+  onSuccess: async () => {
+    await utils.invalidate();
+
+    // display a toast notification to the user
+    toast({
+      title: "Claimed Item",
+      description:
+        "You have successfully claimed this item. Your email and other information has been shared with the reporter.",
+      duration: 10000,
+    });
+  },
+
+  // onError runs if the procedure runs into an error
+  onError: (err) => { // do something with the error },
+});
+```
+
+Here, `api` is a tRPC client instance 
+(which uses [React Query](https://tanstack.com/query/latest/docs/framework/react/overview) under the hood. The 
+`useMutation` hook is used to call the procedure (which is a mutation because it **changes data**), 
+and the `onSuccess` callback is called when the procedure is successful. In this case, we **invalidate the cache so 
+that the feed is updated**, and display a toast notification to the user. *Wait, a cache?* Yep! tRPC/React Query
+comes with a built-in cache that can act as global state for your app. This is super useful because you don't have to
+worry about a thousand `useState`s, `useCallback`s and whatnot, or using a state management library like Redux or Zustand!
+
+## File Uploads
+
+Another cool part of the app is how it handles file uploads. Obviously, when a user posts an item, they need to be able
+to upload a picture of the item. While building this app, I stumbled upon this service called [UploadThing](https://uploadthing.com/).
+UploadThing is basically a nice wrapper around AWS S3, which can be an absolute pain to work with. UploadThing also
+works really well with someting like tRPC, as you can see from the code examples on their website:
+
+```ts
+// server
+
+export const fileRouter = {
+  imageUploader: f({ image: { maxFileSize: "4MB" } })
+    .middleware(async ({ req }) => {
+      // This code runs on your server before upload
+      const user = await auth(req);
+ 
+      // Throw to block uploading
+      if (!user)
+        throw new UploadThingError("Unauthorized");
+ 
+      // Return metadata to client
+      return { userId: user.id };
+    })
+    .onUploadComplete(async ({ metadata, file }) => ...),
+} satisfies FileRouter;
+```
+
+```tsx
+// React client
+
+<UploadButton
+  endpoint="imageUploader" // Typesafe btw
+  onClientUploadComplete={(response) => ...}
+  onUploadError={(error) => ...}
+/>
+```
+
+UploadThing also has a nice dashboard where you can see all the files that have been uploaded. The free tier is 
+decent enough for small projects, since it gives you 2GB of storage and 2 projects. If you exceed the free tier,
+ you probably shouldn't be using it, and consider using S3 for a fraction of the cost. 
+
+## Conclusion
+
+And that's it! I hope this post gave you a broad overview of how Tinofind works, so that you can apply these ideas
+to your own projects. Again, the project is open source, so feel free to check out the code on 
+[GitHub](https://github.com/carrotfarmer/tinofind)! Thanks for reading! 🚀

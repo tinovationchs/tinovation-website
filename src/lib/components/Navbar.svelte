@@ -2,7 +2,7 @@
   import { page } from "$app/stores";
 </script>
 
-<div class="fixed flex flex-col w-full items-center py-4 gap-4"> 
+<div class="fixed flex w-full flex-col items-center gap-4 py-4">
   <div>
     <nav
       class="text-semibold z-30 flex flex-row gap-4 rounded-3xl bg-retro-white px-4 py-1 font-header text-lg opacity-90 shadow-md shadow-transparent transition ease-in hover:-translate-y-0.5 hover:shadow-retro-white md:gap-8 md:px-10 md:py-1.5 md:text-2xl">
@@ -12,7 +12,7 @@
         <a href="/" class="transition ease-in hover:text-amber-700">home</a>
       {/if}
 
-      {#if $page.url.pathname === "/resources"}
+      {#if $page.url.pathname.includes("/resources")}
         <a href="/resources" class="text-pink-700 transition ease-in">resources</a>
       {:else}
         <a href="/resources" class="transition ease-in hover:text-pink-700">resources</a>
@@ -31,10 +31,9 @@
       {/if}
     </nav>
   </div>
-  <div class="text-2xl font-header bg-retro-white rounded-3xl px-4 py-1">
+  <div class="rounded-3xl bg-retro-white px-4 py-1 font-header text-2xl">
     Club Faire
-    <a 
-      class="text-sky-700 underline"
-      href="https://forms.gle/hvb6C1KAkU781qRX6">interest forum →</a>
+    <a class="text-sky-700 underline" href="https://forms.gle/hvb6C1KAkU781qRX6"
+      >interest forum →</a>
   </div>
 </div>

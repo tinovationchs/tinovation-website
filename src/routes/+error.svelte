@@ -6,15 +6,15 @@
   <title>{"Error - Tinovation"}</title>
 </svelte:head>
 
-<div class="fixed flex w-full flex-row justify-center">
-  <div class="flex flex-col gap-4">
+<div class="flex w-full flex-row justify-center">
+  <div class="flex flex-col gap-4 pt-8">
     <h1 class="font-header text-4xl font-semibold text-retro-white md:text-6xl">
       {`${$page.error?.message} :(`}
     </h1>
     <img class="w-full rounded-lg" src="/website/sad_cat.gif" alt="sad cat gif" />
     <a
       href="/"
-      class="text-center text-xl text-retro-white transition ease-in hover:scale-105 hover:text-amber-600">
+      class="mb-24 text-center text-xl text-retro-white transition ease-in hover:scale-105 hover:text-amber-600">
       back to home
 
       <svg
