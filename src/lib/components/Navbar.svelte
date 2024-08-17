@@ -9,7 +9,7 @@
       {#if $page.url.pathname === "/"}
         <a href="/" class="text-amber-700 transition ease-in">home</a>
       {:else}
-        <a href="/" class="!important transition ease-in hover:text-amber-700">home</a>
+        <a href="/" class="transition ease-in hover:text-amber-700">home</a>
       {/if}
 
       {#if $page.url.pathname.includes("/resources")}
