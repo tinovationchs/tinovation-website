@@ -1,0 +1,38 @@
+---
+title: Deploying Static Sites on GitHub Pages 
+authors: [Dhruva Srinivas]
+date: "2024-09-23"
+checked: true 
+published: true
+---
+
+This is a rapid guide that goes through deploying [static sites](https://www.google.com/search?q=what+is+a+static+web+site&oq=what+is+a+static+web+site) on [GitHub Pages](https://pages.github.com/).
+
+## Prerequisites
+- A static web site with atleast an `index.html` file
+- A GitHub repository with said static web site
+
+## Step 1 - Add a publishing source
+
+> You can configure your GitHub Pages site to publish when changes are pushed to a specific branch, or you can write a GitHub Actions 
+workflow to publish your site. 
+- [the docs?](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+Literally so easy.
+
+1. Navigate to your repository on GitHub
+2. Under the repository, click on the **"Settings"** tab
+3. In the **"Code and automation"** section of the sidebar, click **__Pages__**. 
+4. Under **"Build and deployment"**, under **"Source"**, select **__Deploy from a branch__**.
+5. Under **"Build and deployment"**, use the branch dropdown menu and select a publishing source.
+6. Save
+
+## Step 2 - Magic
+
+- GitHub looks for an `index.html`, `index.md`, or a `README.md` file in your repository as the entry-point for the website
+- **IMPORTANT (but also obvious?)** - The files mentioned above MUST be located **at the top level** of the source folder of the source branch!
+    - For example, if you configured your publishing source in the `/ (root)` folder on the `main` branch, your `index.html` file should be in `/` on the main branch.
+- Go to **Settings -> Pages -> Visit Site (under GitHub pages)**
+- Your static website is now live on the internet!
+
+For detailed documentation: https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
