@@ -1,0 +1,218 @@
+---
+title: Introduction to React
+authors: [Ayush Bheemaiah]
+date: "2024-09-1"
+checked: true
+published: true
+---
+
+## Prerequisites
+Basic knowledge of website development with **HTML, JavaScript, CSS**
+
+## What are Web Frameworks?
+
+Web frameworks provide several tools, libraries, and built in features to make the development process **easier and faster**. Typically, code written using these frameworks is **transpiled** or converted back into standard HTML, JavaScript, and CSS before being rendered in the browser. Some popular web frameworks are React, Django, Angular, and Express.
+
+## What is React?
+
+
+React is a popular frontend JavaScript library for rapidly building static user interfaces. This framework was built by Meta in 2013 and is one of the most widely used frontend technologies due to its efficient state management and ability to create reusable UI components. In this article, we’ll cover the basics of React, and learn how to build our own projects.
+
+To begin, it’s good to know that all websites are built with HTML for content, CSS for styling, and JavaScript for interactivity or **reactivity**. React introduces a concept called **components** where you can efficiently reuse and manage JavaScript, CSS, and HTML code. Similar to nesting tags in HTML, you can nest components in React to build complex websites. 
+
+Libraries such as DaisyUI, ChakraUI, and MaterialUI provide thousands of functional React components with pre-styled CSS classes that you can reuse in your own project! This notion of reusing code with components is one of the most significant features of React. To build your own components, React uses JavaScript functions like this, where the return statement is what is rendered for that component: 
+
+```javascript
+// Implementation 1
+
+export default function Home() {
+
+	return (
+		<h1>Hello World</h1>
+	);
+
+}
+
+// Implementation 2
+
+const Home = () => {
+
+    return (
+        <h1>Hello World</h1>
+    );
+
+}
+
+export default Home;
+
+// Note: Both of these are valid ways to create a React component
+// Note: A React component must always begin with a capital letter
+```
+You may notice that this syntax is similar to HTML. React uses **JSX syntax**, which enables you to include HTML markup inside a JavaScript file. JSX allows users to render logic and markup within each component, unlike how native HTML and JavaScript works, where the logic and markup are completely separate from each other.
+
+Additionally, if you want to include a value in JavaScript in your JSX component, you must include curly braces like this: 
+
+```javascript
+export default function Home() {
+
+	const  message = “Hello World”;
+
+	return (
+        <h1>{message}</h1>
+	)
+
+}
+
+// Note: Curly braces let you write code in JavaScript within the JSX.
+
+```
+
+React also lets you easily pass information to other components and render different values based on that input. Components use **props** to send data to each other. You can pass any values through props. Here is an example: 
+
+```javascript
+export default function Home() {
+
+	return (
+        // passing in age prop to Person component
+		<Person age={25} />
+	);
+
+}
+
+export function Person({ age }) {
+
+	return (
+		<h1>Hi, I am {age} years old.</h1>
+	);
+
+}
+```
+
+React also provides simple syntax for conditionally rendering components. This can be done by using if statements, &&, and ternary operators. 
+
+```javascript
+export default function Home() {
+
+  return (
+    <div>
+      <Person age={25} />
+      <Person age={16} />
+      <Person age={5} />
+    </div>
+  );
+
+}
+
+export function Person({ age }) {
+
+  if (age >= 18) {
+    return <h1>Hi, I am {age} years old. I am an adult.</h1>;
+  } else if (age >= 13) {
+    return <h1>Hi, I am {age} years old. I am a teenager.</h1>;
+  } else {
+    return <h1>Hi, I am {age} years old. I am a child.</h1>;
+  }
+
+}
+```
+
+What if you had an array of raw data, that you need to iterate into each component to render it? JavaScript methods like **map()** and **filter()** are particularly useful for this.
+
+```javascript
+export default function Home() {
+
+  const people = [
+    { name: “Alice”, age: 25 },
+    { name: “Bob”, age: 16 },
+    { name: “Charlie”, age: 5 },
+    { name: “Dian”, age: 18 }
+  ];
+
+  return (
+    <div>
+      {people.map(person => (
+        <Person key={person.name} name={person.name} age={person.age} />
+      ))}
+    </div>
+  );
+
+}
+
+export function Person({ name, age }) {
+
+  return (
+    <div>
+      <h1>Hi, my name is {name} and I am {age} years old.</h1>
+    </div>
+  );
+
+}
+```
+
+## Adding Interactivity and Managing State
+React allows you to add **event handlers** to components by first defining functions and passing it as a prop. Along with onClick, there are several other event handlers like onSubmit, onChange, onMouseEnter, etc. 
+
+Now, for one of the more important concepts: **state management**. Components are not always static; in fact, they almost always change. React manages component re-renders based on state changes. For instance, when interacting with radio buttons or typing in an input field, React detects these updates through the **useState** hook, which only triggers the necessary re-renders to reflect the latest state. Think about hooks like special React functions that allow you to modify  state in components. Other hooks exist like useEffect, useContext, etc, however they will not be covered in this article. Here is a basic example of how you use useState. Typically, you define a state variable, along with a setter function to change the value. When this button is clicked, the corresponding value will be updated.
+
+```javascript
+function Person({ name, initialAge }) {
+
+   // initializing state variable for age with value from initialAge prop
+   const [age, setAge] = useState(initialAge);
+
+   const incrementAge = () => {
+    //updating age state with setAge
+    setAge(prevAge => prevAge + 1);
+  };
+
+  return (
+    <div>
+      <h1>Hi, my name is {name} and I am {age} years old.</h1>
+      <button onClick={incrementAge}>Add One to Age</button>
+    </div>
+  );
+}
+```
+## Creating your first React project
+Creating a React project is quite straightforward. First install node.js [here](https://nodejs.org/en) (if you think you already have node.js installed, run ```node –version``` in your terminal to confirm). Then, open your terminal and cd into the directory you want your project to be located. Run ```npx create-react-app <project name>``` in your terminal and open your project folder in VS Code or your preferred code editor. Finally, cd into your new project folder and run ```npm start``` to launch your development server. For Next.js, which we will explore in the next section, follow this same process, however, replace ```npx create-react-app <project name>``` with ```npx create-next-app <project name>.``` Next.js will ask you to specify a few configurations; proceed with the default selections. Additionally, once you have your project open, instead of running ```npm start```, run ```npm run dev.``` By default, these commands will run the local development server on port 3000. Open ```localhost:3000``` with your preferred browser to view your React.js or Next.js project. Changes in the codebase will automatically be displayed on your local server.
+
+## What is Next.js?
+
+Next.js is another popular JavaScript framework **built on top of React** that provides several enhancements and optimizations for developers. 
+
+Here are the most significant optimizations of Next.js.
+### File Based Routing
+
+In Next.js projects, your content is within the /app directory in **pages** (page.jsx)
+You can manage your routing within your **file structure.** Here are a few examples.
+- ```app/page.tsx``` → ```/```
+- ```app/dashboard/page.tsx``` → ```/dashboard```
+- ```app/dashboard/settings/page.tsx``` → ```/dashboard/settings```
+- ```app/profile/page.tsx``` → ```/profile```
+
+
+### Server-Side Rendering
+
+Next.js provides flexible options for **client side** rendering vs **server side** rendering. This lets developers decide whether HTML pages are generated on the server for every request or if the client’s browser should render the HTML
+
+### API Routes
+
+Create **serverless** API endpoints within your application, which avoids having to manage an entirely different server or framework for your backend. For example, instead of worrying about deploying a Flask or Express backend along with your Next.js frontend, you only need to deploy the Next.js server.
+
+
+### Optimized Components
+
+Next.js provides several built in components to enhance functionality:
+
+- **Link** component for client side navigation (React counterpart is a `<a>`)
+- **Image** component for optimized image loading (React counterpart is `<img>`)
+- **useRouter** hook for more flexible navigation and access to router information 
+
+## Deploying your React.js or Next.js Project
+
+Vercel, the developers of Next.js, offers **free hosting** for React.js and Next.js projects! First visit https://vercel.com/ and create an account. Push your project into GitHub, and ensure you are the owner of the repository. Then, click "add new project", specify your repo, and you’re good to go!
+
+## More Information
+Next.js pairs great with Tailwind CSS for rapid styling within your JSX, and also works well with Express.js and MongoDB. Popular technologies for building full stack websites with React.js or Next.js include MERN (MongoDB, Express.js, React or Next.js, Node.js), PERN (PostgreSQL, Express.js, React.js or Next.js, Node.js), or Springboot, which is typically paired with an SQL database.
+
+
