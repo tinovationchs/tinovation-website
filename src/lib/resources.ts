@@ -11,8 +11,9 @@ const resourceCategories: Categories = {
     "rust-and-elm-architecture",
     { type: ItemType.Guide, displayName: "deployment", path: "web-deployment" },
     "tinofind-walkthrough",
-    "react"
+    "react",
     { type: ItemType.Guide, displayName: "deply-on-github-pages", path: "gh-pages" },
+    { type: ItemType.Guide, displayName: "tino-fruit-exchange-walkthrough", path: "tino-fruit-exchange-guide" },
   ],
   "Artificial Intelligence": [
     // "machine-learning",
