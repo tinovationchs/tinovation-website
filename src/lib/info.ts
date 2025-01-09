@@ -25,6 +25,8 @@ const info = {
     "Alvin Kang",
     "Ayush Bheemaiah",
     "Christopher Zhang",
+    "Shauryan Kanaujia",
+    "Michael Chuang",
   ],
   club_advisor: "Mr. Ferrante",
 
