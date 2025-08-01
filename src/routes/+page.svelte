@@ -12,7 +12,13 @@
 </svelte:head>
 
 <!-- CONTENT STREAM -->
-<div class="flex w-full flex-col bg-retro-gray text-lg text-retro-white md:items-center">
+<div class="flex w-full flex-col bg-retro-gray text-lg text-retro-white md:items-center" style="cursor: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2224%22>💡</text></svg>') 16 16, auto;">
+  <style>
+    /* Override all cursor styles within this page to use lightbulb */
+    div * {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2224%22>💡</text></svg>') 16 16, auto !important;
+    }
+  </style>
   <!-- BANNER/HEADER THINGY -->
   <div class="flex min-h-[40rem] w-full flex-row justify-center rounded-b-3xl bg-retro-black pb-4">
     <div class="flex flex-col items-center pt-52">
