@@ -67,18 +67,10 @@ Then, get your API key at [*the API key page*](https://home.openweathermap.org/a
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Cupertino Weather</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
-        h1 { color: #333; }
-        #weather { font-size: 18px; color: #666; }
-    </style>
-</head>
 <body>
 
 <h1>Cupertino Weather</h1>
-<p id="weather">Loading weather data...</p>
+<p id="weather"></p>
 
 <script>
 const apiKey = "YOUR_API_KEY"; // PUT YOUR API KEY IN THE QUOTES
@@ -88,12 +80,9 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}
   .then(res => res.json())
   .then(data => {
     document.getElementById("weather").innerText = 
-      `Weather: ${data.weather[0].description}, Temperature: ${data.main.temp}°F, Humidity: ${data.main.humidity}%`;
+      `Weather: ${data.weather[0].description}, Temp: ${data.main.temp}°F`;
   })
-  .catch(err => {
-    console.log("Error:", err);
-    document.getElementById("weather").innerText = "Error loading weather data";
-  });
+  .catch(err => console.log("Error:", err));
 </script>
 
 </body>
