@@ -1,0 +1,110 @@
+---
+title: APIs
+authors: [Bernard Freund]
+date: "2025-08-15"
+checked: true
+published: true
+---
+
+## What is an API?
+
+An API, or Application Programming Interface, is a way for different softwares to communicate and connect with one another. For example, if you wanted to make a simple weather website, you could use a weather API to get real data about the weather to display on your website. Or, if you wanted to display any locations within a site, you could use the Google Maps API to display those locations.
+
+## How it Works
+
+When using an API, you basically send an **HTTP request**, for example something like:
+
+```
+GET https://random-url.com/data?parameter=something&apikey=123abc
+```
+
+This will make a request for data from that URL, and either it will be successful and some data (probably in **JSON format**) gets returned, or an error occurs.
+
+### HTTP Methods
+
+As you can see, there is a **"GET"** at the beginning, which is a method to get information. There is also:
+- **POST** - creates new information
+- **PUT** and **PATCH** - updates information (*PUT replaces info, but PATCH modifies it*)
+- **DELETE** - removes information
+
+### API Components
+
+You can also see there is a place for you to put a **parameter**. If you wanted to get a pie recipe from a recipe API, you could put *"pie"* as a parameter. Parameters simply help specify what exact information you want.
+
+Lastly, there is an **API key**. An API key is a string of random characters that tracks how many times someone uses the API, like an ID. You need to provide one for an API for it to let you use it. Many APIs cost money to use, and this is how they can tell who to charge.
+
+### Response Formats
+
+Most APIs return data in **JSON** format, which looks like this:
+
+```json
+{
+  "weather": [
+    {
+      "description": "clear sky",
+      "main": "Clear"
+    }
+  ],
+  "main": {
+    "temp": 72.5,
+    "humidity": 45
+  }
+}
+```
+
+## Example: Weather API
+
+Let's create a basic example of using an API. We will be creating a website that uses an API to display the current weather in Cupertino.
+
+### Step 1: Get API Access
+First, create an account at [*Open Weather Map*](https://home.openweathermap.org/users/sign_up)
+
+Then, get your API key at [*the API key page*](https://home.openweathermap.org/api_keys)
+
+> **Note:** DO NOT share API keys publicly or commit them to version control!
+
+### Step 2: Create the Website
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cupertino Weather</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        h1 { color: #333; }
+        #weather { font-size: 18px; color: #666; }
+    </style>
+</head>
+<body>
+
+<h1>Cupertino Weather</h1>
+<p id="weather">Loading weather data...</p>
+
+<script>
+const apiKey = "YOUR_API_KEY"; // PUT YOUR API KEY IN THE QUOTES
+const city = "Cupertino";
+
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`)
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("weather").innerText = 
+      `Weather: ${data.weather[0].description}, Temperature: ${data.main.temp}°F, Humidity: ${data.main.humidity}%`;
+  })
+  .catch(err => {
+    console.log("Error:", err);
+    document.getElementById("weather").innerText = "Error loading weather data";
+  });
+</script>
+
+</body>
+</html>
+```
+
+### Step 3: Test Your Website
+Create a new HTML file anywhere like **VSCode** and paste this code in. Don't forget to replace the placeholder with your own API key. Then find the file in file explorer/finder, and run it by double clicking it.
+
+You should see something like this:
+
+![Weather Site](/guides/misc/Weather.png)
+
+**If so, congrats!** You just used an API to make a simple weather website to display the weather in Cupertino. You can also experiment by changing the city variable to change the city, or even using a different API from this [list](https://github.com/public-apis/public-apis?tab=readme-ov-file).
