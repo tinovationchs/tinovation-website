@@ -18,7 +18,7 @@
   <meta property="twitter:image" content="https://tinovation.org/website/meta/showcase.webp" />
 </svelte:head>
 
-<div class="absolute -z-10 h-full w-full fill-blue-300">
+<div class="absolute -z-10 h-full w-full fill-blue-3004">
   <div class="h-64 bg-blue-300" />
 
   <div class="fill-inherit">
@@ -41,7 +41,7 @@
 
 <div class="fixed -z-20 h-full min-h-screen w-full bg-retro-black" />
 
-<div class="mb-8 flex flex-row justify-center">
+<div class="mb-8 flex flex-row justify-center mt-20 md:mt-24">
   <div>
     <h1 class="text-center font-header text-5xl md:text-6xl">Showcase</h1>
 
