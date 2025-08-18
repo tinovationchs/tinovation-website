@@ -82,7 +82,7 @@ const resourceCategories: Categories = {
     {
       type: ItemType.Code,
       displayName: "quantum-computing-qiskit-tutorial",
-      path: "https://colab.research.google.com/drive/1SS4oZzZzuQBDoSV8vJO244ZUVH9MTiMI?usp=sharing",
+      path: "https://colab.research.google.com/drive/1Wr8Y0S5FihsT16GhH7ta6hEzBpNLiOjJ?usp=sharing",
     },
     { type: ItemType.Guide, displayName: "figma", path: "figma" },
     "cool-stuff",
