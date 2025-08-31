@@ -1,0 +1,118 @@
+---
+title: JavaScript Async Tips
+authors: [Dhruva Srinivas]
+date: "2025-08-29"
+checked: true 
+published: true
+---
+
+These are some elementary tips in asynchronous JavaScript that I think are pretty useful.
+
+## Promise.all
+
+Say you have a bunch of entities that you want to create at once. Maybe you're implementing multi-file uploads and the API you're using only allows you to upload one 
+file at a time. What you COULD do is run each request sequentially like this:
+
+```ts
+const uploadFile = async (file: File) => {
+  const formData = new FormData();
+  formData.append("file", file);
+  await fetch("/upload", {
+    method: "POST",
+    body: formData,
+  });
+};
+
+const uploadFiles = async (files: File[]) => {
+  for (const file of files) {
+    await uploadFile(file);
+  }
+};
+```
+
+But, this is terribly slow because it waits for each file to upload before starting the next one.
+Instead, you can use `Promise.all` to upload all files "concurrently" (JS isn't *truly* concurrent, but that is out of the scope of this post):
+
+```ts
+const uploadFiles = async (files: File[]) => {
+  await Promise.all(files.map(file => uploadFile(file)));
+};
+```
+
+`Promise.all` takes in an array of `Promise` objects and returns a single `Promise` that resolves when all of the input promises resolve, or rejects if any of the input promises reject.
+It lets you run multiple async operations in parallel and wait for all of them to complete.
+
+But, there is a catch. You cannot natively limit the number of requests you want to initiate.
+So, if you pass in an array of 10,000 `Promise` objects, it will try to run all of them at once, which can lead to performance issues for the user and crash the browser, AND/OR put a load on the server.
+
+You can set a limit on the number of concurrent uploads using a library like `p-limit`:
+
+```ts
+import pLimit from 'p-limit';
+
+const limit = pLimit(5); // Limit to 5 concurrent uploads
+
+const uploadFiles = async (files: File[]) => {
+  await Promise.all(files.map(file => limit(() => uploadFile(file))));
+};
+```
+
+You should always be careful when using `Promise.all`, especially when you're dealing with a lot of objects. Using `p-limit` is a good way to mitigate potential issues.
+
+## Promise.allSettled
+
+This one's pretty similar to `Promise.all`, but its different in how it handles errors.
+- `Promise.all` **fails fast**, meaning if any of the promises reject, the whole thing rejects.
+- `Promise.allSettled` waits for all promises to settle (either resolve or reject) and returns an array of objects describing the outcome of each promise.
+
+This is useful when you want to perform multiple operations and want to know the result of each operation, regardless of whether it succeeded or failed.
+
+```ts
+const results = await Promise.allSettled(files.map(file => uploadFile(file)));
+results.forEach((result, index) => {
+  if (result.status === "fulfilled") {
+    console.log(`File ${index} uploaded successfully:`, result.value);
+  } else {
+    console.error(`File ${index} failed to upload:`, result.reason);
+  }
+});
+```
+
+## Abort and Timeout Long Tasks
+
+Sometimes, you might want to cancel a long-running async operation if it takes too long to avoid getting rate-limited, or if the user navigates away. The Fetch API supports aborting requests using an `AbortController`.
+
+Here's how you can use it:
+
+```ts
+const controller = new AbortController();
+const signal = controller.signal;
+
+const fetchData = async () => {
+  try {
+    const response = await fetch("/data", { signal }); // pass the signal to the fetch request!!
+    const data = await response.json();
+    console.log("Data received:", data);
+  } catch (error) {
+    if (error.name === "AbortError") {
+      console.error("Fetch aborted");
+    } else {
+      console.error("Fetch error:", error);
+    }
+  }
+};
+
+// start the fetch operation
+fetchData();
+
+// abort the fetch operation after 5 seconds
+setTimeout(() => {
+  controller.abort();
+}, 5000);
+```
+
+<hr />
+
+If you want to learn more about async JavaScript, I recommend checking out these resources:
+- [Jake Archibald's talk on the browser event loop](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
+- [Fireship video about parallelism and concurrency in JS](https://www.youtube.com/watch?v=-JE8P2TiJEg)

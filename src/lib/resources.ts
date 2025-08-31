@@ -13,6 +13,7 @@ const resourceCategories: Categories = {
     "tinofind-walkthrough",
     "react",
     { type: ItemType.Guide, displayName: "deply-on-github-pages", path: "gh-pages" },
+    "js-async-tips"
   ],
   "Artificial Intelligence": [
     // "machine-learning",
