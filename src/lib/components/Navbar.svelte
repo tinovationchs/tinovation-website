@@ -32,6 +32,6 @@
     </nav>
   </div>
   <div class="rounded-3xl bg-retro-white px-4 py-1 font-header text-2xl">
-    First meeting <span class="text-sky-600">9/16</span>! rm 307 @ Lunch
+    First meeting <span class="text-sky-600">9/22</span>! rm 212 @ Lunch
   </div>
 </div>
