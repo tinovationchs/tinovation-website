@@ -1,0 +1,234 @@
+---
+title: Tino Fruit Exchange Project Walkthrough
+authors: [Kavya Gupta]
+date: 2024-10-04
+prereqs: Basic knowledge of Flask and Svelte
+published: true
+---
+
+## Introduction
+
+This guide will walk you through building a web application that allows users to list and exchange fruits and vegetables. We'll use Flask, a Python web framework, for our backend, and Svelte, a modern JavaScript framework, for our frontend.
+
+## What Does This App Do?
+
+The Fruit Exchange app has several main functions:
+
+1. User Authentication: Allow users to register, log in, and log out.
+2. Produce Listing: Users can view all available produce items.
+3. Add Produce: Registered users can add their own produce items to the listing.
+4. Purchase Simulation: Users can "buy" produce items.
+
+## Backend (Flask)
+
+The backend, built with Flask, handles data processing, database interactions, and serves API endpoints for the frontend. Here's a breakdown of its components:
+
+### __init__.py
+
+This file sets up the Flask application:
+
+```python
+def create_app(conf_class=Config):
+    app = Flask(__name__)
+    cors.init_app(app)
+    app.config.from_object(conf_class)
+    db.init_app(app)
+    login_manager.init_app(app)
+    from .auth import auth as auth_bp
+    app.register_blueprint(auth_bp)
+    from .main import main as main_bp
+    app.register_blueprint(main_bp)
+
+    return app
+```
+
+This initializes the Flask app, sets up CORS (Cross-Origin Resource Sharing) for API requests, configures the database, and registers blueprints for authentication and main routes.
+
+* SQLAlchemy: allows developers to work with databases using Python objects
+* CORS: enables cross-origin resource sharing for API requests
+
+### models.py
+
+Defines the database models using SQLAlchemy:
+
+#### User
+
+For managing user accounts:
+
+```python
+class User(UserMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    username = db.Column(db.String(100), nullable=False)
+    password = db.Column(db.String(200), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
+    address = db.Column(db.String(1000), unique=True, nullable=False)
+```
+
+#### ProduceType
+
+To represent fruit & vegetable listings:
+
+```python
+class ProduceType(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    fruit_type = db.Column(db.String(100), nullable=False)
+    num_fruits = db.Column(db.Integer)
+    description = db.Column(db.String(1000), unique=True, nullable=False)
+    produce_user_id = db.Column(db.Integer, db.ForeignKey(User.id))
+    produce_owner = relationship('User', foreign_keys='ProduceType.produce_user_id')
+```
+
+These models define the structure for storing user and produce information in the database.
+
+### auth.py
+
+Handles user authentication:
+
+```python
+@auth.route('/login', methods=['POST'])
+def login():
+    rq = request.json
+    if '@' not in rq["email"]:
+        return jsonify({"success": False, "error": "EMAIL IS NOT VALID"})
+    usr = User.query.filter_by(User.id).first()
+    session["uid"] = usr.id
+    return jsonify({"success": True})
+```
+
+This route handles user login, validating the email and setting a session for the user.
+
+### main.py
+
+Contains the main application routes:
+
+```python
+@main.route('/get_all_produce')
+@cross_origin()
+def get_all_produce():
+    produce = ProduceType.query.all()
+    produce_list = []
+    for item in produce:
+        produce_list.append({
+            'fruit_type': item.fruit_type,
+            'num_fruits': item.num_fruits,
+            'description': item.description
+        })
+    return jsonify(produce_list)
+
+@main.route('/add_produce_type', methods=['POST'])
+@cross_origin()
+def add_produce_type():
+    rq = request.json
+    fruit = ProduceType(fruit_type=rq['fruit_type'],
+                        num_fruits=rq['num_fruits'], description=rq['description'])
+    db.session.add(fruit)
+    db.session.commit()
+    return jsonify({'success': True})
+```
+
+These routes handle retrieving all produce items and adding new produce items to the database.
+
+## Frontend (Svelte)
+
+The frontend, built with Svelte, provides the user interface and interacts with the backend API. Here's an overview of key components:
+
+### App.svelte
+
+The main component that displays produce items:
+
+```html
+<main>
+  <div class="card bg-orange-100 w-96 bg-base-100 shadow-xl">
+    <figure class="px-10 pt-10">
+      {#if name==="Orange"}
+        <img src="orange_image_url" alt="Orange" class="rounded-xl" />
+      {:else if name==="Banana"}
+        <img src="banana_image_url" alt="Banana" class="rounded-xl" />
+        <!-- More conditionals for other fruits -->
+      {/if}
+    </figure>
+    <div class="card-body items-center text-center">
+      <h2 class="card-title">{name}</h2>
+      <p>Number: {num}</p>
+      <p>{description}</p>
+      <div class="card-actions">
+        <button class="btn btn-primary">Press to Email</button>
+      </div>
+    </div>
+  </div>
+</main>
+```
+
+This component creates a card for each produce item, displaying its image, name, quantity, and description.
+
+### Nav.svelte
+
+Handles navigation and user logout:
+
+```html
+<script>
+function logout(){
+  const lo = fetch(urlbase + '/logout', {
+    method:'POST',
+    body: JSON.stringify({'logout': true}),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then(resp => resp.json().then(res => {
+    if (res['loggedout'] == true){
+      isloggedin.set(false)
+      push('/signin')
+    }
+  }))
+}
+</script>
+```
+
+This component provides navigation links and handles user logout by sending a POST request to the backend.
+
+### LoginPage.svelte
+
+Manages user login:
+
+```html
+<script>
+function userLogin(){
+  const user = fetch('http://127.0.0.1:5000/login', {
+    method: 'POST',
+    body: JSON.stringify({'username': username, 'password': password, 'email':email}),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then(resp => resp.json().then(res => {
+    if (res['success'] === true){
+      isloggedin.set(true)
+      first_name.set(res["firstname"])
+      push('/fruits');
+    } else{
+      if (res['error'] == 'USER NOT FOUND'){
+        push('/error')
+      }
+    }
+  }));
+}
+</script>
+```
+
+This component handles user login by sending credentials to the backend and updating the application state upon successful authentication.
+
+## Connecting Flask and Svelte
+
+Flask and Svelte are connected through API calls. The Svelte frontend makes HTTP requests to the Flask backend's endpoints. For example:
+
+1. When a user logs in, LoginPage.svelte sends a POST request to `http://127.0.0.1:5000/login`.
+2. The Flask backend processes this request in the `login()` function in auth.py.
+3. The backend sends a JSON response back to the frontend.
+4. The Svelte component then updates the UI based on this response.
+
+This interaction allows the frontend to remain dynamic and responsive while the backend handles data processing and storage.
+
+## Data Flow & Interaction
+
+This website shows a classic client-server architecture. The frontend makes API calls to the backend for things like authenticating users, listing products, and managing produce. Requests are processed with Flask, which interacts with the database as needed to return responses & update what the user sees. Then, the Svelte frontend updates its state and UI based on the responses.
+
+For example, when a user logs in, the LoginPage component sends a POST request to the /login endpoint. The backend returns a response based on if the credentials are accurate or not. If they are, the frontend updates its login state to navigate the user to the produce listing/main page. In a similar fashion, the produce listing is shown by fetching data from the /get_all_produce endpoint and rendering it through the App component.
