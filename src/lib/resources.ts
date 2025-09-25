@@ -96,7 +96,6 @@ const resourceCategories: Categories = {
   ],
   Tinovation: [
     { type: ItemType.Guide, displayName: "dev-notes", path: "dev-notes" },
-    { type: ItemType.Guide, displayName: "my-blog-post", path: "my-blog-post" },
     "scoring",
     "error",
     {
