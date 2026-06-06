@@ -15,17 +15,20 @@ const info = {
   form_link: "https://forms.gle/8v1tzN5hnULHtN447",
   form_text: "registration form",
 
-  co_presidents: ["Ayush Bheemaiah", "Michael Chuang"],
-  vice_president: "Kavya Gupta",
-  secretary_treasurer: "Shauryan Kanaujia",
+  co_presidents: ["Prakruti Sunil", "Bernard Freund"],
+  vice_president: "Arnav Gokhale",
+  secretary_treasurer: "Connor Wang",
   mentors: [
-    "Bernard Freund",
     "Aarush Arya",
     "Dhruva Srinivas",
     "Alex Li",
     "Jimin Lee",
-    "Arnav Gokhale",
-    "Prakruti Sunil",
+  ],
+  officers: [
+    "Amogh Bhatta",
+    "Michael Zhao",
+    "Adarsh Sudheer",
+    "Shreeansh Bharadwaj",
   ],
   club_advisor: "Mr. Ferrante",
 
