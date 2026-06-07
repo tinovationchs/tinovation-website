@@ -24,6 +24,12 @@
         <a href="/showcase" class="transition ease-in hover:text-blue-700">showcase</a>
       {/if}
 
+      {#if $page.url.pathname.includes("/blogs")}
+        <a href="/blogs" class="text-emerald-700 transition ease-in">blogs</a>
+      {:else}
+        <a href="/blogs" class="transition ease-in hover:text-emerald-700">blogs</a>
+      {/if}
+
       {#if $page.url.pathname === "/leaderboard"}
         <a href="/leaderboard" class="text-purple-700 transition ease-in">leaderboard</a>
       {:else}
