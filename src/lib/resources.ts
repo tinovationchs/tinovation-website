@@ -1,7 +1,7 @@
 import { ItemType, type Categories, type Item } from "$lib/types";
 
 const resourceCategories: Categories = {
-  Basics: ["languages", "editors", "file-system", "command-line", "git", "github"],
+  Basics: ["languages", "editors", "command-line", "git", "github"],
   "Web Development": [
     { type: ItemType.Guide, displayName: "intro", path: "web-intro" },
     "html-css",
@@ -13,7 +13,11 @@ const resourceCategories: Categories = {
     "tinofind-walkthrough",
     "react",
     { type: ItemType.Guide, displayName: "deply-on-github-pages", path: "gh-pages" },
-    { type: ItemType.Guide, displayName: "tino-fruit-exchange-walkthrough", path: "tino-fruit-exchange-guide" },
+    {
+      type: ItemType.Guide,
+      displayName: "tino-fruit-exchange-walkthrough",
+      path: "tino-fruit-exchange-guide",
+    },
   ],
   "Artificial Intelligence": [
     // "machine-learning",
@@ -99,7 +103,6 @@ const resourceCategories: Categories = {
     { type: ItemType.Guide, displayName: "dev-notes", path: "dev-notes" },
     { type: ItemType.Guide, displayName: "my-blog-post", path: "my-blog-post" },
     "scoring",
-    "error",
     {
       type: ItemType.Link,
       displayName: "rick",

@@ -60,7 +60,7 @@ const showcaseProjects: Project[] = [
     date: "2023-10-07",
     description:
       "This is an organizer for the availability in different rooms during tutorials on Mondays, Wednesdays, and Fridays for Cupertino High School.",
-    main_link: "https:/chs-tut-vercel.vercel.app/",
+    main_link: "https://chs-tut-vercel.vercel.app/",
     github_link: "https://github.com/pragisharma/chs-tutorial/",
   },
   {
@@ -98,17 +98,8 @@ const showcaseProjects: Project[] = [
     authors: ["Purva Marfatia"],
     date: "2023-09-10",
     description: "Platform for students to share books, calculators, and other resources.",
-    main_link: "https://tino-market-fe.onrender.com/",
+    main_link: "https://github.com/sourcherryscones/tino_market",
     github_link: "https://github.com/sourcherryscones/tino_market",
-  },
-  {
-    thumbnail_image: "retro.png",
-    name: "Retro Website",
-    authors: ["---"],
-    date: "2023-08-12",
-    description: "Retro style personal website with terminal and minesweeper.",
-    main_link:
-      "https://aadsfjkslda.user5829.repl.co/?background=https://cdn.discordapp.com/attachments/695408753658298470/1127040540039446549/fbafa9e921610f2bb55799fd36cd1051.webp",
   },
   {
     thumbnail_image: "tinochan.png",
@@ -117,7 +108,7 @@ const showcaseProjects: Project[] = [
     date: "2023-07-27",
     description:
       "A recreation of traditional online forums, now using modern frameworks and deployable on the edge!",
-    main_link: "https://tinochan.vercel.app/",
+    main_link: "https://github.com/shine00chang/tinochan",
     github_link: "https://github.com/shine00chang/tinochan",
   },
   {
@@ -147,7 +138,7 @@ const showcaseProjects: Project[] = [
     authors: ["Taisei De La Cruz", "Skyler Tabofunda"],
     date: "2023-08-03",
     description: "South Bay Robotics website and blog!",
-    main_link: "https://www.southbayrobotics.org",
+    main_link: "https://github.com/frc-sbr/sbr-site",
     github_link: "https://github.com/frc-sbr/sbr-site",
   },
   {
@@ -168,15 +159,6 @@ const showcaseProjects: Project[] = [
       "The official curriculum websites for APCS and Intro Java classes at Cupertino High School.",
     main_link: "https://apcs.tinocs.com/",
     other_links: ["https://java.tinocs.com/"],
-  },
-  {
-    thumbnail_image: "leetdeal.png",
-    name: "LeetDeal",
-    authors: ["Jiaming Liu"],
-    date: "2023-07-22",
-    description: "Mobile app and website for finding the best shopping deals. (defunct)",
-    main_link: "https://apps.apple.com/us/app/leetdeal-save-big-with-deals/id1534467869",
-    other_links: ["https://www.instagram.com/leetdeal/"],
   },
 ];
 
