@@ -20,8 +20,7 @@ Here is an example:
 ```html
 <iframe src = media link  width = "1000px" height = "1000px"></iframe>
 ```
-In this specific **CoolMathGames.com** example, embedding video games could be quite daunting with servers and databases; but if you are able to make a [WebGL](https://www.khronos.org/webgl/wiki/Getting_Started) build of your game (which can be done with most game engines), you can upload a build to a cloud platform such as [Netlify.com](https://www.netlify.com/?attr=homepage-modal) or refer to our [Deployment resource](https://www.tinovation.org/resources/deployment).
+In this specific **CoolMathGames.com** example, embedding video games could be quite daunting with servers and databases; but if you are able to make a [WebGL](https://www.khronos.org/webgl/wiki/Getting_Started) build of your game (which can be done with most game engines), you can upload a build to a cloud platform such as [Netlify.com](https://www.netlify.com/?attr=homepage-modal) or refer to our [Deployment resource](/resources/web-deployment).
 <br>
 
 **Media** can include ***youtube videos***, ***games***, ***other websites*** and etc, which can all be embedded into your own website!
-
