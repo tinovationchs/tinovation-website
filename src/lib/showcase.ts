@@ -6,42 +6,6 @@ import type { Project } from "./types";
 
 const showcaseProjects: Project[] = [
   {
-    thumbnail_image: "alidada.png",
-    name: "Alidada",
-    authors: ["Prakruti"],
-    date: "2025-09-16",
-    description:
-      "A satirical dark-pattern landing page demo that exaggerates fake reward popups, security alerts, and cookie prompts.",
-    main_link: "https://alidada.vercel.app/",
-  },
-  {
-    thumbnail_image: "clayable.png",
-    name: "Clayable",
-    authors: ["Prakruti"],
-    date: "2025-08-19",
-    description:
-      "A Three.js-rendered clay sculpting project for shaping and exporting 3D forms. (still updating)",
-    main_link: "https://clayable.vercel.app/",
-  },
-  {
-    thumbnail_image: "sics-ground.png",
-    name: "SICS Ground",
-    authors: ["Prakruti"],
-    date: "2025-06-07",
-    description:
-      "A Three.js-rendered physics playground for experimenting with shapes, gravity, and special effects.",
-    main_link: "https://sics-ground.vercel.app/",
-  },
-  {
-    thumbnail_image: "shapey.png",
-    name: "Shapey",
-    authors: ["Prakruti"],
-    date: "2025-04-01",
-    description:
-      "A Three.js-rendered demo of a hypothetical game home page with interactive shape transformations.",
-    main_link: "https://shapey.vercel.app/",
-  },
-  {
     thumbnail_image: "confbooker.png",
     name: "Conference Room Booker",
     authors: ["Purva Marfatia"],
