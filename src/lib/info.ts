@@ -18,12 +18,6 @@ const info = {
   co_presidents: ["Prakruti Sunil", "Bernard Freund"],
   vice_president: "Arnav Gokhale",
   secretary_treasurer: "Connor Wang",
-  mentors: [
-    "Aarush Arya",
-    "Dhruva Srinivas",
-    "Alex Li",
-    "Jimin Lee",
-  ],
   officers: [
     "Amogh Bhatta",
     "Michael Zhao",
