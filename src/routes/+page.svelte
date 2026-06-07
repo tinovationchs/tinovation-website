@@ -240,8 +240,8 @@
         {info.secretary_treasurer}
       </p>
       <p>
-        <b class="text-red-300">Mentors:</b>
-        {info.mentors.join(", ")}
+        <b class="text-red-300">Officers:</b>
+        {info.officers.join(", ")}
       </p>
     </div>
   </div>
