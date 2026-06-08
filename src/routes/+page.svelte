@@ -3,6 +3,7 @@
   import HomePageLogo from "$lib/components/HomePageLogo.svelte";
   import SocialsBar from "$lib/components/SocialsBar.svelte";
   import OfficerCarousel from "$lib/components/OfficerCarousel.svelte";
+  import Terminal from "$lib/components/Terminal.svelte";
   import info from "$lib/info";
 </script>
 
@@ -25,8 +26,8 @@
     }
   </style>
   <!-- BANNER/HEADER THINGY -->
-  <div class="flex min-h-[40rem] w-full flex-row justify-center rounded-b-3xl bg-retro-black pb-4">
-    <div class="flex flex-col items-center pt-52">
+  <div class="flex min-h-[43rem] w-full flex-row justify-center rounded-b-3xl bg-retro-black pb-8">
+    <div class="flex flex-col items-center pt-48">
       <HomePageLogo />
 
       <h1 class="mt-4 font-header text-6xl font-semibold text-retro-white md:text-7xl">
@@ -35,6 +36,14 @@
       <h3 class="font-header text-lg text-retro-white md:text-2xl">programming club at CHS</h3>
 
       <SocialsBar />
+
+      <a
+        href={info.discord_link}
+        target="_blank"
+        class="mt-8 flex flex-row items-center gap-3 rounded-xl border-2 border-retro-black bg-[#5865F2] px-6 py-3 font-header text-lg font-bold text-white shadow-[4px_4px_0px_0px_#232222] transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_#232222] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[0px_0px_0px_0px_#232222] md:text-xl">
+        <img src="/website/discord-mark-white.svg" alt="Discord Logo" class="h-6 w-6" />
+        <span>Join our Discord!</span>
+      </a>
     </div>
   </div>
 
@@ -228,6 +237,14 @@
     <!-- ================== -->
     <div class="mt-6 w-full">
       <OfficerCarousel />
+    </div>
+
+    <!-- ======================= -->
+    <!-- INTERACTIVE TERMINAL CLI -->
+    <!-- ======================= -->
+    <div class="mt-12 w-full">
+      <h2 class="font-header text-4xl">Interactive CLI</h2>
+      <Terminal />
     </div>
   </div>
 
