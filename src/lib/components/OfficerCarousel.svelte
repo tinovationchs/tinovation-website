@@ -100,6 +100,7 @@
         on:click={() => scroll("left")}
         class="flex h-10 w-10 items-center justify-center rounded-lg border-2 border-retro-black bg-retro-white text-retro-black shadow-[2px_2px_0px_0px_#232222] transition-all hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[3px_3px_0px_0px_#232222] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_0px_#232222] disabled:pointer-events-none disabled:opacity-40"
         disabled={!showLeftBtn}
+        type="button"
         aria-label="Scroll left">
         <svg
           xmlns="http://www.w3.org/2000/svg"
