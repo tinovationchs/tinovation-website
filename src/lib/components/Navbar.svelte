@@ -1,11 +1,12 @@
 <script>
   import { page } from "$app/stores";
+  import info from "$lib/info";
 </script>
 
 <div class="fixed z-30 flex w-full flex-col items-center gap-4 py-4">
   <div>
     <nav
-      class="text-semibold flex flex-row gap-4 rounded-3xl bg-retro-white px-4 py-1 font-header text-lg opacity-90 shadow-md shadow-transparent transition ease-in hover:-translate-y-0.5 hover:shadow-retro-white md:gap-8 md:px-10 md:py-1.5 md:text-2xl">
+      class="text-semibold flex max-w-[calc(100vw-1rem)] flex-row flex-wrap justify-center gap-x-4 gap-y-1 rounded-3xl bg-retro-white px-4 py-1 font-header text-base opacity-90 shadow-md shadow-transparent transition ease-in hover:-translate-y-0.5 hover:shadow-retro-white sm:text-lg md:gap-x-8 md:px-10 md:py-1.5 md:text-2xl">
       {#if $page.url.pathname === "/"}
         <a href="/" class="text-amber-700 transition ease-in">home</a>
       {:else}
@@ -16,6 +17,12 @@
         <a href="/resources" class="text-pink-700 transition ease-in">resources</a>
       {:else}
         <a href="/resources" class="transition ease-in hover:text-pink-700">resources</a>
+      {/if}
+
+      {#if $page.url.pathname === "/join"}
+        <a href="/join" class="text-rose-700 transition ease-in">join</a>
+      {:else}
+        <a href="/join" class="transition ease-in hover:text-rose-700">join</a>
       {/if}
 
       {#if $page.url.pathname === "/showcase"}
@@ -38,6 +45,8 @@
     </nav>
   </div>
   <div class="rounded-3xl bg-retro-white px-4 py-1 font-header text-2xl">
-    First meeting <span class="text-sky-600">9/22</span>! rm 212 @ Lunch
+    {info.school_year} meetings:
+    <span class="text-sky-600">{info.meeting_day}</span>
+    @ {info.meeting_time}, {info.meeting_room}
   </div>
 </div>

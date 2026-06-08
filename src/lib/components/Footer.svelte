@@ -1,7 +1,7 @@
 <script lang="ts">
   import info from "$lib/info";
 
-  export let isBgTransparent: boolean = true;
+  export let isBgTransparent = true;
   let bg = isBgTransparent ? "" : "bg-retro-black";
 </script>
 
