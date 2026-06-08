@@ -1,4 +1,5 @@
 <script lang="ts">
+  import info from "$lib/info";
   import { leaderboardData, leaderboardLastUpdated } from "$lib/leaderboard";
   import LeaderboardMessage from "./LeaderboardMessage.svelte";
   import LeaderboardSwitcher from "./LeaderboardSwitcher.svelte";
@@ -21,6 +22,20 @@
   </div>
 
   <hr class="mb-4 mt-2 border border-retro-black" />
+
+  <div class="mb-4 rounded-lg bg-purple-100 p-3 font-sans text-base font-semibold text-retro-black">
+    <h2 class="font-header text-2xl text-purple-700">How to earn points</h2>
+    <p>
+      Join {info.meeting_day} meetings, submit code sprint projects, play club activities, and add finished
+      work to the showcase. Points help track participation through the semester.
+    </p>
+    <div class="mt-2 flex flex-wrap gap-2 font-header text-lg">
+      <a href="/join" class="text-rose-700 underline-offset-2 hover:underline">start here</a>
+      <a href="/showcase" class="text-blue-700 underline-offset-2 hover:underline">view showcase</a>
+      <a href="/resources/scoring" class="text-purple-700 underline-offset-2 hover:underline"
+        >scoring guide</a>
+    </div>
+  </div>
 
   {#await $leaderboardData}
     <LeaderboardMessage>loading data...</LeaderboardMessage>

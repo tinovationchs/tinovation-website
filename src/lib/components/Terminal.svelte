@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { activeTheme, allThemes, themesUnlocked, isThemeActiveForDate } from "$lib/theme";
 
   interface TerminalLine {
     text: string;
@@ -8,7 +9,7 @@
 
   let inputVal = "";
   let terminalLines: TerminalLine[] = [
-    { text: "Welcome to the Tinovation Terminal v1.0.0", type: "success" },
+    { text: "Welcome to the Tinovation Terminal v1.1.0", type: "success" },
     { text: "Type 'help' to see list of available commands.", type: "output" },
   ];
 
@@ -16,20 +17,68 @@
   let inputEl: HTMLInputElement;
 
   const commands: Record<string, string | (() => string | TerminalLine[])> = {
-    help: "Available commands:\n  about     - What is Tinovation?\n  officers  - Meet the leadership team\n  sprints   - Learn about our code sprints\n  hack      - Run the secret hacker sequence ⚡\n  clear     - Clear terminal logs",
+    help: "Available commands:\n  about        - What is Tinovation?\n  officers     - Meet the leadership team\n  sprints      - Learn about our code sprints\n  theme <name> - Change theme (default, halloween, christmas, summer, july4th)\n  hack         - Unlock theme controls\n  clear        - Clear terminal logs",
     about:
       "Tinovation is Cupertino High School's premier programming and software development club! We build projects, host PioneerHacks, and run competitive coding workshops.",
     officers:
       "Co-Presidents: Prakruti Sunil, Bernard Freund\nVice President: Arnav Gokhale\nSecretary & Treasurer: Connor Wang\nOfficers: Amogh Bhatta, Michael Zhao, Adarsh Sudheer, Shreeansh Bharadwaj\nClub Advisor: Mr. Ferrante",
     sprints:
       "Code Sprints are 2-week programming cycles. Build custom software, showcase it, earn points, and climb the leaderboard to win cool prizes at the semester's end!",
-    hack: () => [
-      { text: "Initializing override...", type: "output" },
-      { text: "Bypassing firewalls...", type: "output" },
-      { text: "HACK SUCCESSFUL! 💡 HACK THE PLANET! 💻⚡", type: "success" },
-      {
-        text: `
-      .---.
+    hack: () => {
+      // Trigger themes unlock override
+      themesUnlocked.set(true);
+      if (typeof window !== "undefined") {
+        localStorage.setItem("tino-themes-unlocked", "true");
+      }
+
+      const currentThemeName = $activeTheme.name;
+      let ascii = "";
+      let emoji = "💡";
+
+      if (currentThemeName === "halloween") {
+        emoji = "👻";
+        ascii = `
+     .-.
+    (o.o)   👻
+     |=|
+    /   \\
+   |     |
+    \\___/
+   SPOOKY SEASON!
+`;
+      } else if (currentThemeName === "christmas") {
+        emoji = "🎄";
+        ascii = `
+       *
+      / \\
+     /   \\   🎄
+    /     \\
+   /       \\
+   ---------
+      |_|
+   MERRY CS!
+`;
+      } else if (currentThemeName === "july4th") {
+        emoji = "🎆";
+        ascii = `
+      \\ _ /
+     '-.I.-'
+    -== o ==-  🎆
+     .-'I'-.
+      /   \\
+    BOOM! 🇺🇸
+`;
+      } else if (currentThemeName === "summer") {
+        emoji = "☀️";
+        ascii = `
+      \\ _ /
+    -= (_) =-  ☀️
+      /   \\
+    TINOVATION
+`;
+      } else {
+        ascii = `
+      ,---.
      /     \\
     |   💡  |
     |  TINO |
@@ -38,23 +87,78 @@
       |___|
       |___|
       (( ))
-`,
-        type: "ascii",
-      },
-    ],
+`;
+      }
+
+      return [
+        { text: "Unlocking theme controls...", type: "output" },
+        { text: `Theme controls unlocked. ${emoji}`, type: "success" },
+        { text: ascii, type: "ascii" },
+      ];
+    },
   };
 
   function executeCommand() {
-    const trimmedInput = inputVal.trim().toLowerCase();
-    if (!trimmedInput) return;
+    const rawInput = inputVal.trim();
+    if (!rawInput) return;
 
-    // Add input line
-    terminalLines = [...terminalLines, { text: `tinovation@chs:~$ ${inputVal}`, type: "input" }];
+    // Split input into command and arguments (handles spaces)
+    const args = rawInput.split(/\s+/);
+    const cmd = args[0].toLowerCase();
 
-    if (trimmedInput === "clear") {
+    // Add input line to history
+    terminalLines = [...terminalLines, { text: `tinovation@chs:~$ ${rawInput}`, type: "input" }];
+
+    if (cmd === "clear") {
       terminalLines = [];
-    } else if (trimmedInput in commands) {
-      const result = commands[trimmedInput];
+    } else if (cmd === "theme") {
+      if (args.length < 2) {
+        terminalLines = [
+          ...terminalLines,
+          { text: `Current theme: ${$activeTheme.name} ${$activeTheme.cursor}`, type: "output" },
+          { text: "Usage: theme [default|halloween|christmas|summer|july4th]", type: "output" },
+        ];
+      } else {
+        const targetThemeName = args[1].toLowerCase();
+        if (targetThemeName in allThemes) {
+          const isAvailable = isThemeActiveForDate(targetThemeName, new Date()) || $themesUnlocked;
+          if (isAvailable) {
+            activeTheme.set(allThemes[targetThemeName]);
+            if (typeof window !== "undefined") {
+              localStorage.setItem("tino-preferred-theme", targetThemeName);
+            }
+            terminalLines = [
+              ...terminalLines,
+              {
+                text: `Theme successfully updated to: ${targetThemeName} ${allThemes[targetThemeName].cursor}`,
+                type: "success",
+              },
+            ];
+          } else {
+            terminalLines = [
+              ...terminalLines,
+              {
+                text: `Theme '${targetThemeName}' is currently locked for this season 🔒`,
+                type: "error",
+              },
+              {
+                text: `Available: ${allThemes[targetThemeName].availableRange}. Run 'hack' to unlock theme controls.`,
+                type: "output",
+              },
+            ];
+          }
+        } else {
+          terminalLines = [
+            ...terminalLines,
+            {
+              text: `Theme '${args[1]}' not recognized. Available: default, halloween, christmas, summer, july4th`,
+              type: "error",
+            },
+          ];
+        }
+      }
+    } else if (cmd in commands) {
+      const result = commands[cmd];
       if (typeof result === "function") {
         const linesToAdd = result();
         if (Array.isArray(linesToAdd)) {
@@ -71,10 +175,7 @@
     } else {
       terminalLines = [
         ...terminalLines,
-        {
-          text: `bash: command not found: ${trimmedInput}. Type 'help' for commands.`,
-          type: "error",
-        },
+        { text: `bash: command not found: ${cmd}. Type 'help' for commands.`, type: "error" },
       ];
     }
 
@@ -107,11 +208,11 @@
   tabindex="0">
   <!-- Window Header Bar (macOS style) -->
   <div
-    class="flex select-none items-center gap-2 rounded-t-xl border-b border-retro-black bg-retro-gray/30 px-4 py-3">
+    class="bg-retro-gray/30 flex select-none items-center gap-2 rounded-t-xl border-b border-retro-black px-4 py-3">
     <div class="h-3 w-3 rounded-full bg-[#ff5f56]" />
     <div class="h-3 w-3 rounded-full bg-[#ffbd2e]" />
     <div class="h-3 w-3 rounded-full bg-[#27c93f]" />
-    <span class="ml-4 font-header text-xs tracking-wider text-retro-white/50"
+    <span class="text-retro-white/50 ml-4 font-header text-xs tracking-wider"
       >tinovation@chs: ~</span>
   </div>
 

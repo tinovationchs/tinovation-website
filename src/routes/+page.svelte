@@ -2,9 +2,10 @@
   import Footer from "$lib/components/Footer.svelte";
   import HomePageLogo from "$lib/components/HomePageLogo.svelte";
   import SocialsBar from "$lib/components/SocialsBar.svelte";
-  import OfficerCarousel from "$lib/components/OfficerCarousel.svelte";
   import Terminal from "$lib/components/Terminal.svelte";
+  import { activeTheme } from "$lib/theme";
   import info from "$lib/info";
+  import showcaseProjects from "$lib/showcase";
 </script>
 
 <svelte:head>
@@ -14,17 +15,7 @@
 </svelte:head>
 
 <!-- CONTENT STREAM -->
-<div
-  class="flex w-full flex-col bg-retro-gray text-lg text-retro-white md:items-center"
-  style="cursor: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2224%22>💡</text></svg>') 16 16, auto;">
-  <style>
-    /* Override all cursor styles within this page to use lightbulb */
-    div * {
-      cursor: url("data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2224%22>💡</text></svg>")
-          16 16,
-        auto !important;
-    }
-  </style>
+<div class="flex w-full flex-col bg-retro-gray text-lg text-retro-white md:items-center">
   <!-- BANNER/HEADER THINGY -->
   <div class="flex min-h-[43rem] w-full flex-row justify-center rounded-b-3xl bg-retro-black pb-8">
     <div class="flex flex-col items-center pt-48">
@@ -34,6 +25,13 @@
         Tinovation
       </h1>
       <h3 class="font-header text-lg text-retro-white md:text-2xl">programming club at CHS</h3>
+
+      {#if $activeTheme.badge}
+        <span
+          class="mt-3 animate-pulse rounded-full border-2 border-retro-black bg-retro-white px-4 py-1 font-header text-xs font-bold uppercase tracking-wider text-retro-black shadow-[2px_2px_0px_0px_#232222]">
+          {$activeTheme.badge}
+        </span>
+      {/if}
 
       <SocialsBar />
 
@@ -59,11 +57,71 @@
       upon your coding skills. Anyone can learn to bring an idea to life!
     </p>
 
+    <!-- =================== -->
+    <!-- THIS YEAR SNAPSHOT -->
+    <!-- =================== -->
+    <div
+      class="my-4 rounded-lg border-2 border-retro-black bg-retro-white p-4 font-semibold text-retro-black shadow-[4px_4px_0px_0px_#232222]">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <h2 class="font-header text-4xl text-amber-700">This Year</h2>
+          <p class="mt-1 text-lg">
+            {info.school_year}: {info.current_focus}.
+          </p>
+        </div>
+
+        <a
+          href="/join"
+          class="w-fit rounded-lg border-2 border-retro-black bg-rose-400 px-4 py-2 font-header text-lg text-retro-black shadow-[3px_3px_0px_0px_#232222] transition-all hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[4px_4px_0px_0px_#232222] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_0px_#232222]">
+          start here
+        </a>
+      </div>
+
+      <div class="mt-4 grid grid-cols-1 gap-3 text-base sm:grid-cols-3">
+        <div class="rounded-lg bg-yellow-100 p-3">
+          <h3 class="font-header text-xl text-amber-700">Build</h3>
+          <p>Join short project sprints and ship something real with friends.</p>
+        </div>
+        <div class="rounded-lg bg-blue-100 p-3">
+          <h3 class="font-header text-xl text-blue-700">Learn</h3>
+          <p>Use guides, workshops, and officer help even if you are new to coding.</p>
+        </div>
+        <div class="rounded-lg bg-green-100 p-3">
+          <h3 class="font-header text-xl text-green-700">Showcase</h3>
+          <p>Submit projects for points, prizes, and the club project gallery.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= -->
+    <!-- CREDIBILITY BLOCK -->
+    <!-- ================= -->
+    <div class="grid grid-cols-1 gap-3 font-header text-retro-black sm:grid-cols-3">
+      <div class="rounded-lg border-2 border-retro-black bg-pink-200 p-3 shadow-md">
+        <div class="text-3xl text-pink-700">{showcaseProjects.length}+</div>
+        <div class="text-lg">member projects</div>
+      </div>
+      <div class="rounded-lg border-2 border-retro-black bg-sky-200 p-3 shadow-md">
+        <div class="text-3xl text-sky-700">100s</div>
+        <div class="text-lg">of hackathon builders</div>
+      </div>
+      <div class="rounded-lg border-2 border-retro-black bg-emerald-200 p-3 shadow-md">
+        <div class="text-3xl text-emerald-700">0</div>
+        <div class="text-lg">experience required</div>
+      </div>
+    </div>
+
     <!-- =============== -->
     <!-- LINKS AND STUFF -->
     <!-- =============== -->
     <div
-      class="mt-2 flex w-full flex-row flex-wrap gap-4 px-2 text-center text-retro-black sm:flex-nowrap">
+      class="mt-2 flex w-full flex-row flex-wrap gap-4 px-2 text-center text-retro-black lg:flex-nowrap">
+      <a
+        href="/join"
+        class="flex w-full flex-col gap-1 rounded-lg border-2 border-retro-black bg-gradient-to-br from-rose-200 via-pink-300 to-orange-200 p-2 shadow-lg transition ease-in hover:scale-[102%] hover:shadow-2xl">
+        <h2 class="text-xl font-bold">Start Here</h2>
+        <p>New to Tinovation? Learn how meetings, sprints, points, and project help work.</p>
+      </a>
       <a
         href="/resources"
         class="flex w-full flex-col gap-1 rounded-lg border-2 border-retro-black bg-gradient-to-br from-purple-400 via-purple-600 to-purple-800 p-2 text-retro-white shadow-lg transition ease-in hover:scale-[102%] hover:shadow-2xl">
@@ -90,13 +148,14 @@
     <h2 class="mt-4 font-header text-4xl">Meeting Times</h2>
     <div class="mb-4 flex flex-col gap-1 text-xl">
       <p>
-        <em class="not-italic text-blue-300">Mondays</em> during
-        <em class="not-italic text-green-300">Lunch</em>
+        <em class="not-italic text-blue-300">{info.meeting_day}</em> during
+        <em class="not-italic text-green-300">{info.meeting_time}</em>
         at
         <a
-          href="https://chs-map.vercel.app?rooms=307"
+          href={info.meeting_room_link}
           target="_blank"
-          class="text-red-300 transition duration-100 ease-in-out hover:underline">Room 307</a>
+          class="text-red-300 transition duration-100 ease-in-out hover:underline"
+          >{info.meeting_room}</a>
       </p>
     </div>
 
@@ -175,7 +234,7 @@
           target="_blank"
           class="text-semibold group mt-2 flex w-fit flex-row items-center justify-center gap-1 self-center rounded-lg text-center text-lg
       font-bold text-indigo-500 transition duration-100 ease-in hover:translate-x-1">
-          <span class="align-baseline">fun link</span>
+          <span class="align-baseline">join Discord</span>
 
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -235,8 +294,28 @@
     <!-- ================== -->
     <!-- OFFICER TEAM BLOCK -->
     <!-- ================== -->
-    <div class="mt-6 w-full">
-      <OfficerCarousel />
+    <div class="mt-4 flex flex-col gap-3">
+      <h2 class="font-header text-4xl">The Officer Team</h2>
+      <p>
+        <b class="text-pink-300">Club Advisor:</b>
+        {info.club_advisor}
+      </p>
+      <p>
+        <b class="text-purple-300">Co-Presidents:</b>
+        {`${info.co_presidents.join(", ")}`}
+      </p>
+      <p>
+        <b class="text-blue-300">Vice President:</b>
+        {info.vice_president}
+      </p>
+      <p>
+        <b class="text-green-300">Secretary/Treasurer:</b>
+        {info.secretary_treasurer}
+      </p>
+      <p>
+        <b class="text-red-300">Officers:</b>
+        {info.officers.join(", ")}
+      </p>
     </div>
 
     <!-- ======================= -->
