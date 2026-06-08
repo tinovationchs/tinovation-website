@@ -1,6 +1,13 @@
 import { ItemType, type Categories, type Item } from "$lib/types";
 
 const resourceCategories: Categories = {
+  Blogs: [
+    {
+      type: ItemType.Guide,
+      displayName: "twitch-x-tinovation-ama",
+      path: "twitch-x-tinovation-ama",
+    },
+  ],
   Basics: ["languages", "editors", "command-line", "git", "github"],
   "Web Development": [
     { type: ItemType.Guide, displayName: "intro", path: "web-intro" },
