@@ -2,6 +2,7 @@
   import Footer from "$lib/components/Footer.svelte";
   import HomePageLogo from "$lib/components/HomePageLogo.svelte";
   import SocialsBar from "$lib/components/SocialsBar.svelte";
+  import OfficerCarousel from "$lib/components/OfficerCarousel.svelte";
   import info from "$lib/info";
 </script>
 
@@ -12,11 +13,15 @@
 </svelte:head>
 
 <!-- CONTENT STREAM -->
-<div class="flex w-full flex-col bg-retro-gray text-lg text-retro-white md:items-center" style="cursor: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2224%22>💡</text></svg>') 16 16, auto;">
+<div
+  class="flex w-full flex-col bg-retro-gray text-lg text-retro-white md:items-center"
+  style="cursor: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2224%22>💡</text></svg>') 16 16, auto;">
   <style>
     /* Override all cursor styles within this page to use lightbulb */
     div * {
-      cursor: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2224%22>💡</text></svg>') 16 16, auto !important;
+      cursor: url("data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2224%22>💡</text></svg>")
+          16 16,
+        auto !important;
     }
   </style>
   <!-- BANNER/HEADER THINGY -->
@@ -221,28 +226,8 @@
     <!-- ================== -->
     <!-- OFFICER TEAM BLOCK -->
     <!-- ================== -->
-    <div class="mt-4 flex flex-col gap-3">
-      <h2 class="font-header text-4xl">The Officer Team</h2>
-      <p>
-        <b class="text-pink-300">Club Advisor:</b>
-        {info.club_advisor}
-      </p>
-      <p>
-        <b class="text-purple-300">Co-Presidents:</b>
-        {`${info.co_presidents.join(", ")}`}
-      </p>
-      <p>
-        <b class="text-blue-300">Vice President:</b>
-        {info.vice_president}
-      </p>
-      <p>
-        <b class="text-green-300">Secretary/Treasurer:</b>
-        {info.secretary_treasurer}
-      </p>
-      <p>
-        <b class="text-red-300">Officers:</b>
-        {info.officers.join(", ")}
-      </p>
+    <div class="mt-6 w-full">
+      <OfficerCarousel />
     </div>
   </div>
 
