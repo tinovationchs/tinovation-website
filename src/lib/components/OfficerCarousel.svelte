@@ -149,7 +149,7 @@
           <!-- Animated Custom Logo Avatar (No Emoji, using Tinovation lightbulb logo) -->
           <div
             class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-retro-black {officer.accentBg} transition-transform duration-500 group-hover:rotate-[15deg] group-hover:scale-110">
-            <img src="/website/new_logo.svg" alt="Tinovation logo" class="h-10 w-10" />
+            <img src="/website/new_logo.svg" alt="" aria-hidden="true" class="h-10 w-10" />
           </div>
 
           <!-- Officer Name -->
