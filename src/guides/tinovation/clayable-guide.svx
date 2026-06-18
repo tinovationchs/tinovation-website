@@ -1,5 +1,5 @@
 ---
-title: Building Clayable - A 3D Sculpting Web Application
+title: Clayable Guide
 authors: [magical paperclip] 
 date: "2025-07-29"
 checked: true
@@ -332,4 +332,3 @@ I'm considering several improvements for future versions:
 - **Texture Painting**: Sculpt the shape first, then paint colors and patterns on top
 - **3D Export**: Save sculptures as .obj or .stl files for 3D printing
 - **Collaborative Sculpting**: Multiple people sculpting the same clay ball in real-time (chaotic but fun)
-

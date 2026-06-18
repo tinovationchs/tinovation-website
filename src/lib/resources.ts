@@ -1,19 +1,24 @@
 import { ItemType, type Categories, type Item } from "$lib/types";
 
 const resourceCategories: Categories = {
-  Basics: ["languages", "editors", "file-system", "command-line", "git", "github"],
+  Basics: ["languages", "editors", "command-line", "git", "github"],
   "Web Development": [
     { type: ItemType.Guide, displayName: "intro", path: "web-intro" },
     "html-css",
     { type: ItemType.Guide, displayName: "embedding-media", path: "embedding-media" },
     "javascript",
     "web-frameworks",
+    { type: ItemType.Guide, displayName: "clayable-guide", path: "clayable-guide" },
     "rust-and-elm-architecture",
     { type: ItemType.Guide, displayName: "deployment", path: "web-deployment" },
     "tinofind-walkthrough",
     "react",
     { type: ItemType.Guide, displayName: "deply-on-github-pages", path: "gh-pages" },
-    { type: ItemType.Guide, displayName: "tino-fruit-exchange-walkthrough", path: "tino-fruit-exchange-guide" },
+    {
+      type: ItemType.Guide,
+      displayName: "tino-fruit-exchange-walkthrough",
+      path: "tino-fruit-exchange-guide",
+    },
   ],
   "Artificial Intelligence": [
     // "machine-learning",
@@ -97,13 +102,11 @@ const resourceCategories: Categories = {
   ],
   Tinovation: [
     { type: ItemType.Guide, displayName: "dev-notes", path: "dev-notes" },
-    { type: ItemType.Guide, displayName: "my-blog-post", path: "my-blog-post" },
     "scoring",
-    "error",
     {
       type: ItemType.Link,
-      displayName: "rick",
-      path: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      displayName: "join-discord",
+      path: "https://discord.gg/hzWNchnrf",
     },
     { type: ItemType.Code, displayName: "github", path: "https://github.com/tinovationchs" },
   ],
@@ -113,7 +116,7 @@ interface exportCategories {
   [index: string]: Item[];
 }
 
-for (const [_, arr] of Object.entries(resourceCategories)) {
+for (const arr of Object.values(resourceCategories)) {
   for (let i = 0; i < arr.length; i++) {
     if (typeof arr[i] === "string") {
       arr[i] = {

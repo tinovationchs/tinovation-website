@@ -1,0 +1,44 @@
+---
+title: Twitch x Tinovation AMA
+authors: [Tinovation]
+date: "2026-05-18"
+checked: false
+published: true
+---
+
+On May 18, 2026, Tinovation hosted a Twitch x Tinovation AMA with Marc Szanto, a
+Senior Developer Relations professional at Twitch.
+
+The AMA gave members a look into developer relations, customer success, and the work that
+goes into supporting developers who build tools, extensions, and communities around
+Twitch. Marc shared how his role connects technical work with communication, product
+decisions, and long-term relationships with developers and companies.
+
+What stood out most was how Marc explained the customer success side of developer
+relations. Not every feature request is automatically worth building, even when it comes
+from an important customer. Teams have to think about whether a request creates enough
+value, fits the product, and has a strong return on investment.
+
+Marc also talked about working with both individual developers and larger companies,
+including Amazon and Discord. He broke down his work at Twitch in a clear and approachable
+way, helping members understand how developer-facing roles can combine software,
+communication, and business strategy.
+
+## What Stood Out
+
+Marc explained how developer relations sits between engineering, product, and customer
+support. That mix made the conversation especially useful for students, since it showed
+that technical careers can take many forms beyond traditional coding roles.
+
+He also shared career advice for students interested in software and developer relations,
+and he brought Tinovation Twitch merch for the club. About 20 people attended the AMA,
+which gave the event a strong turnout and a very engaged audience.
+
+## Takeaways
+
+This AMA showed that software careers are not limited to writing code all day. Developer
+relations requires technical knowledge, but it also depends on explaining ideas clearly,
+understanding what developers need, and making thoughtful product decisions.
+
+Tinovation thanks Marc for spending time with our club and sharing an inside look at his
+work at Twitch.

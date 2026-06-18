@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-retro-black: #232222;
+  --color-retro-gray: #545b64;
+  --color-retro-lightgray: rgb(201, 199, 196);
+  --color-retro-white: #ece8e0;
+}
+
 body {
   @apply bg-retro-black;
 }
