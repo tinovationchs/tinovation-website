@@ -1,0 +1,146 @@
+---
+title: Slack Bot Tutorial
+authors: [Shreeansh Bharadwaj]
+date: "2026-06-10"
+checked: true
+published: true
+---
+
+## Introduction
+
+### What is a Slack bot?
+
+A Slack bot is an automated app that works inside Slack and responds to messages, commands, or events.
+It can send reminders, post updates, react to mentions, and handle repetitive tasks for you.
+
+We need it because it saves time, keeps communication organized, and reduces manual work.
+For example, instead of posting the same reminder every day, a bot can do it automatically on a schedule.
+
+## What you need first
+
+Before you start, make sure you have:
+
+- A Slack workspace where you can install apps
+- Permission to create a Slack app
+- A local development environment with Node.js
+- A place to store secrets safely, such as a `.env` file
+
+## Create the Slack app
+
+1. Go to the [Slack API dashboard](https://api.slack.com/apps).
+2. Click **Create New App**.
+3. Choose **From scratch**.
+4. Name the app and select the workspace you want to use.
+
+![Slack app creation dialog](/guides/misc/slack-create-app.png)
+
+This screenshot should show the app creation flow, especially the **From scratch** option.
+
+## Add bot permissions
+
+After the app is created, open **OAuth & Permissions** and add the scopes your bot needs.
+
+Start with these common bot scopes:
+
+- `chat:write` lets the bot send messages
+- `app_mentions:read` lets the bot detect when someone mentions it
+
+If your bot needs more access later, add only the extra scopes you actually use.
+Keeping the permission set small is better for security and makes debugging simpler.
+
+![OAuth scopes list](/guides/misc/slack-oauth-scopes.png)
+
+This image should show the OAuth scope list with the bot permissions highlighted.
+
+## Install the bot
+
+Once the scopes are in place, install the app to your workspace.
+
+1. Open **Install App** or **OAuth & Permissions**.
+2. Click **Install to Workspace**.
+3. Approve the requested permissions.
+4. Copy the bot token that starts with `xoxb-`.
+
+Store that token in an environment variable instead of hardcoding it into your code.
+
+![Bot install screen](/guides/misc/slack-install-bot.png)
+
+This screenshot should show the install button and the generated bot token area.
+
+## Set up your local project
+
+Create a simple Node.js project and install the Slack SDK:
+
+```bash
+npm init -y
+npm install @slack/web-api dotenv
+```
+
+Create a `.env` file:
+
+```env
+SLACK_BOT_TOKEN=xoxb-your-token-here
+SLACK_CHANNEL_ID=C0123456789
+```
+
+Then load the token in your app:
+
+```js
+import "dotenv/config";
+import { WebClient } from "@slack/web-api";
+
+const client = new WebClient(process.env.SLACK_BOT_TOKEN);
+
+async function sendMessage() {
+  await client.chat.postMessage({
+    channel: process.env.SLACK_CHANNEL_ID,
+    text: "Hello from the bot",
+  });
+}
+
+sendMessage().catch(console.error);
+```
+
+This is the simplest possible test: it authenticates with Slack and posts one message to a channel.
+
+## Enable event subscriptions
+
+If you want the bot to react when someone tags it, enable **Event Subscriptions**.
+
+1. Turn on event subscriptions.
+2. Add your request URL if you are running a public endpoint.
+3. Subscribe to events such as `app_mention`.
+
+For local development, you can use a tunnel like ngrok or Cloudflare Tunnel so Slack can reach your server.
+
+![Event subscriptions enabled](/guides/misc/slack-event-subscriptions.png)
+
+This image should show the event subscription page and the `app_mention` event selection.
+
+## Test a bot response
+
+After the app is installed and your server is running, test one message flow.
+
+Example behavior:
+
+- A user mentions the bot in a channel
+- Slack sends the event payload to your server
+- Your code reads the event and replies in the thread or channel
+
+![Slack bot reply in channel](/guides/misc/slack-bot-message.png)
+
+This final screenshot should show the bot replying in Slack so readers can confirm the setup worked.
+
+## Common mistakes
+
+- Using the wrong token type instead of the bot token
+- Forgetting to reinstall the app after adding scopes
+- Exposing secrets in source control
+- Not using a public URL when Slack needs to send events to your local server
+
+## Summary
+
+Slack bots are useful when you want a repeatable workflow to happen automatically.
+The main setup is straightforward: create the app, add the right scopes, install it, store the token safely, and then test a message flow.
+
+Once that works, you can extend the bot with reminders, moderation tools, status updates, or workflow automation.
