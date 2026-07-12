@@ -93,6 +93,8 @@ const resourceCategories: Categories = {
     { type: ItemType.Guide, displayName: "figma", path: "figma" },
     "cool-stuff",
     { type: ItemType.Guide, displayName: "apis", path: "apis" },
+    { type: ItemType.Guide, displayName: "appdev", path: "appdev" },
+
   ],
   "Hack Club": [
     { type: ItemType.Link, displayName: "toolbox", path: "https://toolbox.hackclub.com/" },
