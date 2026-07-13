@@ -80,6 +80,7 @@ const resourceCategories: Categories = {
     // "assembly",
     { type: ItemType.Guide, displayName: "google-earth-engine", path: "gee-basics" },
     { type: ItemType.Guide, displayName: "vr-applications", path: "vr-applications" },
+    { type: ItemType.Guide, displayName: "make-it-yours", path: "make-it-yours" },
     {
       type: ItemType.Code,
       displayName: "discord-bot-tutorial",
@@ -104,6 +105,7 @@ const resourceCategories: Categories = {
   ],
   Tinovation: [
     { type: ItemType.Guide, displayName: "dev-notes", path: "dev-notes" },
+    { type: ItemType.Guide, displayName: "make-it-yours", path: "make-it-yours" },
     "scoring",
     {
       type: ItemType.Link,
