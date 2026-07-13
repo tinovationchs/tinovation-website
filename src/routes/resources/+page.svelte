@@ -1,7 +1,45 @@
-<script>
+<script lang="ts">
   import ResourceGroup from "$lib/components/ResourceGroup.svelte";
   import info from "$lib/info";
   import resourceCategories from "$lib/resources";
+  import { ItemType, type Item } from "$lib/types";
+
+  let searchQuery = "";
+  let selectedCategory = "All";
+
+  const categoriesList = Object.keys(resourceCategories);
+
+  $: filteredCategories = Object.entries(resourceCategories).reduce(
+    (acc, [category, resources]) => {
+      if (selectedCategory !== "All" && selectedCategory !== category) {
+        return acc;
+      }
+
+      const query = searchQuery.trim().toLowerCase();
+      const matchingResources = resources.filter((resource) => {
+        if (!query) return true;
+
+        const displayName = resource.displayName.toLowerCase();
+        const path = resource.path.toLowerCase();
+
+        let typeText = "";
+        if (resource.type === ItemType.Guide) typeText = "guide";
+        else if (resource.type === ItemType.Link) typeText = "link";
+        else if (resource.type === ItemType.Code) typeText = "code colab notebook";
+
+        return displayName.includes(query) || path.includes(query) || typeText.includes(query);
+      });
+
+      if (matchingResources.length > 0) {
+        acc[category] = matchingResources;
+      }
+
+      return acc;
+    },
+    {} as Record<string, Item[]>
+  );
+
+  $: hasResults = Object.keys(filteredCategories).length > 0;
 </script>
 
 <svelte:head>
@@ -59,10 +97,96 @@
     </a>
 
     <hr class="mx-2 mb-8 rounded-full border-2 border-retro-black" />
-    <div class="grid w-fit grid-cols-1 gap-4 px-4 md:grid-cols-2 lg:grid-cols-3">
-      {#each Object.entries(resourceCategories) as [category, resources]}
-        <ResourceGroup {category} {resources} />
+
+    <!-- SEARCH BAR -->
+    <div
+      class="mx-auto mb-6 flex max-w-[32rem] items-center rounded-xl border-2 border-retro-black bg-retro-white px-3 py-2 text-retro-black shadow-[3px_3px_0px_0px_#232222] transition-all focus-within:translate-x-[-1px] focus-within:translate-y-[-1px] focus-within:shadow-[4px_4px_0px_0px_#232222]">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2.5"
+        stroke="currentColor"
+        class="mr-2 h-6 w-6 text-retro-gray">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+      </svg>
+      <input
+        type="text"
+        placeholder="Search resources..."
+        bind:value={searchQuery}
+        class="placeholder-retro-gray/60 w-full bg-transparent font-sans text-lg font-medium text-retro-black outline-none" />
+      {#if searchQuery}
+        <button
+          on:click={() => (searchQuery = "")}
+          class="ml-2 text-retro-gray hover:text-retro-black"
+          type="button"
+          aria-label="Clear search">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+            stroke="currentColor"
+            class="h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      {/if}
+    </div>
+
+    <!-- CATEGORY TABS -->
+    <div class="mx-auto mb-8 flex max-w-[50rem] flex-wrap justify-center gap-2 px-4">
+      <button
+        on:click={() => (selectedCategory = "All")}
+        class="rounded-lg border-2 border-retro-black px-4 py-1.5 font-header text-lg transition-all active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_0px_#232222]
+          {selectedCategory === 'All'
+          ? 'bg-pink-700 text-retro-white shadow-[1px_1px_0px_0px_#232222]'
+          : 'bg-retro-white text-retro-black shadow-[3px_3px_0px_0px_#232222] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[4px_4px_0px_0px_#232222]'}">
+        All
+      </button>
+      {#each categoriesList as category}
+        <button
+          on:click={() => (selectedCategory = category)}
+          class="rounded-lg border-2 border-retro-black px-4 py-1.5 font-header text-lg transition-all active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_0px_#232222]
+            {selectedCategory === category
+            ? 'bg-pink-700 text-retro-white shadow-[1px_1px_0px_0px_#232222]'
+            : 'bg-retro-white text-retro-black shadow-[3px_3px_0px_0px_#232222] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[4px_4px_0px_0px_#232222]'}">
+          {category}
+        </button>
       {/each}
     </div>
+
+    <!-- GRID / RESULTS -->
+    {#if hasResults}
+      <div class="grid w-fit grid-cols-1 gap-4 px-4 md:grid-cols-2 lg:grid-cols-3">
+        {#each Object.entries(filteredCategories) as [category, resources]}
+          <ResourceGroup {category} {resources} />
+        {/each}
+      </div>
+    {:else}
+      <div
+        class="mx-auto my-12 max-w-[28rem] rounded-xl border-2 border-retro-black bg-retro-white p-8 text-center text-retro-black shadow-[4px_4px_0px_0px_#232222]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="text-retro-gray/60 mx-auto mb-4 h-16 w-16">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+        </svg>
+        <h2 class="mb-2 font-header text-3xl">No Resources Found</h2>
+        <p class="font-sans text-lg text-retro-gray">
+          We couldn't find any resources matching "<b>{searchQuery}</b
+          >"{#if selectedCategory !== "All"} in category <b>{selectedCategory}</b>{/if}.
+        </p>
+      </div>
+    {/if}
   </div>
 </div>

@@ -8,7 +8,7 @@ test("initializes the site at the top instead of restoring a previous scroll pos
   const scrollCalls = [];
   const browserWindow = {
     history: { scrollRestoration: "auto" },
-    scrollTo: (...args) => scrollCalls.push(args)
+    scrollTo: (...args) => scrollCalls.push(args),
   };
 
   initializeScrollAtTop(browserWindow);
