@@ -620,6 +620,9 @@ This section combines:
 - Tooltip not showing? Ensure selector matches existing elements.
 - Animation jitter? Reduce particle count or duration.
 - Layout shifts? Keep containers fixed in size where possible.
+
+<div></div>
+
 {:else}
   <div class="destroyed-state">
     <h3>Blog post is currently destroyed.</h3>
