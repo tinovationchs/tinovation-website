@@ -24,6 +24,7 @@ const resourceCategories: Categories = {
       displayName: "tino-fruit-exchange-walkthrough",
       path: "tino-fruit-exchange-guide",
     },
+    { type: ItemType.Guide, displayName: "make-it-yours", path: "make-it-yours" },
   ],
   "Artificial Intelligence": [
     // "machine-learning",
@@ -99,7 +100,6 @@ const resourceCategories: Categories = {
     "cool-stuff",
     { type: ItemType.Guide, displayName: "apis", path: "apis" },
     { type: ItemType.Guide, displayName: "appdev", path: "appdev" },
-
   ],
   "Hack Club": [
     { type: ItemType.Link, displayName: "toolbox", path: "https://toolbox.hackclub.com/" },
