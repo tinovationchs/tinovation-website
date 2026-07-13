@@ -8,6 +8,11 @@ const resourceCategories: Categories = {
     { type: ItemType.Guide, displayName: "embedding-media", path: "embedding-media" },
     "javascript",
     "web-frameworks",
+    {
+      type: ItemType.Guide,
+      displayName: "AI APIs",
+      path: "ai-apis",
+    },
     { type: ItemType.Guide, displayName: "clayable-guide", path: "clayable-guide" },
     "rust-and-elm-architecture",
     { type: ItemType.Guide, displayName: "deployment", path: "web-deployment" },

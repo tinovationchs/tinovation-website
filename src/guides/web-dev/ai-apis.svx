@@ -1,0 +1,129 @@
+---
+title: AI APIs
+authors: [Amogh Bhatta]
+date: "2026-07-12"
+checked: true
+published: true
+---
+
+AI APIs allow websites to use artificial intelligence without needing to build and train their own AI models. Instead, websites can send requests to AI services and receive generated responses.
+
+## What is an API?
+
+An API (Application Programming Interface) allows different programs to communicate with each other.
+
+For example, instead of building an AI model yourself, your website can send a request to an AI provider and receive an AI-generated response.
+
+APIs usually work through a request and response system. A program sends information to another service, and that service processes the request and sends back data.
+
+## How AI APIs Work
+
+The process usually looks like this:
+
+User
+↓
+Website
+↓
+Backend Server
+↓
+AI API
+↓
+Response
+↓
+Website
+
+The user interacts with the website, the website sends information to the backend, and the backend communicates with the AI API. The response from the AI service is then sent back to the website.
+
+## Frontend vs Backend
+
+When working with AI APIs, it is important to understand the difference between frontend and backend code.
+
+Frontend code runs in the user's browser. This includes HTML, CSS, and JavaScript. Since users can inspect frontend code, sensitive information should never be stored there.
+
+Backend code runs on a server. It handles private information, processes requests, and communicates with external services.
+
+Never put API keys directly in frontend code.
+
+For example, this is unsafe:
+
+```javascript
+const apiKey = "your-secret-key";
+```
+
+Anyone who visits the website could potentially find and use this key.
+
+Instead, use this structure:
+
+Frontend → Backend → AI API
+
+The backend stores the API key securely and handles communication with the AI provider.
+
+## Making an API Request
+
+Most AI APIs use HTTP requests with JSON data.
+
+A request might look like this:
+
+```javascript
+const response = await fetch("/api/chat", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    prompt: "Explain recursion"
+  })
+});
+
+const data = await response.json();
+
+console.log(data.response);
+```
+
+This code sends a user's prompt to a backend endpoint and receives a response.
+
+## Using API Keys
+
+Most AI services require an API key to authenticate requests.
+
+API keys should be stored using environment variables.
+
+Example:
+
+AI_API_KEY=your_key_here
+
+The backend can access this variable without exposing it to users.
+
+## Common Uses of AI APIs
+
+AI APIs can be used to build many different applications, including:
+
+* AI chatbots
+* Coding assistants
+* Study helpers
+* Resume reviewers
+* Text summarizers
+* Image generators
+* Recommendation systems
+
+## Security Tips
+
+When building applications with AI APIs:
+
+Never expose API keys in frontend code.
+Validate user input before sending requests.
+Limit the number of requests users can make.
+Monitor API usage to avoid unexpected costs.
+Keep API keys stored securely.
+
+## Next Steps
+
+After learning how to use AI APIs, try building your own project.
+
+Some ideas include:
+
+* A chatbot for your website
+* An AI homework helper
+* An AI-powered search tool
+* A flashcard generator
+* A coding assistant
