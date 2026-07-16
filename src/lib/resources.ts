@@ -25,6 +25,8 @@ const resourceCategories: Categories = {
       path: "tino-fruit-exchange-guide",
     },
     { type: ItemType.Guide, displayName: "Make It Yours", path: "make-it-yours" },
+    { type: ItemType.Guide, displayName: "Debugging", path: "debugging" },
+    
   ],
   "Artificial Intelligence": [
     // "machine-learning",
