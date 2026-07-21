@@ -1,0 +1,45 @@
+---
+title: Godot Game Engine
+authors: [Adarsh Sudheer]
+date: "2026.07.20"
+checked: true
+published: true
+---
+
+## Introduction
+
+### What is Godot
+Godot is a completely free software used to build 2D and 3D video games. Unlike other engines, you do not have to pay any royalties or licensing fees. It uses a clean node system and a scripting language called GDScript that looks a lot like Python.
+
+### Why bother with it
+Making games helps you learn how object oriented programming works in practice. You also pick up useful math skills and learn how to structure a large project without getting overwhelmed. It is a great tool if you want to build things from scratch and understand what is happening under the hood.
+
+### Prerequisites
+You should already understand basic programming concepts like classes and inheritance before jumping in. Knowing some Python makes learning GDScript super easy.
+
+## Core Concepts
+
+Before you start building anything, you need to know a few terms that pop up everywhere in the engine interface.
+
+### Node
+The basic building block of everything in the engine. Sprites and cameras are all nodes. Every single object in your game is a node arranged in a tree.
+
+### Scene
+A collection of nodes arranged together in a specific hierarchy. You can take an entire scene and reuse it inside other scenes as many times as you want.
+
+### Signal
+How nodes talk to each other when an event happens. For example, when a player clicks a button, that button emits a signal telling another script to do something.
+
+### Inspector
+The panel on the right side of the screen that shows properties for whatever node you currently have selected. You can change colors, textures, and coordinates here.
+
+## Getting Started
+
+Let us write your first script and get something moving on the screen.
+
+1. Go to the official website and download the latest stable release. It runs as a single standalone program with no complicated installation process.
+2. Open the program up and create a new project folder on your computer.
+3. Make a new 2D scene which creates a root node.
+4. Add a sprite node to your tree and drop an image file into its texture property.
+5. Click the script icon next to your node to attach a new script file.
+6. Inside the process function, write a few lines of code to change the position based on keyboard input. Hit the play button at the top to test it out.

@@ -100,6 +100,7 @@ const resourceCategories: Categories = {
     "cool-stuff",
     { type: ItemType.Guide, displayName: "apis", path: "apis" },
     { type: ItemType.Guide, displayName: "appdev", path: "appdev" },
+    { type: ItemType.Guide, displayName: "godot_gamedev", path: "godot" },
   ],
   "Hack Club": [
     { type: ItemType.Link, displayName: "toolbox", path: "https://toolbox.hackclub.com/" },
