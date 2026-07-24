@@ -8,6 +8,11 @@ const resourceCategories: Categories = {
     { type: ItemType.Guide, displayName: "embedding-media", path: "embedding-media" },
     "javascript",
     "web-frameworks",
+    {
+      type: ItemType.Guide,
+      displayName: "AI APIs",
+      path: "ai-apis",
+    },
     { type: ItemType.Guide, displayName: "clayable-guide", path: "clayable-guide" },
     "rust-and-elm-architecture",
     { type: ItemType.Guide, displayName: "deployment", path: "web-deployment" },
@@ -19,6 +24,7 @@ const resourceCategories: Categories = {
       displayName: "tino-fruit-exchange-walkthrough",
       path: "tino-fruit-exchange-guide",
     },
+    { type: ItemType.Guide, displayName: "Make It Yours", path: "make-it-yours" },
   ],
   "Artificial Intelligence": [
     // "machine-learning",
@@ -94,6 +100,7 @@ const resourceCategories: Categories = {
     "cool-stuff",
     { type: ItemType.Guide, displayName: "apis", path: "apis" },
     { type: ItemType.Guide, displayName: "slack-bot", path: "slack-bot" },
+    { type: ItemType.Guide, displayName: "appdev", path: "appdev" },
   ],
   "Hack Club": [
     { type: ItemType.Link, displayName: "toolbox", path: "https://toolbox.hackclub.com/" },

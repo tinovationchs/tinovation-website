@@ -5,12 +5,12 @@ import type { Leaderboard } from "$lib/types";
 const data: Leaderboard = [
   {
     name: "Aarush Arya",
-    points: [3,5,10],
+    points: [3, 5, 10],
     comment: "",
   },
   {
     name: "Michael Chuang",
-    points: [8,10],
+    points: [8, 10],
     comment: "",
   },
   {
@@ -30,7 +30,7 @@ const data: Leaderboard = [
   },
   {
     name: "Aneesh Raghavan",
-    points: [3,5],
+    points: [3, 5],
     comment: "",
   },
   {
@@ -40,7 +40,7 @@ const data: Leaderboard = [
   },
   {
     name: "Bernard Freund",
-    points: [3,5],
+    points: [3, 5],
     comment: "prussian",
   },
   {
@@ -55,7 +55,7 @@ const data: Leaderboard = [
   },
   {
     name: "Tomoki Takeuchi",
-    points: [3,8],
+    points: [3, 8],
     comment: "ML genius",
   },
   {
@@ -65,7 +65,7 @@ const data: Leaderboard = [
   },
   {
     name: "Jimin Lee",
-    points: [3,5,5],
+    points: [3, 5, 5],
     comment: "locker room project!",
   },
   {
@@ -90,7 +90,7 @@ const data: Leaderboard = [
   },
   {
     name: "Dhruva Srinivas",
-    points: [3, 5,5],
+    points: [3, 5, 5],
     comment: "",
   },
   {
@@ -100,7 +100,7 @@ const data: Leaderboard = [
   },
   {
     name: "Kavya Gupta",
-    points: [3,7],
+    points: [3, 7],
     comment: "Bookstore application - 3rd in code sprint #3",
   },
   {

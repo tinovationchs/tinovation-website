@@ -160,20 +160,20 @@
 
           <!-- Simplified Display Role (e.g. coprez, vp, advisor, sec / treas) -->
           <p
-            class="mt-1 font-sans text-sm font-semibold uppercase tracking-wider text-retro-gray/80">
+            class="text-retro-gray/80 mt-1 font-sans text-sm font-semibold uppercase tracking-wider">
             {officer.displayRole}
           </p>
         </div>
 
         <!-- BOTTOM CARD DECORATION -->
         <div
-          class="flex items-center justify-between border-t border-retro-black/10 pt-3 text-[10px] font-semibold text-retro-gray/60">
+          class="border-retro-black/10 text-retro-gray/60 flex items-center justify-between border-t pt-3 text-[10px] font-semibold">
           <span>TINOVATION '26</span>
           <!-- Dynamic accent glow dot -->
           <div
-            class="flex h-4 w-4 items-center justify-center rounded-full border border-retro-black/20 bg-retro-white">
+            class="border-retro-black/20 flex h-4 w-4 items-center justify-center rounded-full border bg-retro-white">
             <span
-              class="h-2 w-2 rounded-full border border-retro-black/30 {officer.dotColor} animate-pulse" />
+              class="border-retro-black/30 h-2 w-2 rounded-full border {officer.dotColor} animate-pulse" />
           </div>
         </div>
       </div>
