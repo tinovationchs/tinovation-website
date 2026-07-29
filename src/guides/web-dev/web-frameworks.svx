@@ -1,31 +1,126 @@
 ---
 title: Web Frameworks 
-authors: [Taisei De La Cruz]
-date: "2023-07-20"
+authors: [Michael Zhao]
+date: "2026-07-28"
 checked: false
 published: true
 ---
 
-## Frameworks + their Documentation and Tutorials
-Once websites become moderately complex and/or dynamic, it can become a pain to write them in pure HTML, CSS, and JS. 
-If you were making a small wiki about cheeses, would you want to copy paste a bunch of HTML and create a new HTML 
-file every time you added an entry? Probably not.
+Frameworks help you build websites that are complex and/or dynamic without writing repetitive HTML by hand.
 
-Here a few frameworks and their tutorial/documentation pages (not a comprehensive list, not even close):
+## The Problem
 
-[Svelte](https://learn.svelte.dev/tutorial/welcome-to-svelte): Syntax is nice and clean, my personal favourite. Also has sveltekit
+Say you're writing recipes for 40 different boba drinks.
 
-[React](https://react.dev/learn): Most popular JS framework, made by Facebook
+Would you write 40 completely separate recipes from scratch? Of course not.
 
-[Yew](https://yew.rs/): Rust framework that compiles into [Web Assembly](https://developer.mozilla.org/en-US/docs/WebAssembly)
+Instead, you would probably write a few base recipes, one per tea base (black, green, fruit, assam, etc).
 
-### Templating
+Each base recipe then branches into multiple drinks at specific points, like
 
-Templating is one part of what frameworks usually do, but templating can be done on its own too. 
-Templating engines allow you to reuse HTML, CSS, and JS code (like a navbar present on every page, or a 
-blog post template where you just need to insert the title, author, and content). They typically also allow 
-you to render variables from the server, have for loops, etc. Here are some templating engines:
+* Milk or no milk
+* Foam
+* Toppings
 
-[Jinja](https://jinja.palletsprojects.com/en/3.1.x/) (Python) or Nunjucks (Node.js)
+Most of the recipe (such as how to brew the tea) stays the same. Only a few ingredients change.
 
-[EJS](https://ejs.co/) (Node.js)
+Frameworks apply this same idea to HTML.
+
+## What Frameworks Actually Do
+
+Instead of writing a full, independent HTML file for every page of a website, frameworks allow you to:
+
+* Write templates for groups of similar pages
+* Specify what is different in each page in each group
+* Use the given templates and specifications to generate all pages automatically, without you needing to write it all by hand
+
+## Routing
+
+Routing means deciding what to show based on the incoming request.
+
+* A request is literally just the thing you type into the URL bar. `google.com/search?q=boba` is a request for 
+the path `/search` with `q=boba` attached.
+* A route is a rule: "when a request with this method and this path comes in, run this function, and send back 
+whatever it returns."
+* Frameworks exist largely to make writing and managing these rules easy.
+
+Routing happens on both ends of a website, doing different jobs:
+
+**Server-Side Routing** (backend)
+
+* Browser requests a path, like `/menu`
+* Server matches it to a function
+* That function runs, pulls together data, hands it to a template, and sends back HTML
+* All of this happens during a reload
+
+**Client-Side Routing** (frontend)
+
+* A JavaScript trick that fakes server-side routing without contacting the server every time
+* Clicking a link is intercepted by JS, which updates the URL and swaps out content, no full reload
+* The server is usually only contacted once, to load the page in the first place
+* This is why clicking an email in Gmail changes the URL but doesn't reload the page
+
+This split, client-side vs server-side, roughly lines up with frontend vs backend frameworks as a whole.
+
+## Frontend Frameworks
+
+Frontend frameworks (Svelte, React, Vue, etc.) run in the browser and handle client-side routing and 
+interactivity.
+
+To use one, you need:
+
+* **Node.js**: lets JavaScript run on your own computer, outside the browser, while developing
+* **A package manager** (npm, pnpm, or yarn): installs the framework and its dependencies, keeps versions consistent
+* **A build tool** (like Vite): compiles code (JSX, TypeScript, etc.) into plain HTML/CSS/JS a browser can run, 
+and reloads automatically as you save files during development
+
+Once built, a frontend app is just static files, no server required to run it long-term.
+
+The advantage of this is that pages update instantly, and the framework keeps the UI in sync with 
+your data automatically.
+
+## Backend Frameworks
+
+Backend frameworks (Flask, Django, Express, etc.) run on a server and handle server-side routing, databases, 
+authentication, and generating HTML or JSON.
+
+To use one, you need:
+
+* **A language runtime** (Python for Flask/Django, Node.js for Express): keeps running 24/7, waiting for 
+requests, as long as your site is live
+* **The framework itself** (`pip install flask`, `npm install express`): gives you tools to define routes and 
+handle requests instead of writing that plumbing by hand
+* **A database** (like SQLite or PostgreSQL), once your app needs to remember things between requests
+
+Unlike a frontend app, a backend app needs an actual running process, listening for requests the whole time your 
+site is live.
+
+The advantage of this is that you have control over anything that shouldn't be exposed to the browser (business logic, credentials, database 
+access), plus the ability to serve the same data to a website, mobile app, or any other client.
+
+## Templating
+
+The "templates" mentioned earlier are actually a real thing in web development.
+
+* A template is your base recipe: write the shared structure once, leave blanks for the parts that change
+* Feed it data, and it gets combined into a finished HTML page
+
+Templating tools are tied to the language of their framework:
+
+* [Jinja](https://jinja.palletsprojects.com/en/3.1.x/): Flask (Python) uses this by default. `{{ username }}` 
+inserts a variable, `{% for drink in drinks %}` loops over a list
+* [Django Templates](https://docs.djangoproject.com/en/stable/topics/templates/): Django's (Python) built-in 
+engine, similar to Jinja but restricts arbitrary logic to keep display and app logic separate
+* [EJS](https://ejs.co/): Express (Node.js) commonly uses this. Embeds real JavaScript in HTML using `<% %>` tags
+* [Nunjucks](https://mozilla.github.io/nunjucks/): Also used with Express, but modeled after Jinja's syntax 
+instead of raw JavaScript
+
+A templating engine is written in (or built for) the same language as the backend framework using it, since it 
+needs to receive data directly from your route code.
+
+## Learning More
+
+
+* [The Odin Project](https://www.theodinproject.com/): free, project-based full stack curriculum
+* [freeCodeCamp](https://www.freecodecamp.org/): free curriculum and YouTube tutorials on individual frameworks
+* [Very good resource for Flask](https://cs50.harvard.edu/x/weeks/9/)
