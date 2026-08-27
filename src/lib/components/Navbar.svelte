@@ -42,6 +42,12 @@
       {:else}
         <a href="/leaderboard" class="transition ease-in hover:text-purple-700">leaderboard</a>
       {/if}
+
+      {#if $page.url.pathname === "/partners"}
+        <a href="/partners" class="text-orange-700 transition ease-in">partners</a>
+      {:else}
+        <a href="/partners" class="transition ease-in hover:text-orange-700">partners</a>
+      {/if}
     </nav>
   </div>
   <div class="rounded-3xl bg-retro-white px-4 py-1 font-header text-2xl">
