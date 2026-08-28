@@ -320,7 +320,7 @@ The smooth tool needs to remember what the original ball looked like so it can r
 
 ## The Final Result
 
-You can try out Clayable at [clayable.vercel.app](https://clayable.vercel.app). It works on both desktop and mobile, includes 5 different sculpting tools, multiple color themes, and honestly feels much closer to real clay than I thought would be possible when I started.
+You can try out Clayable at [clayable.studio](https://clayable.studio). It works on both desktop and mobile, includes 5 different sculpting tools, multiple color themes, and honestly feels much closer to real clay than I thought would be possible when I started.
 
 The complete source code is available at [github.com/magical-paperclip/clayable](https://github.com/magical-paperclip/clayable) if you want to see how everything works under the hood or learn from my mistakes.
 

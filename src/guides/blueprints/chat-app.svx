@@ -1,0 +1,36 @@
+---
+title: Full-Stack Chat App
+authors: [Tinovation]
+date: "2026-07-13"
+checked: true
+published: true
+tech_stack: ["React", "Node.js", "Socket.io"]
+difficulty: "Intermediate"
+description: "A real-time messaging application with live websockets."
+---
+
+## Goal
+
+Build a real-time global chat room where multiple users can talk instantly.
+
+## Architecture Diagram
+
+```mermaid
+graph LR
+    A[React Frontend] <-->|WebSocket| B(Node.js Server)
+    B <--> C[(MongoDB)]
+```
+
+## Tech Stack Justification
+
+- **React:** Great for dynamic UI updates when new messages arrive.
+- **Node.js & Socket.io:** Standard and simplest way to handle persistent WebSocket connections.
+- **MongoDB:** Easy to store unstructured chat logs.
+
+## AI Prompting Guide
+
+Drop these prompts into Cursor or ChatGPT:
+
+1. "Scaffold a Vite React application with TailwindCSS for the frontend."
+2. "Create an Express.js server in Node and configure Socket.io for cross-origin requests."
+3. "Write the frontend code to connect to Socket.io and emit a 'send_message' event when the user submits a form."
