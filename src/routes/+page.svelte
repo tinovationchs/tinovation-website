@@ -111,6 +111,29 @@
       </div>
     </div>
 
+    <!-- ================== -->
+    <!-- INDUSTRY PARTNERS  -->
+    <!-- ================== -->
+    <a
+      href="/partners"
+      class="mt-4 flex flex-col items-center justify-center rounded-lg border-2 border-retro-black bg-retro-white py-4 shadow-[4px_4px_0px_0px_#232222] transition-transform hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#232222]">
+      <h3 class="mb-3 font-header text-xl text-retro-black">Supported By</h3>
+      <div class="flex flex-row flex-wrap items-center justify-center gap-6 opacity-80 md:gap-12">
+        <img
+          src="/website/twitch.svg"
+          alt="Twitch"
+          class="h-10 w-10 transition-transform hover:scale-110" />
+        <img
+          src="/website/figma.svg"
+          alt="Figma"
+          class="h-10 w-10 transition-transform hover:scale-110" />
+        <img
+          src="/website/mongodb.svg"
+          alt="MongoDB"
+          class="h-10 w-10 transition-transform hover:scale-110" />
+      </div>
+    </a>
+
     <!-- =============== -->
     <!-- LINKS AND STUFF -->
     <!-- =============== -->
