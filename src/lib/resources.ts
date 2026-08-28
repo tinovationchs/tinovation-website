@@ -8,8 +8,8 @@ const resourceCategories: Categories = {
       path: "chat-app",
       tech_stack: ["React", "Node.js", "Socket.io"],
       difficulty: "Intermediate",
-      description: "A real-time messaging application with live websockets."
-    }
+      description: "A real-time messaging application with live websockets.",
+    },
   ],
   Basics: ["languages", "editors", "command-line", "git", "github"],
   "Web Development": [
