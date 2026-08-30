@@ -2,6 +2,7 @@
   import Footer from "$lib/components/Footer.svelte";
   import Navbar from "$lib/components/Navbar.svelte";
   import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
+  import CustomCursor from "$lib/components/CustomCursor.svelte";
   import { activeTheme, initTheme } from "$lib/theme";
   import { initializeScrollAtTop } from "$lib/scroll.js";
   import "../app.css";
@@ -23,6 +24,8 @@
     document.documentElement.style.setProperty("--color-retro-white", $activeTheme.colors.white);
   }
 </script>
+
+<CustomCursor />
 
 <div class="flex min-h-screen flex-col">
   <Navbar />
