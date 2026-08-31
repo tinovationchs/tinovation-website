@@ -3,6 +3,7 @@
   import Navbar from "$lib/components/Navbar.svelte";
   import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
   import CustomCursor from "$lib/components/CustomCursor.svelte";
+  import KonamiCode from "$lib/components/KonamiCode.svelte";
   import { activeTheme, initTheme } from "$lib/theme";
   import { initializeScrollAtTop } from "$lib/scroll.js";
   import "../app.css";
@@ -26,6 +27,7 @@
 </script>
 
 <CustomCursor />
+<KonamiCode />
 
 <div class="flex min-h-screen flex-col">
   <Navbar />
