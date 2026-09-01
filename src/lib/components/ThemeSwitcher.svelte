@@ -5,6 +5,31 @@
   let isOpen = false;
   let clickedLockedTheme = "";
   let timeoutId: number;
+  let isHackMode = false;
+
+  function toggleHackMode() {
+    isHackMode = !isHackMode;
+    if (typeof document !== "undefined") {
+      document.designMode = isHackMode ? "on" : "off";
+
+      if (isHackMode) {
+        const style = document.createElement("style");
+        style.id = "hack-mode-style";
+        style.innerHTML = `
+          *:hover {
+            outline: 2px dashed #00ff00 !important;
+            outline-offset: 2px !important;
+            background-color: rgba(0, 255, 0, 0.1) !important;
+            cursor: text !important;
+          }
+        `;
+        document.head.appendChild(style);
+      } else {
+        const style = document.getElementById("hack-mode-style");
+        if (style) style.remove();
+      }
+    }
+  }
 
   function toggleMenu() {
     isOpen = !isOpen;
@@ -107,6 +132,18 @@
           all themes!
         </div>
       {/if}
+
+      <!-- HACK MODE TOGGLE -->
+      <div class="mt-4 border-t-2 border-retro-black pt-3">
+        <button
+          on:click={toggleHackMode}
+          class="flex w-full items-center justify-center gap-2 rounded-xl border-2 px-3 py-2 text-center font-sans text-sm font-bold shadow-[2px_2px_0px_0px_#232222] transition-all
+            {isHackMode
+            ? 'translate-x-[2px] translate-y-[2px] border-[#00ff00] bg-retro-black text-[#00ff00] shadow-[0px_0px_0px_0px_#232222]'
+            : 'border-retro-black bg-retro-white text-retro-black hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[3px_3px_0px_0px_#232222] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[0px_0px_0px_0px_#232222]'}">
+          <span>{isHackMode ? "🔓 HACK MODE: ON" : "⌨️ ENABLE HACK MODE"}</span>
+        </button>
+      </div>
     </div>
   {/if}
 
