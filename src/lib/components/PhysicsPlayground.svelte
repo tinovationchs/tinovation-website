@@ -96,9 +96,20 @@
       }
     );
 
-    const softBody = Composites.softBody(200, 100, 5, 5, 0, 0, true, 18, {
-      render: { visible: false },
-    }, { stiffness: 0.9 });
+    const softBody = Composites.softBody(
+      200,
+      100,
+      5,
+      5,
+      0,
+      0,
+      true,
+      18,
+      {
+        render: { visible: false },
+      },
+      { stiffness: 0.9 }
+    );
 
     Composite.add(engine.world, [stack, softBody]);
 

@@ -120,15 +120,15 @@
       <h3 class="mb-3 font-header text-xl text-retro-black">Supported By</h3>
       <div class="flex flex-row flex-wrap items-center justify-center gap-6 opacity-80 md:gap-12">
         <img
-          src="/website/twitch.svg"
+          src="/website/twitch_full.svg"
           alt="Twitch"
           class="h-10 w-auto transition-transform hover:scale-110" />
         <img
-          src="/website/figma.svg"
+          src="/website/figma_full.svg"
           alt="Figma"
           class="h-10 w-auto transition-transform hover:scale-110" />
         <img
-          src="/website/mongodb.svg"
+          src="/website/mongodb_full.svg"
           alt="MongoDB"
           class="h-10 w-auto transition-transform hover:scale-110" />
         <img
