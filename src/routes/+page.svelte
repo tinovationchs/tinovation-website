@@ -122,23 +122,23 @@
         <img
           src="/website/twitch_full.svg"
           alt="Twitch"
-          class="h-10 w-auto transition-transform hover:scale-110" />
+          class="h-8 w-28 object-contain transition-transform hover:scale-110" />
         <img
           src="/website/figma_full.svg"
           alt="Figma"
-          class="h-10 w-auto transition-transform hover:scale-110" />
+          class="h-8 w-28 object-contain transition-transform hover:scale-110" />
         <img
           src="/website/mongodb_full.svg"
           alt="MongoDB"
-          class="h-10 w-auto transition-transform hover:scale-110" />
+          class="h-8 w-28 object-contain transition-transform hover:scale-110" />
         <img
           src="/website/koss.svg"
           alt="Koss"
-          class="h-8 w-auto transition-transform hover:scale-110" />
+          class="h-8 w-28 object-contain transition-transform hover:scale-110" />
         <img
           src="/website/soldred.png"
           alt="Soldred Electronics"
-          class="h-8 w-auto transition-transform hover:scale-110" />
+          class="h-8 w-28 object-contain transition-transform hover:scale-110" />
       </div>
     </a>
 
