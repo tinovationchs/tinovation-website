@@ -42,23 +42,39 @@
 
     <hr class="mx-2 mb-12 w-full rounded-full border-2 border-retro-black" />
 
-    <div class="flex flex-col items-center gap-16 px-4 md:flex-row md:gap-24">
+    <div
+      class="flex flex-col flex-wrap items-center justify-center gap-16 px-4 md:flex-row md:gap-12 lg:gap-24">
       <div
         class="flex flex-col items-center justify-center rounded-2xl border-4 border-retro-black bg-retro-white p-8 shadow-[8px_8px_0px_0px_#232222] transition-transform hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_#232222]">
-        <img src="/website/twitch.svg" alt="Twitch" class="h-32 w-32" />
+        <img src="/website/twitch_full.svg" alt="Twitch" class="h-20 w-48 object-contain" />
         <span class="mt-4 font-header text-2xl text-retro-black">Twitch</span>
       </div>
 
       <div
         class="flex flex-col items-center justify-center rounded-2xl border-4 border-retro-black bg-retro-white p-8 shadow-[8px_8px_0px_0px_#232222] transition-transform hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_#232222]">
-        <img src="/website/figma.svg" alt="Figma" class="h-32 w-32" />
+        <img src="/website/figma_full.svg" alt="Figma" class="h-20 w-48 object-contain" />
         <span class="mt-4 font-header text-2xl text-retro-black">Figma</span>
       </div>
 
       <div
         class="flex flex-col items-center justify-center rounded-2xl border-4 border-retro-black bg-retro-white p-8 shadow-[8px_8px_0px_0px_#232222] transition-transform hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_#232222]">
-        <img src="/website/mongodb.svg" alt="MongoDB" class="h-32 w-32" />
+        <img src="/website/mongodb_full.svg" alt="MongoDB" class="h-20 w-48 object-contain" />
         <span class="mt-4 font-header text-2xl text-retro-black">MongoDB</span>
+      </div>
+
+      <div
+        class="flex flex-col items-center justify-center rounded-2xl border-4 border-retro-black bg-retro-white p-8 shadow-[8px_8px_0px_0px_#232222] transition-transform hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_#232222]">
+        <img src="/website/koss.svg" alt="Koss" class="h-20 w-48 object-contain" />
+        <span class="mt-4 font-header text-2xl text-retro-black">Koss</span>
+      </div>
+
+      <div
+        class="flex flex-col items-center justify-center rounded-2xl border-4 border-retro-black bg-retro-white p-8 shadow-[8px_8px_0px_0px_#232222] transition-transform hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_#232222]">
+        <img
+          src="/website/soldred.png"
+          alt="Soldred Electronics"
+          class="h-20 w-48 object-contain" />
+        <span class="mt-4 font-header text-2xl text-retro-black">Soldred Electronics</span>
       </div>
     </div>
 

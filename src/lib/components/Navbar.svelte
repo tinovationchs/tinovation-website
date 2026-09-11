@@ -1,12 +1,23 @@
 <script>
   import { page } from "$app/stores";
   import info from "$lib/info";
+  import PhysicsPlayground from "./PhysicsPlayground.svelte";
+
+  let playgroundActive = false;
+  let navContainer;
+
+  function togglePlayground() {
+    playgroundActive = true;
+  }
 </script>
 
 <div class="fixed z-30 flex w-full flex-col items-center gap-4 py-4">
   <div>
     <nav
-      class="text-semibold flex max-w-[calc(100vw-1rem)] flex-row flex-wrap justify-center gap-x-4 gap-y-1 rounded-3xl bg-retro-white px-4 py-1 font-header text-base opacity-90 shadow-md shadow-transparent transition ease-in hover:-translate-y-0.5 hover:shadow-retro-white sm:text-lg md:gap-x-8 md:px-10 md:py-1.5 md:text-2xl">
+      bind:this={navContainer}
+      class="text-semibold flex max-w-[calc(100vw-1rem)] flex-row flex-wrap justify-center gap-x-4 gap-y-1 rounded-3xl bg-retro-white px-4 py-1 font-header text-base opacity-90 shadow-md shadow-transparent transition ease-in hover:-translate-y-0.5 hover:shadow-retro-white sm:text-lg md:gap-x-8 md:px-10 md:py-1.5 md:text-2xl {playgroundActive
+        ? 'opacity-0'
+        : ''}">
       {#if $page.url.pathname === "/"}
         <a href="/" class="text-amber-700 transition ease-in">home</a>
       {:else}
@@ -48,11 +59,27 @@
       {:else}
         <a href="/partners" class="transition ease-in hover:text-orange-700">partners</a>
       {/if}
+
+      <!-- hidden trigger button -->
+      <button
+        on:click={togglePlayground}
+        class="pointer-events-auto ml-2 opacity-10 transition-opacity hover:opacity-100">
+        🍎
+      </button>
     </nav>
   </div>
-  <div class="rounded-3xl bg-retro-white px-4 py-1 font-header text-2xl">
+  <div
+    class="rounded-3xl bg-retro-white px-4 py-1 font-header text-2xl {playgroundActive
+      ? 'opacity-0'
+      : ''}">
     {info.school_year} meetings:
     <span class="text-sky-600">{info.meeting_day}</span>
     @ {info.meeting_time}, {info.meeting_room}
   </div>
 </div>
+
+{#if playgroundActive}
+  <PhysicsPlayground
+    navLinks={Array.from(navContainer.querySelectorAll("a"))}
+    close={() => (playgroundActive = false)} />
+{/if}
