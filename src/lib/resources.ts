@@ -124,7 +124,7 @@ const resourceCategories: Categories = {
     {
       type: ItemType.Link,
       displayName: "join-discord",
-      path: "https://discord.gg/hzWNchnrf",
+      path: "https://discord.gg/q347S4meF",
     },
     { type: ItemType.Code, displayName: "github", path: "https://github.com/tinovationchs" },
   ],
