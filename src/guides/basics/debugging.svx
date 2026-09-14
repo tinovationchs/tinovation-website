@@ -1,0 +1,167 @@
+# Debugging
+
+Debugging is the process of finding and fixing problems in your code that cause it to crash or run incorrectly. Whilst programming, you will always encounter bugs, and learning how to debug properly and quickly is an extremely useful skill.
+---
+
+## Three Types of Bugs
+
+### Syntax Errors
+
+These happen when your code doesn’t match the language’s official syntax.
+
+```python
+print("Hello"
+```
+
+```
+SyntaxError: '(' was never closed
+```
+
+These are the easiest to fix because the compiler will tell you where the problem is and usually exactly what to fix. In the example above, we had to add simple parentheses.
+---
+
+### Runtime Errors
+
+These occur while your program is running. These are not able to be caught by the compiler, because on paper, they follow correct syntax.
+
+```python
+numbers = [1, 2, 3]
+print(numbers[5])
+```
+
+```
+IndexError: list index out of range
+```
+
+Your code syntax is valid, but something unexpected happened causing it to crash. In this example, the list size was only 3, so accessing the element 5 would raise an out of bounds or index error.
+
+---
+
+### Logic Errors
+
+The hardest bugs to find, as they are bugs with your logic or reasoning, and do not crash the program most of the time.
+
+```python
+age = 18
+
+if age > 18:
+    print("Adult")
+```
+
+The program runs without crashing, but isn't what you expected. In this example, it should have been age >= 18, meaning that you were not counting age = 18 as an adult, which is a logic error.
+
+---
+
+### Debugging Strategies
+
+## Read the Error Message
+
+Don't ignore error messages.
+
+A Python traceback, JavaScript console error, or compiler message usually tells you:
+
+- What went wrong
+- Which file in your project had the error
+- Which line contains the issue
+
+Read from the bottom of the error list upward, as the first line usually contains the actual error. In many languages, once an error is tripped, it will inadvertently cause many errors later on in the program, when they are actually correct. Thus, by starting with the highest line that is flagged, you can fix all errors.
+
+---
+
+## Print Statements
+
+One of the simplest debugging techniques is printing values. This is especially in the case of logic errors, where you are not sure what parts are working or not. To help you, you can just print out a bunch of values and see what is happening in your code versus what you expected.
+
+```python
+print(username)
+print(score)
+print(items)
+```
+
+You can also mark each with labels or indicators to help you keep track of big programs.
+
+```python
+print("Score:", score)
+print("Items:", items)
+```
+
+Printing helps you verify that variables contain the values you expect.
+
+---
+
+## Use a Debugger
+
+Most editors include a debugger that lets you:
+
+- Pause execution
+- Step through code line-by-line
+- Inspect variables
+- Watch values change over time
+
+Learning to use breakpoints is a very important tool.
+
+---
+
+## Isolate the Problem
+
+Instead of debugging your entire project, reduce it to the smallest portion of the code that still causes the bug.
+
+For example:
+
+- Remove unrelated code.
+- Test individual functions.
+- Create a small test file.
+- Comment out portions
+
+Smaller code is always easier to debug.
+
+---
+
+## Check Your Assumptions
+
+Many bugs happen because we assume something is true. For example, in some section of your program you could be assuming to yourself that a variable will not equal 0, when in reality it could.
+
+To catch these, you can trace all variables and sections of your code, asking yourself:
+
+- Is this function actually being called?
+- Does this variable contain what I think it does?
+- Is this file actually loading?
+- Do I need to validate any data?
+
+Never “guess” that something will work, make sure by tracing the code.
+
+---
+
+## Search the Error
+
+If you don’t understand what an error message is saying, search it up, providing the necessary information like:
+
+- The language (Python, JavaScript, Rust...)
+- The exact error message
+- The library or framework you're using
+
+You can likely find people with similar issues by searching on StackOverflow, or resolve your issue by asking an AI agent.
+
+---
+
+## Mental Tricks
+
+Explain your code out loud and walking through your logic step-by-step often reveals mistakes you overlooked while you were reading the code to yourself.
+
+If you keep on staring at some section of code, but can’t seem to fix anything, likely spending hours more just staring at it will be useless. In this case, taking a break and gaining a new perspective is the best solution.
+
+---
+
+## Summary
+
+When something doesn't work:
+
+- Read the error message.
+- Check the line where it occurred.
+- Print important variables.
+- Verify your assumptions.
+- Simplify the problem.
+- Search for the exact error on google or AI
+- Use a debugger from applications like visual studio, etc. if necessary.
+- Take a short break if you're stuck or explain your code aloud
+
