@@ -1,0 +1,58 @@
+---
+title: Godot Game Engine
+authors: [Adarsh Sudheer]
+date: "2026.07.21"
+checked: true
+published: true
+---
+
+## Introduction
+
+### The Engine
+Godot is a completely free open source engine for making 2D and 3D games. Unlike Unity or Unreal, there are no surprise fees or licensing traps. The best part is how lightweight it is. You just download a single executable file that is less than a hundred megabytes. It opens instantly and has absolutely zero bloatware attached to it. You will write your logic in GDScript, which is a custom language that feels incredibly similar to Python.
+
+### Why you should care
+If you want to get good at structuring complex software, make a game. Godot actually forces you to write organized code through its scene system. Instead of writing one massive script that handles everything, you build tiny independent scenes and snap them together like Lego bricks. This completely prevents the spaghetti code that usually ruins beginner projects. 
+
+### Prerequisites
+Godot is meant for beginners, and its very easy to start using! You dpn't have to have a lot of computer science knowledge to begin. If you know basic concepts like variables and loops, you are good to go. Godot is actually one of the best environments to learn those advanced concepts naturally while building something fun.
+
+## Core Architecture
+
+Before we jump into the code, you need to understand the structural logic of the engine.
+
+* Node: The fundamental atom of your game. Everything from a Sprite2D to a Camera3D is a node. Every single thing you see or interact with is a node placed in a tree hierarchy.
+* Scene: A bundled up collection of nodes. You save this bundle and can reuse it inside other scenes as many times as you want. Your player character is a scene, and you place that player scene into your main level scene.
+* Signal: This is the event system. The golden rule in Godot architecture is to call down and signal up. A parent node can directly command its children, but a child node should never hardcode direct instructions to its parent. Instead, the child broadcasts a signal into the void, and the parent listens for it and reacts.
+* Inspector: The panel on the right side of your editor where you tweak the specific properties of whatever node you clicked on, like its position or texture.
+
+## Writing Your First Script
+
+Let us actually get a character moving on screen properly.
+
+1. Go to godotengine.org and download the latest stable release. It does not even need to install, it just runs.
+2. Open the file, create a new project, and pick a folder on your computer.
+3. Create a new 2D scene, which automatically gives you a Node2D as your root.
+4. Add a Sprite2D node as a child of that root. Drag an image file from your computer into the texture property of the Sprite2D inside the Inspector panel.
+5. Click the little scroll icon next to your Sprite2D node to attach a new script.
+6. Replace the default template with this exact GDScript below to handle player movement.
+
+```gdscript
+extends Sprite2D
+
+var speed = 400
+
+func _process(delta):
+    var direction = Vector2.ZERO
+    
+    if Input.is_action_pressed("ui_right"):
+        direction.x += 1
+    if Input.is_action_pressed("ui_left"):
+        direction.x -= 1
+        
+    position += direction * speed * delta
+```
+
+The most important part of that script is multiplying our movement by delta. The delta parameter gives you the exact fraction of a second that passed since the previous frame. If you forget to multiply by delta, your player will move way too fast on a high end gaming rig and super slow on an old laptop. Multiplying by delta forces the movement speed to tie to real world time instead of the frame rate of the computer. 
+
+Hit the play button at the top right to watch it work.
