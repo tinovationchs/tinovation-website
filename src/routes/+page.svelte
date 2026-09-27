@@ -136,8 +136,8 @@
           alt="Koss"
           class="h-8 w-28 object-contain transition-transform hover:scale-110" />
         <img
-          src="/website/soldred.png"
-          alt="Soldred Electronics"
+          src="/website/soldered.png"
+          alt="Soldered Electronics"
           class="h-8 w-28 object-contain transition-transform hover:scale-110" />
       </div>
     </a>
