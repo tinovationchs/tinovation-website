@@ -121,11 +121,6 @@ const resourceCategories: Categories = {
   Tinovation: [
     { type: ItemType.Guide, displayName: "dev-notes", path: "dev-notes" },
     "scoring",
-    {
-      type: ItemType.Link,
-      displayName: "join-discord",
-      path: "https://discord.gg/hzWNchnrf",
-    },
     { type: ItemType.Code, displayName: "github", path: "https://github.com/tinovationchs" },
   ],
 };

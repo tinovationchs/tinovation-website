@@ -58,17 +58,12 @@
           href={info.meeting_room_link}
           target="_blank"
           class="text-blue-700 underline-offset-2 hover:underline">{info.meeting_room}</a
-        >. You do not need coding experience. Bring a laptop if you can, join the Discord, and pick
+        >. You do not need coding experience. Bring a laptop if you can, and pick
         a project path that fits your skill level.
       </p>
 
       <div class="mt-4 flex flex-wrap gap-3">
-        <a
-          href={info.discord_link}
-          target="_blank"
-          class="rounded-lg border-2 border-retro-black bg-[#5865F2] px-4 py-2 font-header text-lg text-white shadow-[3px_3px_0px_0px_#232222] transition-all hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[4px_4px_0px_0px_#232222]">
-          join Discord
-        </a>
+
         {#if info.form_visible}
           <a
             href={info.form_link}
@@ -96,7 +91,7 @@
         <h2 class="font-header text-3xl text-green-700">Every Sprint</h2>
         <ul class="mt-2 list-inside list-disc text-lg">
           <li>Build for about two weeks.</li>
-          <li>Ask for help in meetings or Discord.</li>
+          <li>Ask for help in meetings.</li>
           <li>Submit your project for points and feedback.</li>
         </ul>
       </div>
@@ -116,7 +111,7 @@
         <h2 class="font-header text-3xl text-pink-700">Need Help?</h2>
         <ul class="mt-2 list-inside list-disc text-lg">
           <li>Start with the resources page.</li>
-          <li>Post questions in Discord.</li>
+
           <li>Ask officers to help scope your idea smaller.</li>
         </ul>
       </div>
