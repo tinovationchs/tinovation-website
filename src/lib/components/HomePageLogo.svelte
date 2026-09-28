@@ -1,6 +1,18 @@
-<span class="absolute z-10 w-0 translate-y-9" />
+<script lang="ts">
+  import { popMatterConfetti } from "$lib/confetti";
 
-<div class="z-20 h-auto w-40 stroke-retro-white">
+  function popConfetti() {
+    popMatterConfetti();
+  }
+</script>
+
+<span class="pointer-events-none absolute z-10 w-0 translate-y-9" />
+
+<button
+  type="button"
+  aria-label="Celebrate with confetti"
+  class="z-20 h-auto w-40 cursor-pointer stroke-retro-white transition-transform duration-200 hover:-rotate-6 hover:scale-110 active:scale-95"
+  on:click={popConfetti}>
   <svg
     width="100%"
     height="100%"
@@ -41,7 +53,7 @@
         style="fill:none;stroke-width:4.58px;" />
     </g>
   </svg>
-</div>
+</button>
 
 <style>
   span {

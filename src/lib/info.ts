@@ -7,14 +7,12 @@ const info = {
   meeting_room_link: "https://chs-map.vercel.app?rooms=201",
   current_focus: "project sprints, beginner-friendly workshops, and PioneerHacks prep",
 
-  discord_link: "https://discord.gg/hzWNchnrf",
   instagram_link: "https://www.instagram.com/tinovationchs",
   donate_link: "https://bank.hackclub.com/donations/start/tinovation",
   email: "team@tinovation.org",
   github_link: "https://github.com/tinovationchs",
   club_advisor_email: "ann_shriver@fuhsd.org",
 
-  fun_games_link: "https://discord.gg/hzWNchnrf",
   pioneerhacks_link: "https://www.pioneerhacks.org",
 
   form_visible: true,

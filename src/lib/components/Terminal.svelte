@@ -17,13 +17,19 @@
   let inputEl: HTMLInputElement;
 
   const commands: Record<string, string | (() => string | TerminalLine[])> = {
-    help: "Available commands:\n  about        - What is Tinovation?\n  officers     - Meet the leadership team\n  sprints      - Learn about our code sprints\n  theme <name> - Change theme (default, halloween, christmas, summer, july4th)\n  hack         - Unlock theme controls\n  clear        - Clear terminal logs",
+    help: "Available commands:\n  about        - What is Tinovation?\n  officers     - Meet the leadership team\n  sprints      - Learn about our code sprints\n  theme <name> - Change theme (default, halloween, christmas, summer, july4th)\n  hack         - Unlock theme controls\n  clear        - Clear terminal logs\n  confetti     - Celebrate!",
     about:
       "Tinovation is Cupertino High School's premier programming and software development club! We build projects, host PioneerHacks, and run competitive coding workshops.",
     officers:
       "Co-Presidents: Prakruti Sunil, Bernard Freund\nVice President: Arnav Gokhale\nSecretary & Treasurer: Connor Wang\nOfficers: Amogh Bhatta, Michael Zhao, Adarsh Sudheer, Shreeansh Bharadwaj\nClub Advisor: Mr. Ferrante",
     sprints:
       "Code Sprints are 2-week programming cycles. Build custom software, showcase it, earn points, and climb the leaderboard to win cool prizes at the semester's end!",
+    confetti: () => {
+      import("$lib/confetti").then((mod) => {
+        mod.popMatterConfetti();
+      });
+      return [{ text: "🎉 BOOM! 🎉", type: "success" }];
+    },
     hack: () => {
       // Trigger themes unlock override
       themesUnlocked.set(true);
