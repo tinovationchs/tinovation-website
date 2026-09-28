@@ -1,5 +1,8 @@
 import Matter from "matter-js";
 
+let activeBatches = 0;
+let resizeHandler: (() => void) | null = null;
+
 function getOrInitEngine() {
   if (typeof window === "undefined") return null;
 
@@ -35,7 +38,7 @@ function getOrInitEngine() {
     const floor = Matter.Bodies.rectangle(
       window.innerWidth / 2,
       window.innerHeight + 25,
-      window.innerWidth,
+      window.innerWidth * 3, // Wide enough for resize
       50,
       { isStatic: true }
     );
@@ -43,14 +46,14 @@ function getOrInitEngine() {
       -25,
       window.innerHeight / 2,
       50,
-      window.innerHeight * 2,
+      window.innerHeight * 3,
       { isStatic: true }
     );
     const rightWall = Matter.Bodies.rectangle(
       window.innerWidth + 25,
       window.innerHeight / 2,
       50,
-      window.innerHeight * 2,
+      window.innerHeight * 3,
       { isStatic: true }
     );
 
@@ -61,8 +64,68 @@ function getOrInitEngine() {
     Matter.Runner.run(runner, engine);
 
     (window as any).confettiEngine = engine;
+    (window as any).confettiRender = render;
+    (window as any).confettiRunner = runner;
+    (window as any).confettiFloor = floor;
+    (window as any).confettiRightWall = rightWall;
+
+    resizeHandler = () => {
+      render.canvas.width = window.innerWidth;
+      render.canvas.height = window.innerHeight;
+      Matter.Body.setPosition((window as any).confettiFloor, {
+        x: window.innerWidth / 2,
+        y: window.innerHeight + 25,
+      });
+      Matter.Body.setPosition((window as any).confettiRightWall, {
+        x: window.innerWidth + 25,
+        y: window.innerHeight / 2,
+      });
+    };
+    window.addEventListener("resize", resizeHandler);
   }
   return (window as any).confettiEngine;
+}
+
+function tearDownEngine() {
+  if (typeof window === "undefined") return;
+  const engine = (window as any).confettiEngine;
+  const render = (window as any).confettiRender;
+  const runner = (window as any).confettiRunner;
+
+  if (engine && render && runner) {
+    Matter.Render.stop(render);
+    Matter.Runner.stop(runner);
+    Matter.Engine.clear(engine);
+    if (render.canvas) render.canvas.remove();
+  }
+
+  const container = document.getElementById("confetti-container");
+  if (container) {
+    container.remove();
+  }
+
+  if (resizeHandler) {
+    window.removeEventListener("resize", resizeHandler);
+    resizeHandler = null;
+  }
+
+  delete (window as any).confettiEngine;
+  delete (window as any).confettiRender;
+  delete (window as any).confettiRunner;
+  delete (window as any).confettiFloor;
+  delete (window as any).confettiRightWall;
+}
+
+function scheduleCleanup(engine: Matter.Engine, bodies: Matter.Body[]) {
+  activeBatches++;
+  setTimeout(() => {
+    Matter.Composite.remove(engine.world, bodies);
+    activeBatches--;
+    if (activeBatches <= 0) {
+      activeBatches = 0;
+      tearDownEngine();
+    }
+  }, 10000);
 }
 
 export function popMatterConfetti() {
@@ -105,10 +168,7 @@ export function popMatterConfetti() {
   }
 
   Matter.Composite.add(engine.world, bodies);
-
-  setTimeout(() => {
-    Matter.Composite.remove(engine.world, bodies);
-  }, 10000);
+  scheduleCleanup(engine, bodies);
 }
 
 export function popTinoCs() {
@@ -147,8 +207,5 @@ export function popTinoCs() {
   }
 
   Matter.Composite.add(engine.world, bodies);
-
-  setTimeout(() => {
-    Matter.Composite.remove(engine.world, bodies);
-  }, 10000);
+  scheduleCleanup(engine, bodies);
 }

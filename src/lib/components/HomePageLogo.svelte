@@ -8,9 +8,9 @@
 
 <span class="pointer-events-none absolute z-10 w-0 translate-y-9" />
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<div
+<button
+  type="button"
+  aria-label="Celebrate with confetti"
   class="z-20 h-auto w-40 cursor-pointer stroke-retro-white transition-transform duration-200 hover:-rotate-6 hover:scale-110 active:scale-95"
   on:click={popConfetti}>
   <svg
@@ -53,7 +53,7 @@
         style="fill:none;stroke-width:4.58px;" />
     </g>
   </svg>
-</div>
+</button>
 
 <style>
   span {
