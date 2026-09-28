@@ -17,31 +17,16 @@
   let inputEl: HTMLInputElement;
 
   const commands: Record<string, string | (() => string | TerminalLine[])> = {
-    help: "Available commands:\n  about        - What is Tinovation?\n  officers     - Meet the leadership team\n  sprints      - Learn about our code sprints\n  theme <name> - Change theme (default, halloween, christmas, summer, july4th)\n  hack         - Unlock theme controls\n  clear        - Clear terminal logs\n  joke         - Tell a programming joke\n  confetti     - Celebrate!",
+    help: "Available commands:\n  about        - What is Tinovation?\n  officers     - Meet the leadership team\n  sprints      - Learn about our code sprints\n  theme <name> - Change theme (default, halloween, christmas, summer, july4th)\n  hack         - Unlock theme controls\n  clear        - Clear terminal logs\n  confetti     - Celebrate!",
     about:
       "Tinovation is Cupertino High School's premier programming and software development club! We build projects, host PioneerHacks, and run competitive coding workshops.",
     officers:
       "Co-Presidents: Prakruti Sunil, Bernard Freund\nVice President: Arnav Gokhale\nSecretary & Treasurer: Connor Wang\nOfficers: Amogh Bhatta, Michael Zhao, Adarsh Sudheer, Shreeansh Bharadwaj\nClub Advisor: Mr. Ferrante",
     sprints:
       "Code Sprints are 2-week programming cycles. Build custom software, showcase it, earn points, and climb the leaderboard to win cool prizes at the semester's end!",
-    joke: () => {
-      const jokes = [
-        "Why do programmers prefer dark mode? Because light attracts bugs.",
-        "How many programmers does it take to change a light bulb? None, that's a hardware problem.",
-        "Why did the programmer quit his job? Because he didn't get arrays.",
-        "What is a programmer's favorite hangout place? Foo Bar.",
-        "A SQL query goes into a bar, walks up to two tables and asks: 'Can I join you?'"
-      ];
-      return [{ text: jokes[Math.floor(Math.random() * jokes.length)], type: "output" }];
-    },
     confetti: () => {
-      import("canvas-confetti").then((mod) => {
-        mod.default({
-          particleCount: 150,
-          spread: 80,
-          origin: { y: 0.6 },
-          colors: ['#f472b6', '#38bdf8', '#fbbf24', '#a78bfa', '#34d399']
-        });
+      import("$lib/confetti").then((mod) => {
+        mod.popMatterConfetti();
       });
       return [{ text: "🎉 BOOM! 🎉", type: "success" }];
     },

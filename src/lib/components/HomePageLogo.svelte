@@ -1,13 +1,8 @@
 <script lang="ts">
-  import confetti from "canvas-confetti";
+  import { popMatterConfetti } from "$lib/confetti";
 
   function popConfetti() {
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors: ['#f472b6', '#38bdf8', '#fbbf24', '#a78bfa', '#34d399']
-    });
+    popMatterConfetti();
   }
 </script>
 
