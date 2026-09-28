@@ -93,6 +93,10 @@ export function popMatterConfetti() {
   }
   
   Matter.Composite.add(engine.world, bodies);
+
+  setTimeout(() => {
+    Matter.Composite.remove(engine.world, bodies);
+  }, 10000);
 }
 
 export function popTinoCs() {
@@ -131,4 +135,8 @@ export function popTinoCs() {
   }
 
   Matter.Composite.add(engine.world, bodies);
+
+  setTimeout(() => {
+    Matter.Composite.remove(engine.world, bodies);
+  }, 10000);
 }
