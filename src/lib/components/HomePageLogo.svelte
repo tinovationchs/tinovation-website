@@ -1,6 +1,24 @@
-<span class="absolute z-10 w-0 translate-y-9" />
+<script lang="ts">
+  import confetti from "canvas-confetti";
 
-<div class="z-20 h-auto w-40 stroke-retro-white">
+  function popConfetti() {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#f472b6', '#38bdf8', '#fbbf24', '#a78bfa', '#34d399']
+    });
+  }
+</script>
+
+<span class="absolute z-10 w-0 translate-y-9 pointer-events-none" />
+
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div 
+  class="z-20 h-auto w-40 stroke-retro-white cursor-pointer transition-transform hover:scale-110 hover:-rotate-6 active:scale-95 duration-200"
+  on:click={popConfetti}
+>
   <svg
     width="100%"
     height="100%"

@@ -17,6 +17,7 @@
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
     "@sveltejs/kit": "^1.30.4",
+    "@types/canvas-confetti": "^1.9.0",
     "@types/matter-js": "^0.20.2",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
@@ -42,6 +43,7 @@
   "dependencies": {
     "@sveltejs/adapter-vercel": "^4.0.5",
     "@sveltejs/vite-plugin-svelte": "^2.5.0",
+    "canvas-confetti": "^1.9.4",
     "matter-js": "^0.20.0"
   }
 }
