@@ -34,8 +34,6 @@
       {/if}
 
       <SocialsBar />
-
-
     </div>
   </div>
 
@@ -253,8 +251,6 @@
         To be honest, coding can be quite frustrating. That's why we want to maintain a relaxed,
         casual environment for anyone to work on their projects or just to hang out. We will also
         have fun interim activities to keep members engaged and even to win some points! :D
-
-
       </p>
     </div>
 
@@ -342,7 +338,6 @@
         <h2 class="text-4xl">Contact Us</h2>
 
         <div class="flex w-fit flex-col gap-2 p-4 pt-2 text-left">
-
           <div>
             <span class="select-none">Instagram: </span><a
               href={info.instagram_link}

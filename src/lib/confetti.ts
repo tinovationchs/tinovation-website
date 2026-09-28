@@ -29,22 +29,34 @@ function getOrInitEngine() {
         height: window.innerHeight,
         wireframes: false,
         background: "transparent",
-      }
+      },
     });
 
     const floor = Matter.Bodies.rectangle(
-      window.innerWidth / 2, window.innerHeight + 25, window.innerWidth, 50, { isStatic: true }
+      window.innerWidth / 2,
+      window.innerHeight + 25,
+      window.innerWidth,
+      50,
+      { isStatic: true }
     );
     const leftWall = Matter.Bodies.rectangle(
-      -25, window.innerHeight / 2, 50, window.innerHeight * 2, { isStatic: true }
+      -25,
+      window.innerHeight / 2,
+      50,
+      window.innerHeight * 2,
+      { isStatic: true }
     );
     const rightWall = Matter.Bodies.rectangle(
-      window.innerWidth + 25, window.innerHeight / 2, 50, window.innerHeight * 2, { isStatic: true }
+      window.innerWidth + 25,
+      window.innerHeight / 2,
+      50,
+      window.innerHeight * 2,
+      { isStatic: true }
     );
 
     Matter.Composite.add(engine.world, [floor, leftWall, rightWall]);
     Matter.Render.run(render);
-    
+
     const runner = Matter.Runner.create();
     Matter.Runner.run(runner, engine);
 
@@ -57,17 +69,17 @@ export function popMatterConfetti() {
   const engine = getOrInitEngine();
   if (!engine) return;
 
-  const colors = ['#f472b6', '#38bdf8', '#fbbf24', '#a78bfa', '#34d399'];
-  
+  const colors = ["#f472b6", "#38bdf8", "#fbbf24", "#a78bfa", "#34d399"];
+
   const bodies = [];
   for (let i = 0; i < 60; i++) {
     const x = window.innerWidth / 2 + (Math.random() - 0.5) * 50;
     const y = window.innerHeight * 0.2 + (Math.random() - 0.5) * 50;
     const color = colors[Math.floor(Math.random() * colors.length)];
-    
+
     const size = Math.random() * 8 + 6;
     const isCircle = Math.random() > 0.5;
-    
+
     let body;
     if (isCircle) {
       body = Matter.Bodies.circle(x, y, size, {
@@ -82,16 +94,16 @@ export function popMatterConfetti() {
         friction: 0.1,
       });
     }
-    
+
     Matter.Body.setVelocity(body, {
       x: (Math.random() - 0.5) * 30,
-      y: (Math.random() - 0.5) * 10 - 15
+      y: (Math.random() - 0.5) * 10 - 15,
     });
-    
+
     Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.5);
     bodies.push(body);
   }
-  
+
   Matter.Composite.add(engine.world, bodies);
 
   setTimeout(() => {
@@ -119,7 +131,7 @@ export function popTinoCs() {
           texture: "/website/cupertino_c.png",
           xScale: size / 100, // Assuming natural size of image is ~100px. We scale down.
           yScale: size / 100,
-        }
+        },
       },
       restitution: 0.6,
       friction: 0.1,
@@ -127,10 +139,10 @@ export function popTinoCs() {
 
     Matter.Body.setVelocity(body, {
       x: (Math.random() * 12 + 8) * (side === "left" ? 1 : -1),
-      y: -(Math.random() * 18 + 15)
+      y: -(Math.random() * 18 + 15),
     });
     Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.5);
-    
+
     bodies.push(body);
   }
 

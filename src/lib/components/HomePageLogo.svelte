@@ -6,14 +6,13 @@
   }
 </script>
 
-<span class="absolute z-10 w-0 translate-y-9 pointer-events-none" />
+<span class="pointer-events-none absolute z-10 w-0 translate-y-9" />
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div 
-  class="z-20 h-auto w-40 stroke-retro-white cursor-pointer transition-transform hover:scale-110 hover:-rotate-6 active:scale-95 duration-200"
-  on:click={popConfetti}
->
+<div
+  class="z-20 h-auto w-40 cursor-pointer stroke-retro-white transition-transform duration-200 hover:-rotate-6 hover:scale-110 active:scale-95"
+  on:click={popConfetti}>
   <svg
     width="100%"
     height="100%"

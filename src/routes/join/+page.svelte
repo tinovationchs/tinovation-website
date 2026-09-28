@@ -58,12 +58,11 @@
           href={info.meeting_room_link}
           target="_blank"
           class="text-blue-700 underline-offset-2 hover:underline">{info.meeting_room}</a
-        >. You do not need coding experience. Bring a laptop if you can, and pick
-        a project path that fits your skill level.
+        >. You do not need coding experience. Bring a laptop if you can, and pick a project path
+        that fits your skill level.
       </p>
 
       <div class="mt-4 flex flex-wrap gap-3">
-
         {#if info.form_visible}
           <a
             href={info.form_link}
