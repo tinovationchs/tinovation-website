@@ -1,20 +1,18 @@
 const info = {
   copyright_year: "2026",
   school_year: "2026-27",
-  meeting_day: "Mondays",
+  meeting_day: "Fridays",
   meeting_time: "Lunch",
-  meeting_room: "Room 307",
-  meeting_room_link: "https://chs-map.vercel.app?rooms=307",
+  meeting_room: "Room 201",
+  meeting_room_link: "https://chs-map.vercel.app?rooms=201",
   current_focus: "project sprints, beginner-friendly workshops, and PioneerHacks prep",
 
-  discord_link: "https://discord.gg/q347S4meF",
   instagram_link: "https://www.instagram.com/tinovationchs",
   donate_link: "https://bank.hackclub.com/donations/start/tinovation",
   email: "team@tinovation.org",
   github_link: "https://github.com/tinovationchs",
-  club_advisor_email: "eric_ferrante@fuhsd.org",
+  club_advisor_email: "ann_shriver@fuhsd.org",
 
-  fun_games_link: "https://discord.gg/q347S4meF",
   pioneerhacks_link: "https://www.pioneerhacks.org",
 
   form_visible: true,
@@ -25,7 +23,7 @@ const info = {
   vice_president: "Arnav Gokhale",
   secretary_treasurer: "Connor Wang",
   officers: ["Amogh Bhatta", "Michael Zhao", "Adarsh Sudheer", "Shreeansh Bharadwaj"],
-  club_advisor: "Mr. Ferrante",
+  club_advisor: "Ann Shriver",
 
   resource_contribution_link:
     "https://github.com/tinovationchs/tinovation-website/blob/main/src/guides/README.md",

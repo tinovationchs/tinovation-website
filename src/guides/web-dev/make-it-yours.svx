@@ -1,6 +1,6 @@
 ---
 title: Personalize Your Website with Interactive Effects
-authors: [Tinovation]
+authors: [Prakruti]
 date: "2026-07-12"
 checked: true
 published: true

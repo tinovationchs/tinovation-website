@@ -18,6 +18,9 @@ export interface Item {
   type: ItemType;
   path: string;
   displayName: string;
+  tech_stack?: string[];
+  difficulty?: string;
+  description?: string;
 }
 
 export interface Categories {

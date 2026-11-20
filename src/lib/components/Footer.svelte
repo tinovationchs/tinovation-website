@@ -10,6 +10,14 @@
   class="mt-auto w-full {bg} rounded-t-3xl px-1 py-4 pb-7 text-center font-header text-retro-lightgray">
   <slot />
 
+  <div class="mb-2 text-base">
+    <a
+      href="mailto:{info.email}"
+      class="underline-offset-2 transition duration-100 ease-in-out hover:text-blue-300 hover:underline">
+      {info.email}
+    </a>
+  </div>
+
   <div class="text-base">
     © {info.copyright_year}
     <span class="transition duration-100 ease-in-out hover:text-retro-white">Tinovation</span>. Made

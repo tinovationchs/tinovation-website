@@ -34,14 +34,6 @@
       {/if}
 
       <SocialsBar />
-
-      <a
-        href={info.discord_link}
-        target="_blank"
-        class="mt-8 flex flex-row items-center gap-3 rounded-xl border-2 border-retro-black bg-[#5865F2] px-6 py-3 font-header text-lg font-bold text-white shadow-[4px_4px_0px_0px_#232222] transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_#232222] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[0px_0px_0px_0px_#232222] md:text-xl">
-        <img src="/website/discord-mark-white.svg" alt="Discord Logo" class="h-6 w-6" />
-        <span>Join our Discord!</span>
-      </a>
     </div>
   </div>
 
@@ -110,6 +102,37 @@
         <div class="text-lg">experience required</div>
       </div>
     </div>
+
+    <!-- ================== -->
+    <!-- INDUSTRY PARTNERS  -->
+    <!-- ================== -->
+    <a
+      href="/partners"
+      class="mt-4 flex flex-col items-center justify-center rounded-lg border-2 border-retro-black bg-retro-white py-4 shadow-[4px_4px_0px_0px_#232222] transition-transform hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#232222]">
+      <h3 class="mb-3 font-header text-xl text-retro-black">Supported By</h3>
+      <div class="flex flex-row flex-wrap items-center justify-center gap-6 opacity-80 md:gap-12">
+        <img
+          src="/website/twitch_full.svg"
+          alt="Twitch"
+          class="h-8 w-28 object-contain transition-transform hover:scale-110" />
+        <img
+          src="/website/figma_full.svg"
+          alt="Figma"
+          class="h-8 w-28 object-contain transition-transform hover:scale-110" />
+        <img
+          src="/website/mongodb_full.svg"
+          alt="MongoDB"
+          class="h-8 w-28 object-contain transition-transform hover:scale-110" />
+        <img
+          src="/website/koss.svg"
+          alt="Koss"
+          class="h-8 w-28 object-contain transition-transform hover:scale-110" />
+        <img
+          src="/website/soldered.png"
+          alt="Soldered Electronics"
+          class="h-8 w-28 object-contain transition-transform hover:scale-110" />
+      </div>
+    </a>
 
     <!-- =============== -->
     <!-- LINKS AND STUFF -->
@@ -228,27 +251,6 @@
         To be honest, coding can be quite frustrating. That's why we want to maintain a relaxed,
         casual environment for anyone to work on their projects or just to hang out. We will also
         have fun interim activities to keep members engaged and even to win some points! :D
-
-        <a
-          href={info.fun_games_link}
-          target="_blank"
-          class="text-semibold group mt-2 flex w-fit flex-row items-center justify-center gap-1 self-center rounded-lg text-center text-lg
-      font-bold text-indigo-500 transition duration-100 ease-in hover:translate-x-1">
-          <span class="align-baseline">join Discord</span>
-
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="3"
-            stroke="currentColor"
-            class="inline-block h-4 w-4 transition duration-[25ms] ease-in">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-          </svg>
-        </a>
       </p>
     </div>
 
@@ -336,13 +338,6 @@
         <h2 class="text-4xl">Contact Us</h2>
 
         <div class="flex w-fit flex-col gap-2 p-4 pt-2 text-left">
-          <div>
-            <span class="select-none">Discord: </span><a
-              href={info.discord_link}
-              target="_blank"
-              class="inline underline underline-offset-4 hover:text-purple-400"
-              >{info.discord_link.replace(/(www.)|(https:\/\/)/g, "")}</a>
-          </div>
           <div>
             <span class="select-none">Instagram: </span><a
               href={info.instagram_link}

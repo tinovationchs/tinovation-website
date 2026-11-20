@@ -1,6 +1,16 @@
 import { ItemType, type Categories, type Item } from "$lib/types";
 
 const resourceCategories: Categories = {
+  Blueprints: [
+    {
+      type: ItemType.Guide,
+      displayName: "Full-Stack Chat App",
+      path: "chat-app",
+      tech_stack: ["React", "Node.js", "Socket.io"],
+      difficulty: "Intermediate",
+      description: "A real-time messaging application with live websockets.",
+    },
+  ],
   Basics: ["languages", "editors", "command-line", "git", "github"],
   "Web Development": [
     { type: ItemType.Guide, displayName: "intro", path: "web-intro" },
@@ -111,11 +121,6 @@ const resourceCategories: Categories = {
   Tinovation: [
     { type: ItemType.Guide, displayName: "dev-notes", path: "dev-notes" },
     "scoring",
-    {
-      type: ItemType.Link,
-      displayName: "join-discord",
-      path: "https://discord.gg/q347S4meF",
-    },
     { type: ItemType.Code, displayName: "github", path: "https://github.com/tinovationchs" },
   ],
 };

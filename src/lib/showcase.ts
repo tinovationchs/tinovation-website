@@ -21,7 +21,7 @@ const showcaseProjects: Project[] = [
     date: "2025-08-19",
     description:
       "A Three.js-rendered clay sculpting project for shaping and exporting 3D forms. (still updating)",
-    main_link: "https://clayable.vercel.app/",
+    main_link: "https://clayable.studio",
     guide_name: "clayable-guide",
   },
   {
